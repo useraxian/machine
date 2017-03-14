@@ -1,5 +1,6 @@
-D:\mss.workspace\machine-parent\machine-public\src\main\java\com\ahem\machine\pub\entity\UserPO.java
-D:\mss.workspace\machine-parent\machine-public\src\main\java\com\ahem\machine\pub\service\UserService.java
-D:\mss.workspace\machine-parent\machine-public\src\main\java\com\ahem\machine\pub\mapper\RoleMapper.java
-D:\mss.workspace\machine-parent\machine-public\src\main\java\com\ahem\machine\pub\entity\RolePO.java
-D:\mss.workspace\machine-parent\machine-public\src\main\java\com\ahem\machine\pub\mapper\UserMapper.java
+/Users/fangzhixian/git/machine/machine-public/src/main/java/com/ahem/machine/pub/entity/UserPO.java
+/Users/fangzhixian/git/machine/machine-public/src/main/java/com/ahem/machine/pub/entity/RolePO.java
+/Users/fangzhixian/git/machine/machine-public/src/main/java/com/ahem/machine/pub/mapper/UserMapper.java
+/Users/fangzhixian/git/machine/machine-public/src/main/java/com/ahem/machine/pub/service/UserService.java
+/Users/fangzhixian/git/machine/machine-public/src/main/java/com/ahem/machine/pub/service/CustomUserService.java
+/Users/fangzhixian/git/machine/machine-public/src/main/java/com/ahem/machine/pub/mapper/RoleMapper.java

@@ -7,15 +7,75 @@
 		<version>v.0.0.1</version>
 	</parent>
 
-	<groupId>com.ahem.machine.weixin</groupId>
 	<artifactId>machine-weixin</artifactId>
-	<packaging>pom</packaging>
-	<name>machine-weixin</name>
-	<description>machine weixin parent</description>
+	<packaging>jar</packaging>
+	<name>machine-weixin </name>
+	<description>machine weixin part</description>
 
-	<modules>
-		<module>machine-wx-stater</module>
-		<module>machine-wx-app</module>
-		<module>machine-wx-server</module>
-	</modules>
+
+	<properties>
+		<machine.version>v.0.0.1</machine.version>
+		<machine.public.version>v.0.0.1</machine.public.version>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.ahem.machine</groupId>
+			<artifactId>machine-public</artifactId>
+			<version>${machine.public.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<!-- fastjson -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.2.15</version>
+		</dependency>
+	</dependencies>
+
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.ahem.machine.public</groupId>
+				<artifactId>machine-public</artifactId>
+				<version>${machine.pulic.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.ahem.machine.public</groupId>
+				<artifactId>machine-public</artifactId>
+				<version>${machine.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.ahem.machine.manage</groupId>
+				<artifactId>machine-manage-app</artifactId>
+				<version>${machine.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.ahem.machine.manage</groupId>
+				<artifactId>machine-manage-server</artifactId>
+				<version>${machine.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.ahem.machine.manage</groupId>
+				<artifactId>machine-manage-starter</artifactId>
+				<version>${machine.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<finalName>machine-manage</finalName>
+
+	</build>
 </project>

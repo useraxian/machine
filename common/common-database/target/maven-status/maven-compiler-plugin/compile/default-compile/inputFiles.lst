@@ -1,4 +1,4 @@
-D:\mss.workspace\machine-parent\common\common-database\src\main\java\com\ahem\common\database\MyBatisConfiguration.java
-D:\mss.workspace\machine-parent\common\common-database\src\main\java\com\ahem\common\database\DruidDsConfiguration.java
-D:\mss.workspace\machine-parent\common\common-database\src\main\java\com\ahem\common\database\DruidStatFilter.java
-D:\mss.workspace\machine-parent\common\common-database\src\main\java\com\ahem\common\database\DruidStatViewServlet.java
+/Users/fangzhixian/git/machine/common/common-database/src/main/java/com/ahem/common/database/DruidDsConfiguration.java
+/Users/fangzhixian/git/machine/common/common-database/src/main/java/com/ahem/common/database/MyBatisConfiguration.java
+/Users/fangzhixian/git/machine/common/common-database/src/main/java/com/ahem/common/database/DruidStatViewServlet.java
+/Users/fangzhixian/git/machine/common/common-database/src/main/java/com/ahem/common/database/DruidStatFilter.java

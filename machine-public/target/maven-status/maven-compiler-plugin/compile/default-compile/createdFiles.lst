@@ -1,5 +1,6 @@
-com\ahem\machine\pub\service\UserService.class
-com\ahem\machine\pub\entity\RolePO.class
-com\ahem\machine\pub\mapper\RoleMapper.class
-com\ahem\machine\pub\mapper\UserMapper.class
-com\ahem\machine\pub\entity\UserPO.class
+com/ahem/machine/pub/service/UserService.class
+com/ahem/machine/pub/mapper/UserMapper.class
+com/ahem/machine/pub/entity/RolePO.class
+com/ahem/machine/pub/mapper/RoleMapper.class
+com/ahem/machine/pub/service/CustomUserService.class
+com/ahem/machine/pub/entity/UserPO.class

@@ -7,22 +7,41 @@
 		<version>v.0.0.1</version>
 	</parent>
 
-	<groupId>com.ahem.machine.manage</groupId>
 	<artifactId>machine-manage</artifactId>
-	<packaging>pom</packaging>
+	<packaging>jar</packaging>
 	<name>machine-manage</name>
-	<description>machine manage parent</description>
+	<description>machine manage part</description>
 
-	<modules>
-		<module>machine-manage-app</module>
-		<module>machine-manage-server</module>
-		<module>machine-manage-stater</module>
-	</modules>
 
 	<properties>
 		<machine.version>v.0.0.1</machine.version>
 		<machine.public.version>v.0.0.1</machine.public.version>
 	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.ahem.machine</groupId>
+			<artifactId>machine-public</artifactId>
+			<version>${machine.public.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<!-- fastjson -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.2.15</version>
+		</dependency>
+	</dependencies>
+
 
 	<dependencyManagement>
 		<dependencies>

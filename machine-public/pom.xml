@@ -7,7 +7,6 @@
 		<version>v.0.0.1</version>
 	</parent>
 
-	<groupId>com.ahem.machine.public</groupId>
 	<artifactId>machine-public</artifactId>
 	<name>machine-public</name>
 	<description>machine public part</description>
