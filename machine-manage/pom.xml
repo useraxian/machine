@@ -1,0 +1,62 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.ahem.machine</groupId>
+		<artifactId>machine-parent</artifactId>
+		<version>v.0.0.1</version>
+	</parent>
+
+	<groupId>com.ahem.machine.manage</groupId>
+	<artifactId>machine-manage</artifactId>
+	<packaging>pom</packaging>
+	<name>machine-manage</name>
+	<description>machine manage parent</description>
+
+	<modules>
+		<module>machine-manage-app</module>
+		<module>machine-manage-server</module>
+		<module>machine-manage-stater</module>
+	</modules>
+
+	<properties>
+		<machine.version>v.0.0.1</machine.version>
+		<machine.public.version>v.0.0.1</machine.public.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.ahem.machine.public</groupId>
+				<artifactId>machine-public</artifactId>
+				<version>${machine.pulic.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.ahem.machine.public</groupId>
+				<artifactId>machine-public</artifactId>
+				<version>${machine.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.ahem.machine.manage</groupId>
+				<artifactId>machine-manage-app</artifactId>
+				<version>${machine.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.ahem.machine.manage</groupId>
+				<artifactId>machine-manage-server</artifactId>
+				<version>${machine.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.ahem.machine.manage</groupId>
+				<artifactId>machine-manage-starter</artifactId>
+				<version>${machine.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<finalName>machine-manage</finalName>
+
+	</build>
+</project>

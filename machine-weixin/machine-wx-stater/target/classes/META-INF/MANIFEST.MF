@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: machine-wx-stater
+Implementation-Version: v.0.0.1
+Built-By: Administrator
+Implementation-Vendor-Id: com.ahem.machine.weixin
+Build-Jdk: 1.8.0_40
+Implementation-URL: http://projects.spring.io/spring-boot/machine-pare
+ nt/machine-weixin/machine-wx-stater/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+

@@ -1,0 +1,21 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.ahem.machine</groupId>
+		<artifactId>machine-parent</artifactId>
+		<version>v.0.0.1</version>
+	</parent>
+
+	<groupId>com.ahem.machine.weixin</groupId>
+	<artifactId>machine-weixin</artifactId>
+	<packaging>pom</packaging>
+	<name>machine-weixin</name>
+	<description>machine weixin parent</description>
+
+	<modules>
+		<module>machine-wx-stater</module>
+		<module>machine-wx-app</module>
+		<module>machine-wx-server</module>
+	</modules>
+</project>
