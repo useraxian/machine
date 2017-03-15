@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script type="text/javascript">
+		window.jQuery
+				|| document
+						.write("<script src='/assets/js/jquery-2.0.3.min.js'>"
+								+ "<"+"script>");
+	</script>
+<script>
+//注意：下面的代码是放在test.html调用,并且id跟test.html中的iframe的id要保持一致
+$(window.parent.document).find("#mainFrame").load(function(){
+	var main = $(window.parent.document).find("#mainFrame");
+	var thisheight = $(document).height()+30;
+	main.height(thisheight);
+});
+</script>
+</head>
+<title>用户</title>
+
+<body>用户管理
+</body>
+</html>
