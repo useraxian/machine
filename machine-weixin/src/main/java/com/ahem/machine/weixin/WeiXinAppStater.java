@@ -11,12 +11,12 @@ import org.springframework.context.annotation.ComponentScans;
 @SpringBootApplication
 @ServletComponentScan// 使用@WebServlet 、@WebListener、@WebFilter
 @ComponentScans(value = { @ComponentScan("com.ahem") })
-public class ManageAppStater {
-	private static Logger log = LoggerFactory.getLogger(ManageAppStater.class);
+public class WeiXinAppStater {
+	private static Logger log = LoggerFactory.getLogger(WeiXinAppStater.class);
 
 	public static void main(String[] args) {
 		log.info("machine manage 正在启动!");
-		SpringApplication.run(ManageAppStater.class, args);
+		SpringApplication.run(WeiXinAppStater.class, args);
 		log.info("machine manage 成功启动!");
 	}
 }
