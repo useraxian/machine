@@ -18,7 +18,6 @@ import com.ahem.machine.weixin.core.TimeCounter;
  * @author Administrator
  *
  */
-@Configuration
 @Component
 public class TimeCounterScheduler {
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
