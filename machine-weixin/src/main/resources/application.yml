@@ -1,9 +1,16 @@
+#设置http参数限制
+server:
+  tomcat:
+    max-http-header-size: 3145728
+
+#设置日志级别
 logging:
   level:
+    root: DEBUG
     org:
       springframework:
-        security: DEBUG
-        web: DEBUG
+        security: INFO
+        web: INFO
 
 #是否开启基本的鉴权，默认为true
 security:

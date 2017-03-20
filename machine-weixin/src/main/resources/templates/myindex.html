@@ -4,181 +4,25 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport"
-	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+>
 <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
 <title>slot machine</title>
 <!-- head 中 -->
 <link rel="stylesheet"
-	href="//cdn.bootcss.com/weui/1.1.1/style/weui.min.css">
+	href="//cdn.bootcss.com/weui/1.1.1/style/weui.min.css"
+>
 <link rel="stylesheet"
-	href="//cdn.bootcss.com/jquery-weui/1.0.1/css/jquery-weui.min.css">
+	href="//cdn.bootcss.com/jquery-weui/1.0.1/css/jquery-weui.min.css"
+>
 
 <!-- body 最后 -->
 <script src="//cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/jquery-weui/1.0.1/js/jquery-weui.min.js"></script>
 
 
-<!--游戏样式-->
-<style type="text/css">
-* {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	background: black;
-}
-
-.screen table {
-	border-width: 2px;
-	border-style: solid;
-	border-color: white;
-	border-radius: 10px;
-	margin: 10px auto;
-	border-style: solid;
-}
-
-.screen table tr td {
-	border-radius: 5px;
-}
-
-.control table {
-	margin: 10px auto;
-}
-
-.control table tr {
-	border: 2px, solid, red;
-}
-
-.control table tr td {
-	width: 110px;
-	height: 110px;
-}
-
-.control table tr td .space {
-	width: 10px;
-	height: 110px;
-}
-
-.control table tr .td-top-border {
-	border-top: 2px, solid, red;
-}
-
-.control table tr .td-left-border {
-	border-left: 2px, solid, red;
-}
-
-.control table tr .td-bottom-border {
-	border-bottom: 2px, solid, red;
-}
-
-.control table tr .td-right-border {
-	border-right: 2px, solid, red;
-}
-
-.bet-num-tr td {
-	border: 0;
-	text-align: center;
-}
-
-.bet-btn-tr td {
-	border: 0;
-	text-align: center;
-}
-
-.bet-btn-tr td button {
-	width: 100%;
-	height: 100%;
-	border: 1px solid;
-	border-radius: 100%;
-	box-shadow: 1px 1px 2px #E0E0E0, -1px -1px 2px #E0E0E0;
-}
-
-/* 固定顶部div */
-.top-div {
-	position: fixed;
-	top: 0;
-	left: 0;
-}
-
-.user-pic {
-	width: 25;
-	height: 25px;
-}
-
-div.button {
-	width: 150px;
-	height: 40px;
-	line-height: 40px;
-	display: inline-block;
-	color: #fff;
-	font-family: "Microsoft Yahei";
-	background-color: rgb(106, 38, 19);
-	border-radius: 3px;
-	cursor: pointer;
-	top: 100px;
-	left: 20px;
-}
-
-div.button:hover {
-	background-color: #481305;
-}
-
-.target {
-	border: 3px solid red;
-	position: absolute;
-	top: 0;
-	left: 0;
-	box-shadow: 2px 2px 5px #f00, -2px -2px 5px #f00;
-	border-radius: 3px;
-}
-
-@font-face {
-	font-family: ledFont;
-	src: url('/fonts/led.TTF');
-}
-
-.number {
-	padding: 0;
-	margin: 0;
-	font-size: 20px;
-	font-family: ledFont;
-}
-</style>
-<script type="text/javascript">
-	$(document).load(function() {
-	});
-	$(document).ready(
-			function() {
-				console.log($(window).height()); //浏览器当前窗口可视区域高度   
-				console.log($(document).height()); //浏览器当前窗口文档的高度   
-				console.log($(document.body).height());//浏览器当前窗口文档body的高度   
-				console.log($(document.body).outerHeight(true));//浏览器当前窗口文档body的总高度 包括border padding margin   
-				console.log($(window).width()); //浏览器当前窗口可视区域宽度   
-				console.log($(document).width());//浏览器当前窗口文档对象宽度   
-				console.log($(document.body).width());//浏览器当前窗口文档body的高度   
-				console.log($(document.body).outerWidth(true));//浏览器当前窗口文档body的总宽度 包括border padding margin   
-
-				var imgWidth = ($(document.body).width() - $(document.body)
-						.width() * 0.1) / 7;
-				console.log('imgWidth=' + imgWidth);
-
-				$('.screen table tr td').width(imgWidth);
-				$('.screen table tr td').height(imgWidth);
-				$('.control table tr td').width(imgWidth - 5);
-				$('.control table tr td').height(imgWidth - 5);
-
-				var $target = $('div.target');//代表找到div.target的元素
-				var offset = $('#0').offset();
-				$target.css('top', offset.top);
-				$target.css('left', offset.left);
-				$target.width(imgWidth - 3);
-				$target.height(imgWidth - 3);
-				console.log('td width=' + $('.screen table tr td').width());
-				console.log('td height=' + $('.screen table tr td').height());
-
-			})
-</script>
+<!--游戏首页样式-->
+<link rel="stylesheet" href="/css/index.css">
 
 </head>
 <body>
@@ -194,78 +38,106 @@ div.button:hover {
 		<table cellpadding="0" cellspacing="1">
 			<tr>
 				<td id="0"
-					style="background: url(images/0.png); background-size: cover"></td>
+					style="background: url(images/0.png); background-size: cover"
+				></td>
 				<td id="1"
-					style="background: url(images/1.png); background-size: cover;"></td>
+					style="background: url(images/1.png); background-size: cover;"
+				></td>
 				<td id="2"
-					style="background: url(images/2.png); background-size: cover;"></td>
+					style="background: url(images/2.png); background-size: cover;"
+				></td>
 				<td id="3"
-					style="background: url(images/3.png); background-size: cover;"></td>
+					style="background: url(images/3.png); background-size: cover;"
+				></td>
 				<td id="4"
-					style="background: url(images/4.png); background-size: cover;"></td>
+					style="background: url(images/4.png); background-size: cover;"
+				></td>
 				<td id="5"
-					style="background: url(images/5.png); background-size: cover;"></td>
+					style="background: url(images/5.png); background-size: cover;"
+				></td>
 				<td id="6"
-					style="background: url(images/6.png); background-size: cover;"></td>
+					style="background: url(images/6.png); background-size: cover;"
+				></td>
 			</tr>
 			<tr>
 				<td id="23"
-					style="background: url(images/19.png); background-size: cover;"></td>
+					style="background: url(images/19.png); background-size: cover;"
+				></td>
 				<td colspan="5" rowspan="5" valign="top" height="30px"
-					style="background: url(images/center.jpg); background-size: cover; position: relative; border-width: 2px; border-style: solid; border-color: white">
+					style="background: url(images/center.jpg); background-size: cover; position: relative; border-width: 2px; border-style: solid; border-color: white"
+				>
 					<div class="weui-flex"
-						style="position: relative; top: 5px; height: 30px;">
+						style="position: relative; top: 5px; height: 30px;"
+					>
 						<div class="weui-flex__item number"
 							style="box-shadow: 2px 2px 2px #888888 inset, -2px -2px 2px #888888 inset; border-radius: 5px; text-align: center; color: red; display: inline;"
-							align="left">000000</div>
+							align="left"
+						>000000</div>
 						<div class="weui-flex__item number"></div>
 						<div id="myscore" class="weui-flex__item number"
 							style="box-shadow: 2px 2px 2px #888888 inset, -2px -2px 2px #888888 inset; border-radius: 5px; text-align: center; color: red; display: inline;"
-							align="right">000010</div>
+							align="right"
+						>000010</div>
 					</div>
 				</td>
 				<td id="7"
-					style="background: url(images/7.png); background-size: cover"></td>
+					style="background: url(images/7.png); background-size: cover"
+				></td>
 			</tr>
 			<tr>
 				<td id="22"
-					style="background: url(images/18.png); background-size: cover;"></td>
+					style="background: url(images/18.png); background-size: cover;"
+				></td>
 				<td id="8"
-					style="background: url(images/8.png); background-size: cover;"></td>
+					style="background: url(images/8.png); background-size: cover;"
+				></td>
 			</tr>
 			<tr>
 				<td id="21"
-					style="background: url(images/17.png); background-size: cover;"></td>
+					style="background: url(images/17.png); background-size: cover;"
+				></td>
 				<td id="9"
-					style="background: url(images/9.png); background-size: cover;"></td>
+					style="background: url(images/9.png); background-size: cover;"
+				></td>
 			</tr>
 			<tr>
 				<td id="20"
-					style="background: url(images/17.png); background-size: cover;"></td>
+					style="background: url(images/17.png); background-size: cover;"
+				></td>
 				<td id="10"
-					style="background: url(images/9.png); background-size: cover;"></td>
+					style="background: url(images/9.png); background-size: cover;"
+				></td>
 			</tr>
 			<tr>
 				<td id="19"
-					style="background: url(images/17.png); background-size: cover;"></td>
+					style="background: url(images/17.png); background-size: cover;"
+				></td>
 				<td id="11"
-					style="background: url(images/9.png); background-size: cover;"></td>
+					style="background: url(images/9.png); background-size: cover;"
+				></td>
 			</tr>
 			<tr>
 				<td id="18"
-					style="background: url(images/16.png); background-size: cover;"></td>
+					style="background: url(images/16.png); background-size: cover;"
+				></td>
 				<td id="17"
-					style="background: url(images/15.png); background-size: cover;"></td>
+					style="background: url(images/15.png); background-size: cover;"
+				></td>
 				<td id="16"
-					style="background: url(images/14.png); background-size: cover;"></td>
+					style="background: url(images/14.png); background-size: cover;"
+				></td>
 				<td id="15"
-					style="background: url(images/13.png); background-size: cover;"></td>
+					style="background: url(images/13.png); background-size: cover;"
+				></td>
 				<td id="14"
-					style="background: url(images/12.png); background-size: cover;"></td>
+					style="background: url(images/12.png); background-size: cover;"
+				></td>
 				<td id="13"
-					style="background: url(images/11.png); background-size: cover;"></td>
+					style="background: url(images/11.png); background-size: cover;"
+				></td>
 				<td id="12"
-					style="background: url(images/10.png); background-size: cover;"></td>
+					style="background: url(images/10.png); background-size: cover;"
+				></td>
 			</tr>
 		</table>
 	</div>
@@ -285,25 +157,32 @@ div.button:hover {
 			<tr class="bet-btn-tr">
 				<td><button id="bet1" type="button"
 						style="background: url(images/0.png); background-size: cover;"
-						onclick="bet(1)"></button></td>
+						onclick="bet(1)"
+					></button></td>
 				<td><button id="bet2" type="button"
 						style="background: url(images/1.png); background-size: cover;"
-						onclick="bet(2)"></button></td>
+						onclick="bet(2)"
+					></button></td>
 				<td><button id="bet3" type="button"
 						style="background: url(images/2.png); background-size: cover;"
-						onclick="bet(3)"></button></td>
+						onclick="bet(3)"
+					></button></td>
 				<td><button id="bet4" type="button"
 						style="background: url(images/3.png); background-size: cover;"
-						onclick="bet(4)"></button></td>
+						onclick="bet(4)"
+					></button></td>
 				<td><button id="bet5" type="button"
 						style="background: url(images/4.png); background-size: cover;"
-						onclick="bet(5)"></button></td>
+						onclick="bet(5)"
+					></button></td>
 				<td><button id="bet6" type="button"
 						style="background: url(images/5.png); background-size: cover;"
-						onclick="bet(6)"></button></td>
+						onclick="bet(6)"
+					></button></td>
 				<td><button id="bet7" type="button"
 						style="background: url(images/6.png); background-size: cover;"
-						onclick="bet(7)"></button></td>
+						onclick="bet(7)"
+					></button></td>
 
 			</tr>
 			<tr style="color: white" align="center">
@@ -318,124 +197,20 @@ div.button:hover {
 			</tr>
 		</table>
 	</div>
-
+	<div style="color: red">
+		开奖时间： <span id="timeSpan" class="number">00:00:00</span>
+	</div>
 	<div class="button staBtn" onclick="startRun()">开始抽奖</div>
 	<div class="button czBtn" onclick="reset()">重置</div>
 	<!--游戏区域结束-->
+
 	<!--目标游戏开始-->
 	<div class="target"></div>
 	<!--目标游戏结束-->
-	<!--引入外部jquery类库文件-->
-	<script type="text/javascript">
-		var last = 23;
-		//变量
-		//数据类型
-		//条件判断
-		//循环
-		//API
-		//对象
-		//json
-		function reset() {
-			var $scoreDivs = $('.bet-num-tr td div');
-			for (var i = 0; i < $scoreDivs.length; i++) {
-				var div = $scoreDivs[i];
-				$(div).html("00");
-			}
-		}
-		function moveToNext(i) {
-			var $target = $('div.target');//代表找到div.target的元素
-			var offset = $('#' + (i % 24)).offset();
-			$target.animate({
-				top : offset.top - 2,
-				left : offset.left - 2
-			}, 50, function() {
-				reset();
-			});
-			n = i;
-		}
-		function startRun() {
-			//randomNumber改成从后台获取
-// 			 Math.random(10) * 20;
-			var randomNumber = 1;//随机生成0-20之间的数字
-			
-			if(randomNumber>=last){
-				randomNumber = randomNumber + 48;//+上一个50的基数
-				
-			}else if(randomNumber<last){
-				randomNumber = 24-last+ randomNumber+ 48;//+上一个50的基数
-				
-			}
-			
-			for (var i = last; i <=randomNumber; i++) {
-				moveToNext(i);
-			}
-			last = (randomNumber)%24;
-		}
 
-		/**
-		 *事件
-		 */
+	<script type="text/javascript" src="/js/index.js"></script>
+	<script type="text/javascript" src="/js/timecounter.js"></script>
+	<script type="text/javascript" src="/js/websokect.js"></script>
 
-		//下注
-		function bet(idx) {
-			if ($("div.target").is(":animated")) {
-				return false;
-			}
-			//判断是否在开奖动画
-			var $score = $('#score' + idx);
-			var $myscore = $('#myscore');
-			var scoreVal = parseInt($score.html());//下注分数
-			var myscoreVal = parseInt($myscore.html());//我的分数
-			console.log("scoreVal=" + scoreVal);
-			console.log("myscoreVal=" + myscoreVal);
-			if (myscoreVal <= 0) {
-				$.confirm({
-					title : '提醒',
-					text : '对不起，您的分数不足！',
-					onOK : function() {
-						//点击确认
-					},
-					onCancel : function() {
-					}
-				});
-
-				$.modal({
-					title : "提醒",
-					text : "对不起，您的分数不足！",
-					buttons : [ {
-						text : "取消",
-						className : "default",
-						onClick : function() {
-							console.log(3)
-						}
-					}, {
-						text : "充值积分",
-						onClick : function() {
-							alert('充值界面');
-						}
-					}, ]
-				});
-			} else {
-				if (scoreVal < 99) {
-					scoreVal++;
-					myscoreVal--;
-					if (scoreVal < 10) {
-						$score.html("0" + scoreVal);
-					} else {
-						$score.html(scoreVal);
-					}
-
-					var myscoreLength = String(myscoreVal).length;
-					if (myscoreLength < 6) {
-						for (var i = 0; i < 6 - myscoreLength; i++) {
-							myscoreVal = "0" + myscoreVal;
-						}
-					}
-					$myscore.html(myscoreVal);
-				}
-			}
-
-		}
-	</script>
 </body>
 </html>

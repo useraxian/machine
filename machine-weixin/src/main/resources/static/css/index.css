@@ -1,0 +1,140 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: black;
+}
+
+/*
+*
+*机器屏幕样式 
+*/
+.screen table {
+	border-width: 2px;
+	border-style: solid;
+	border-color: white;
+	border-radius: 10px;
+	margin: 10px auto;
+	border-style: solid;
+}
+
+.screen table tr td {
+	border-radius: 5px;
+}
+
+/*
+*
+*机器 控制台样式 
+*
+**/
+.control table {
+	margin: 10px auto;
+}
+
+.control table tr {
+	border: 2px, solid, red;
+}
+
+.control table tr td {
+	width: 110px;
+	height: 110px;
+}
+
+.control table tr td .space {
+	width: 10px;
+	height: 110px;
+}
+
+.control table tr .td-top-border {
+	border-top: 2px, solid, red;
+}
+
+.control table tr .td-left-border {
+	border-left: 2px, solid, red;
+}
+
+.control table tr .td-bottom-border {
+	border-bottom: 2px, solid, red;
+}
+
+.control table tr .td-right-border {
+	border-right: 2px, solid, red;
+}
+
+/*
+ *
+ * 下注栏样式
+ * */
+.bet-num-tr td {
+	border: 0;
+	text-align: center;
+}
+
+.bet-btn-tr td {
+	border: 0;
+	text-align: center;
+}
+
+.bet-btn-tr td button {
+	width: 100%;
+	height: 100%;
+	border: 1px solid;
+	border-radius: 100%;
+	box-shadow: 1px 1px 2px #E0E0E0, -1px -1px 2px #E0E0E0;
+}
+
+/* 固定顶部div */
+.top-div {
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+/* 用户头像 */
+.user-pic {
+	width: 25;
+	height: 25px;
+}
+
+/* 按钮 */
+div.button {
+	width: 150px;
+	height: 40px;
+	line-height: 40px;
+	display: inline-block;
+	color: #fff;
+	font-family: "Microsoft Yahei";
+	background-color: rgb(106, 38, 19);
+	border-radius: 3px;
+	cursor: pointer;
+	top: 100px;
+	left: 20px;
+}
+
+div.button:hover {
+	background-color: #481305;
+}
+
+/* 目标样式 */
+.target {
+	border: 3px solid red;
+	position: absolute;
+	top: 0;
+	left: 0;
+	box-shadow: 2px 2px 5px #f00, -2px -2px 5px #f00;
+	border-radius: 3px;
+}
+
+@font-face {
+	font-family: ledFont;
+	src: url('/fonts/led.TTF');
+}
+
+.number {
+	padding: 0;
+	margin: 0;
+	font-size: 20px;
+	font-family: ledFont;
+}
