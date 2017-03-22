@@ -56,7 +56,7 @@ public class TimeCounter implements Serializable {
 			// TODO 期号从数据库获取，时间从配置表获取
 			set(recordId++, 1, 0);
 		}
-		logger.debug(this.toString());
+//		logger.debug(this.toString());
 	}
 
 	/**

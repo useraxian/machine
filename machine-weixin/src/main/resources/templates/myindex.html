@@ -198,8 +198,11 @@
 		</table>
 	</div>
 	<div style="color: red">
-		开奖时间： <span id="timeSpan" class="number">00:00:00</span>
+		开奖时间： <span id="timeSpan" class="number">00:00</span>
 	</div>
+	<div class="button" onclick="startTimeCounter()">开启计时</div>
+	<div class="button" onclick="stopTimeCounter()">停止计时</div>
+	<input id="openNum" type="text" /><div class="button" onclick="setNextOpenNum()">设置开奖号码</div>
 	<div class="button staBtn" onclick="startRun()">开始抽奖</div>
 	<div class="button czBtn" onclick="reset()">重置</div>
 	<!--游戏区域结束-->
@@ -207,7 +210,10 @@
 	<!--目标游戏开始-->
 	<div class="target"></div>
 	<!--目标游戏结束-->
-
+	<script
+		src="http://cdn.bootcss.com/web-socket-js/1.0.0/web_socket.min.js"
+	></script>
+	<script type="text/javascript" src="/js/machine.js"></script>
 	<script type="text/javascript" src="/js/index.js"></script>
 	<script type="text/javascript" src="/js/timecounter.js"></script>
 	<script type="text/javascript" src="/js/websokect.js"></script>

@@ -2,13 +2,13 @@
  * websocket js
  */
 var websocket = null;
-var serverUrl = "ws://localhost:8080/websocket";
+var url = "localhost:8080";
 
 // 判断当前浏览器是否支持WebSocket
 if ('WebSocket' in window) {
-	websocket = new WebSocket(serverUrl);
+	websocket = new WebSocket("ws://" + url + "/websocket");
 } else {
-	alert('Not support websocket')
+	websocket = new SockJS("http://" + url + "/sockjs/websocket");
 }
 
 // 连接发生错误的回调方法
@@ -25,9 +25,15 @@ websocket.onopen = function(event) {
 // 接收到消息的回调方法
 websocket.onmessage = function(event) {
 	console.log('接收到服务端的消息:' + event.data);
-	setTimeCounter(event.data);
-	startTimeCounter(event.data);
-	// var obj = JSON.parse(event.data);
+	var obj = JSON.parse(event.data);
+//	if (obj.type == 'time_count') {
+//		// 设置时间计时器时间
+//		setTimeCounter(obj.content);
+//		startTimeCounter(obj.content);
+//	} else {
+//
+//	}
+
 	// var type = obj.type;
 	// var msg = obj.message;
 	// var innerHTML = "";
@@ -62,8 +68,6 @@ function send() {
 	websocket.send(message);
 }
 
-// 设置时间计时器的值
-function setTimeCounter(time) {
-	$('#timeSpan').html(time);
-	timer = time;
+function sendMsg() {
+	websocket.send('我是客户端');
 }
