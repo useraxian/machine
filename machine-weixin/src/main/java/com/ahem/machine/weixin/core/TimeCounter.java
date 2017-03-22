@@ -20,6 +20,7 @@ import com.alibaba.fastjson.annotation.JSONField;
  * @date 2017年3月20日
  * @version
  */
+@Component
 public class TimeCounter implements Serializable {
 	/** serialVersionUID */
 	private static final long serialVersionUID = 1L;

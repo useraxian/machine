@@ -10,7 +10,6 @@ import com.ahem.machine.weixin.core.TimeCounter;
 public class TimeCounterConfiguration {
 
 	@Bean
-	@Scope("singleton")
 	TimeCounter timeCounter() {
 		return new TimeCounter();
 	};
