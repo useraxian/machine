@@ -38,6 +38,7 @@ function initTimeCounter() {
 				// TODO 全为0 ，开奖调用动画,重新设置时间
 				startRun();
 				refreshTime();
+				//判断输赢
 				// $('#timeSpan').html("00:01:00");
 			}
 
