@@ -1,5 +1,6 @@
 #设置http参数限制
 server:
+  port: 8080
   tomcat:
     max-http-header-size: 3145728
 

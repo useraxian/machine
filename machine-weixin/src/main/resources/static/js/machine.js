@@ -52,10 +52,16 @@ var nextOpenNum = null;
 var moveNum = null;
 var finalNum = null;
 
+var myScoreUrl = '/machine/myscore';
 /**
  * 初始化机器UI
  */
-function initMachineUI() {
+function initMachine() {
+	ui();
+	data();
+}
+
+function ui() {
 	// 设置转盘图标
 	for ( var key in indexs) {
 		var img = 'url(images/' + fruits[key] + ')';
@@ -76,6 +82,24 @@ function initMachineUI() {
 	}
 }
 
+function data() {
+	$.ajax({
+		url : "/machine/myscore",
+		success : function(result) {
+			var obj = JSON.parse(result);
+			if (obj.meta.success) {
+				console.log('我的分数:' + obj.data);
+				$('#myscore').html(numberCover(obj.data, 6));
+			} else {
+				console.log('加载分数失败!' + result);
+			}
+
+		},
+		error : function() {
+
+		}
+	});
+}
 /**
  * 移动到下个目标
  */
@@ -237,13 +261,9 @@ function getWinScore(fruitName) {
 	}
 	// 根据下注索引获取下注分数
 	var score = parseInt($('#score' + betIdx).html());
-	var bs = times[betIdx];
-	console.log('score='+score);
-	console.log('times='+bs);
+	var bs = times[betIdx];// 倍数
 	var winScore = score * bs;
-	console.log('winScore='+winScore);
+	console.log('winScore=' + winScore);
 	var myScore = parseInt($('#myscore').html());
-	console.log('myScore='+myScore);
-	console.log('myScore + winScore='+myScore + winScore);
-	$('#myscore').html(myScore + winScore);
+	$('#myscore').html(numberCover(myScore + winScore, 6));
 }

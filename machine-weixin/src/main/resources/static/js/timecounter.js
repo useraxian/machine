@@ -13,7 +13,7 @@ var status = 'init';// 计时器状态
 function initTimeCounter() {
 	timeId = self.setInterval(function() {
 		// 第一次启动
-		if (status == 'init'||status=='start') {
+		if (status == 'init' || status == 'start') {
 			refreshTime();
 			status = 'run';
 			return;
@@ -28,7 +28,6 @@ function initTimeCounter() {
 				second--;
 			}
 			setTime(minute, second);
-			console.log(time);
 
 			if (minute == 0 && second == 30) {
 				// TODO 剩余30秒 ，提醒用户，停止下注
@@ -38,7 +37,7 @@ function initTimeCounter() {
 				// TODO 全为0 ，开奖调用动画,重新设置时间
 				startRun();
 				refreshTime();
-				//判断输赢
+				// 判断输赢
 				// $('#timeSpan').html("00:01:00");
 			}
 
@@ -47,12 +46,12 @@ function initTimeCounter() {
 	}, 1000);
 }
 
-function numberCover(num) {
-	if (num < 10) {
-		num = '0' + num;
-	}
-	return num;
-}
+// function numberCover(num) {
+// if (num < 10) {
+// num = '0' + num;
+// }
+// return num;
+// }
 
 /**
  * 
@@ -65,17 +64,18 @@ function refreshTime() {
 			var obj = JSON.parse(result);
 			minute = obj.minute;
 			second = obj.second;
-			var timeVal = numberCover() + ":" + numberCover(obj.second);
+			var timeVal = numberCover(obj.minute, 2) + ":"
+					+ numberCover(obj.second, 2);
 			setTime(obj.minute, obj.second);
 		},
 		error : function() {
 			time = '加载失败';
 			minute = 0;
-			seconde = 0;
+			second = 0;
 			$('#timeSpan').html(time);
 
 			stopTimeCounter();
-			
+
 		}
 	});
 }
@@ -86,8 +86,8 @@ function refreshTime() {
  */
 function setTime(m, s) {
 	minute = m;
-	seconde = s;
-	time = numberCover(minute) + ":" + numberCover(seconde);
+	second = s;
+	time = numberCover(minute,2) + ":" + numberCover(second,2);
 	$('#timeSpan').html(time);
 }
 

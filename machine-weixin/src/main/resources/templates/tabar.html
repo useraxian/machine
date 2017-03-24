@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+>
+<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+<title>slot machine</title>
+<!-- head 中 -->
+<link rel="stylesheet"
+	href="//cdn.bootcss.com/weui/1.1.1/style/weui.min.css"
+>
+<link rel="stylesheet"
+	href="//cdn.bootcss.com/jquery-weui/1.0.1/css/jquery-weui.min.css"
+>
+
+<!-- body 最后 -->
+<script src="//cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/jquery-weui/1.0.1/js/jquery-weui.min.js"></script>
+<style type="text/css">
+html, body {
+	height: 100%;
+}
+</style>
+</head>
+<body ontouchstart>
+
+
+
+<body ontouchstart>
+	<div class="weui-tab">
+
+        <div class="weui-tabbar">
+            <a href="#homePage"
+				class="weui-tabbar__item weui_bar__item_on"
+			>
+                <span class="weui-badge"
+					style="position: absolute;top: -.4em;right: 1em;"
+				>8</span>
+                <div class="weui-tabbar__icon">
+                    <img src="./images/icons/home.png" alt="">
+                </div>
+                <p class="weui-tabbar__label">水果机</p>
+            </a>
+            <a href="#findPage" class="weui-tabbar__item">
+                <div class="weui-tabbar__icon">
+                    <img src="./images/icons/find.png" alt="">
+                </div>
+                <p class="weui-tabbar__label">开奖记录</p>
+            </a>
+            <a href="#orderPage" class="weui-tabbar__item">
+                <div class="weui-tabbar__icon">
+                    <img src="./images/icons/order.png" alt="">
+                </div>
+                <p class="weui-tabbar__label">充值</p>
+            </a>
+            <a href="#mePage" class="weui-tabbar__item">
+                <div class="weui-tabbar__icon">
+                    <img src="./images/icons/user.png" alt="">
+                </div>
+                <p class="weui-tabbar__label">我</p>
+            </a>
+        </div>
+
+        <div class="weui-tab__bd">
+            <div id="homePage"
+				class="weui-tab__bd-item weui-tab__bd-item--active"
+			>
+				
+                <iframe align="center" width="100%" height="95%"
+					src="myindex.html" frameborder="no" border="0" marginwidth="0"
+					marginheight="0" scrolling="true"
+				></iframe>
+                <!-- <link rel = "import" href = "home.html"/> -->
+
+            </div>
+            <div id="findPage" class="weui-tab__bd-item">
+                <iframe align="center" width="100%" height="100%"
+					src="find.html" frameborder="no" border="0" marginwidth="0"
+					marginheight="0" scrolling="no"
+				></iframe>
+                <!-- <h1>发现-页面</h1> -->
+            </div>
+            <div id="orderPage" class="weui-tab__bd-item">
+              
+            </div>
+            <div id="mePage" class="weui-tab__bd-item">
+                <iframe align="center" width="100%" height="100%"
+					src="me.html" frameborder="no" border="0" marginwidth="0"
+					marginheight="0" scrolling="no"
+				></iframe>
+                <!-- <h1>我-页面</h1> -->
+            </div>
+        </div>
+    </div>
+
+    <!-- body 最后 -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
+    <script
+		src="http://cdn.bootcss.com/jquery-weui/1.0.0-rc.0/js/jquery-weui.min.js"
+	></script>
+
+
+    <!-- 如果使用了某些拓展插件还需要额外的JS -->
+    <script
+		src="http://cdn.bootcss.com/jquery-weui/1.0.0-rc.0/js/swiper.min.js"
+	></script>
+    <script
+		src="http://cdn.bootcss.com/jquery-weui/1.0.0-rc.0/js/city-picker.min.js"
+	></script></body>
+
+
+</html>
