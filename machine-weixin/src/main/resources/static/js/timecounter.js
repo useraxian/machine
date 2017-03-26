@@ -31,7 +31,7 @@ function initTimeCounter() {
 
 			if (minute == 0 && second == 30) {
 				// TODO 剩余30秒 ，提醒用户，停止下注
-				alert('距离开奖时间还有30秒，停止下注！');
+				$.toptip('距离开奖时间还有30秒，停止下注！',2000, 'warning');
 
 			} else if (minute == 0 && second == 00) {
 				// TODO 全为0 ，开奖调用动画,重新设置时间

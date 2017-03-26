@@ -16,20 +16,16 @@ import com.github.sd4324530.fastweixin.api.response.GetUserInfoResponse;
 import com.github.sd4324530.fastweixin.api.response.OauthGetTokenResponse;
 
 @Controller
-public class WeixinUserController {
+public class WeixinLoginController {
 	private static final String APPID = "wxac3471806544b684";
 	private static final String APPSECRET = "fc8607790326bf7a1186ccc1fe3bf9e7";
 	private static final String CALL_BACK_URL = "http://blbl.ittun.com/callback";
-	// private static final String APPID = "wxcf0a5c29b58566fe";
-	// private static final String APPSECRET =
-	// "8134e7caf02aecd7657dcb8d72ac2fbf";
 	private static final String TOKEN = "test";
 	ApiConfig apiConfig = new ApiConfig(APPID, APPSECRET);
 	OauthAPI oauthAPI = new OauthAPI(apiConfig);
 
 	@RequestMapping("/wxlogin")
 	public void wxlogin(HttpServletResponse response) throws IOException {
-
 		String oauthPageUrl = oauthAPI.getOauthPageUrl(CALL_BACK_URL, OauthScope.SNSAPI_USERINFO, "STATE");
 		response.sendRedirect(oauthPageUrl);
 	}

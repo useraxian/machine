@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+	<classPathEntry
+		location="/Users/fangzhixian/Documents/repo/mysql/mysql-connector-java/5.1.40/mysql-connector-java-5.1.40.jar" />
+
+	<context id="context1" targetRuntime="MyBatis3">
+		<!-- 生成的Java文件的编码 -->
+		<property name="javaFileEncoding" value="UTF-8" />
+		<plugin type="org.mybatis.generator.plugins.ToStringPlugin" />
+		<commentGenerator>
+			<property name="suppressAllComments" value="false" />
+			<property name="addRemarkComments" value="true" />
+		</commentGenerator>
+		<jdbcConnection
+			connectionURL="jdbc:mysql://localhost:3306/machine?characterEncoding=utf-8"
+			driverClass="com.mysql.jdbc.Driver" password="root" userId="root" />
+		<javaModelGenerator targetPackage="com.ahem.machine.weixin.entity"
+			targetProject="machine-weixin/src/main/java" />
+		<sqlMapGenerator targetPackage="com.ahem.machine.weixin.mapper"
+			targetProject="machine-weixin/src/main/java" />
+		<javaClientGenerator targetPackage="com.ahem.machine.weixin.mapper"
+			targetProject="machine-weixin/src/main/java" type="ANNOTATEDMAPPER" />
+		<table schema="machine" tableName="t_machine_fruit"
+			domainObjectName="TMachineFruit">
+		</table>
+		<table schema="machine" tableName="t_machine_bet_record"
+			domainObjectName="TMachineBetRecord">
+		</table>
+		<table schema="machine" tableName="t_machine_fruit"
+			domainObjectName="TMachineFruit">
+		</table>
+		<table schema="machine" tableName="t_machine_index"
+			domainObjectName="TMachineIndex">
+		</table>
+		<table schema="machine" tableName="t_machine_record"
+			domainObjectName="TMachineRecord">
+		</table>
+		<table schema="machine" tableName="t_machine_user"
+			domainObjectName="TMachineUser">
+		</table>
+		<table schema="machine" tableName="t_weixin_user"
+			domainObjectName="TWeixinUser">
+		</table>
+	</context>
+</generatorConfiguration>
+
