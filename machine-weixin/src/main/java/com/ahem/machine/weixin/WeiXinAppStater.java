@@ -1,5 +1,6 @@
 package com.ahem.machine.weixin;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
@@ -15,6 +16,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @ComponentScans(value = { @ComponentScan("com.ahem") })
 @EnableScheduling
 @EnableWebMvc
+@MapperScan(basePackages = { "com.ahem.machine.weixin.mapper", "com.ahem.machine.pub.mapper" })
 public class WeiXinAppStater {
 	private static Logger log = LoggerFactory.getLogger(WeiXinAppStater.class);
 
