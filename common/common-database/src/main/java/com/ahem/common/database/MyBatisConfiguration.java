@@ -2,19 +2,20 @@ package com.ahem.common.database;
 
 import javax.sql.DataSource;
 
-import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
-import org.mybatis.spring.annotation.MapperScan;
+import org.mybatis.spring.SqlSessionTemplate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
-@MapperScan(basePackages={"com.ahem"},annotationClass = Mapper.class)
 @AutoConfigureAfter(DruidDsConfiguration.class)
+@EnableTransactionManagement  
 public class MyBatisConfiguration {
 	private Logger logger = LoggerFactory.getLogger(MyBatisConfiguration.class);
 
@@ -36,6 +37,16 @@ public class MyBatisConfiguration {
 		SqlSessionFactory sqlSessionFactory = fb.getObject();
 		logger.debug("完成SqlSessionFactory配置...");
 		return sqlSessionFactory;
+	}
+
+	@Bean
+	public DataSourceTransactionManager transactionManager(DataSource dataSource) {
+		return new DataSourceTransactionManager(dataSource);
+	}
+
+	@Bean
+	public SqlSessionTemplate sqlSessionTemplate(SqlSessionFactory sqlSessionFactory) throws Exception {
+		return new SqlSessionTemplate(sqlSessionFactory);
 	}
 
 }
