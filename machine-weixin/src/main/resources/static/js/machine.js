@@ -83,22 +83,22 @@ function ui() {
 }
 
 function data() {
-	// $.ajax({
-	// url : "/machine/myscore",
-	// success : function(result) {
-	// var obj = JSON.parse(result);
-	// if (obj.meta.success) {
-	// console.log('我的分数:' + obj.data);
-	// $('#myscore').html(numberCover(obj.data, 6));
-	// } else {
-	// console.log('加载分数失败!' + result);
-	// }
-	//
-	// },
-	// error : function() {
-	//
-	// }
-	// });
+//	 $.ajax({
+//		url : "/machine/myscore",
+//		success : function(result) {
+//			var obj = JSON.parse(result);
+//			if (obj.meta.success) {
+//				console.log('我的分数:' + obj.data);
+//				$('#myscore').html(numberCover(obj.data, 6));
+//			} else {
+//				console.log('加载分数失败!' + result);
+//			}
+//
+//		},
+//		error : function() {
+//
+//		}
+//	});
 }
 /**
  * 移动到下个目标

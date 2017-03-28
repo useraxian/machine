@@ -4,8 +4,11 @@ import java.io.Serializable;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.ahem.machine.weixin.entity.TMachineRecord;
+import com.ahem.machine.weixin.mapper.TMachineBetRecordMapper;
 import com.alibaba.fastjson.annotation.JSONField;
 
 /**
@@ -26,6 +29,9 @@ public class TimeCounter implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private Logger logger = LoggerFactory.getLogger(TimeCounter.class);
+
+	@Autowired
+	TMachineBetRecordMapper recordMapper;
 
 	// 期号
 	private volatile int recordId = 0;
@@ -52,12 +58,12 @@ public class TimeCounter implements Serializable {
 			second--;
 		}
 
-		// 全为0 表示到开奖时间，重置时间和期号
-		if (minute == 0 && second == 0) {
+		// 距离开奖30秒，生成开奖结果,重置时间和期号
+		if (minute == 0 && second == 30) {
 			// TODO 期号从数据库获取，时间从配置表获取
 			set(recordId++, 1, 0);
 		}
-//		logger.debug(this.toString());
+		// logger.debug(this.toString());
 	}
 
 	/**
