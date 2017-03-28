@@ -45,24 +45,5 @@ public class MachineController {
 
 	}
 
-	@RequestMapping("/bet/{openid}/{index}/{score}")
-	public RestResponse bet(@PathVariable String openid, @PathVariable String index, @PathVariable String score) {
-		// TODO 下注之后写入数据库
-		logger.debug("下注[openid=" + openid + ",index=" + index + ",score=" + score + "]");
-		RestResponse resp = new RestResponse();
-		resp.success(100);
-		return resp;
 
-	}
-
-	@RequestMapping(value = "/bet/{userid}", method = RequestMethod.GET)
-	public RestResponse bet(@PathVariable String userid) {
-		// TODO 下注之后写入数据库
-		logger.debug("获取下注记录，userid=" + userid);
-		List<TMachineBetRecord> findByOpenId = betRecordService.findByUserId(userid);
-		RestResponse resp = new RestResponse();
-		resp.success(findByOpenId);
-		return resp;
-
-	}
 }

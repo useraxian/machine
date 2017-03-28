@@ -2,7 +2,7 @@
 <!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 <generatorConfiguration>
 	<classPathEntry
-		location="/Users/fangzhixian/Documents/repo/mysql/mysql-connector-java/5.1.40/mysql-connector-java-5.1.40.jar" />
+		location="C:/Users/Administrator/.m2/repository/mysql/mysql-connector-java/5.1.40/mysql-connector-java-5.1.40.jar" />
 
 	<context id="context1" targetRuntime="MyBatis3">
 		<!-- 生成的Java文件的编码 -->

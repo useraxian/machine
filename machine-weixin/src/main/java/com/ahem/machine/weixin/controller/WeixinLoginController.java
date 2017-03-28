@@ -48,6 +48,7 @@ public class WeixinLoginController {
 
 		// 获取userId
 		TMachineUser machineUser = weixinUserService.findMachineUserByOpenId(userInfo.getOpenid());
+		System.out.println("userid="+ machineUser.getId());
 		if (machineUser != null) {
 			model.addAttribute("userid", machineUser.getId());
 		} else {

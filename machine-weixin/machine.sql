@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50625
 File Encoding         : 65001
 
-Date: 2017-03-27 17:51:51
+Date: 2017-03-28 17:57:51
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -21,20 +21,21 @@ SET FOREIGN_KEY_CHECKS=0;
 DROP TABLE IF EXISTS `t_machine_bet_record`;
 CREATE TABLE `t_machine_bet_record` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '下注id',
-  `user_id` varchar(100) DEFAULT NULL COMMENT '用户编号',
-  `record_id` int(11) DEFAULT NULL COMMENT '开奖期号',
-  `bet_fruit_id` int(11) DEFAULT NULL COMMENT '下注水果编号',
-  `bet_score` int(11) DEFAULT NULL COMMENT '下注分数',
-  `bet_multiple` int(255) DEFAULT NULL COMMENT '下注倍数',
-  `bet_time` datetime DEFAULT NULL COMMENT '下注时间',
+  `user_id` int(100) NOT NULL COMMENT '用户编号',
+  `record_id` int(11) NOT NULL COMMENT '开奖期号',
+  `bet_fruit_id` int(11) NOT NULL COMMENT '下注水果编号',
+  `bet_score` int(11) NOT NULL COMMENT '下注分数',
+  `bet_multiple` int(255) NOT NULL COMMENT '下注倍数',
+  `bet_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT '下注时间',
   PRIMARY KEY (`id`),
   KEY `fk_t_machine_bet_record_t_machine_bet_record_2` (`bet_fruit_id`),
-  CONSTRAINT `fk_t_machine_bet_record_t_machine_bet_record_2` FOREIGN KEY (`bet_fruit_id`) REFERENCES `t_machine_fruit` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1 COMMENT='用户下注表';
+  CONSTRAINT `fk_t_machine_bet_record_t_machine_bet_record_2` FOREIGN KEY (`bet_fruit_id`) REFERENCES `t_machine_fruit` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1 COMMENT='用户下注表';
 
 -- ----------------------------
 -- Records of t_machine_bet_record
 -- ----------------------------
+INSERT INTO `t_machine_bet_record` VALUES ('7', '3', '1', '1', '1', '1', '2017-03-28 17:35:25');
 
 -- ----------------------------
 -- Table structure for `t_machine_fruit`
@@ -138,4 +139,4 @@ CREATE TABLE `t_weixin_user` (
 -- ----------------------------
 -- Records of t_weixin_user
 -- ----------------------------
-INSERT INTO `t_weixin_user` VALUES ('oCmBsvwBS37C3MjyvwTyvepQL2EA', 'ahem!', '2017-03-27 17:41:04', '1', '', '', '中国', 'http://wx.qlogo.cn/mmopen/ajNVdqHZLLAP7oXpIAt7WnaV1AjeCUbC6bHuoNAEXLZ5OcIRcn4k7y5Ndb2BQg7myDoNZeqUb6OVBPJtd6bo6w/0', null);
+INSERT INTO `t_weixin_user` VALUES ('oCmBsvwBS37C3MjyvwTyvepQL2EA', 'ahem!', '2017-03-28 17:50:03', '1', '', '', '中国', 'http://wx.qlogo.cn/mmopen/ajNVdqHZLLAP7oXpIAt7WnaV1AjeCUbC6bHuoNAEXLZ5OcIRcn4k7y5Ndb2BQg7myDoNZeqUb6OVBPJtd6bo6w/0', null);

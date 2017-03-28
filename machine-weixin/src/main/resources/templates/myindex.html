@@ -138,6 +138,7 @@
 			</tr>
 		</table>
 	</div>
+	<div id="confirmBetBtn" class="button" onclick="confirmBet()">确认下注</div>
 	<div class="button" onclick="startTimeCounter()">开启计时</div>
 	<div class="button" onclick="stopTimeCounter()">停止计时</div>
 	<input id="openNum" type="text" />
@@ -150,6 +151,8 @@
 	<div class="target"></div>
 	<!--目标游戏结束-->
 
+
+	<input type="hidden" id="userid" th:value="${userid}" />
 
 	<script src="http://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
 	<script

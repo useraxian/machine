@@ -31,7 +31,7 @@ function initTimeCounter() {
 
 			if (minute == 0 && second == 30) {
 				// TODO 剩余30秒 ，提醒用户，停止下注
-				$.toptip('距离开奖时间还有30秒，停止下注！',2000, 'warning');
+				$.toptip('距离开奖时间还有30秒，停止下注！', 2000, 'warning');
 
 			} else if (minute == 0 && second == 00) {
 				// TODO 全为0 ，开奖调用动画,重新设置时间
@@ -87,7 +87,7 @@ function refreshTime() {
 function setTime(m, s) {
 	minute = m;
 	second = s;
-	time = numberCover(minute,2) + ":" + numberCover(second,2);
+	time = numberCover(minute, 2) + ":" + numberCover(second, 2);
 	$('#timeSpan').html(time);
 }
 
@@ -99,8 +99,36 @@ function stopTimeCounter() {
 }
 
 /**
+ * 判断是否能下注
+ */
+function canBet() {
+	if (minute == 0 && second <= 30) {
+		return false;
+	} else {
+		return  true;
+	}
+}
+
+/**
  * 停止时间计时器
  */
 function startTimeCounter() {
+	alert('111');
 	status = 'start';
+	$.modal({
+		title : "提醒",
+		text : "test",
+		buttons : [ {
+			text : "取消",
+			className : "default",
+			onClick : function() {
+				alert('取消');
+			}
+		}, {
+			text : "确认",
+			onClick : function() {
+				alert('quren');
+			}
+		}, ]
+	});
 }
