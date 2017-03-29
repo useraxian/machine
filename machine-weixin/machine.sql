@@ -1,24 +1,22 @@
 /*
- Navicat Premium Data Transfer
+Navicat MySQL Data Transfer
 
- Source Server         : MySQL_DB
- Source Server Type    : MySQL
- Source Server Version : 50635
- Source Host           : localhost
- Source Database       : machine
+Source Server         : mysql
+Source Server Version : 50625
+Source Host           : localhost:3306
+Source Database       : machine
 
- Target Server Type    : MySQL
- Target Server Version : 50635
- File Encoding         : utf-8
+Target Server Type    : MYSQL
+Target Server Version : 50625
+File Encoding         : 65001
 
- Date: 03/28/2017 23:05:19 PM
+Date: 2017-03-29 17:54:29
 */
 
-SET NAMES utf8;
-SET FOREIGN_KEY_CHECKS = 0;
+SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
---  Table structure for `t_machine_bet_record`
+-- Table structure for `t_machine_bet_record`
 -- ----------------------------
 DROP TABLE IF EXISTS `t_machine_bet_record`;
 CREATE TABLE `t_machine_bet_record` (
@@ -35,14 +33,12 @@ CREATE TABLE `t_machine_bet_record` (
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1 COMMENT='用户下注表';
 
 -- ----------------------------
---  Records of `t_machine_bet_record`
+-- Records of t_machine_bet_record
 -- ----------------------------
-BEGIN;
 INSERT INTO `t_machine_bet_record` VALUES ('7', '3', '1', '1', '1', '1', '2017-03-28 17:35:25');
-COMMIT;
 
 -- ----------------------------
---  Table structure for `t_machine_fruit`
+-- Table structure for `t_machine_fruit`
 -- ----------------------------
 DROP TABLE IF EXISTS `t_machine_fruit`;
 CREATE TABLE `t_machine_fruit` (
@@ -55,14 +51,20 @@ CREATE TABLE `t_machine_fruit` (
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1 COMMENT='水果表 ';
 
 -- ----------------------------
---  Records of `t_machine_fruit`
+-- Records of t_machine_fruit
 -- ----------------------------
-BEGIN;
-INSERT INTO `t_machine_fruit` VALUES ('1', 'seven', '七', 'seven.png', 'seven.png'), ('2', 'cherry', '樱桃', 'cherry.png', 'cherry.png'), ('3', 'prune', '西梅', 'prune.png', 'prune.png'), ('4', 'banana', '香蕉', 'banana.png', 'banana.png'), ('5', 'lemo', '柠檬', 'lemo.png', 'lemo.png'), ('6', 'orange', '橘子', 'orange.png', 'orange.png'), ('7', 'watermelon', '西瓜', 'watermelon.png', 'watermelon.png'), ('8', 'bigwin', '大赢家', 'bigwin.png', 'bigwin.png'), ('9', 'bar', 'bar', 'bar.png', 'bar.png');
-COMMIT;
+INSERT INTO `t_machine_fruit` VALUES ('1', 'seven', '七', 'seven.png', 'seven.png');
+INSERT INTO `t_machine_fruit` VALUES ('2', 'cherry', '樱桃', 'cherry.png', 'cherry.png');
+INSERT INTO `t_machine_fruit` VALUES ('3', 'prune', '西梅', 'prune.png', 'prune.png');
+INSERT INTO `t_machine_fruit` VALUES ('4', 'banana', '香蕉', 'banana.png', 'banana.png');
+INSERT INTO `t_machine_fruit` VALUES ('5', 'lemo', '柠檬', 'lemo.png', 'lemo.png');
+INSERT INTO `t_machine_fruit` VALUES ('6', 'orange', '橘子', 'orange.png', 'orange.png');
+INSERT INTO `t_machine_fruit` VALUES ('7', 'watermelon', '西瓜', 'watermelon.png', 'watermelon.png');
+INSERT INTO `t_machine_fruit` VALUES ('8', 'bigwin', '大赢家', 'bigwin.png', 'bigwin.png');
+INSERT INTO `t_machine_fruit` VALUES ('9', 'bar', 'bar', 'bar.png', 'bar.png');
 
 -- ----------------------------
---  Table structure for `t_machine_index`
+-- Table structure for `t_machine_index`
 -- ----------------------------
 DROP TABLE IF EXISTS `t_machine_index`;
 CREATE TABLE `t_machine_index` (
@@ -74,14 +76,12 @@ CREATE TABLE `t_machine_index` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='机器位置表 ';
 
 -- ----------------------------
---  Records of `t_machine_index`
+-- Records of t_machine_index
 -- ----------------------------
-BEGIN;
 INSERT INTO `t_machine_index` VALUES ('0', '1');
-COMMIT;
 
 -- ----------------------------
---  Table structure for `t_machine_record`
+-- Table structure for `t_machine_record`
 -- ----------------------------
 DROP TABLE IF EXISTS `t_machine_record`;
 CREATE TABLE `t_machine_record` (
@@ -91,17 +91,27 @@ CREATE TABLE `t_machine_record` (
   PRIMARY KEY (`id`),
   KEY `fk_t_machine_record_number_index_id` (`open_number`),
   CONSTRAINT `fk_t_machine_record_number_index_id` FOREIGN KEY (`open_number`) REFERENCES `t_machine_index` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1 COMMENT='开奖记录表 ';
+) ENGINE=InnoDB AUTO_INCREMENT=316 DEFAULT CHARSET=latin1 COMMENT='开奖记录表 ';
 
 -- ----------------------------
---  Records of `t_machine_record`
+-- Records of t_machine_record
 -- ----------------------------
-BEGIN;
-INSERT INTO `t_machine_record` VALUES ('9', null, null), ('10', null, null);
-COMMIT;
 
 -- ----------------------------
---  Table structure for `t_machine_user`
+-- Table structure for `t_machine_timer`
+-- ----------------------------
+DROP TABLE IF EXISTS `t_machine_timer`;
+CREATE TABLE `t_machine_timer` (
+  `last_open_time` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  `next_open_time` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of t_machine_timer
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `t_machine_user`
 -- ----------------------------
 DROP TABLE IF EXISTS `t_machine_user`;
 CREATE TABLE `t_machine_user` (
@@ -112,6 +122,7 @@ CREATE TABLE `t_machine_user` (
   `weixin_open_id` varchar(255) CHARACTER SET utf8 DEFAULT NULL COMMENT '微信唯一标识id',
   `create_time` datetime DEFAULT NULL,
   `login_time` datetime DEFAULT NULL,
+  `score` int(10) unsigned zerofill DEFAULT NULL COMMENT '分数',
   `nickname` varchar(100) CHARACTER SET utf8 DEFAULT NULL COMMENT '用户昵称',
   PRIMARY KEY (`id`),
   KEY `fk_t_machine_user_wx_open_id` (`weixin_open_id`),
@@ -119,14 +130,12 @@ CREATE TABLE `t_machine_user` (
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
---  Records of `t_machine_user`
+-- Records of t_machine_user
 -- ----------------------------
-BEGIN;
-INSERT INTO `t_machine_user` VALUES ('3', null, null, null, 'oCmBsvwBS37C3MjyvwTyvepQL2EA', null, null, null);
-COMMIT;
+INSERT INTO `t_machine_user` VALUES ('3', null, null, null, 'oCmBsvwBS37C3MjyvwTyvepQL2EA', null, null, null, null);
 
 -- ----------------------------
---  Table structure for `t_weixin_user`
+-- Table structure for `t_weixin_user`
 -- ----------------------------
 DROP TABLE IF EXISTS `t_weixin_user`;
 CREATE TABLE `t_weixin_user` (
@@ -143,10 +152,6 @@ CREATE TABLE `t_weixin_user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='微信用户表 ';
 
 -- ----------------------------
---  Records of `t_weixin_user`
+-- Records of t_weixin_user
 -- ----------------------------
-BEGIN;
-INSERT INTO `t_weixin_user` VALUES ('oCmBsvwBS37C3MjyvwTyvepQL2EA', 'ahem!', '2017-03-28 17:50:03', '1', '', '', '中国', 'http://wx.qlogo.cn/mmopen/ajNVdqHZLLAP7oXpIAt7WnaV1AjeCUbC6bHuoNAEXLZ5OcIRcn4k7y5Ndb2BQg7myDoNZeqUb6OVBPJtd6bo6w/0', null);
-COMMIT;
-
-SET FOREIGN_KEY_CHECKS = 1;
+INSERT INTO `t_weixin_user` VALUES ('oCmBsvwBS37C3MjyvwTyvepQL2EA', 'ahem!', '2017-03-29 17:12:54', '1', '', '', '中国', 'http://wx.qlogo.cn/mmopen/ajNVdqHZLLAP7oXpIAt7WnaV1AjeCUbC6bHuoNAEXLZ5OcIRcn4k7y5Ndb2BQg7myDoNZeqUb6OVBPJtd6bo6w/0', null);
