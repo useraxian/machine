@@ -226,14 +226,15 @@ function bet(idx) {
 	}
 
 }
+//
+///**
+// * 设置下次开奖号码
+// */
+//function setNextOpenNum() {
+//	console.log('下次开奖号码：' + $('#openNum').val());
+//	nextOpenNum = parseInt($('#openNum').val());
+//}
 
-/**
- * 设置下次开奖号码
- */
-function setNextOpenNum() {
-	console.log('下次开奖号码：' + $('#openNum').val());
-	nextOpenNum = parseInt($('#openNum').val());
-}
 
 /**
  * 判断输赢

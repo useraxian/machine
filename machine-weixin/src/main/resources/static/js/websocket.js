@@ -19,20 +19,20 @@ websocket.onerror = function() {
 // 连接成功建立的回调方法
 websocket.onopen = function(event) {
 	console.log('成功连接websocket！');
-
+	// TODO 成功之后，启动定时器
+	initTimeCounter();
 }
 
 // 接收到消息的回调方法
 websocket.onmessage = function(event) {
 	console.log('接收到服务端的消息:' + event.data);
 	var obj = JSON.parse(event.data);
-//	if (obj.type == 'time_count') {
-//		// 设置时间计时器时间
-//		setTimeCounter(obj.content);
-//		startTimeCounter(obj.content);
-//	} else {
-//
-//	}
+	if (obj.type == 'openRecord') {
+		// 设置开奖号码
+		nextOpenNum = obj.content.openNumber;
+	} else {
+
+	}
 
 	// var type = obj.type;
 	// var msg = obj.message;

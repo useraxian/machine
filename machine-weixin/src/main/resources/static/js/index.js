@@ -43,8 +43,5 @@ $(document)
 					console.log('td width=' + $('.screen table tr td').width());
 					console.log('td height='
 							+ $('.screen table tr td').height());
-
-					// 启动时间计数器
-					initTimeCounter();
 				});
 

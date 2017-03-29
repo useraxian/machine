@@ -17,7 +17,7 @@ import org.springframework.web.socket.WebSocketSession;
 import com.ahem.machine.weixin.core.TimeCounter;
 
 public class SysWebSocketHandler implements WebSocketHandler {
-	private final Logger logger = LoggerFactory.getLogger(this.getClass());
+	private final static Logger logger = LoggerFactory.getLogger(SysWebSocketHandler.class);
 	private static List<WebSocketSession> users = Collections.synchronizedList(new ArrayList<WebSocketSession>());
 
 	@Autowired
@@ -32,16 +32,17 @@ public class SysWebSocketHandler implements WebSocketHandler {
 	@Override
 	public void afterConnectionEstablished(WebSocketSession session) throws Exception {
 		logger.debug("连接成功，用户：" + session.getRemoteAddress().toString());
-		
+		users.add(session); // 加入set中
 		// 连接成功后发送定时器时间
-//		WebMessage webMessage = new WebMessage(WebMessage.MessageType.time_count, "00:10:11");
-//		session.sendMessage(new TextMessage(webMessage.toJsonString()));
+		// WebMessage webMessage = new
+		// WebMessage(WebMessage.MessageType.time_count, "00:10:11");
+		// session.sendMessage(new TextMessage(webMessage.toJsonString()));
 	}
 
 	@Override
 	public void handleMessage(WebSocketSession session, WebSocketMessage<?> msg) throws Exception {
 		try {
-			logger.debug("收到客户端消息："+msg.getPayload());
+			logger.debug("收到客户端消息：" + msg.getPayload());
 			TextMessage returnMessage = new TextMessage(msg.getPayload() + " received at server");
 			session.sendMessage(returnMessage);
 		} catch (Exception e) {
@@ -68,7 +69,8 @@ public class SysWebSocketHandler implements WebSocketHandler {
 	 *
 	 * @param message
 	 */
-	public void sendMessageToUsers(TextMessage message) {
+	public static void sendMessageToUsers(TextMessage message) {
+		logger.error("准备群发给" + users.size() + "名用户");
 		for (WebSocketSession user : users) {
 			try {
 				if (user.isOpen()) {

@@ -21,7 +21,7 @@ public class RecordTest {
 
 	@Test
 	public void test() {
-		recordService.generateRecord();
+		recordService.generateRecord(0);
 	}
 
 }

@@ -1,6 +1,7 @@
 package com.ahem.machine.weixin.websocket;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.serializer.SerializerFeature;
 
 /**
  * websocket 消息类
@@ -11,9 +12,9 @@ import com.alibaba.fastjson.JSON;
 public class WebMessage {
 
 	private MessageType type;
-	private String content;
+	private Object content;
 
-	public WebMessage(MessageType type, String content) {
+	public WebMessage(MessageType type, Object content) {
 		if (type == null) {
 			throw new RuntimeException("MessageType is null!");
 		}
@@ -29,27 +30,16 @@ public class WebMessage {
 		this.type = type;
 	}
 
-	public String getContent() {
+	public Object getContent() {
 		return content;
 	}
 
-	public void setContent(String content) {
+	public void setContent(Object content) {
 		this.content = content;
 	}
 
 	public String toJsonString() {
-		return JSON.toJSONString(this);
-	}
-
-	/**
-	 * 消息类型
-	 * 
-	 * @author ahem
-	 *
-	 */
-	enum MessageType {
-		// 时间计时
-		time_count
+		return JSON.toJSONString(this, SerializerFeature.PrettyFormat, SerializerFeature.WriteDateUseDateFormat);
 	}
 
 }

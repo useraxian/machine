@@ -4,11 +4,14 @@ import java.io.Serializable;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.web.socket.TextMessage;
 
 import com.ahem.machine.weixin.entity.TMachineRecord;
-import com.ahem.machine.weixin.mapper.TMachineBetRecordMapper;
+import com.ahem.machine.weixin.service.RecordService;
+import com.ahem.machine.weixin.websocket.MessageType;
+import com.ahem.machine.weixin.websocket.SysWebSocketHandler;
+import com.ahem.machine.weixin.websocket.WebMessage;
 import com.alibaba.fastjson.annotation.JSONField;
 
 /**
@@ -30,9 +33,6 @@ public class TimeCounter implements Serializable {
 
 	private Logger logger = LoggerFactory.getLogger(TimeCounter.class);
 
-	@Autowired
-	TMachineBetRecordMapper recordMapper;
-
 	// 期号
 	private volatile int recordId = 0;
 	// 分钟
@@ -40,10 +40,17 @@ public class TimeCounter implements Serializable {
 	// 秒
 	private volatile int second = 0;
 
-	public TimeCounter() {
+	private RecordService recordService;
+
+	public TimeCounter(RecordService recordService) {
 		// 初始化时间计数器
-		set(0, 0, 40);
-		logger.info("时间计数器初始化成功！");
+		this.recordService = recordService;
+
+		// 获取开奖期号
+		Integer id = this.recordService.findOpeningId();
+
+		set(id, 1, 0);
+		logger.info("时间计数器初始化成功！[recordId=" + id + ",minute=" + minute + ",second=" + second + "]");
 	}
 
 	/**
@@ -59,9 +66,28 @@ public class TimeCounter implements Serializable {
 		}
 
 		// 距离开奖30秒，生成开奖结果,重置时间和期号
-		if (minute == 0 && second == 30) {
-			// TODO 期号从数据库获取，时间从配置表获取
-			set(recordId++, 1, 0);
+		if (minute == 0 && second == 20) {
+			try {
+				logger.debug("到达开奖前20秒，准备生成开奖记录！期号：" + this.recordId);
+				// 生成开奖记录
+				TMachineRecord openRecord = recordService.generateRecord(this.recordId);
+				logger.debug("已生成，开奖记录：" + openRecord);
+
+				// websocket 向前台推送开奖记录
+				WebMessage message = new WebMessage(MessageType.openRecord, openRecord);
+				TextMessage textMessage = new TextMessage(message.toJsonString());
+				SysWebSocketHandler.sendMessageToUsers(textMessage);
+				logger.debug("结束群发记录：" + openRecord);
+
+				//  期号从数据库获取，时间从配置表获取
+				this.recordId = recordService.readyNext();
+				logger.debug("下一期号：" + this.recordId);
+				set(this.recordId, 1, 0);
+			} catch (Exception e) {
+				logger.error("开奖异常！", e);
+				// TODO 发生异常，进行手动开奖
+			}
+
 		}
 		// logger.debug(this.toString());
 	}

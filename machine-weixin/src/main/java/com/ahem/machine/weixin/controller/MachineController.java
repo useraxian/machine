@@ -1,7 +1,5 @@
 package com.ahem.machine.weixin.controller;
 
-import java.util.List;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,8 +10,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ahem.machine.weixin.core.RestResponse;
-import com.ahem.machine.weixin.entity.TMachineBetRecord;
+import com.ahem.machine.weixin.entity.TMachineRecord;
 import com.ahem.machine.weixin.service.BetRecordService;
+import com.ahem.machine.weixin.service.RecordService;
 
 /**
  * <p>
@@ -35,6 +34,9 @@ public class MachineController {
 	@Autowired
 	BetRecordService betRecordService;
 
+	@Autowired
+	RecordService recordService;
+
 	@ResponseBody
 	@RequestMapping("/myscore")
 	public RestResponse time() {
@@ -45,5 +47,20 @@ public class MachineController {
 
 	}
 
+	/**
+	 * 根据期号获取对应开奖记录
+	 * 
+	 * @param recordId
+	 * @return
+	 */
+	@ResponseBody
+	@RequestMapping(value = "/record/{recordId}", method = RequestMethod.GET)
+	public RestResponse record(@PathVariable Integer recordId) {
+		TMachineRecord record = recordService.findById(recordId);
+		RestResponse resp = new RestResponse();
+		resp.success(record);
+		return resp;
+
+	}
 
 }

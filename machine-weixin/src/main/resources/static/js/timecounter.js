@@ -1,6 +1,7 @@
 /**
  * 倒计时器
  */
+var recordId = 0;
 var minute = 0;
 var second = 0;
 var timeId = '';
@@ -30,10 +31,10 @@ function initTimeCounter() {
 			setTime(minute, second);
 
 			if (minute == 0 && second == 30) {
-				// TODO 剩余30秒 ，提醒用户，停止下注
+				// 剩余30秒 ，提醒用户，停止下注
 				$.toptip('距离开奖时间还有30秒，停止下注！', 2000, 'warning');
 
-			} else if (minute == 0 && second == 00) {
+			} else if (minute == 0 && second == 0) {
 				// TODO 全为0 ，开奖调用动画,重新设置时间
 				startRun();
 				refreshTime();
@@ -46,12 +47,6 @@ function initTimeCounter() {
 	}, 1000);
 }
 
-// function numberCover(num) {
-// if (num < 10) {
-// num = '0' + num;
-// }
-// return num;
-// }
 
 /**
  * 
@@ -62,11 +57,15 @@ function refreshTime() {
 		url : "/time",
 		success : function(result) {
 			var obj = JSON.parse(result);
+			recordId = obj.recordId;
 			minute = obj.minute;
 			second = obj.second;
 			var timeVal = numberCover(obj.minute, 2) + ":"
 					+ numberCover(obj.second, 2);
 			setTime(obj.minute, obj.second);
+
+			setOpenNum();
+
 		},
 		error : function() {
 			time = '加载失败';
@@ -80,6 +79,29 @@ function refreshTime() {
 	});
 }
 
+/**
+ * 设置开奖号码
+ */
+function setOpenNum() {
+	$.ajax({
+		url : '/machine/record/' + recordId,
+		type : 'get',
+		success : function(result) {
+			console.log('设置开奖号码：' + result);
+			var obj = JSON.parse(result);
+			if(obj.data.openNumbe=='undefined'){
+				nextOpenNum = null;
+			}else{
+				nextOpenNum = obj.data.openNumber;
+			}
+		
+			console.log('nextOpenNum：' + nextOpenNum);
+		},
+		error : function() {
+
+		}
+	});
+}
 /**
  * 
  * 设置时间计时器的值
@@ -105,30 +127,14 @@ function canBet() {
 	if (minute == 0 && second <= 30) {
 		return false;
 	} else {
-		return  true;
+		return true;
 	}
 }
 
 /**
- * 停止时间计时器
+ * 开始时间计时器
  */
 function startTimeCounter() {
-	alert('111');
 	status = 'start';
-	$.modal({
-		title : "提醒",
-		text : "test",
-		buttons : [ {
-			text : "取消",
-			className : "default",
-			onClick : function() {
-				alert('取消');
-			}
-		}, {
-			text : "确认",
-			onClick : function() {
-				alert('quren');
-			}
-		}, ]
-	});
+	
 }
