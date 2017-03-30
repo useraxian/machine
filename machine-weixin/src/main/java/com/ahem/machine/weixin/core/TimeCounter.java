@@ -9,6 +9,7 @@ import org.springframework.web.socket.TextMessage;
 
 import com.ahem.machine.weixin.entity.TMachineRecord;
 import com.ahem.machine.weixin.service.RecordService;
+import com.ahem.machine.weixin.service.UserScoreService;
 import com.ahem.machine.weixin.websocket.MessageType;
 import com.ahem.machine.weixin.websocket.SysWebSocketHandler;
 import com.ahem.machine.weixin.websocket.WebMessage;
@@ -41,10 +42,12 @@ public class TimeCounter implements Serializable {
 	private volatile int second = 0;
 
 	private RecordService recordService;
+	private UserScoreService userScoreService;
 
-	public TimeCounter(RecordService recordService) {
+	public TimeCounter(RecordService recordService, UserScoreService userScoreService) {
 		// 初始化时间计数器
 		this.recordService = recordService;
+		this.userScoreService = userScoreService;
 
 		// 获取开奖期号
 		Integer id = this.recordService.findOpeningId();
@@ -65,31 +68,40 @@ public class TimeCounter implements Serializable {
 			second--;
 		}
 
-		// 距离开奖30秒，生成开奖结果,重置时间和期号
+		// 距离开奖20秒
 		if (minute == 0 && second == 20) {
-			try {
-				logger.debug("到达开奖前20秒，准备生成开奖记录！期号：" + this.recordId);
-				// 生成开奖记录
-				TMachineRecord openRecord = recordService.generateRecord(this.recordId);
-				logger.debug("已生成，开奖记录：" + openRecord);
-
-				// websocket 向前台推送开奖记录
-				WebMessage message = new WebMessage(MessageType.openRecord, openRecord);
-				TextMessage textMessage = new TextMessage(message.toJsonString());
-				SysWebSocketHandler.sendMessageToUsers(textMessage);
-				logger.debug("结束群发记录：" + openRecord);
-
-				//  期号从数据库获取，时间从配置表获取
-				this.recordId = recordService.readyNext();
-				logger.debug("下一期号：" + this.recordId);
-				set(this.recordId, 1, 0);
-			} catch (Exception e) {
-				logger.error("开奖异常！", e);
-				// TODO 发生异常，进行手动开奖
-			}
-
+			open();
 		}
 		// logger.debug(this.toString());
+	}
+
+	/**
+	 * 生成开奖结果,重置时间和期号
+	 */
+	private void open() {
+		try {
+			logger.debug("到达开奖前20秒，准备生成开奖记录！期号：" + this.recordId);
+			// 生成开奖记录
+			TMachineRecord openRecord = recordService.generateRecord(this.recordId);
+			logger.debug("已生成，开奖记录：" + openRecord);
+
+			// 计算用户得分
+			userScoreService.countUsersScore(openRecord.getId());
+
+			// websocket 向前台推送开奖记录
+			WebMessage message = new WebMessage(MessageType.openRecord, openRecord);
+			TextMessage textMessage = new TextMessage(message.toJsonString());
+			SysWebSocketHandler.sendMessageToUsers(textMessage);
+			logger.debug("结束群发记录：" + openRecord);
+
+			// 期号从数据库获取，时间从配置表获取
+			this.recordId = recordService.readyNext();
+			logger.debug("下一期号：" + this.recordId);
+			set(this.recordId, 1, 0);
+		} catch (Exception e) {
+			logger.error("开奖异常！", e);
+			// TODO 发生异常，进行手动开奖
+		}
 	}
 
 	/**
