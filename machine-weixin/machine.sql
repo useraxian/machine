@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50625
 File Encoding         : 65001
 
-Date: 2017-03-30 17:32:52
+Date: 2017-04-05 17:53:36
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -23,20 +23,36 @@ CREATE TABLE `t_machine_bet_record` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '下注id',
   `user_id` int(100) NOT NULL COMMENT '用户编号',
   `record_id` int(11) NOT NULL COMMENT '开奖期号',
-  `bet_fruit_id` int(11) NOT NULL COMMENT '下注水果编号',
-  `bet_score` int(11) NOT NULL COMMENT '下注分数',
   `bet_multiple` int(255) NOT NULL COMMENT '下注倍数',
   `bet_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT '下注时间',
-  PRIMARY KEY (`id`),
-  KEY `fk_t_machine_bet_record_t_machine_bet_record_2` (`bet_fruit_id`),
-  CONSTRAINT `fk_t_machine_bet_record_t_machine_bet_record_2` FOREIGN KEY (`bet_fruit_id`) REFERENCES `t_machine_fruit` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1 COMMENT='用户下注表';
+  `bet_fruit_id_1` int(11) NOT NULL COMMENT '下注水果编号',
+  `bet_score_1` int(11) unsigned zerofill NOT NULL COMMENT '下注分数',
+  `bet_fruit_id_2` int(11) unsigned zerofill NOT NULL COMMENT '下注水果编号',
+  `bet_score_2` int(11) unsigned zerofill NOT NULL COMMENT '下注分数',
+  `bet_fruit_id_3` int(11) unsigned zerofill NOT NULL COMMENT '下注水果编号',
+  `bet_score_3` int(11) unsigned zerofill NOT NULL COMMENT '下注分数',
+  `bet_fruit_id_4` int(11) unsigned zerofill NOT NULL COMMENT '下注水果编号',
+  `bet_score_4` int(11) unsigned zerofill NOT NULL COMMENT '下注分数',
+  `bet_fruit_id_5` int(11) unsigned zerofill NOT NULL COMMENT '下注水果编号',
+  `bet_score_5` int(11) unsigned zerofill NOT NULL COMMENT '下注分数',
+  `bet_fruit_id_6` int(11) unsigned zerofill NOT NULL COMMENT '下注水果编号',
+  `bet_score_6` int(11) unsigned zerofill NOT NULL COMMENT '下注分数',
+  `bet_fruit_id_7` int(11) unsigned zerofill NOT NULL COMMENT '下注水果编号',
+  `bet_score_7` int(11) unsigned zerofill NOT NULL COMMENT '下注分数',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COMMENT='用户下注表';
 
 -- ----------------------------
 -- Records of t_machine_bet_record
 -- ----------------------------
-INSERT INTO `t_machine_bet_record` VALUES ('7', '3', '1', '1', '1', '1', '2017-03-28 17:35:25');
-INSERT INTO `t_machine_bet_record` VALUES ('8', '3', '1', '1', '1', '1', '2017-03-30 17:17:24');
+INSERT INTO `t_machine_bet_record` VALUES ('7', '3', '1', '1', '2017-03-28 17:35:25', '1', '00000000001', '00000000000', '00000000000', '00000000000', '00000000000', '00000000000', '00000000000', '00000000000', '00000000000', '00000000000', '00000000000', '00000000000', '00000000000');
+INSERT INTO `t_machine_bet_record` VALUES ('8', '3', '1', '1', '2017-03-30 17:17:24', '1', '00000000001', '00000000000', '00000000000', '00000000000', '00000000000', '00000000000', '00000000000', '00000000000', '00000000000', '00000000000', '00000000000', '00000000000', '00000000000');
+INSERT INTO `t_machine_bet_record` VALUES ('9', '4', '1', '1', '2017-04-05 16:47:08', '1', '00000000003', '00000000002', '00000000000', '00000000003', '00000000000', '00000000004', '00000000000', '00000000005', '00000000000', '00000000007', '00000000000', '00000000006', '00000000000');
+INSERT INTO `t_machine_bet_record` VALUES ('10', '4', '1', '1', '2017-04-05 17:31:22', '1', '00000000001', '00000000002', '00000000001', '00000000003', '00000000001', '00000000004', '00000000002', '00000000005', '00000000001', '00000000007', '00000000000', '00000000006', '00000000000');
+INSERT INTO `t_machine_bet_record` VALUES ('11', '4', '1', '1', '2017-04-05 17:33:04', '1', '00000000001', '00000000002', '00000000001', '00000000003', '00000000001', '00000000004', '00000000001', '00000000005', '00000000001', '00000000007', '00000000001', '00000000006', '00000000001');
+INSERT INTO `t_machine_bet_record` VALUES ('12', '4', '1', '1', '2017-04-05 17:36:30', '1', '00000000001', '00000000002', '00000000002', '00000000003', '00000000002', '00000000004', '00000000001', '00000000005', '00000000001', '00000000007', '00000000001', '00000000006', '00000000001');
+INSERT INTO `t_machine_bet_record` VALUES ('13', '4', '1', '1', '2017-04-05 17:40:19', '1', '00000000001', '00000000002', '00000000001', '00000000003', '00000000001', '00000000004', '00000000001', '00000000005', '00000000002', '00000000007', '00000000001', '00000000006', '00000000000');
+INSERT INTO `t_machine_bet_record` VALUES ('14', '4', '1', '1', '2017-04-05 17:42:25', '1', '00000000002', '00000000002', '00000000000', '00000000003', '00000000000', '00000000004', '00000000000', '00000000005', '00000000000', '00000000007', '00000000000', '00000000006', '00000000000');
 
 -- ----------------------------
 -- Table structure for `t_machine_fruit`
@@ -93,7 +109,7 @@ CREATE TABLE `t_machine_record` (
   PRIMARY KEY (`id`),
   KEY `fk_t_machine_record_number_index_id` (`open_number`),
   CONSTRAINT `fk_t_machine_record_number_index_id` FOREIGN KEY (`open_number`) REFERENCES `t_machine_index` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=latin1 COMMENT='开奖记录表 ';
+) ENGINE=InnoDB AUTO_INCREMENT=76 DEFAULT CHARSET=latin1 COMMENT='开奖记录表 ';
 
 -- ----------------------------
 -- Records of t_machine_record
@@ -139,7 +155,40 @@ INSERT INTO `t_machine_record` VALUES ('38', '2017-03-30 17:22:56', '0');
 INSERT INTO `t_machine_record` VALUES ('39', '2017-03-30 17:23:36', '0');
 INSERT INTO `t_machine_record` VALUES ('40', '2017-03-30 17:24:16', '0');
 INSERT INTO `t_machine_record` VALUES ('41', '2017-03-30 17:24:56', '0');
-INSERT INTO `t_machine_record` VALUES ('42', null, null);
+INSERT INTO `t_machine_record` VALUES ('42', '2017-04-05 16:32:40', '0');
+INSERT INTO `t_machine_record` VALUES ('43', '2017-04-05 16:33:40', '0');
+INSERT INTO `t_machine_record` VALUES ('44', '2017-04-05 16:34:40', '0');
+INSERT INTO `t_machine_record` VALUES ('45', '2017-04-05 16:35:40', '0');
+INSERT INTO `t_machine_record` VALUES ('46', '2017-04-05 16:36:40', '0');
+INSERT INTO `t_machine_record` VALUES ('47', '2017-04-05 16:38:36', '0');
+INSERT INTO `t_machine_record` VALUES ('48', '2017-04-05 16:39:36', '0');
+INSERT INTO `t_machine_record` VALUES ('49', '2017-04-05 16:40:36', '0');
+INSERT INTO `t_machine_record` VALUES ('50', '2017-04-05 16:41:36', '0');
+INSERT INTO `t_machine_record` VALUES ('51', '2017-04-05 16:42:36', '0');
+INSERT INTO `t_machine_record` VALUES ('52', '2017-04-05 16:43:36', '0');
+INSERT INTO `t_machine_record` VALUES ('53', '2017-04-05 16:44:36', '0');
+INSERT INTO `t_machine_record` VALUES ('54', '2017-04-05 16:45:36', '0');
+INSERT INTO `t_machine_record` VALUES ('55', '2017-04-05 16:46:36', '0');
+INSERT INTO `t_machine_record` VALUES ('56', '2017-04-05 16:47:36', '0');
+INSERT INTO `t_machine_record` VALUES ('57', '2017-04-05 17:30:32', '0');
+INSERT INTO `t_machine_record` VALUES ('58', '2017-04-05 17:31:32', '0');
+INSERT INTO `t_machine_record` VALUES ('59', '2017-04-05 17:32:32', '0');
+INSERT INTO `t_machine_record` VALUES ('60', '2017-04-05 17:33:32', '0');
+INSERT INTO `t_machine_record` VALUES ('61', '2017-04-05 17:34:32', '0');
+INSERT INTO `t_machine_record` VALUES ('62', '2017-04-05 17:36:40', '0');
+INSERT INTO `t_machine_record` VALUES ('63', '2017-04-05 17:37:40', '0');
+INSERT INTO `t_machine_record` VALUES ('64', '2017-04-05 17:38:42', '0');
+INSERT INTO `t_machine_record` VALUES ('65', '2017-04-05 17:39:53', '0');
+INSERT INTO `t_machine_record` VALUES ('66', '2017-04-05 17:40:36', '0');
+INSERT INTO `t_machine_record` VALUES ('67', '2017-04-05 17:41:36', '0');
+INSERT INTO `t_machine_record` VALUES ('68', '2017-04-05 17:42:36', '0');
+INSERT INTO `t_machine_record` VALUES ('69', '2017-04-05 17:46:37', '0');
+INSERT INTO `t_machine_record` VALUES ('70', '2017-04-05 17:47:37', '0');
+INSERT INTO `t_machine_record` VALUES ('71', '2017-04-05 17:48:37', '0');
+INSERT INTO `t_machine_record` VALUES ('72', '2017-04-05 17:49:37', '0');
+INSERT INTO `t_machine_record` VALUES ('73', '2017-04-05 17:50:37', '0');
+INSERT INTO `t_machine_record` VALUES ('74', '2017-04-05 17:51:37', '0');
+INSERT INTO `t_machine_record` VALUES ('75', null, null);
 
 -- ----------------------------
 -- Table structure for `t_machine_timer`
@@ -160,23 +209,23 @@ CREATE TABLE `t_machine_timer` (
 DROP TABLE IF EXISTS `t_machine_user`;
 CREATE TABLE `t_machine_user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_name` varchar(255) CHARACTER SET utf8 DEFAULT NULL COMMENT '用户名',
-  `password` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `user_name` varchar(255) DEFAULT NULL COMMENT '用户名',
+  `password` varchar(255) DEFAULT NULL,
   `mobile_num` int(11) DEFAULT NULL COMMENT '手机号码',
-  `weixin_open_id` varchar(255) CHARACTER SET utf8 DEFAULT NULL COMMENT '微信唯一标识id',
+  `weixin_open_id` varchar(100) DEFAULT NULL COMMENT '微信唯一标识id',
   `create_time` datetime DEFAULT NULL,
   `login_time` datetime DEFAULT NULL,
   `score` int(10) unsigned zerofill DEFAULT NULL COMMENT '分数',
-  `nickname` varchar(100) CHARACTER SET utf8 DEFAULT NULL COMMENT '用户昵称',
+  `nickname` varchar(100) DEFAULT NULL COMMENT '用户昵称',
   PRIMARY KEY (`id`),
-  KEY `fk_t_machine_user_wx_open_id` (`weixin_open_id`),
-  CONSTRAINT `fk_t_machine_user_wx_open_id` FOREIGN KEY (`weixin_open_id`) REFERENCES `t_weixin_user` (`open_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+  KEY `FK_T_MACHINE_USER_WX_OPEN_ID` (`weixin_open_id`),
+  CONSTRAINT `FK_T_MACHINE_USER_WX_OPEN_ID` FOREIGN KEY (`weixin_open_id`) REFERENCES `t_weixin_user` (`open_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of t_machine_user
 -- ----------------------------
-INSERT INTO `t_machine_user` VALUES ('3', null, null, null, 'oCmBsvwBS37C3MjyvwTyvepQL2EA', null, null, null, null);
+INSERT INTO `t_machine_user` VALUES ('4', null, null, null, 'oCmBsvwBS37C3MjyvwTyvepQL2EA', null, '2017-04-05 16:38:24', '0000000010', null);
 
 -- ----------------------------
 -- Table structure for `t_weixin_user`
@@ -184,24 +233,18 @@ INSERT INTO `t_machine_user` VALUES ('3', null, null, null, 'oCmBsvwBS37C3MjyvwT
 DROP TABLE IF EXISTS `t_weixin_user`;
 CREATE TABLE `t_weixin_user` (
   `open_id` varchar(100) NOT NULL COMMENT '微信用户的唯一标识',
-  `nickname` varchar(255) DEFAULT NULL,
+  `nickname` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `login_time` datetime DEFAULT NULL COMMENT '最近一次登录时间',
   `sex` int(1) DEFAULT NULL,
-  `province` varchar(50) DEFAULT NULL COMMENT '用户个人资料填写的省份',
-  `city` varchar(50) DEFAULT NULL COMMENT '普通用户个人资料填写的城市',
-  `country` varchar(50) DEFAULT NULL,
-  `headimgurl` varchar(255) DEFAULT NULL COMMENT '用户头像，最后一个数值代表正方形头像大小（有0、46、64、96、132数值可选，0代表640*640正方形头像），用户没有头像时该项为空。若用户更换头像，原有头像URL将失效。 ',
-  `privilege` varchar(255) DEFAULT NULL COMMENT '用户特权信息，json 数组，如微信沃卡用户为（chinaunicom）',
+  `province` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '用户个人资料填写的省份',
+  `city` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '普通用户个人资料填写的城市',
+  `country` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `headimgurl` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '用户头像，最后一个数值代表正方形头像大小（有0、46、64、96、132数值可选，0代表640*640正方形头像），用户没有头像时该项为空。若用户更换头像，原有头像URL将失效。 ',
+  `privilege` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '用户特权信息，json 数组，如微信沃卡用户为（chinaunicom）',
   PRIMARY KEY (`open_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='微信用户表 ';
 
 -- ----------------------------
 -- Records of t_weixin_user
 -- ----------------------------
-INSERT INTO `t_weixin_user` VALUES ('oCmBsvwBS37C3MjyvwTyvepQL2EA', 'ahem!', '2017-03-30 17:17:06', '1', '', '', '中国', 'http://wx.qlogo.cn/mmopen/ajNVdqHZLLAP7oXpIAt7WnaV1AjeCUbC6bHuoNAEXLZ5OcIRcn4k7y5Ndb2BQg7myDoNZeqUb6OVBPJtd6bo6w/0', null);
-
--- ----------------------------
--- View structure for `v_user_bet_record`
--- ----------------------------
-DROP VIEW IF EXISTS `v_user_bet_record`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_user_bet_record` AS select `br`.`id` AS `id`,`br`.`user_id` AS `user_id`,`br`.`record_id` AS `record_id`,`br`.`bet_fruit_id` AS `bet_fruit_id`,`br`.`bet_score` AS `bet_score`,`br`.`bet_multiple` AS `bet_multiple`,`br`.`bet_time` AS `bet_time`,`r`.`open_number` AS `open_number`,`i`.`fruit_id` AS `open_fruit_id`,`f`.`en_name` AS `open_fruit_en_name`,`f`.`cn_name` AS `open_fruit_cn_name`,`f`.`fruit_multiple` AS `open_fruit_multiple`,`r`.`open_time` AS `open_time`,(case when (`br`.`bet_fruit_id` = `i`.`fruit_id`) then 'win' else 'lose' end) AS `bet_result`,(case when (`br`.`bet_fruit_id` = `i`.`fruit_id`) then ((`br`.`bet_multiple` * `br`.`bet_score`) * `f`.`fruit_multiple`) else (-(`br`.`bet_multiple`) * `br`.`bet_score`) end) AS `got_score` from (((`t_machine_bet_record` `br` left join `t_machine_record` `r` on((`br`.`record_id` = `r`.`id`))) left join `t_machine_index` `i` on((`r`.`open_number` = `i`.`id`))) left join `t_machine_fruit` `f` on((`i`.`fruit_id` = `f`.`id`))) ;
+INSERT INTO `t_weixin_user` VALUES ('oCmBsvwBS37C3MjyvwTyvepQL2EA', 'ahem!', '2017-04-05 17:42:20', '1', '', '', '中国', 'http://wx.qlogo.cn/mmopen/ajNVdqHZLLAP7oXpIAt7WnaV1AjeCUbC6bHuoNAEXLap8iaaxBWTPqFaP0pL8RAFCG5zGPEVSdMx5qaR6HiamHAg/0', null);
