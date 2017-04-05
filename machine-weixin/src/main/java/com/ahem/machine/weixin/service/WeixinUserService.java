@@ -1,5 +1,7 @@
 package com.ahem.machine.weixin.service;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.Date;
 import java.util.List;
 
@@ -7,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.ahem.machine.weixin.core.EmojiFilterUtil;
 import com.ahem.machine.weixin.entity.TMachineUser;
 import com.ahem.machine.weixin.entity.TMachineUserExample;
 import com.ahem.machine.weixin.entity.TWeixinUser;
@@ -38,7 +41,8 @@ public class WeixinUserService {
 		wxUser.setCity(userInfo.getCity());
 		wxUser.setCountry(userInfo.getCountry());
 		wxUser.setHeadimgurl(userInfo.getHeadimgurl());
-		wxUser.setNickname(userInfo.getNickname());
+
+		wxUser.setNickname(EmojiFilterUtil.filterEmoji(userInfo.getNickname()));
 		// wxUser.setPrivilege(userInfo.getp());
 		wxUser.setProvince(userInfo.getProvince());
 		wxUser.setSex(userInfo.getSex());

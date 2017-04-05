@@ -8,7 +8,6 @@
 $(document)
 		.ready(
 				function() {
-
 					initMachine();
 					console.log($(window).height()); // 浏览器当前窗口可视区域高度
 					console.log($(document).height()); // 浏览器当前窗口文档的高度

@@ -72,6 +72,13 @@ public class TimeCounter implements Serializable {
 		if (minute == 0 && second == 20) {
 			open();
 		}
+
+		if (minute == 0 && second == 0) {
+			// 期号从数据库获取，时间从配置表获取
+			this.recordId = recordService.readyNext();
+			logger.debug("下一期号：" + this.recordId);
+			set(this.recordId, 1, 0);
+		}
 		// logger.debug(this.toString());
 	}
 
@@ -94,10 +101,6 @@ public class TimeCounter implements Serializable {
 			SysWebSocketHandler.sendMessageToUsers(textMessage);
 			logger.debug("结束群发记录：" + openRecord);
 
-			// 期号从数据库获取，时间从配置表获取
-			this.recordId = recordService.readyNext();
-			logger.debug("下一期号：" + this.recordId);
-			set(this.recordId, 1, 0);
 		} catch (Exception e) {
 			logger.error("开奖异常！", e);
 			// TODO 发生异常，进行手动开奖

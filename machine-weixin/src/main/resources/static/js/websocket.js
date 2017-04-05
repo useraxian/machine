@@ -29,6 +29,7 @@ websocket.onmessage = function(event) {
 	var obj = JSON.parse(event.data);
 	if (obj.type == 'openRecord') {
 		// 设置开奖号码
+		recordId=obj.content.id;
 		nextOpenNum = obj.content.openNumber;
 	} else {
 

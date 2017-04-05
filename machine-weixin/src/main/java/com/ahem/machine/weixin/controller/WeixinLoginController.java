@@ -51,8 +51,6 @@ public class WeixinLoginController {
 		System.out.println("userid="+ machineUser.getId());
 		if (machineUser != null) {
 			model.addAttribute("userid", machineUser.getId());
-		} else {
-			model.addAttribute("userid", null);
 		}
 		model.addAttribute("openid", userInfo.getOpenid());
 		model.addAttribute("nickname", userInfo.getNickname());

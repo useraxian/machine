@@ -46,9 +46,9 @@
 		<table schema="machine" tableName="t_weixin_user"
 			domainObjectName="TWeixinUser">
 		</table>
-		<table schema="machine" tableName="v_user_bet_record"
+		<!--<table schema="machine" tableName="v_user_bet_record"
 			domainObjectName="VUserBetRecord" enableInsert="false" enableSelectByPrimaryKey="false" enableUpdateByPrimaryKey="false" enableDeleteByPrimaryKey="false" enableDeleteByExample="false" enableUpdateByExample="false">
-		</table>
+		</table>-->
 	</context>
 </generatorConfiguration>
 

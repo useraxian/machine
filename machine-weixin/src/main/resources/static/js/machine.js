@@ -83,22 +83,22 @@ function ui() {
 }
 
 function data() {
-//	 $.ajax({
-//		url : "/machine/myscore",
-//		success : function(result) {
-//			var obj = JSON.parse(result);
-//			if (obj.meta.success) {
-//				console.log('我的分数:' + obj.data);
-//				$('#myscore').html(numberCover(obj.data, 6));
-//			} else {
-//				console.log('加载分数失败!' + result);
-//			}
-//
-//		},
-//		error : function() {
-//
-//		}
-//	});
+	// $.ajax({
+	// url : "/machine/myscore",
+	// success : function(result) {
+	// var obj = JSON.parse(result);
+	// if (obj.meta.success) {
+	// console.log('我的分数:' + obj.data);
+	// $('#myscore').html(numberCover(obj.data, 6));
+	// } else {
+	// console.log('加载分数失败!' + result);
+	// }
+	//
+	// },
+	// error : function() {
+	//
+	// }
+	// });
 }
 /**
  * 移动到下个目标
@@ -166,11 +166,12 @@ function bet(idx) {
 	if ($("div.target").is(":animated")) {
 		return false;
 	}
-	var canBetSts= canBet();
-	if(!canBetSts){
+	var canBetSts = canBet();
+	if (!canBetSts) {
 		$.toptip('已封盘，无法下注！', 1000, 'warning');
+		return false;
 	}
-	
+
 	// 判断是否在开奖动画
 	var $score = $('#score' + idx);
 	var $myscore = $('#myscore');
@@ -227,14 +228,13 @@ function bet(idx) {
 
 }
 //
-///**
+// /**
 // * 设置下次开奖号码
 // */
-//function setNextOpenNum() {
-//	console.log('下次开奖号码：' + $('#openNum').val());
-//	nextOpenNum = parseInt($('#openNum').val());
-//}
-
+// function setNextOpenNum() {
+// console.log('下次开奖号码：' + $('#openNum').val());
+// nextOpenNum = parseInt($('#openNum').val());
+// }
 
 /**
  * 判断输赢
@@ -277,11 +277,9 @@ function getWinScore(fruitName) {
 function confirmBet() {
 	// TODO 下注内容从获取
 	var userId = $('#userid').val();
-	var recordId = 1;
-	var fruitId = 1;
-	var score = 1;
 	var multiple = 1;
-	
+
+
 	$.confirm({
 		title : '确认下注？',
 		text : '当前下注内容',
@@ -291,9 +289,14 @@ function confirmBet() {
 				type : 'post',
 				data : {
 					'userId' : userId,
-					'fruitId' : fruitId,
 					'recordId' : recordId,
-					'score' : score,
+					'score1':parseInt($('#score1').html()),
+					'score2':parseInt($('#score2').html()),
+					'score3':parseInt($('#score3').html()),
+					'score4':parseInt($('#score4').html()),
+					'score5':parseInt($('#score5').html()),
+					'score6':parseInt($('#score6').html()),
+					'score7':parseInt($('#score7').html()),
 					'multiple' : multiple
 				},
 				success : function(result) {
