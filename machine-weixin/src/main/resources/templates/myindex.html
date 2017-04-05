@@ -4,17 +4,14 @@
 <meta charset="utf-8"></meta>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
 <meta name="viewport"
-	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
-></meta>
+	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"></meta>
 <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
 <title>slot machine</title>
 <!-- head 中 -->
 <link rel="stylesheet"
-	href="http://cdn.bootcss.com/weui/1.1.1/style/weui.min.css"
-></link>
+	href="http://cdn.bootcss.com/weui/1.1.1/style/weui.min.css"></link>
 <link rel="stylesheet"
-	href="http://cdn.bootcss.com/jquery-weui/1.0.1/css/jquery-weui.min.css"
-></link>
+	href="http://cdn.bootcss.com/jquery-weui/1.0.1/css/jquery-weui.min.css"></link>
 
 <!--游戏首页样式-->
 <link rel="stylesheet" href="/css/index.css"></link>
@@ -31,7 +28,7 @@
 	<div class="weui-flex">
 		<div class="weui-flex__item">
 			<div style="color: red">
-				开奖时间： <span id="timeSpan" class="number">00:00</span>
+				第： <span id="recordIdSpan">0</span>期
 			</div>
 		</div>
 		<div class="weui-flex__item">
@@ -58,20 +55,20 @@
 			<tr>
 				<td id="23"></td>
 				<td colspan="5" rowspan="5" valign="top" height="30px"
-					style="background: url(images/center.jpg); background-size: cover; position: relative; border-width: 2px; border-style: solid; border-color: white"
-				>
+					style="background: url(images/center.jpg); background-size: cover; position: relative; border-width: 2px; border-style: solid; border-color: white">
 					<div class="weui-flex"
-						style="position: relative; top: 5px; height: 30px;"
-					>
+						style="position: relative; top: 5px; height: 30px;">
 						<div class="weui-flex__item number"
 							style="box-shadow: 2px 2px 2px #888888 inset, -2px -2px 2px #888888 inset; border-radius: 5px; text-align: center; color: red; display: inline;"
-							align="left"
-						>000000</div>
+							align="left">000000</div>
 						<div class="weui-flex__item number"></div>
 						<div id="myscore" class="weui-flex__item number"
 							style="box-shadow: 2px 2px 2px #888888 inset, -2px -2px 2px #888888 inset; border-radius: 5px; text-align: center; color: red; display: inline;"
-							align="right"
-						>000010</div>
+							align="right">000010</div>
+
+						<div style="color: red">
+							开奖时间： <span id="timeSpan" class="number">00:00</span>
+						</div>
 					</div>
 				</td>
 				<td id="7"></td>
@@ -156,11 +153,9 @@
 
 	<script src="http://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
 	<script
-		src="http://cdn.bootcss.com/jquery-weui/1.0.1/js/jquery-weui.min.js"
-	></script>
+		src="http://cdn.bootcss.com/jquery-weui/1.0.1/js/jquery-weui.min.js"></script>
 	<script
-		src="http://cdn.bootcss.com/web-socket-js/1.0.0/web_socket.min.js"
-	></script>
+		src="http://cdn.bootcss.com/web-socket-js/1.0.0/web_socket.min.js"></script>
 	<script type="text/javascript" src="/js/tool.js"></script>
 	<script type="text/javascript" src="/js/machine.js"></script>
 	<script type="text/javascript" src="/js/index.js"></script>

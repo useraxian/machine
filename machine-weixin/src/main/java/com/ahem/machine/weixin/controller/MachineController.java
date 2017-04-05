@@ -11,8 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.ahem.machine.weixin.core.RestResponse;
 import com.ahem.machine.weixin.entity.TMachineRecord;
+import com.ahem.machine.weixin.mapper.TMachineUserMapper;
 import com.ahem.machine.weixin.service.BetRecordService;
 import com.ahem.machine.weixin.service.RecordService;
+import com.ahem.machine.weixin.service.UserScoreService;
 
 /**
  * <p>
@@ -37,12 +39,21 @@ public class MachineController {
 	@Autowired
 	RecordService recordService;
 
+	@Autowired
+	UserScoreService userScoreService;
+
 	@ResponseBody
-	@RequestMapping("/myscore")
-	public RestResponse time() {
-		// TODO 根据用户获取分数
+	@RequestMapping("/myscore/{userId}")
+	public RestResponse time(@PathVariable Integer userId) {
 		RestResponse resp = new RestResponse();
-		resp.success(100);
+		Integer score = 0;
+		try {
+			score = userScoreService.findScoreByUserId(userId);
+			resp.success(score);
+		} catch (Exception e) {
+			logger.error("用户获取分数异常！userid=" + userId, e);
+			resp.failure("获取失败！");
+		}
 		return resp;
 
 	}

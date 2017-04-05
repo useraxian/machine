@@ -58,6 +58,7 @@ function refreshTime() {
 		success : function(result) {
 			var obj = JSON.parse(result);
 			recordId = obj.recordId;
+			$('#recordIdSpan').html(recordId);
 			minute = obj.minute;
 			second = obj.second;
 			var timeVal = numberCover(obj.minute, 2) + ":"

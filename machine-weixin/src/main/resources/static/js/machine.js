@@ -80,9 +80,27 @@ function ui() {
 		$('#bet' + key).css('background', img);
 		$('#bet' + key).css('background-size', 'cover');
 	}
+
+	// 响应窗体大小
+	var imgWidth = ($(document.body).width() - $(document.body).width() * 0.1) / 7;
+	console.log('imgWidth=' + imgWidth);
+	$('.screen table tr td').width(imgWidth);
+	$('.screen table tr td').height(imgWidth);
+	$('.control table tr td').width(imgWidth - 5);
+	$('.control table tr td').height(imgWidth - 5);
+	var $target = $('div.target');// 代表找到div.target的元素
+	var offset = $('#0').offset();
+	$target.css('top', offset.top);
+	$target.css('left', offset.left);
+	$target.width(imgWidth - 3);
+	$target.height(imgWidth - 3);
+	console.log('td width=' + $('.screen table tr td').width());
+	console.log('td height=' + $('.screen table tr td').height());
 }
 
 function data() {
+	// 获取分数
+	getUserScore();
 	// $.ajax({
 	// url : "/machine/myscore",
 	// success : function(result) {
@@ -136,8 +154,9 @@ function startRun() {
 		console.log('动画正在执行');
 		// 判断动画是否结束
 		if (finalNum != null && moveNum != null && finalNum == moveNum) {
-			// 判断输赢
-			isWin();
+			// TODO 判断输赢，结合动画效果
+			// 获取分数
+			getUserScore();
 
 			// 重置下注分数
 			reset();
@@ -240,19 +259,39 @@ function bet(idx) {
  * 判断输赢
  */
 
-function isWin() {
-	// TODO 1.根据NextOpenNum获取水果名称，2.根据水果名称获取下注分数 3.判断是否有下注分数，有则赢
-	var fruitName = getFruitNameFromIndexs(nextOpenNum);
-	getWinScore(fruitName);
-	// console($('bet-num-tr td div').length);
-}
-
+// function isWin() {
+// // TODO 1.根据NextOpenNum获取水果名称，2.根据水果名称获取下注分数 3.判断是否有下注分数，有则赢
+// var fruitName = getFruitNameFromIndexs(nextOpenNum);
+// getWinScore(fruitName);
+// // console($('bet-num-tr td div').length);
+// }
 function getFruitNameFromIndexs(num) {
 	for ( var key in indexs) {
 		if ($.inArray(num, indexs[key]) == 0) {
 			return key;
 		}
 	}
+}
+
+function getUserScore() {
+	var userId = $('#userid').val();
+	$.ajax({
+		url : 'machine/myscore/' + userId,
+		type : 'post',
+		success : function(result) {
+			var obj = JSON.parse(result);
+			if (obj.meta.success) {
+				var scr = parseInt(obj.data);
+				$('#myscore').html(numberCover(scr, 6));
+			} else {
+				$.alert(obj.data, "提示");
+			}
+
+		},
+		error : function() {
+			$.alert('无法获取分数', "提示");
+		}
+	});
 }
 
 function getWinScore(fruitName) {
@@ -279,7 +318,6 @@ function confirmBet() {
 	var userId = $('#userid').val();
 	var multiple = 1;
 
-
 	$.confirm({
 		title : '确认下注？',
 		text : '当前下注内容',
@@ -290,13 +328,13 @@ function confirmBet() {
 				data : {
 					'userId' : userId,
 					'recordId' : recordId,
-					'score1':parseInt($('#score1').html()),
-					'score2':parseInt($('#score2').html()),
-					'score3':parseInt($('#score3').html()),
-					'score4':parseInt($('#score4').html()),
-					'score5':parseInt($('#score5').html()),
-					'score6':parseInt($('#score6').html()),
-					'score7':parseInt($('#score7').html()),
+					'score1' : parseInt($('#score1').html()),
+					'score2' : parseInt($('#score2').html()),
+					'score3' : parseInt($('#score3').html()),
+					'score4' : parseInt($('#score4').html()),
+					'score5' : parseInt($('#score5').html()),
+					'score6' : parseInt($('#score6').html()),
+					'score7' : parseInt($('#score7').html()),
 					'multiple' : multiple
 				},
 				success : function(result) {

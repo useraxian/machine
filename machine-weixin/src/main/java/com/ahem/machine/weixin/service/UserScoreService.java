@@ -108,4 +108,15 @@ public class UserScoreService {
 		}
 	}
 
+	/**
+	 * 获取用户分数
+	 * 
+	 * @param userId
+	 * @return
+	 */
+	public Integer findScoreByUserId(Integer userId) {
+		TMachineUser user = userMapper.selectByPrimaryKey(userId);
+		return user.getScore();
+	}
+
 }
