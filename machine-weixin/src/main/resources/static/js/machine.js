@@ -82,7 +82,7 @@ function ui() {
 	}
 
 	// 响应窗体大小
-	var imgWidth = ($(document.body).width() - $(document.body).width() * 0.1) / 7;
+	var imgWidth = ($(document.body).width() - $(document.body).width() * 0.2) / 7;
 	console.log('imgWidth=' + imgWidth);
 	$('.screen table tr td').width(imgWidth);
 	$('.screen table tr td').height(imgWidth);

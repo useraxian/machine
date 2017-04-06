@@ -44,6 +44,7 @@ public class UserScoreService {
 
 	@Autowired
 	TMachineIndexMapper indexMapper;
+
 	@Autowired
 	TMachineFruitMapper fuirtMapper;
 
@@ -100,10 +101,23 @@ public class UserScoreService {
 				gotScore -= betRecord.getBetScore7() * betRecord.getBetMultiple();
 			}
 			logger.debug("下注得分统计,下注ID:" + betRecord.getId() + ",得分：" + gotScore);
+			Integer isWin = null;
+			if (gotScore > 0) {
+				isWin = 1;// 赢
+			} else if (gotScore < 0) {
+				isWin = 0;// 输
+			} else {
+				isWin = 2;// 平
+			}
+			betRecord.setBetResult(isWin);
+			betRecord.setGotScore(gotScore);
+
+			// 更新下注记录
+			betRecordMapper.updateByPrimaryKey(betRecord);
 
 			// 更新用户分数
 			TMachineUser user = userMapper.selectByPrimaryKey(betRecord.getUserId());
-			user.setScore(gotScore);
+			user.setScore(user.getScore()+gotScore);
 			userMapper.updateByPrimaryKey(user);
 		}
 	}

@@ -2,11 +2,13 @@
  * websocket js
  */
 var websocket = null;
-var url = "localhost:8080";
+//var url = "localhost:8080";
+var url = "ittun.com:52317";
 
 // 判断当前浏览器是否支持WebSocket
 if ('WebSocket' in window) {
-	websocket = new WebSocket("ws://" + url + "/websocket");
+//	alert(document.location.host);
+	websocket = new WebSocket( "ws://"+url + "/websocket");
 } else {
 	websocket = new SockJS("http://" + url + "/sockjs/websocket");
 }
