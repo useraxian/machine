@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.ahem.machine.weixin.core.IGenerator;
+import com.ahem.machine.weixin.core.MaxGenerator;
 import com.ahem.machine.weixin.entity.TMachineRecord;
 import com.ahem.machine.weixin.entity.TMachineRecordExample;
 import com.ahem.machine.weixin.mapper.TMachineRecordMapper;
@@ -26,6 +28,9 @@ public class RecordService {
 	@Autowired
 	TMachineRecordMapper recordMapper;
 
+	@Autowired
+	MaxGenerator maxGenerator;
+
 	/**
 	 * 开奖，并返回下期开奖ID： 1.本期开奖号码设置 ;2.生成下一期号
 	 * 
@@ -34,7 +39,7 @@ public class RecordService {
 	@Transactional
 	public TMachineRecord generateRecord(Integer recordId) {
 		// 生成开奖号码
-		Integer openNumber = generateOpenNumber();
+		Integer openNumber = generateOpenNumber(recordId);
 
 		// 1.本期开奖号码设置
 		TMachineRecord openRecord = new TMachineRecord();
@@ -45,9 +50,10 @@ public class RecordService {
 		return openRecord;
 	}
 
-	private Integer generateOpenNumber() {
-		// TODO 根据当前下注结果，计算出所要开始的号码
-		return 0;
+	private Integer generateOpenNumber(Integer recordId) {
+		// TODO 判断使用那种策略
+		IGenerator generator = maxGenerator;
+		return generator.generate(recordId);
 	}
 
 	/**

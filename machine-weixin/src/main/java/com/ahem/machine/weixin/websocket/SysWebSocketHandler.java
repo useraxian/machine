@@ -27,6 +27,7 @@ public class SysWebSocketHandler implements WebSocketHandler {
 	public void afterConnectionClosed(WebSocketSession session, CloseStatus status) throws Exception {
 		System.out.println("Connection closed..." + session.getRemoteAddress().toString());
 		logger.debug("连接已经关闭，用户：" + session.getRemoteAddress().toString());
+		users.remove(session); //移除用户
 	}
 
 	@Override

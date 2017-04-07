@@ -40,7 +40,7 @@ var indexs = {
 	'cherry' : [ 1, 10, 19 ],
 	'prune' : [ 2, 11, 20 ],
 	'banana' : [ 3, 12, 21 ],
-	'lemo' : [ 4, 13, 22, 18 ],
+	'lemo' : [ 4, 13, 22],
 	'orange' : [ 5, 14, 23 ],
 	'watermelon' : [ 6, 15 ],
 	'bigwin' : [ 7, 16 ],
@@ -246,25 +246,10 @@ function bet(idx) {
 	}
 
 }
-//
-// /**
-// * 设置下次开奖号码
-// */
-// function setNextOpenNum() {
-// console.log('下次开奖号码：' + $('#openNum').val());
-// nextOpenNum = parseInt($('#openNum').val());
-// }
 
 /**
- * 判断输赢
- */
-
-// function isWin() {
-// // TODO 1.根据NextOpenNum获取水果名称，2.根据水果名称获取下注分数 3.判断是否有下注分数，有则赢
-// var fruitName = getFruitNameFromIndexs(nextOpenNum);
-// getWinScore(fruitName);
-// // console($('bet-num-tr td div').length);
-// }
+ * 根据位置，获取水果时间
+ * */
 function getFruitNameFromIndexs(num) {
 	for ( var key in indexs) {
 		if ($.inArray(num, indexs[key]) == 0) {
@@ -314,7 +299,12 @@ function getWinScore(fruitName) {
 }
 
 function confirmBet() {
-	// TODO 下注内容从获取
+	var canBetSts = canBet();
+	if (!canBetSts) {
+		$.toptip('已封盘，无法下注！', 1000, 'warning');
+		return false;
+	}
+	
 	var userId = $('#userid').val();
 	var multiple = 1;
 

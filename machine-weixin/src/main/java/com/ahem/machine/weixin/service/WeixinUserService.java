@@ -1,7 +1,5 @@
 package com.ahem.machine.weixin.service;
 
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
 import java.util.Date;
 import java.util.List;
 

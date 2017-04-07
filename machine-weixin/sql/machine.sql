@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50625
 File Encoding         : 65001
 
-Date: 2017-04-06 17:54:21
+Date: 2017-04-07 16:26:37
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -40,9 +40,9 @@ CREATE TABLE `t_machine_bet_record` (
   `bet_fruit_id_7` int(11) unsigned zerofill NOT NULL COMMENT '下注水果编号',
   `bet_score_7` int(11) unsigned zerofill NOT NULL COMMENT '下注分数',
   `bet_result` int(1) DEFAULT NULL COMMENT '0输1赢2平',
-  `got_score` int(11) unsigned DEFAULT NULL COMMENT '获得的分数',
+  `got_score` int(11) DEFAULT NULL COMMENT '获得的分数',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COMMENT='用户下注表';
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8 COMMENT='用户下注表';
 
 -- ----------------------------
 -- Records of t_machine_bet_record
@@ -57,6 +57,14 @@ INSERT INTO `t_machine_bet_record` VALUES ('13', '4', '1', '1', '2017-04-05 17:4
 INSERT INTO `t_machine_bet_record` VALUES ('14', '4', '1', '1', '2017-04-05 17:42:25', '1', '00000000002', '00000000002', '00000000000', '00000000003', '00000000000', '00000000004', '00000000000', '00000000005', '00000000000', '00000000007', '00000000000', '00000000006', '00000000000', null, null);
 INSERT INTO `t_machine_bet_record` VALUES ('15', '4', '244', '1', '2017-04-06 17:28:08', '1', '00000000002', '00000000002', '00000000001', '00000000003', '00000000001', '00000000004', '00000000001', '00000000005', '00000000001', '00000000007', '00000000001', '00000000006', '00000000001', '1', '14');
 INSERT INTO `t_machine_bet_record` VALUES ('16', '4', '245', '1', '2017-04-06 17:29:13', '1', '00000000003', '00000000002', '00000000001', '00000000003', '00000000001', '00000000004', '00000000000', '00000000005', '00000000000', '00000000007', '00000000000', '00000000006', '00000000000', '1', '28');
+INSERT INTO `t_machine_bet_record` VALUES ('17', '4', '286', '1', '2017-04-07 11:27:06', '1', '00000000003', '00000000002', '00000000001', '00000000003', '00000000001', '00000000004', '00000000001', '00000000005', '00000000002', '00000000007', '00000000001', '00000000006', '00000000000', null, null);
+INSERT INTO `t_machine_bet_record` VALUES ('18', '4', '290', '1', '2017-04-07 11:40:02', '1', '00000000002', '00000000002', '00000000004', '00000000003', '00000000001', '00000000004', '00000000003', '00000000005', '00000000001', '00000000007', '00000000001', '00000000006', '00000000000', '0', '-12');
+INSERT INTO `t_machine_bet_record` VALUES ('19', '4', '293', '1', '2017-04-07 11:50:22', '1', '00000000002', '00000000002', '00000000001', '00000000003', '00000000001', '00000000004', '00000000003', '00000000005', '00000000004', '00000000007', '00000000001', '00000000006', '00000000000', '0', '-12');
+INSERT INTO `t_machine_bet_record` VALUES ('20', '4', '355', '1', '2017-04-07 12:52:14', '1', '00000000001', '00000000002', '00000000001', '00000000003', '00000000000', '00000000004', '00000000001', '00000000005', '00000000001', '00000000007', '00000000000', '00000000006', '00000000000', '0', '-4');
+INSERT INTO `t_machine_bet_record` VALUES ('21', '4', '355', '1', '2017-04-07 12:52:23', '1', '00000000001', '00000000002', '00000000001', '00000000003', '00000000000', '00000000004', '00000000001', '00000000005', '00000000001', '00000000007', '00000000000', '00000000006', '00000000000', '0', '-8');
+INSERT INTO `t_machine_bet_record` VALUES ('22', '4', '355', '1', '2017-04-07 12:52:27', '1', '00000000001', '00000000002', '00000000001', '00000000003', '00000000000', '00000000004', '00000000001', '00000000005', '00000000001', '00000000007', '00000000000', '00000000006', '00000000000', null, null);
+INSERT INTO `t_machine_bet_record` VALUES ('23', '4', '355', '1', '2017-04-07 12:52:30', '1', '00000000001', '00000000002', '00000000001', '00000000003', '00000000000', '00000000004', '00000000001', '00000000005', '00000000001', '00000000007', '00000000000', '00000000006', '00000000000', null, null);
+INSERT INTO `t_machine_bet_record` VALUES ('24', '4', '379', '1', '2017-04-07 15:14:17', '1', '00000000001', '00000000002', '00000000001', '00000000003', '00000000001', '00000000004', '00000000001', '00000000005', '00000000000', '00000000007', '00000000000', '00000000006', '00000000000', '0', '-4');
 
 -- ----------------------------
 -- Table structure for `t_machine_fruit`
@@ -101,6 +109,29 @@ CREATE TABLE `t_machine_index` (
 -- Records of t_machine_index
 -- ----------------------------
 INSERT INTO `t_machine_index` VALUES ('0', '1');
+INSERT INTO `t_machine_index` VALUES ('9', '1');
+INSERT INTO `t_machine_index` VALUES ('18', '1');
+INSERT INTO `t_machine_index` VALUES ('1', '2');
+INSERT INTO `t_machine_index` VALUES ('10', '2');
+INSERT INTO `t_machine_index` VALUES ('19', '2');
+INSERT INTO `t_machine_index` VALUES ('2', '3');
+INSERT INTO `t_machine_index` VALUES ('11', '3');
+INSERT INTO `t_machine_index` VALUES ('20', '3');
+INSERT INTO `t_machine_index` VALUES ('3', '4');
+INSERT INTO `t_machine_index` VALUES ('12', '4');
+INSERT INTO `t_machine_index` VALUES ('21', '4');
+INSERT INTO `t_machine_index` VALUES ('4', '5');
+INSERT INTO `t_machine_index` VALUES ('13', '5');
+INSERT INTO `t_machine_index` VALUES ('22', '5');
+INSERT INTO `t_machine_index` VALUES ('5', '6');
+INSERT INTO `t_machine_index` VALUES ('14', '6');
+INSERT INTO `t_machine_index` VALUES ('23', '6');
+INSERT INTO `t_machine_index` VALUES ('6', '7');
+INSERT INTO `t_machine_index` VALUES ('15', '7');
+INSERT INTO `t_machine_index` VALUES ('7', '8');
+INSERT INTO `t_machine_index` VALUES ('16', '8');
+INSERT INTO `t_machine_index` VALUES ('8', '9');
+INSERT INTO `t_machine_index` VALUES ('17', '9');
 
 -- ----------------------------
 -- Table structure for `t_machine_record`
@@ -113,7 +144,7 @@ CREATE TABLE `t_machine_record` (
   PRIMARY KEY (`id`),
   KEY `fk_t_machine_record_number_index_id` (`open_number`),
   CONSTRAINT `fk_t_machine_record_number_index_id` FOREIGN KEY (`open_number`) REFERENCES `t_machine_index` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=271 DEFAULT CHARSET=latin1 COMMENT='开奖记录表 ';
+) ENGINE=InnoDB AUTO_INCREMENT=449 DEFAULT CHARSET=latin1 COMMENT='开奖记录表 ';
 
 -- ----------------------------
 -- Records of t_machine_record
@@ -387,7 +418,169 @@ INSERT INTO `t_machine_record` VALUES ('266', '2017-04-06 17:50:28', '0');
 INSERT INTO `t_machine_record` VALUES ('267', '2017-04-06 17:51:28', '0');
 INSERT INTO `t_machine_record` VALUES ('268', '2017-04-06 17:52:28', '0');
 INSERT INTO `t_machine_record` VALUES ('269', '2017-04-06 17:53:28', '0');
-INSERT INTO `t_machine_record` VALUES ('270', null, null);
+INSERT INTO `t_machine_record` VALUES ('270', '2017-04-06 17:54:28', '0');
+INSERT INTO `t_machine_record` VALUES ('285', '2017-04-07 11:26:24', '20');
+INSERT INTO `t_machine_record` VALUES ('288', '2017-04-07 11:37:29', '9');
+INSERT INTO `t_machine_record` VALUES ('289', '2017-04-07 11:38:29', '8');
+INSERT INTO `t_machine_record` VALUES ('290', '2017-04-07 11:40:12', '14');
+INSERT INTO `t_machine_record` VALUES ('291', '2017-04-07 11:46:53', '10');
+INSERT INTO `t_machine_record` VALUES ('292', '2017-04-07 11:49:43', '20');
+INSERT INTO `t_machine_record` VALUES ('293', '2017-04-07 11:50:43', '5');
+INSERT INTO `t_machine_record` VALUES ('294', '2017-04-07 11:51:43', '19');
+INSERT INTO `t_machine_record` VALUES ('295', '2017-04-07 11:52:43', '6');
+INSERT INTO `t_machine_record` VALUES ('296', '2017-04-07 11:53:43', '18');
+INSERT INTO `t_machine_record` VALUES ('297', '2017-04-07 11:54:43', '19');
+INSERT INTO `t_machine_record` VALUES ('298', '2017-04-07 11:55:43', '8');
+INSERT INTO `t_machine_record` VALUES ('299', '2017-04-07 11:56:43', '20');
+INSERT INTO `t_machine_record` VALUES ('300', '2017-04-07 11:57:43', '23');
+INSERT INTO `t_machine_record` VALUES ('301', '2017-04-07 11:58:43', '4');
+INSERT INTO `t_machine_record` VALUES ('302', '2017-04-07 11:59:43', '8');
+INSERT INTO `t_machine_record` VALUES ('303', '2017-04-07 12:00:43', '23');
+INSERT INTO `t_machine_record` VALUES ('304', '2017-04-07 12:01:43', '9');
+INSERT INTO `t_machine_record` VALUES ('305', '2017-04-07 12:02:43', '5');
+INSERT INTO `t_machine_record` VALUES ('306', '2017-04-07 12:03:43', '14');
+INSERT INTO `t_machine_record` VALUES ('307', '2017-04-07 12:04:43', '7');
+INSERT INTO `t_machine_record` VALUES ('308', '2017-04-07 12:05:43', '18');
+INSERT INTO `t_machine_record` VALUES ('309', '2017-04-07 12:06:43', '12');
+INSERT INTO `t_machine_record` VALUES ('310', '2017-04-07 12:07:43', '10');
+INSERT INTO `t_machine_record` VALUES ('311', '2017-04-07 12:08:43', '21');
+INSERT INTO `t_machine_record` VALUES ('312', '2017-04-07 12:09:43', '13');
+INSERT INTO `t_machine_record` VALUES ('313', '2017-04-07 12:10:43', '16');
+INSERT INTO `t_machine_record` VALUES ('314', '2017-04-07 12:11:43', '22');
+INSERT INTO `t_machine_record` VALUES ('315', '2017-04-07 12:12:43', '1');
+INSERT INTO `t_machine_record` VALUES ('316', '2017-04-07 12:13:43', '12');
+INSERT INTO `t_machine_record` VALUES ('317', '2017-04-07 12:14:43', '8');
+INSERT INTO `t_machine_record` VALUES ('318', '2017-04-07 12:15:43', '3');
+INSERT INTO `t_machine_record` VALUES ('319', '2017-04-07 12:16:43', '17');
+INSERT INTO `t_machine_record` VALUES ('320', '2017-04-07 12:17:43', '20');
+INSERT INTO `t_machine_record` VALUES ('321', '2017-04-07 12:18:43', '23');
+INSERT INTO `t_machine_record` VALUES ('322', '2017-04-07 12:19:43', '21');
+INSERT INTO `t_machine_record` VALUES ('323', '2017-04-07 12:20:43', '14');
+INSERT INTO `t_machine_record` VALUES ('324', '2017-04-07 12:21:43', '13');
+INSERT INTO `t_machine_record` VALUES ('325', '2017-04-07 12:22:43', '9');
+INSERT INTO `t_machine_record` VALUES ('326', '2017-04-07 12:23:43', '10');
+INSERT INTO `t_machine_record` VALUES ('327', '2017-04-07 12:24:43', '16');
+INSERT INTO `t_machine_record` VALUES ('328', '2017-04-07 12:25:43', '15');
+INSERT INTO `t_machine_record` VALUES ('329', '2017-04-07 12:26:43', '15');
+INSERT INTO `t_machine_record` VALUES ('330', '2017-04-07 12:27:43', '22');
+INSERT INTO `t_machine_record` VALUES ('331', '2017-04-07 12:28:43', '0');
+INSERT INTO `t_machine_record` VALUES ('332', '2017-04-07 12:29:43', '23');
+INSERT INTO `t_machine_record` VALUES ('333', '2017-04-07 12:30:43', '11');
+INSERT INTO `t_machine_record` VALUES ('334', '2017-04-07 12:31:43', '21');
+INSERT INTO `t_machine_record` VALUES ('335', '2017-04-07 12:32:43', '8');
+INSERT INTO `t_machine_record` VALUES ('336', '2017-04-07 12:33:43', '1');
+INSERT INTO `t_machine_record` VALUES ('337', '2017-04-07 12:34:43', '19');
+INSERT INTO `t_machine_record` VALUES ('338', '2017-04-07 12:35:43', '15');
+INSERT INTO `t_machine_record` VALUES ('339', '2017-04-07 12:36:43', '11');
+INSERT INTO `t_machine_record` VALUES ('340', '2017-04-07 12:37:43', '6');
+INSERT INTO `t_machine_record` VALUES ('341', '2017-04-07 12:38:43', '5');
+INSERT INTO `t_machine_record` VALUES ('342', '2017-04-07 12:39:43', '6');
+INSERT INTO `t_machine_record` VALUES ('343', '2017-04-07 12:40:43', '1');
+INSERT INTO `t_machine_record` VALUES ('344', '2017-04-07 12:41:43', '19');
+INSERT INTO `t_machine_record` VALUES ('345', '2017-04-07 12:42:43', '21');
+INSERT INTO `t_machine_record` VALUES ('346', '2017-04-07 12:43:43', '22');
+INSERT INTO `t_machine_record` VALUES ('347', '2017-04-07 12:44:43', '20');
+INSERT INTO `t_machine_record` VALUES ('348', '2017-04-07 12:45:43', '12');
+INSERT INTO `t_machine_record` VALUES ('349', '2017-04-07 12:46:43', '13');
+INSERT INTO `t_machine_record` VALUES ('350', '2017-04-07 12:47:43', '7');
+INSERT INTO `t_machine_record` VALUES ('351', '2017-04-07 12:48:43', '13');
+INSERT INTO `t_machine_record` VALUES ('352', '2017-04-07 12:49:43', '2');
+INSERT INTO `t_machine_record` VALUES ('353', '2017-04-07 12:50:43', '16');
+INSERT INTO `t_machine_record` VALUES ('354', '2017-04-07 12:51:43', '13');
+INSERT INTO `t_machine_record` VALUES ('355', '2017-04-07 12:52:43', '2');
+INSERT INTO `t_machine_record` VALUES ('356', '2017-04-07 12:53:43', '13');
+INSERT INTO `t_machine_record` VALUES ('357', '2017-04-07 12:55:31', '23');
+INSERT INTO `t_machine_record` VALUES ('358', '2017-04-07 14:53:20', '18');
+INSERT INTO `t_machine_record` VALUES ('359', '2017-04-07 14:54:29', '11');
+INSERT INTO `t_machine_record` VALUES ('360', '2017-04-07 14:55:29', '1');
+INSERT INTO `t_machine_record` VALUES ('361', '2017-04-07 14:56:29', '18');
+INSERT INTO `t_machine_record` VALUES ('362', '2017-04-07 14:57:29', '4');
+INSERT INTO `t_machine_record` VALUES ('363', '2017-04-07 14:58:29', '1');
+INSERT INTO `t_machine_record` VALUES ('364', '2017-04-07 14:59:29', '10');
+INSERT INTO `t_machine_record` VALUES ('365', '2017-04-07 15:00:29', '2');
+INSERT INTO `t_machine_record` VALUES ('366', '2017-04-07 15:01:29', '15');
+INSERT INTO `t_machine_record` VALUES ('367', '2017-04-07 15:02:29', '2');
+INSERT INTO `t_machine_record` VALUES ('368', '2017-04-07 15:03:29', '7');
+INSERT INTO `t_machine_record` VALUES ('369', '2017-04-07 15:04:29', '18');
+INSERT INTO `t_machine_record` VALUES ('370', '2017-04-07 15:05:29', '13');
+INSERT INTO `t_machine_record` VALUES ('371', '2017-04-07 15:06:29', '0');
+INSERT INTO `t_machine_record` VALUES ('372', '2017-04-07 15:07:29', '21');
+INSERT INTO `t_machine_record` VALUES ('373', '2017-04-07 15:08:29', '11');
+INSERT INTO `t_machine_record` VALUES ('374', '2017-04-07 15:09:29', '23');
+INSERT INTO `t_machine_record` VALUES ('375', '2017-04-07 15:10:29', '5');
+INSERT INTO `t_machine_record` VALUES ('376', '2017-04-07 15:11:29', '17');
+INSERT INTO `t_machine_record` VALUES ('377', '2017-04-07 15:12:29', '23');
+INSERT INTO `t_machine_record` VALUES ('378', '2017-04-07 15:13:29', '10');
+INSERT INTO `t_machine_record` VALUES ('379', '2017-04-07 15:14:29', '6');
+INSERT INTO `t_machine_record` VALUES ('380', '2017-04-07 15:15:29', '12');
+INSERT INTO `t_machine_record` VALUES ('381', '2017-04-07 15:16:29', '8');
+INSERT INTO `t_machine_record` VALUES ('382', '2017-04-07 15:17:29', '11');
+INSERT INTO `t_machine_record` VALUES ('383', '2017-04-07 15:18:29', '21');
+INSERT INTO `t_machine_record` VALUES ('384', '2017-04-07 15:19:29', '15');
+INSERT INTO `t_machine_record` VALUES ('385', '2017-04-07 15:20:29', '18');
+INSERT INTO `t_machine_record` VALUES ('386', '2017-04-07 15:21:29', '17');
+INSERT INTO `t_machine_record` VALUES ('387', '2017-04-07 15:22:29', '3');
+INSERT INTO `t_machine_record` VALUES ('388', '2017-04-07 15:23:29', '9');
+INSERT INTO `t_machine_record` VALUES ('389', '2017-04-07 15:24:29', '18');
+INSERT INTO `t_machine_record` VALUES ('390', '2017-04-07 15:25:29', '15');
+INSERT INTO `t_machine_record` VALUES ('391', '2017-04-07 15:26:29', '10');
+INSERT INTO `t_machine_record` VALUES ('392', '2017-04-07 15:27:29', '20');
+INSERT INTO `t_machine_record` VALUES ('393', '2017-04-07 15:28:29', '22');
+INSERT INTO `t_machine_record` VALUES ('394', '2017-04-07 15:29:29', '1');
+INSERT INTO `t_machine_record` VALUES ('395', '2017-04-07 15:30:29', '21');
+INSERT INTO `t_machine_record` VALUES ('396', '2017-04-07 15:31:29', '14');
+INSERT INTO `t_machine_record` VALUES ('397', '2017-04-07 15:32:29', '0');
+INSERT INTO `t_machine_record` VALUES ('398', '2017-04-07 15:33:29', '3');
+INSERT INTO `t_machine_record` VALUES ('399', '2017-04-07 15:34:29', '21');
+INSERT INTO `t_machine_record` VALUES ('400', '2017-04-07 15:35:29', '9');
+INSERT INTO `t_machine_record` VALUES ('401', '2017-04-07 15:36:29', '11');
+INSERT INTO `t_machine_record` VALUES ('402', '2017-04-07 15:37:29', '21');
+INSERT INTO `t_machine_record` VALUES ('403', '2017-04-07 15:38:29', '8');
+INSERT INTO `t_machine_record` VALUES ('404', '2017-04-07 15:39:29', '2');
+INSERT INTO `t_machine_record` VALUES ('405', '2017-04-07 15:40:29', '3');
+INSERT INTO `t_machine_record` VALUES ('406', '2017-04-07 15:41:29', '20');
+INSERT INTO `t_machine_record` VALUES ('407', '2017-04-07 15:42:29', '5');
+INSERT INTO `t_machine_record` VALUES ('408', '2017-04-07 15:43:29', '7');
+INSERT INTO `t_machine_record` VALUES ('409', '2017-04-07 15:44:29', '13');
+INSERT INTO `t_machine_record` VALUES ('410', '2017-04-07 15:45:29', '21');
+INSERT INTO `t_machine_record` VALUES ('411', '2017-04-07 15:46:29', '20');
+INSERT INTO `t_machine_record` VALUES ('412', '2017-04-07 15:47:29', '16');
+INSERT INTO `t_machine_record` VALUES ('413', '2017-04-07 15:48:29', '12');
+INSERT INTO `t_machine_record` VALUES ('414', '2017-04-07 15:49:29', '17');
+INSERT INTO `t_machine_record` VALUES ('415', '2017-04-07 15:50:29', '0');
+INSERT INTO `t_machine_record` VALUES ('416', '2017-04-07 15:51:29', '6');
+INSERT INTO `t_machine_record` VALUES ('417', '2017-04-07 15:52:29', '16');
+INSERT INTO `t_machine_record` VALUES ('418', '2017-04-07 15:53:29', '19');
+INSERT INTO `t_machine_record` VALUES ('419', '2017-04-07 15:54:29', '12');
+INSERT INTO `t_machine_record` VALUES ('420', '2017-04-07 15:55:29', '13');
+INSERT INTO `t_machine_record` VALUES ('421', '2017-04-07 15:56:29', '16');
+INSERT INTO `t_machine_record` VALUES ('422', '2017-04-07 15:58:34', '6');
+INSERT INTO `t_machine_record` VALUES ('423', '2017-04-07 15:59:34', '23');
+INSERT INTO `t_machine_record` VALUES ('424', '2017-04-07 16:00:34', '4');
+INSERT INTO `t_machine_record` VALUES ('425', '2017-04-07 16:01:34', '20');
+INSERT INTO `t_machine_record` VALUES ('426', '2017-04-07 16:02:34', '2');
+INSERT INTO `t_machine_record` VALUES ('427', '2017-04-07 16:03:34', '14');
+INSERT INTO `t_machine_record` VALUES ('428', '2017-04-07 16:04:34', '7');
+INSERT INTO `t_machine_record` VALUES ('429', '2017-04-07 16:05:34', '13');
+INSERT INTO `t_machine_record` VALUES ('430', '2017-04-07 16:06:34', '10');
+INSERT INTO `t_machine_record` VALUES ('431', '2017-04-07 16:07:34', '13');
+INSERT INTO `t_machine_record` VALUES ('432', '2017-04-07 16:08:34', '4');
+INSERT INTO `t_machine_record` VALUES ('433', '2017-04-07 16:09:34', '14');
+INSERT INTO `t_machine_record` VALUES ('434', '2017-04-07 16:10:34', '21');
+INSERT INTO `t_machine_record` VALUES ('435', '2017-04-07 16:11:34', '6');
+INSERT INTO `t_machine_record` VALUES ('436', '2017-04-07 16:12:34', '1');
+INSERT INTO `t_machine_record` VALUES ('437', '2017-04-07 16:13:34', '8');
+INSERT INTO `t_machine_record` VALUES ('438', '2017-04-07 16:14:34', '12');
+INSERT INTO `t_machine_record` VALUES ('439', '2017-04-07 16:15:34', '0');
+INSERT INTO `t_machine_record` VALUES ('440', '2017-04-07 16:16:34', '16');
+INSERT INTO `t_machine_record` VALUES ('441', '2017-04-07 16:18:23', '3');
+INSERT INTO `t_machine_record` VALUES ('442', '2017-04-07 16:19:23', '22');
+INSERT INTO `t_machine_record` VALUES ('443', '2017-04-07 16:20:23', '11');
+INSERT INTO `t_machine_record` VALUES ('444', '2017-04-07 16:21:23', '3');
+INSERT INTO `t_machine_record` VALUES ('445', '2017-04-07 16:22:23', '22');
+INSERT INTO `t_machine_record` VALUES ('446', '2017-04-07 16:23:23', '8');
+INSERT INTO `t_machine_record` VALUES ('447', '2017-04-07 16:24:23', '22');
+INSERT INTO `t_machine_record` VALUES ('448', '2017-04-07 16:25:23', '19');
 
 -- ----------------------------
 -- Table structure for `t_machine_timer`
@@ -424,7 +617,7 @@ CREATE TABLE `t_machine_user` (
 -- ----------------------------
 -- Records of t_machine_user
 -- ----------------------------
-INSERT INTO `t_machine_user` VALUES ('4', null, null, null, 'oCmBsvwBS37C3MjyvwTyvepQL2EA', null, '2017-04-05 16:38:24', '0000000028', null);
+INSERT INTO `t_machine_user` VALUES ('4', null, null, null, 'oCmBsvwBS37C3MjyvwTyvepQL2EA', null, '2017-04-05 16:38:24', '0000009996', null);
 
 -- ----------------------------
 -- Table structure for `t_weixin_user`
@@ -446,4 +639,16 @@ CREATE TABLE `t_weixin_user` (
 -- ----------------------------
 -- Records of t_weixin_user
 -- ----------------------------
-INSERT INTO `t_weixin_user` VALUES ('oCmBsvwBS37C3MjyvwTyvepQL2EA', 'ahem!', '2017-04-06 17:27:49', '1', '', '', '中国', 'http://wx.qlogo.cn/mmopen/ajNVdqHZLLAP7oXpIAt7WnaV1AjeCUbC6bHuoNAEXLap8iaaxBWTPqFaP0pL8RAFCG5zGPEVSdMx5qaR6HiamHAg/0', null);
+INSERT INTO `t_weixin_user` VALUES ('oCmBsvwBS37C3MjyvwTyvepQL2EA', 'ahem!', '2017-04-07 16:24:41', '1', '', '', '中国', 'http://wx.qlogo.cn/mmopen/ajNVdqHZLLAP7oXpIAt7WnaV1AjeCUbC6bHuoNAEXLap8iaaxBWTPqFaP0pL8RAFCG5zGPEVSdMx5qaR6HiamHAg/0', null);
+
+-- ----------------------------
+-- View structure for `v_bet_record`
+-- ----------------------------
+DROP VIEW IF EXISTS `v_bet_record`;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_bet_record` AS select `r`.`record_id` AS `record_id`,`r`.`bet_fruit_id_1` AS `fruit_id`,sum(`r`.`bet_score_1`) AS `sum_score` from `t_machine_bet_record` `r` group by `r`.`record_id`,`fruit_id` union all select `r`.`record_id` AS `record_id`,`r`.`bet_fruit_id_2` AS `fruit_id`,sum(`r`.`bet_score_2`) AS `sum_score` from `t_machine_bet_record` `r` group by `r`.`record_id`,`fruit_id` union all select `r`.`record_id` AS `record_id`,`r`.`bet_fruit_id_3` AS `fruit_id`,sum(`r`.`bet_score_3`) AS `sum_score` from `t_machine_bet_record` `r` group by `r`.`record_id`,`fruit_id` union all select `r`.`record_id` AS `record_id`,`r`.`bet_fruit_id_4` AS `fruit_id`,sum(`r`.`bet_score_4`) AS `sum_score` from `t_machine_bet_record` `r` group by `r`.`record_id`,`fruit_id` union all select `r`.`record_id` AS `record_id`,`r`.`bet_fruit_id_5` AS `fruit_id`,sum(`r`.`bet_score_5`) AS `sum_score` from `t_machine_bet_record` `r` group by `r`.`record_id`,`fruit_id` union all select `r`.`record_id` AS `record_id`,`r`.`bet_fruit_id_6` AS `fruit_id`,sum(`r`.`bet_score_6`) AS `sum_score` from `t_machine_bet_record` `r` group by `r`.`record_id`,`fruit_id` union all select `r`.`record_id` AS `record_id`,`r`.`bet_fruit_id_7` AS `fruit_id`,sum(`r`.`bet_score_7`) AS `sum_score` from `t_machine_bet_record` `r` group by `r`.`record_id`,`fruit_id` ;
+
+-- ----------------------------
+-- View structure for `v_bet_statistic`
+-- ----------------------------
+DROP VIEW IF EXISTS `v_bet_statistic`;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_bet_statistic` AS select `t`.`record_id` AS `record_id`,`t`.`fruit_id` AS `fruit_id`,`f`.`cn_name` AS `fruit_name`,sum(`t`.`sum_score`) AS `sum_score`,ifnull((sum(`t`.`sum_score`) * `f`.`fruit_multiple`),0) AS `all_sum` from (`v_bet_record` `t` left join `t_machine_fruit` `f` on((`f`.`id` = `t`.`fruit_id`))) group by `t`.`record_id`,`t`.`fruit_id` order by `t`.`record_id` desc,`t`.`fruit_id` ;
