@@ -132,10 +132,9 @@ function canBet() {
 	}
 }
 
-/**
- * 开始时间计时器
- */
-function startTimeCounter() {
-	status = 'start';
-	
-}
+///**
+// * 开始时间计时器
+// */
+//function startTimeCounter() {
+//	status = 'start';
+//}
