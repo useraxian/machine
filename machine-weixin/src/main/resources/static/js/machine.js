@@ -349,3 +349,13 @@ function confirmBet() {
 		}
 	});
 }
+
+
+function addMultiple(){
+	var valStr = $('#addMul').html();
+	valStr=valStr.substr(1);
+	var intVal=parseInt(valStr)
+	 if(intVal>=0&&intVal<=100){
+		 $('#addMul').html("X"+(intVal+10));
+	 }
+}

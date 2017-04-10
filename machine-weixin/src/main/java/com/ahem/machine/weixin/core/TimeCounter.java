@@ -1,12 +1,14 @@
 package com.ahem.machine.weixin.core;
 
 import java.io.Serializable;
+import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 import org.springframework.web.socket.TextMessage;
 
+import com.ahem.machine.weixin.entity.TMachineBetRecord;
 import com.ahem.machine.weixin.entity.TMachineRecord;
 import com.ahem.machine.weixin.service.RecordService;
 import com.ahem.machine.weixin.service.UserScoreService;
@@ -95,13 +97,21 @@ public class TimeCounter implements Serializable {
 			// 计算用户得分
 			userScoreService.countUsersScore(openRecord.getId());
 
-			// websocket 向前台推送开奖记录
+			// 群发开奖记录
 			WebMessage message = new WebMessage(MessageType.openRecord, openRecord);
 			TextMessage textMessage = new TextMessage(message.toJsonString());
-			SysWebSocketHandler.sendMessageToUsers(textMessage);
-			logger.debug("结束群发记录：" + openRecord);
+			SysWebSocketHandler.broadcast(textMessage);
+			logger.debug("结束群发开奖记录：" + openRecord);
 
+			// 发送用户各自得分情况
+			List<TMachineBetRecord> records = userScoreService.findGotScore(recordId);
+			
+			for (TMachineBetRecord record : records) {
+				record.getBetResult();
+//				record
+			}
 		} catch (Exception e) {
+			
 			logger.error("开奖异常！", e);
 			// TODO 发生异常，进行手动开奖
 		}

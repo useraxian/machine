@@ -57,7 +57,7 @@
 					style="background: url(images/center.jpg); background-size: cover; position: relative; border-width: 2px; border-style: solid; border-color: white">
 					<div class="weui-flex"
 						style="position: relative; top: 5px; height: 30px;">
-						<div class="weui-flex__item number"
+						<div id="gotscore" class="weui-flex__item number"
 							style="box-shadow: 2px 2px 2px #888888 inset, -2px -2px 2px #888888 inset; border-radius: 5px; text-align: center; color: red; display: inline;"
 							align="left">000000</div>
 						<div class="weui-flex__item number"></div>
@@ -97,13 +97,13 @@
 				<td id="12"></td>
 			</tr>
 		</table>
-		<br>
+		<br/>
 	</div>
 	<div class="operate-contain">
 		<div class="operate">
 			<table height="100%">
 				<tr>
-					<td><a class="yx-btn">X10</a></td>
+					<td><a id="addMul" class="yx-btn" onclick="addMultiple()">X10</a></td>
 					<td><a class="zfx-btn">+</a></td>
 					<td><a class="zfx-btn">-</a></td>
 					<td><a class="yx-btn">1-6</a></td>
@@ -132,14 +132,14 @@
 	<div style="margin-top: 3px;height: 45px;background-color: #e1870a;" align="center">
 		<table width="100%" cellspacing="0">
 			<tr class="bet-btn-tr">
-				<td><a id="bet1" class="zfx-btn" onclick="bet(1)">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a></td>
-				<td><a id="bet2" class="zfx-btn" onclick="bet(1)">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a></td>
-				<td><a id="bet3" class="zfx-btn" onclick="bet(1)">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a></td>
-				<td><a id="bet4" class="zfx-btn" onclick="bet(1)">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a></td>
-				<td><a id="bet5" class="zfx-btn" onclick="bet(1)">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a></td>
-				<td><a id="bet6" class="zfx-btn" onclick="bet(1)">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a></td>
-				<td><a id="bet7" class="zfx-btn" onclick="bet(1)">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a></td>
-				<td><a id="bet8" class="zfx-btn" onclick="bet(1)">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a></td>
+				<td><a id="bet1" class="yx-bet-btn" onclick="bet(1)">&nbsp;&nbsp;</a></td>
+				<td><a id="bet2" class="yx-bet-btn" onclick="bet(1)">&nbsp;&nbsp;</a></td>
+				<td><a id="bet3" class="yx-bet-btn" onclick="bet(1)">&nbsp;&nbsp;</a></td>
+				<td><a id="bet4" class="yx-bet-btn" onclick="bet(1)">&nbsp;&nbsp;</a></td>
+				<td><a id="bet5" class="yx-bet-btn" onclick="bet(1)">&nbsp;&nbsp;</a></td>
+				<td><a id="bet6" class="yx-bet-btn" onclick="bet(1)">&nbsp;&nbsp;</a></td>
+				<td><a id="bet7" class="yx-bet-btn" onclick="bet(1)">&nbsp;&nbsp;</a></td>
+				<td><a id="bet8" class="yx-bet-btn" onclick="bet(1)">&nbsp;&nbsp;</a></td>
 <!-- 				<td><button id="bet2" type="button" onclick="bet(2)"></button></td> -->
 <!-- 				<td><button id="bet3" type="button" onclick="bet(3)"></button></td> -->
 <!-- 				<td><button id="bet4" type="button" onclick="bet(4)"></button></td> -->

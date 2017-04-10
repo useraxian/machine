@@ -51,11 +51,25 @@ public class MachineController {
 			score = userScoreService.findScoreByUserId(userId);
 			resp.success(score);
 		} catch (Exception e) {
-			logger.error("用户获取分数异常！userid=" + userId, e);
+			logger.error("获取用户分数异常！userid=" + userId, e);
 			resp.failure("获取失败！");
 		}
 		return resp;
-
+	}
+	
+	@ResponseBody
+	@RequestMapping("/gotscore/{recordId}")
+	public RestResponse gotScore(@PathVariable Integer recordId) {
+		RestResponse resp = new RestResponse();
+		Integer score = 0;
+		try {
+//			score = userScoreService.findGotScore(recordId);
+			resp.success(score);
+		} catch (Exception e) {
+			logger.error("获取用户得分分数异常！recordId=" + recordId, e);
+			resp.failure("获取失败！");
+		}
+		return resp;
 	}
 
 	/**

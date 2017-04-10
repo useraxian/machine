@@ -15,14 +15,21 @@ public class WebSocketConfiguration implements WebSocketConfigurer {
 	public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
 
 		// 注册websocket实现类，指定参数访问地址;allowed-origins="*" 允许跨域
-		registry.addHandler(syshandler(), "/websocket").setAllowedOrigins("*");
+		registry.addHandler(syshandler(), "/websocket").setAllowedOrigins("*").addInterceptors(handshakeInterceptor());
 		// 允许客户端使用SockJS
-		registry.addHandler(syshandler(), "/sockjs/websocket").setAllowedOrigins("*").withSockJS();
+		registry.addHandler(syshandler(), "/sockjs/websocket")
+				.addInterceptors(handshakeInterceptor())
+				.setAllowedOrigins("*")
+				.withSockJS();
 	}
 
+	@Bean
+	public SysWebSocketHandler syshandler() {
+		return new SysWebSocketHandler();
+	}
 
 	@Bean
-	public SysWebSocketHandler syshandler(){
-		return new SysWebSocketHandler();
+	public HandshakeInterceptor handshakeInterceptor() {
+		return new HandshakeInterceptor();
 	}
 }

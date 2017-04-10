@@ -117,7 +117,7 @@ public class UserScoreService {
 
 			// 更新用户分数
 			TMachineUser user = userMapper.selectByPrimaryKey(betRecord.getUserId());
-			user.setScore(user.getScore()+gotScore);
+			user.setScore(user.getScore() + gotScore);
 			userMapper.updateByPrimaryKey(user);
 		}
 	}
@@ -131,6 +131,13 @@ public class UserScoreService {
 	public Integer findScoreByUserId(Integer userId) {
 		TMachineUser user = userMapper.selectByPrimaryKey(userId);
 		return user.getScore();
+	}
+
+	public List<TMachineBetRecord> findGotScore(Integer recordId) {
+		TMachineBetRecordExample example = new TMachineBetRecordExample();
+		example.createCriteria().andRecordIdEqualTo(recordId);
+		List<TMachineBetRecord> betRecords = betRecordMapper.selectByExample(example);
+		return betRecords;
 	}
 
 }

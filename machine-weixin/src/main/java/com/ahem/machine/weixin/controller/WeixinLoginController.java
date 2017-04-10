@@ -4,12 +4,14 @@ import java.io.IOException;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.ahem.machine.weixin.core.Global;
 import com.ahem.machine.weixin.entity.TMachineUser;
 import com.ahem.machine.weixin.service.WeixinUserService;
 import com.github.sd4324530.fastweixin.api.OauthAPI;
@@ -48,16 +50,20 @@ public class WeixinLoginController {
 
 		// 获取userId
 		TMachineUser machineUser = weixinUserService.findMachineUserByOpenId(userInfo.getOpenid());
-		System.out.println("userid="+ machineUser.getId());
+		System.out.println("userid=" + machineUser.getId());
 		if (machineUser != null) {
+			HttpSession session = req.getSession();
+			session.setAttribute(Global.SEESION_USER_KEY, machineUser);
 			model.addAttribute("userid", machineUser.getId());
+			model.addAttribute("openid", userInfo.getOpenid());
+			model.addAttribute("nickname", userInfo.getNickname());
+			model.addAttribute("city", userInfo.getCity());
+			model.addAttribute("headimgurl", userInfo.getHeadimgurl());
+			model.addAttribute("province", userInfo.getProvince());
+			model.addAttribute("country", userInfo.getCountry());
+		} else {
+
 		}
-		model.addAttribute("openid", userInfo.getOpenid());
-		model.addAttribute("nickname", userInfo.getNickname());
-		model.addAttribute("city", userInfo.getCity());
-		model.addAttribute("headimgurl", userInfo.getHeadimgurl());
-		model.addAttribute("province", userInfo.getProvince());
-		model.addAttribute("country", userInfo.getCountry());
 
 		return "myindex";
 
