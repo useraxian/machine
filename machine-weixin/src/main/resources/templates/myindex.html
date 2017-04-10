@@ -41,7 +41,7 @@
 
 	<!--游戏区域开始-->
 	<div class="screen">
-		<table cellpadding="0" cellspacing="1">
+		<table class="screen-table" cellpadding="0" cellspacing="1">
 			<tr>
 				<td id="0"></td>
 				<td id="1"></td>
@@ -66,8 +66,8 @@
 							align="right">000010</div>
 					</div>
 					<div style="color: red">
-							开奖时间： <span id="timeSpan" class="number">00:00</span>
-						</div>
+						开奖时间： <span id="timeSpan" class="number">00:00</span>
+					</div>
 				</td>
 				<td id="7"></td>
 			</tr>
@@ -97,11 +97,25 @@
 				<td id="12"></td>
 			</tr>
 		</table>
+		<br>
+	</div>
+	<div class="operate-contain">
+		<div class="operate">
+			<table height="100%">
+				<tr>
+					<td><a class="yx-btn">X10</a></td>
+					<td><a class="zfx-btn">+</a></td>
+					<td><a class="zfx-btn">-</a></td>
+					<td><a class="yx-btn">1-6</a></td>
+					<td><a class="yx-btn">8-13</a></td>
+					<td style="width:50px"><a class="yx-btn" >GO</a></td>
+				</tr>
+			</table>
+		</div>
 	</div>
 
-
-	<div class="control">
-		<table>
+	<div>
+		<table width="100%" cellspacing="0">
 			<tr class="bet-num-tr">
 				<td><div class="number" id="score1" style="color: red;">00</div></td>
 				<td><div class="number" id="score2" style="color: red;">00</div></td>
@@ -110,6 +124,45 @@
 				<td><div class="number" id="score5" style="color: red;">00</div></td>
 				<td><div class="number" id="score6" style="color: red;">00</div></td>
 				<td><div class="number" id="score7" style="color: red;">00</div></td>
+				<td><div class="number" id="score8" style="color: red;">00</div></td>
+			</tr>
+		</table>
+	</div>
+	
+	<div style="margin-top: 3px;height: 45px;background-color: #e1870a;" align="center">
+		<table width="100%" cellspacing="0">
+			<tr class="bet-btn-tr">
+				<td><a id="bet1" class="zfx-btn" onclick="bet(1)">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a></td>
+				<td><a id="bet2" class="zfx-btn" onclick="bet(1)">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a></td>
+				<td><a id="bet3" class="zfx-btn" onclick="bet(1)">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a></td>
+				<td><a id="bet4" class="zfx-btn" onclick="bet(1)">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a></td>
+				<td><a id="bet5" class="zfx-btn" onclick="bet(1)">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a></td>
+				<td><a id="bet6" class="zfx-btn" onclick="bet(1)">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a></td>
+				<td><a id="bet7" class="zfx-btn" onclick="bet(1)">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a></td>
+				<td><a id="bet8" class="zfx-btn" onclick="bet(1)">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a></td>
+<!-- 				<td><button id="bet2" type="button" onclick="bet(2)"></button></td> -->
+<!-- 				<td><button id="bet3" type="button" onclick="bet(3)"></button></td> -->
+<!-- 				<td><button id="bet4" type="button" onclick="bet(4)"></button></td> -->
+<!-- 				<td><button id="bet5" type="button" onclick="bet(5)"></button></td> -->
+<!-- 				<td><button id="bet6" type="button" onclick="bet(6)"></button></td> -->
+<!-- 				<td><button id="bet7" type="button" onclick="bet(7)"></button></td> -->
+<!-- 				<td><button id="bet8" type="button" onclick="bet87)"></button></td> -->
+
+			</tr>
+		</table>
+	</div>
+
+	<!-- <div class="control">
+		<table cellspacing="5">
+			<tr class="bet-num-tr">
+				<td><div class="number" id="score1" style="color: red;">00</div></td>
+				<td><div class="number" id="score2" style="color: red;">00</div></td>
+				<td><div class="number" id="score3" style="color: red;">00</div></td>
+				<td><div class="number" id="score4" style="color: red;">00</div></td>
+				<td><div class="number" id="score5" style="color: red;">00</div></td>
+				<td><div class="number" id="score6" style="color: red;">00</div></td>
+				<td><div class="number" id="score7" style="color: red;">00</div></td>
+				<td><div class="number" id="score8" style="color: red;">00</div></td>
 			</tr>
 			<tr class="bet-btn-tr">
 				<td><button id="bet1" type="button" onclick="bet(1)"></button></td>
@@ -119,6 +172,7 @@
 				<td><button id="bet5" type="button" onclick="bet(5)"></button></td>
 				<td><button id="bet6" type="button" onclick="bet(6)"></button></td>
 				<td><button id="bet7" type="button" onclick="bet(7)"></button></td>
+				<td><button id="bet8" type="button" onclick="bet87)"></button></td>
 
 			</tr>
 			<tr style="color: white" align="center">
@@ -133,6 +187,8 @@
 			</tr>
 		</table>
 	</div>
+ -->
+
 	<div id="confirmBetBtn" class="button" onclick="confirmBet()">确认下注</div>
 	<div class="button czBtn" onclick="reset()">重置</div>
 

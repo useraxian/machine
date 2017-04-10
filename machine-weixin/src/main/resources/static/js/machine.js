@@ -78,12 +78,21 @@ function ui() {
 		var fruitName = bets[key];
 		var img = 'url(images/' + fruits[fruitName] + ')';
 		$('#bet' + key).css('background', img);
-		$('#bet' + key).css('background-size', 'cover');
+		$('#bet' + key).css('background-size', '35px 25px');
 	}
 
 	// 响应窗体大小
-	var imgWidth = ($(document.body).width() - $(document.body).width() * 0.2) / 7;
+	var imgWidth = ($(document.body).width() - $(document.body).width() * 0.25) / 7;
 	console.log('imgWidth=' + imgWidth);
+	$('.screen').width($(document.body).width()-$(document.body).width() * 0.25);
+	$('.screen').css('margin-left', $(document.body).width() * 0.2*0.5);
+	$('.operate-contain').width($(document.body).width()-$(document.body).width() * 0.09);
+	$('.operate-contain').css('margin-left',$(document.body).width() * 0.09*0.5);
+//	
+	$('.control').width($(document.body).width()-$(document.body).width() * 0.2);
+	$('.control').css('left', "35px");
+//	$('.control').css('bottom', '100px');
+	
 	$('.screen table tr td').width(imgWidth);
 	$('.screen table tr td').height(imgWidth);
 	$('.control table tr td').width(imgWidth - 5);
