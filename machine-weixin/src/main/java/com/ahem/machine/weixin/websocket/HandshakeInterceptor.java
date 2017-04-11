@@ -22,15 +22,12 @@ public class HandshakeInterceptor extends HttpSessionHandshakeInterceptor {
 	public boolean beforeHandshake(ServerHttpRequest request, ServerHttpResponse response, WebSocketHandler wsHandler,
 			Map<String, Object> attributes) throws Exception {
 		logger.debug("beforeHandshake start.....");
-		logger.debug(request.getClass().getName());
 		if (request instanceof ServletServerHttpRequest) {
 			ServletServerHttpRequest servletRequest = (ServletServerHttpRequest) request;
-			HttpSession session = servletRequest.getServletRequest().getSession(false);
-			if (session != null) {
+			String userId = servletRequest.getServletRequest().getParameter("user");
+			if (userId != null) {
 				// 使用userName区分WebSocketHandler，以便定向发送消息
-				TMachineUser user = (TMachineUser) session.getAttribute(Global.SEESION_USER_KEY);
-				System.out.println("user="+user);
-//				attributes.put(Global.SEESION_USER_KEY, user);
+				attributes.put(Global.SEESION_USER_ID_KEY, userId);
 			} else {
 				return false;
 			}

@@ -8,7 +8,7 @@ var url = "ittun.com:52317";
 // 判断当前浏览器是否支持WebSocket
 if ('WebSocket' in window) {
 //	alert(document.location.host);
-	websocket = new WebSocket( "ws://"+url + "/websocket;user=4");
+	websocket = new WebSocket( "ws://"+url + "/websocket?user="+$('#userid').val());
 } else {
 	websocket = new SockJS("http://" + url + "/sockjs/websocket");
 }

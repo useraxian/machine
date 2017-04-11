@@ -1,6 +1,7 @@
 package com.ahem.machine.weixin.core;
 
 import java.io.Serializable;
+import java.util.HashMap;
 import java.util.List;
 
 import org.json.JSONObject;
@@ -108,16 +109,16 @@ public class TimeCounter implements Serializable {
 			List<TMachineBetRecord> records = userScoreService.findGotScore(recordId);
 
 			for (TMachineBetRecord record : records) {
-				JSONObject object = new JSONObject();
+				HashMap<String, Integer> hashMap = new HashMap<>();
 				Integer result = record.getBetResult();
-				object.put("betResult", result);
+				hashMap.put("betResult", result);
 				if (result == 1) {
 					Integer gotScore = record.getGotScore();
-					object.put("gotScore", gotScore);
+					hashMap.put("gotScore", gotScore);
 				}
-				WebMessage msg = new WebMessage(MessageType.betResult, object);
+				WebMessage msg = new WebMessage(MessageType.betResult, hashMap);
 				TextMessage txtMsg = new TextMessage(msg.toJsonString());
-				SysWebSocketHandler.sendMsgToUser(record.getUserId(), txtMsg);
+				SysWebSocketHandler.sendMsgToUser(record.getUserId()+"", txtMsg);
 			}
 		} catch (Exception e) {
 

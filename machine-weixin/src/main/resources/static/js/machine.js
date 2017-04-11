@@ -40,7 +40,7 @@ var indexs = {
 	'cherry' : [ 1, 10, 19 ],
 	'prune' : [ 2, 11, 20 ],
 	'banana' : [ 3, 12, 21 ],
-	'lemo' : [ 4, 13, 22],
+	'lemo' : [ 4, 13, 22 ],
 	'orange' : [ 5, 14, 23 ],
 	'watermelon' : [ 6, 15 ],
 	'bigwin' : [ 7, 16 ],
@@ -49,9 +49,11 @@ var indexs = {
 
 var last = 23;// 上次开奖位置
 var nextOpenNum = null;
-var nextGotScore=0;
+var nextGotScore = 0;
 var moveNum = null;
 var finalNum = null;
+
+var mul=true;//倍数按钮状态
 
 var myScoreUrl = '/machine/myscore';
 /**
@@ -85,15 +87,19 @@ function ui() {
 	// 响应窗体大小
 	var imgWidth = ($(document.body).width() - $(document.body).width() * 0.25) / 7;
 	console.log('imgWidth=' + imgWidth);
-	$('.screen').width($(document.body).width()-$(document.body).width() * 0.25);
-	$('.screen').css('margin-left', $(document.body).width() * 0.2*0.5);
-	$('.operate-contain').width($(document.body).width()-$(document.body).width() * 0.09);
-	$('.operate-contain').css('margin-left',$(document.body).width() * 0.09*0.5);
-//	
-	$('.control').width($(document.body).width()-$(document.body).width() * 0.2);
+	$('.screen').width(
+			$(document.body).width() - $(document.body).width() * 0.25);
+	$('.screen').css('margin-left', $(document.body).width() * 0.2 * 0.5);
+	$('.operate-contain').width(
+			$(document.body).width() - $(document.body).width() * 0.09);
+	$('.operate-contain').css('margin-left',
+			$(document.body).width() * 0.09 * 0.5);
+	//	
+	$('.control').width(
+			$(document.body).width() - $(document.body).width() * 0.2);
 	$('.control').css('left', "35px");
-//	$('.control').css('bottom', '100px');
-	
+	// $('.control').css('bottom', '100px');
+
 	$('.screen table tr td').width(imgWidth);
 	$('.screen table tr td').height(imgWidth);
 	$('.control table tr td').width(imgWidth - 5);
@@ -165,8 +171,17 @@ function startRun() {
 		// 判断动画是否结束
 		if (finalNum != null && moveNum != null && finalNum == moveNum) {
 			// TODO 判断输赢，结合动画效果
+			setGotScore(nextGotScore);
+			$.confirm("自定义的消息内容", function() {
+				// 点击确认后的回调函数
+			}, function() {
+				nextGotScore = 0;
+				setGotScore(nextGotScore);
+				getUserScore();
+			});
+
 			// 获取分数
-			getUserScore();
+			// getUserScore();
 
 			// 重置下注分数
 			reset();
@@ -177,14 +192,16 @@ function startRun() {
 }
 
 /**
- * 重置下注分数
+ * 重置分数
  */
 function reset() {
+	mul=true;//重置加倍按钮状态
 	var $scoreDivs = $('.bet-num-tr td div');
 	for (var i = 0; i < $scoreDivs.length; i++) {
 		var div = $scoreDivs[i];
 		$(div).html("00");
 	}
+
 }
 
 /**
@@ -201,23 +218,14 @@ function bet(idx) {
 		return false;
 	}
 
+	mul=false;
 	// 判断是否在开奖动画
 	var $score = $('#score' + idx);
 	var $myscore = $('#myscore');
 	var scoreVal = parseInt($score.html());// 下注分数
 	var myscoreVal = parseInt($myscore.html());// 我的分数
-	console.log("scoreVal=" + scoreVal);
-	console.log("myscoreVal=" + myscoreVal);
-	if (myscoreVal <= 0) {
-		$.confirm({
-			title : '提醒',
-			text : '对不起，您的分数不足！',
-			onOK : function() {
-				// 点击确认
-			},
-			onCancel : function() {
-			}
-		});
+	var mul = getMultiple();
+	if (myscoreVal-1*mul < 0) {
 
 		$.modal({
 			title : "提醒",
@@ -238,13 +246,14 @@ function bet(idx) {
 	} else {
 		if (scoreVal < 99) {
 			scoreVal++;
-			myscoreVal--;
+			myscoreVal=myscoreVal-mul*1;
 			if (scoreVal < 10) {
 				$score.html("0" + scoreVal);
 			} else {
 				$score.html(scoreVal);
 			}
 
+			
 			var myscoreLength = String(myscoreVal).length;
 			if (myscoreLength < 6) {
 				for (var i = 0; i < 6 - myscoreLength; i++) {
@@ -259,7 +268,7 @@ function bet(idx) {
 
 /**
  * 根据位置，获取水果时间
- * */
+ */
 function getFruitNameFromIndexs(num) {
 	for ( var key in indexs) {
 		if ($.inArray(num, indexs[key]) == 0) {
@@ -289,9 +298,11 @@ function getUserScore() {
 	});
 }
 
-function setGotScore(fruitName) {
-	
-	$('#gotscore').html(numberCover(nextGotScore, 6));
+function setGotScore(scoreVal) {
+	$('#gotscore').html(numberCover(scoreVal, 6));
+}
+function getGotScore() {
+	return nextGotScore;
 }
 
 function confirmBet() {
@@ -300,9 +311,9 @@ function confirmBet() {
 		$.toptip('已封盘，无法下注！', 1000, 'warning');
 		return false;
 	}
-	
+
 	var userId = $('#userid').val();
-	var multiple = 1;
+	var multiple = getMultiple();
 
 	$.confirm({
 		title : '确认下注？',
@@ -336,13 +347,47 @@ function confirmBet() {
 		}
 	});
 }
+//获取我的分数
+function getMyScore(){
+	var $myscore = $('#myscore');
+	return parseInt($myscore.html());// 我的分数
+}
+//设置我的分数
+function setMyScore(val){
+	var $myscore = $('#myscore');
+	$myscore.html(numberCover(val,6))
+}
 
 
-function addMultiple(){
+//加倍
+function addMultiple() {
 	var valStr = $('#addMul').html();
-	valStr=valStr.substr(1);
-	var intVal=parseInt(valStr)
-	 if(intVal>=0&&intVal<=100){
-		 $('#addMul').html("X"+(intVal+10));
-	 }
+	valStr = valStr.substr(1);
+	var intVal = parseInt(valStr)
+	if (intVal >= 0 && intVal <= 100) {
+		$('#addMul').html("X" + (intVal + 10));
+	}
+}
+
+//获取当前倍数
+function getMultiple() {
+	var valStr = $('#addMul').html();
+	valStr = valStr.substr(1);
+	return parseInt(valStr);
+}
+
+//赢得的分数-减
+function reduceScore() {
+	//TODO  控制压大小的起始分数
+	var scVal=getGotScore()/2;
+	nextGotScore=nextGotScore-scVal;
+	setGotScore(nextGotScore);
+	setMyScore(getMyScore()+scVal);
+}
+//赢得的分数-减
+function addScore() {
+	var scVal=getGotScore()/2;
+	nextGotScore=nextGotScore-scVal;
+	setGotScore(nextGotScore);
+	setMyScore(getMyScore()+scVal);
 }

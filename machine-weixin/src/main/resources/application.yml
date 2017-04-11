@@ -7,7 +7,7 @@ server:
 #设置日志级别
 logging:
   level:
-    root: INFO
+    root: DEBUG
     org:
       springframework:
         security: INFO

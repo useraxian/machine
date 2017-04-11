@@ -22,7 +22,7 @@ import com.ahem.machine.weixin.entity.TMachineUser;
 
 public class SysWebSocketHandler implements WebSocketHandler {
 	private final static Logger logger = LoggerFactory.getLogger(SysWebSocketHandler.class);
-	private static ConcurrentMap<Integer, WebSocketSession> userMap = new ConcurrentHashMap<>();
+	private static ConcurrentMap<String, WebSocketSession> userMap = new ConcurrentHashMap<>();
 	@Autowired
 	TimeCounter timeCounter;
 
@@ -35,18 +35,14 @@ public class SysWebSocketHandler implements WebSocketHandler {
 		logger.debug("连接已经关闭，用户：" + session.getRemoteAddress().toString());
 
 		Map<String, Object> attributes = session.getAttributes();
-		TMachineUser user = (TMachineUser) attributes.get(Global.SEESION_USER_KEY);
-		Integer userId = user.getId();
+		String userId = (String) attributes.get(Global.SEESION_USER_ID_KEY);
 		userMap.remove(userId, session);// 移除用户
 	}
 
 	@Override
 	public void afterConnectionEstablished(WebSocketSession session) throws Exception {
-		HttpHeaders httpHeaders= session.getHandshakeHeaders();
-		System.out.println("Cookie="+httpHeaders.get("Cookie")); //这里面就有 sessionid
 		Map<String, Object> attributes = session.getAttributes();
-		TMachineUser user = (TMachineUser) attributes.get(Global.SEESION_USER_KEY);
-		Integer userId = user.getId();
+		String userId = (String) attributes.get(Global.SEESION_USER_ID_KEY);
 		WebSocketSession wsSession = userMap.get(userId);
 		if(wsSession==null){
 			userMap.put(userId, session); // 加入set中
@@ -105,7 +101,7 @@ public class SysWebSocketHandler implements WebSocketHandler {
 	 *
 	 * @param message
 	 */
-	public static void sendMsgToUser(Integer userId, TextMessage message) {
+	public static void sendMsgToUser(String userId, TextMessage message) {
 		logger.error("发送消息给用户：" + userId + ",消息：" + message);
 		try {
 			WebSocketSession session = userMap.get(userId);

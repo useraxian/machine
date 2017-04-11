@@ -1,22 +1,24 @@
 /*
-Navicat MySQL Data Transfer
+ Navicat Premium Data Transfer
 
-Source Server         : mysql
-Source Server Version : 50625
-Source Host           : localhost:3306
-Source Database       : machine
+ Source Server         : MySQL_DB
+ Source Server Type    : MySQL
+ Source Server Version : 50635
+ Source Host           : localhost
+ Source Database       : machine
 
-Target Server Type    : MYSQL
-Target Server Version : 50625
-File Encoding         : 65001
+ Target Server Type    : MySQL
+ Target Server Version : 50635
+ File Encoding         : utf-8
 
-Date: 2017-04-07 16:26:37
+ Date: 04/11/2017 23:18:08 PM
 */
 
-SET FOREIGN_KEY_CHECKS=0;
+SET NAMES utf8;
+SET FOREIGN_KEY_CHECKS = 0;
 
 -- ----------------------------
--- Table structure for `t_machine_bet_record`
+--  Table structure for `t_machine_bet_record`
 -- ----------------------------
 DROP TABLE IF EXISTS `t_machine_bet_record`;
 CREATE TABLE `t_machine_bet_record` (
@@ -42,32 +44,33 @@ CREATE TABLE `t_machine_bet_record` (
   `bet_result` int(1) DEFAULT NULL COMMENT '0输1赢2平',
   `got_score` int(11) DEFAULT NULL COMMENT '获得的分数',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8 COMMENT='用户下注表';
+) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf8 COMMENT='用户下注表';
 
 -- ----------------------------
--- Records of t_machine_bet_record
+--  Records of `t_machine_bet_record`
 -- ----------------------------
-INSERT INTO `t_machine_bet_record` VALUES ('7', '3', '1', '1', '2017-03-28 17:35:25', '1', '00000000001', '00000000000', '00000000000', '00000000000', '00000000000', '00000000000', '00000000000', '00000000000', '00000000000', '00000000000', '00000000000', '00000000000', '00000000000', null, null);
-INSERT INTO `t_machine_bet_record` VALUES ('8', '3', '1', '1', '2017-03-30 17:17:24', '1', '00000000001', '00000000000', '00000000000', '00000000000', '00000000000', '00000000000', '00000000000', '00000000000', '00000000000', '00000000000', '00000000000', '00000000000', '00000000000', null, null);
-INSERT INTO `t_machine_bet_record` VALUES ('9', '4', '1', '1', '2017-04-05 16:47:08', '1', '00000000003', '00000000002', '00000000000', '00000000003', '00000000000', '00000000004', '00000000000', '00000000005', '00000000000', '00000000007', '00000000000', '00000000006', '00000000000', null, null);
-INSERT INTO `t_machine_bet_record` VALUES ('10', '4', '1', '1', '2017-04-05 17:31:22', '1', '00000000001', '00000000002', '00000000001', '00000000003', '00000000001', '00000000004', '00000000002', '00000000005', '00000000001', '00000000007', '00000000000', '00000000006', '00000000000', null, null);
-INSERT INTO `t_machine_bet_record` VALUES ('11', '4', '1', '1', '2017-04-05 17:33:04', '1', '00000000001', '00000000002', '00000000001', '00000000003', '00000000001', '00000000004', '00000000001', '00000000005', '00000000001', '00000000007', '00000000001', '00000000006', '00000000001', null, null);
-INSERT INTO `t_machine_bet_record` VALUES ('12', '4', '1', '1', '2017-04-05 17:36:30', '1', '00000000001', '00000000002', '00000000002', '00000000003', '00000000002', '00000000004', '00000000001', '00000000005', '00000000001', '00000000007', '00000000001', '00000000006', '00000000001', null, null);
-INSERT INTO `t_machine_bet_record` VALUES ('13', '4', '1', '1', '2017-04-05 17:40:19', '1', '00000000001', '00000000002', '00000000001', '00000000003', '00000000001', '00000000004', '00000000001', '00000000005', '00000000002', '00000000007', '00000000001', '00000000006', '00000000000', null, null);
-INSERT INTO `t_machine_bet_record` VALUES ('14', '4', '1', '1', '2017-04-05 17:42:25', '1', '00000000002', '00000000002', '00000000000', '00000000003', '00000000000', '00000000004', '00000000000', '00000000005', '00000000000', '00000000007', '00000000000', '00000000006', '00000000000', null, null);
-INSERT INTO `t_machine_bet_record` VALUES ('15', '4', '244', '1', '2017-04-06 17:28:08', '1', '00000000002', '00000000002', '00000000001', '00000000003', '00000000001', '00000000004', '00000000001', '00000000005', '00000000001', '00000000007', '00000000001', '00000000006', '00000000001', '1', '14');
-INSERT INTO `t_machine_bet_record` VALUES ('16', '4', '245', '1', '2017-04-06 17:29:13', '1', '00000000003', '00000000002', '00000000001', '00000000003', '00000000001', '00000000004', '00000000000', '00000000005', '00000000000', '00000000007', '00000000000', '00000000006', '00000000000', '1', '28');
-INSERT INTO `t_machine_bet_record` VALUES ('17', '4', '286', '1', '2017-04-07 11:27:06', '1', '00000000003', '00000000002', '00000000001', '00000000003', '00000000001', '00000000004', '00000000001', '00000000005', '00000000002', '00000000007', '00000000001', '00000000006', '00000000000', null, null);
-INSERT INTO `t_machine_bet_record` VALUES ('18', '4', '290', '1', '2017-04-07 11:40:02', '1', '00000000002', '00000000002', '00000000004', '00000000003', '00000000001', '00000000004', '00000000003', '00000000005', '00000000001', '00000000007', '00000000001', '00000000006', '00000000000', '0', '-12');
-INSERT INTO `t_machine_bet_record` VALUES ('19', '4', '293', '1', '2017-04-07 11:50:22', '1', '00000000002', '00000000002', '00000000001', '00000000003', '00000000001', '00000000004', '00000000003', '00000000005', '00000000004', '00000000007', '00000000001', '00000000006', '00000000000', '0', '-12');
-INSERT INTO `t_machine_bet_record` VALUES ('20', '4', '355', '1', '2017-04-07 12:52:14', '1', '00000000001', '00000000002', '00000000001', '00000000003', '00000000000', '00000000004', '00000000001', '00000000005', '00000000001', '00000000007', '00000000000', '00000000006', '00000000000', '0', '-4');
-INSERT INTO `t_machine_bet_record` VALUES ('21', '4', '355', '1', '2017-04-07 12:52:23', '1', '00000000001', '00000000002', '00000000001', '00000000003', '00000000000', '00000000004', '00000000001', '00000000005', '00000000001', '00000000007', '00000000000', '00000000006', '00000000000', '0', '-8');
-INSERT INTO `t_machine_bet_record` VALUES ('22', '4', '355', '1', '2017-04-07 12:52:27', '1', '00000000001', '00000000002', '00000000001', '00000000003', '00000000000', '00000000004', '00000000001', '00000000005', '00000000001', '00000000007', '00000000000', '00000000006', '00000000000', null, null);
-INSERT INTO `t_machine_bet_record` VALUES ('23', '4', '355', '1', '2017-04-07 12:52:30', '1', '00000000001', '00000000002', '00000000001', '00000000003', '00000000000', '00000000004', '00000000001', '00000000005', '00000000001', '00000000007', '00000000000', '00000000006', '00000000000', null, null);
-INSERT INTO `t_machine_bet_record` VALUES ('24', '4', '379', '1', '2017-04-07 15:14:17', '1', '00000000001', '00000000002', '00000000001', '00000000003', '00000000001', '00000000004', '00000000001', '00000000005', '00000000000', '00000000007', '00000000000', '00000000006', '00000000000', '0', '-4');
+BEGIN;
+INSERT INTO `t_machine_bet_record` VALUES ('7', '3', '1', '1', '2017-03-28 17:35:25', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', null, null), ('8', '3', '1', '1', '2017-03-30 17:17:24', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', null, null), ('9', '4', '1', '1', '2017-04-05 16:47:08', '1', '3', '2', '0', '3', '0', '4', '0', '5', '0', '7', '0', '6', '0', null, null), ('10', '4', '1', '1', '2017-04-05 17:31:22', '1', '1', '2', '1', '3', '1', '4', '2', '5', '1', '7', '0', '6', '0', null, null), ('11', '4', '1', '1', '2017-04-05 17:33:04', '1', '1', '2', '1', '3', '1', '4', '1', '5', '1', '7', '1', '6', '1', null, null), ('12', '4', '1', '1', '2017-04-05 17:36:30', '1', '1', '2', '2', '3', '2', '4', '1', '5', '1', '7', '1', '6', '1', null, null), ('13', '4', '1', '1', '2017-04-05 17:40:19', '1', '1', '2', '1', '3', '1', '4', '1', '5', '2', '7', '1', '6', '0', null, null), ('14', '4', '1', '1', '2017-04-05 17:42:25', '1', '2', '2', '0', '3', '0', '4', '0', '5', '0', '7', '0', '6', '0', null, null), ('15', '4', '244', '1', '2017-04-06 17:28:08', '1', '2', '2', '1', '3', '1', '4', '1', '5', '1', '7', '1', '6', '1', '1', '14'), ('16', '4', '245', '1', '2017-04-06 17:29:13', '1', '3', '2', '1', '3', '1', '4', '0', '5', '0', '7', '0', '6', '0', '1', '28'), ('17', '4', '286', '1', '2017-04-07 11:27:06', '1', '3', '2', '1', '3', '1', '4', '1', '5', '2', '7', '1', '6', '0', null, null), ('18', '4', '290', '1', '2017-04-07 11:40:02', '1', '2', '2', '4', '3', '1', '4', '3', '5', '1', '7', '1', '6', '0', '0', '-12'), ('19', '4', '293', '1', '2017-04-07 11:50:22', '1', '2', '2', '1', '3', '1', '4', '3', '5', '4', '7', '1', '6', '0', '0', '-12'), ('20', '4', '355', '1', '2017-04-07 12:52:14', '1', '1', '2', '1', '3', '0', '4', '1', '5', '1', '7', '0', '6', '0', '0', '-4'), ('21', '4', '355', '1', '2017-04-07 12:52:23', '1', '1', '2', '1', '3', '0', '4', '1', '5', '1', '7', '0', '6', '0', '0', '-8'), ('22', '4', '355', '1', '2017-04-07 12:52:27', '1', '1', '2', '1', '3', '0', '4', '1', '5', '1', '7', '0', '6', '0', null, null), ('23', '4', '355', '1', '2017-04-07 12:52:30', '1', '1', '2', '1', '3', '0', '4', '1', '5', '1', '7', '0', '6', '0', null, null), ('24', '4', '379', '1', '2017-04-07 15:14:17', '1', '1', '2', '1', '3', '1', '4', '1', '5', '0', '7', '0', '6', '0', '0', '-4'), ('25', '4', '1282', '1', '2017-04-11 16:37:46', '1', '3', '2', '0', '3', '0', '4', '0', '5', '0', '7', '0', '6', '0', '1', '30'), ('26', '4', '1283', '1', '2017-04-11 16:39:06', '1', '4', '2', '0', '3', '0', '4', '0', '5', '0', '7', '0', '6', '0', '1', '40'), ('27', '4', '1290', '1', '2017-04-11 16:46:37', '1', '5', '2', '0', '3', '0', '4', '0', '5', '0', '7', '0', '6', '0', '1', '50'), ('28', '4', '1291', '1', '2017-04-11 16:47:53', '1', '5', '2', '0', '3', '0', '4', '0', '5', '0', '7', '0', '6', '0', '1', '50'), ('29', '4', '1295', '1', '2017-04-11 16:52:07', '1', '4', '2', '0', '3', '0', '4', '0', '5', '0', '7', '0', '6', '0', '1', '40'), ('30', '4', '1298', '1', '2017-04-11 16:55:05', '1', '6', '2', '0', '3', '0', '4', '0', '5', '0', '7', '0', '6', '0', '1', '60'), ('31', '4', '1301', '1', '2017-04-11 16:58:15', '1', '6', '2', '0', '3', '0', '4', '0', '5', '0', '7', '0', '6', '0', '1', '60'), ('32', '4', '1306', '1', '2017-04-11 17:03:31', '1', '4', '2', '0', '3', '0', '4', '0', '5', '0', '7', '0', '6', '0', '1', '40'), ('33', '4', '1312', '1', '2017-04-11 17:09:23', '1', '4', '2', '0', '3', '0', '4', '0', '5', '0', '7', '0', '6', '0', '1', '40'), ('34', '4', '1313', '1', '2017-04-11 17:10:32', '1', '4', '2', '0', '3', '0', '4', '0', '5', '0', '7', '0', '6', '0', '1', '40'), ('35', '4', '1316', '1', '2017-04-11 17:13:16', '1', '12', '2', '0', '3', '0', '4', '0', '5', '0', '7', '0', '6', '0', '1', '120'), ('36', '4', '1317', '1', '2017-04-11 17:14:19', '1', '5', '2', '0', '3', '0', '4', '0', '5', '0', '7', '0', '6', '0', '1', '50'), ('37', '4', '1327', '1', '2017-04-11 17:24:18', '1', '8', '2', '0', '3', '0', '4', '0', '5', '0', '7', '0', '6', '0', '1', '80'), ('38', '4', '1331', '1', '2017-04-11 17:28:30', '1', '5', '2', '0', '3', '0', '4', '0', '5', '0', '7', '0', '6', '0', '1', '50'), ('39', '4', '1332', '1', '2017-04-11 17:29:36', '1', '3', '2', '0', '3', '0', '4', '0', '5', '0', '7', '0', '6', '0', '1', '30'), ('40', '4', '1334', '1', '2017-04-11 17:31:20', '1', '6', '2', '0', '3', '0', '4', '0', '5', '0', '7', '0', '6', '0', '1', '60'), ('41', '4', '1335', '1', '2017-04-11 17:32:31', '1', '6', '2', '0', '3', '0', '4', '0', '5', '0', '7', '0', '6', '0', '1', '60'), ('42', '4', '1336', '1', '2017-04-11 17:33:31', '1', '6', '2', '0', '3', '0', '4', '0', '5', '0', '7', '0', '6', '0', '1', '60'), ('43', '4', '1348', '1', '2017-04-11 17:45:28', '1', '29', '2', '0', '3', '0', '4', '0', '5', '0', '7', '0', '6', '0', '1', '290'), ('44', '4', '1359', '10', '2017-04-11 17:56:17', '1', '5', '2', '0', '3', '0', '4', '0', '5', '0', '7', '0', '6', '0', '1', '500');
+COMMIT;
 
 -- ----------------------------
--- Table structure for `t_machine_fruit`
+--  Table structure for `t_machine_big_small_record`
+-- ----------------------------
+DROP TABLE IF EXISTS `t_machine_big_small_record`;
+CREATE TABLE `t_machine_big_small_record` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `record_id` int(11) NOT NULL COMMENT '期号',
+  `user_id` int(11) NOT NULL COMMENT '用户id',
+  `big_small_num` int(11) unsigned zerofill DEFAULT NULL COMMENT '大小好嘛',
+  `bet_num` int(11) unsigned zerofill NOT NULL COMMENT '0小1大',
+  `create_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `bet_score` int(11) unsigned zerofill NOT NULL COMMENT '下注分数',
+  `got_score` int(11) unsigned zerofill DEFAULT NULL COMMENT '获奖分数',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+--  Table structure for `t_machine_fruit`
 -- ----------------------------
 DROP TABLE IF EXISTS `t_machine_fruit`;
 CREATE TABLE `t_machine_fruit` (
@@ -81,20 +84,14 @@ CREATE TABLE `t_machine_fruit` (
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1 COMMENT='水果表 ';
 
 -- ----------------------------
--- Records of t_machine_fruit
+--  Records of `t_machine_fruit`
 -- ----------------------------
-INSERT INTO `t_machine_fruit` VALUES ('1', 'seven', '七', 'seven.png', 'seven.png', '0000000010');
-INSERT INTO `t_machine_fruit` VALUES ('2', 'cherry', '樱桃', 'cherry.png', 'cherry.png', '0000000010');
-INSERT INTO `t_machine_fruit` VALUES ('3', 'prune', '西梅', 'prune.png', 'prune.png', '0000000010');
-INSERT INTO `t_machine_fruit` VALUES ('4', 'banana', '香蕉', 'banana.png', 'banana.png', '0000000010');
-INSERT INTO `t_machine_fruit` VALUES ('5', 'lemo', '柠檬', 'lemo.png', 'lemo.png', '0000000010');
-INSERT INTO `t_machine_fruit` VALUES ('6', 'orange', '橘子', 'orange.png', 'orange.png', '0000000010');
-INSERT INTO `t_machine_fruit` VALUES ('7', 'watermelon', '西瓜', 'watermelon.png', 'watermelon.png', '0000000010');
-INSERT INTO `t_machine_fruit` VALUES ('8', 'bigwin', '大赢家', 'bigwin.png', 'bigwin.png', '0000000010');
-INSERT INTO `t_machine_fruit` VALUES ('9', 'bar', 'bar', 'bar.png', 'bar.png', '0000000010');
+BEGIN;
+INSERT INTO `t_machine_fruit` VALUES ('1', 'seven', '七', 'seven.png', 'seven.png', '10'), ('2', 'cherry', '樱桃', 'cherry.png', 'cherry.png', '10'), ('3', 'prune', '西梅', 'prune.png', 'prune.png', '10'), ('4', 'banana', '香蕉', 'banana.png', 'banana.png', '10'), ('5', 'lemo', '柠檬', 'lemo.png', 'lemo.png', '10'), ('6', 'orange', '橘子', 'orange.png', 'orange.png', '10'), ('7', 'watermelon', '西瓜', 'watermelon.png', 'watermelon.png', '10'), ('8', 'bigwin', '大赢家', 'bigwin.png', 'bigwin.png', '10'), ('9', 'bar', 'bar', 'bar.png', 'bar.png', '10');
+COMMIT;
 
 -- ----------------------------
--- Table structure for `t_machine_index`
+--  Table structure for `t_machine_index`
 -- ----------------------------
 DROP TABLE IF EXISTS `t_machine_index`;
 CREATE TABLE `t_machine_index` (
@@ -106,35 +103,14 @@ CREATE TABLE `t_machine_index` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='机器位置表 ';
 
 -- ----------------------------
--- Records of t_machine_index
+--  Records of `t_machine_index`
 -- ----------------------------
-INSERT INTO `t_machine_index` VALUES ('0', '1');
-INSERT INTO `t_machine_index` VALUES ('9', '1');
-INSERT INTO `t_machine_index` VALUES ('18', '1');
-INSERT INTO `t_machine_index` VALUES ('1', '2');
-INSERT INTO `t_machine_index` VALUES ('10', '2');
-INSERT INTO `t_machine_index` VALUES ('19', '2');
-INSERT INTO `t_machine_index` VALUES ('2', '3');
-INSERT INTO `t_machine_index` VALUES ('11', '3');
-INSERT INTO `t_machine_index` VALUES ('20', '3');
-INSERT INTO `t_machine_index` VALUES ('3', '4');
-INSERT INTO `t_machine_index` VALUES ('12', '4');
-INSERT INTO `t_machine_index` VALUES ('21', '4');
-INSERT INTO `t_machine_index` VALUES ('4', '5');
-INSERT INTO `t_machine_index` VALUES ('13', '5');
-INSERT INTO `t_machine_index` VALUES ('22', '5');
-INSERT INTO `t_machine_index` VALUES ('5', '6');
-INSERT INTO `t_machine_index` VALUES ('14', '6');
-INSERT INTO `t_machine_index` VALUES ('23', '6');
-INSERT INTO `t_machine_index` VALUES ('6', '7');
-INSERT INTO `t_machine_index` VALUES ('15', '7');
-INSERT INTO `t_machine_index` VALUES ('7', '8');
-INSERT INTO `t_machine_index` VALUES ('16', '8');
-INSERT INTO `t_machine_index` VALUES ('8', '9');
-INSERT INTO `t_machine_index` VALUES ('17', '9');
+BEGIN;
+INSERT INTO `t_machine_index` VALUES ('0', '1'), ('9', '1'), ('18', '1'), ('1', '2'), ('10', '2'), ('19', '2'), ('2', '3'), ('11', '3'), ('20', '3'), ('3', '4'), ('12', '4'), ('21', '4'), ('4', '5'), ('13', '5'), ('22', '5'), ('5', '6'), ('14', '6'), ('23', '6'), ('6', '7'), ('15', '7'), ('7', '8'), ('16', '8'), ('8', '9'), ('17', '9');
+COMMIT;
 
 -- ----------------------------
--- Table structure for `t_machine_record`
+--  Table structure for `t_machine_record`
 -- ----------------------------
 DROP TABLE IF EXISTS `t_machine_record`;
 CREATE TABLE `t_machine_record` (
@@ -144,446 +120,17 @@ CREATE TABLE `t_machine_record` (
   PRIMARY KEY (`id`),
   KEY `fk_t_machine_record_number_index_id` (`open_number`),
   CONSTRAINT `fk_t_machine_record_number_index_id` FOREIGN KEY (`open_number`) REFERENCES `t_machine_index` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=449 DEFAULT CHARSET=latin1 COMMENT='开奖记录表 ';
+) ENGINE=InnoDB AUTO_INCREMENT=1414 DEFAULT CHARSET=latin1 COMMENT='开奖记录表 ';
 
 -- ----------------------------
--- Records of t_machine_record
+--  Records of `t_machine_record`
 -- ----------------------------
-INSERT INTO `t_machine_record` VALUES ('1', '2017-03-30 10:03:16', '0');
-INSERT INTO `t_machine_record` VALUES ('2', '2017-03-30 10:03:56', '0');
-INSERT INTO `t_machine_record` VALUES ('3', '2017-03-30 10:04:36', '0');
-INSERT INTO `t_machine_record` VALUES ('4', '2017-03-30 10:05:16', '0');
-INSERT INTO `t_machine_record` VALUES ('5', '2017-03-30 10:05:56', '0');
-INSERT INTO `t_machine_record` VALUES ('6', '2017-03-30 10:06:36', '0');
-INSERT INTO `t_machine_record` VALUES ('7', '2017-03-30 10:07:16', '0');
-INSERT INTO `t_machine_record` VALUES ('8', '2017-03-30 10:07:56', '0');
-INSERT INTO `t_machine_record` VALUES ('9', '2017-03-30 10:08:36', '0');
-INSERT INTO `t_machine_record` VALUES ('10', '2017-03-30 10:09:16', '0');
-INSERT INTO `t_machine_record` VALUES ('11', '2017-03-30 10:09:56', '0');
-INSERT INTO `t_machine_record` VALUES ('12', '2017-03-30 10:10:36', '0');
-INSERT INTO `t_machine_record` VALUES ('13', '2017-03-30 10:11:16', '0');
-INSERT INTO `t_machine_record` VALUES ('14', '2017-03-30 10:11:56', '0');
-INSERT INTO `t_machine_record` VALUES ('15', '2017-03-30 10:12:36', '0');
-INSERT INTO `t_machine_record` VALUES ('16', '2017-03-30 10:13:16', '0');
-INSERT INTO `t_machine_record` VALUES ('17', '2017-03-30 10:13:56', '0');
-INSERT INTO `t_machine_record` VALUES ('18', '2017-03-30 10:14:36', '0');
-INSERT INTO `t_machine_record` VALUES ('19', '2017-03-30 10:15:16', '0');
-INSERT INTO `t_machine_record` VALUES ('20', '2017-03-30 10:15:56', '0');
-INSERT INTO `t_machine_record` VALUES ('21', '2017-03-30 10:16:36', '0');
-INSERT INTO `t_machine_record` VALUES ('22', '2017-03-30 10:17:16', '0');
-INSERT INTO `t_machine_record` VALUES ('23', '2017-03-30 10:17:56', '0');
-INSERT INTO `t_machine_record` VALUES ('24', '2017-03-30 17:13:36', '0');
-INSERT INTO `t_machine_record` VALUES ('25', '2017-03-30 17:14:16', '0');
-INSERT INTO `t_machine_record` VALUES ('26', '2017-03-30 17:14:56', '0');
-INSERT INTO `t_machine_record` VALUES ('27', '2017-03-30 17:15:36', '0');
-INSERT INTO `t_machine_record` VALUES ('28', '2017-03-30 17:16:16', '0');
-INSERT INTO `t_machine_record` VALUES ('29', '2017-03-30 17:16:56', '0');
-INSERT INTO `t_machine_record` VALUES ('30', '2017-03-30 17:17:36', '0');
-INSERT INTO `t_machine_record` VALUES ('31', '2017-03-30 17:18:16', '0');
-INSERT INTO `t_machine_record` VALUES ('32', '2017-03-30 17:18:56', '0');
-INSERT INTO `t_machine_record` VALUES ('33', '2017-03-30 17:19:36', '0');
-INSERT INTO `t_machine_record` VALUES ('34', '2017-03-30 17:20:16', '0');
-INSERT INTO `t_machine_record` VALUES ('35', '2017-03-30 17:20:56', '0');
-INSERT INTO `t_machine_record` VALUES ('36', '2017-03-30 17:21:36', '0');
-INSERT INTO `t_machine_record` VALUES ('37', '2017-03-30 17:22:16', '0');
-INSERT INTO `t_machine_record` VALUES ('38', '2017-03-30 17:22:56', '0');
-INSERT INTO `t_machine_record` VALUES ('39', '2017-03-30 17:23:36', '0');
-INSERT INTO `t_machine_record` VALUES ('40', '2017-03-30 17:24:16', '0');
-INSERT INTO `t_machine_record` VALUES ('41', '2017-03-30 17:24:56', '0');
-INSERT INTO `t_machine_record` VALUES ('42', '2017-04-05 16:32:40', '0');
-INSERT INTO `t_machine_record` VALUES ('43', '2017-04-05 16:33:40', '0');
-INSERT INTO `t_machine_record` VALUES ('44', '2017-04-05 16:34:40', '0');
-INSERT INTO `t_machine_record` VALUES ('45', '2017-04-05 16:35:40', '0');
-INSERT INTO `t_machine_record` VALUES ('46', '2017-04-05 16:36:40', '0');
-INSERT INTO `t_machine_record` VALUES ('47', '2017-04-05 16:38:36', '0');
-INSERT INTO `t_machine_record` VALUES ('48', '2017-04-05 16:39:36', '0');
-INSERT INTO `t_machine_record` VALUES ('49', '2017-04-05 16:40:36', '0');
-INSERT INTO `t_machine_record` VALUES ('50', '2017-04-05 16:41:36', '0');
-INSERT INTO `t_machine_record` VALUES ('51', '2017-04-05 16:42:36', '0');
-INSERT INTO `t_machine_record` VALUES ('52', '2017-04-05 16:43:36', '0');
-INSERT INTO `t_machine_record` VALUES ('53', '2017-04-05 16:44:36', '0');
-INSERT INTO `t_machine_record` VALUES ('54', '2017-04-05 16:45:36', '0');
-INSERT INTO `t_machine_record` VALUES ('55', '2017-04-05 16:46:36', '0');
-INSERT INTO `t_machine_record` VALUES ('56', '2017-04-05 16:47:36', '0');
-INSERT INTO `t_machine_record` VALUES ('57', '2017-04-05 17:30:32', '0');
-INSERT INTO `t_machine_record` VALUES ('58', '2017-04-05 17:31:32', '0');
-INSERT INTO `t_machine_record` VALUES ('59', '2017-04-05 17:32:32', '0');
-INSERT INTO `t_machine_record` VALUES ('60', '2017-04-05 17:33:32', '0');
-INSERT INTO `t_machine_record` VALUES ('61', '2017-04-05 17:34:32', '0');
-INSERT INTO `t_machine_record` VALUES ('62', '2017-04-05 17:36:40', '0');
-INSERT INTO `t_machine_record` VALUES ('63', '2017-04-05 17:37:40', '0');
-INSERT INTO `t_machine_record` VALUES ('64', '2017-04-05 17:38:42', '0');
-INSERT INTO `t_machine_record` VALUES ('65', '2017-04-05 17:39:53', '0');
-INSERT INTO `t_machine_record` VALUES ('66', '2017-04-05 17:40:36', '0');
-INSERT INTO `t_machine_record` VALUES ('67', '2017-04-05 17:41:36', '0');
-INSERT INTO `t_machine_record` VALUES ('68', '2017-04-05 17:42:36', '0');
-INSERT INTO `t_machine_record` VALUES ('69', '2017-04-05 17:46:37', '0');
-INSERT INTO `t_machine_record` VALUES ('70', '2017-04-05 17:47:37', '0');
-INSERT INTO `t_machine_record` VALUES ('71', '2017-04-05 17:48:37', '0');
-INSERT INTO `t_machine_record` VALUES ('72', '2017-04-05 17:49:37', '0');
-INSERT INTO `t_machine_record` VALUES ('73', '2017-04-05 17:50:37', '0');
-INSERT INTO `t_machine_record` VALUES ('74', '2017-04-05 17:51:37', '0');
-INSERT INTO `t_machine_record` VALUES ('75', '2017-04-06 14:36:40', '0');
-INSERT INTO `t_machine_record` VALUES ('76', '2017-04-06 14:37:40', '0');
-INSERT INTO `t_machine_record` VALUES ('77', '2017-04-06 14:38:40', '0');
-INSERT INTO `t_machine_record` VALUES ('78', '2017-04-06 14:39:40', '0');
-INSERT INTO `t_machine_record` VALUES ('79', '2017-04-06 14:40:40', '0');
-INSERT INTO `t_machine_record` VALUES ('80', '2017-04-06 14:41:40', '0');
-INSERT INTO `t_machine_record` VALUES ('81', '2017-04-06 14:42:40', '0');
-INSERT INTO `t_machine_record` VALUES ('82', '2017-04-06 14:43:40', '0');
-INSERT INTO `t_machine_record` VALUES ('83', '2017-04-06 14:44:40', '0');
-INSERT INTO `t_machine_record` VALUES ('84', '2017-04-06 14:45:40', '0');
-INSERT INTO `t_machine_record` VALUES ('85', '2017-04-06 14:46:40', '0');
-INSERT INTO `t_machine_record` VALUES ('86', '2017-04-06 14:47:40', '0');
-INSERT INTO `t_machine_record` VALUES ('87', '2017-04-06 14:48:40', '0');
-INSERT INTO `t_machine_record` VALUES ('88', '2017-04-06 14:49:40', '0');
-INSERT INTO `t_machine_record` VALUES ('89', '2017-04-06 14:50:40', '0');
-INSERT INTO `t_machine_record` VALUES ('90', '2017-04-06 14:51:40', '0');
-INSERT INTO `t_machine_record` VALUES ('91', '2017-04-06 14:52:40', '0');
-INSERT INTO `t_machine_record` VALUES ('92', '2017-04-06 14:53:40', '0');
-INSERT INTO `t_machine_record` VALUES ('93', '2017-04-06 14:54:40', '0');
-INSERT INTO `t_machine_record` VALUES ('94', '2017-04-06 14:55:40', '0');
-INSERT INTO `t_machine_record` VALUES ('95', '2017-04-06 14:56:40', '0');
-INSERT INTO `t_machine_record` VALUES ('96', '2017-04-06 14:57:40', '0');
-INSERT INTO `t_machine_record` VALUES ('97', '2017-04-06 14:58:40', '0');
-INSERT INTO `t_machine_record` VALUES ('98', '2017-04-06 14:59:40', '0');
-INSERT INTO `t_machine_record` VALUES ('99', '2017-04-06 15:00:40', '0');
-INSERT INTO `t_machine_record` VALUES ('100', '2017-04-06 15:01:40', '0');
-INSERT INTO `t_machine_record` VALUES ('101', '2017-04-06 15:02:40', '0');
-INSERT INTO `t_machine_record` VALUES ('102', '2017-04-06 15:03:40', '0');
-INSERT INTO `t_machine_record` VALUES ('103', '2017-04-06 15:04:40', '0');
-INSERT INTO `t_machine_record` VALUES ('104', '2017-04-06 15:05:40', '0');
-INSERT INTO `t_machine_record` VALUES ('105', '2017-04-06 15:06:40', '0');
-INSERT INTO `t_machine_record` VALUES ('106', '2017-04-06 15:07:40', '0');
-INSERT INTO `t_machine_record` VALUES ('107', '2017-04-06 15:08:40', '0');
-INSERT INTO `t_machine_record` VALUES ('108', '2017-04-06 15:09:40', '0');
-INSERT INTO `t_machine_record` VALUES ('109', '2017-04-06 15:10:40', '0');
-INSERT INTO `t_machine_record` VALUES ('110', '2017-04-06 15:11:40', '0');
-INSERT INTO `t_machine_record` VALUES ('111', '2017-04-06 15:12:40', '0');
-INSERT INTO `t_machine_record` VALUES ('112', '2017-04-06 15:13:40', '0');
-INSERT INTO `t_machine_record` VALUES ('113', '2017-04-06 15:14:40', '0');
-INSERT INTO `t_machine_record` VALUES ('114', '2017-04-06 15:15:40', '0');
-INSERT INTO `t_machine_record` VALUES ('115', '2017-04-06 15:16:40', '0');
-INSERT INTO `t_machine_record` VALUES ('116', '2017-04-06 15:17:40', '0');
-INSERT INTO `t_machine_record` VALUES ('117', '2017-04-06 15:18:40', '0');
-INSERT INTO `t_machine_record` VALUES ('118', '2017-04-06 15:19:40', '0');
-INSERT INTO `t_machine_record` VALUES ('119', '2017-04-06 15:20:40', '0');
-INSERT INTO `t_machine_record` VALUES ('120', '2017-04-06 15:21:40', '0');
-INSERT INTO `t_machine_record` VALUES ('121', '2017-04-06 15:22:40', '0');
-INSERT INTO `t_machine_record` VALUES ('122', '2017-04-06 15:23:40', '0');
-INSERT INTO `t_machine_record` VALUES ('123', '2017-04-06 15:24:40', '0');
-INSERT INTO `t_machine_record` VALUES ('124', '2017-04-06 15:25:40', '0');
-INSERT INTO `t_machine_record` VALUES ('125', '2017-04-06 15:26:40', '0');
-INSERT INTO `t_machine_record` VALUES ('126', '2017-04-06 15:27:40', '0');
-INSERT INTO `t_machine_record` VALUES ('127', '2017-04-06 15:28:40', '0');
-INSERT INTO `t_machine_record` VALUES ('128', '2017-04-06 15:29:40', '0');
-INSERT INTO `t_machine_record` VALUES ('129', '2017-04-06 15:30:40', '0');
-INSERT INTO `t_machine_record` VALUES ('130', '2017-04-06 15:31:40', '0');
-INSERT INTO `t_machine_record` VALUES ('131', '2017-04-06 15:32:40', '0');
-INSERT INTO `t_machine_record` VALUES ('132', '2017-04-06 15:33:40', '0');
-INSERT INTO `t_machine_record` VALUES ('133', '2017-04-06 15:34:40', '0');
-INSERT INTO `t_machine_record` VALUES ('134', '2017-04-06 15:35:40', '0');
-INSERT INTO `t_machine_record` VALUES ('135', '2017-04-06 15:36:40', '0');
-INSERT INTO `t_machine_record` VALUES ('136', '2017-04-06 15:37:40', '0');
-INSERT INTO `t_machine_record` VALUES ('137', '2017-04-06 15:38:40', '0');
-INSERT INTO `t_machine_record` VALUES ('138', '2017-04-06 15:40:48', '0');
-INSERT INTO `t_machine_record` VALUES ('139', '2017-04-06 15:41:48', '0');
-INSERT INTO `t_machine_record` VALUES ('140', '2017-04-06 15:43:33', '0');
-INSERT INTO `t_machine_record` VALUES ('141', '2017-04-06 15:44:25', '0');
-INSERT INTO `t_machine_record` VALUES ('142', '2017-04-06 15:45:25', '0');
-INSERT INTO `t_machine_record` VALUES ('143', '2017-04-06 15:46:25', '0');
-INSERT INTO `t_machine_record` VALUES ('144', '2017-04-06 15:47:25', '0');
-INSERT INTO `t_machine_record` VALUES ('145', '2017-04-06 15:48:25', '0');
-INSERT INTO `t_machine_record` VALUES ('146', '2017-04-06 15:49:25', '0');
-INSERT INTO `t_machine_record` VALUES ('147', '2017-04-06 15:50:25', '0');
-INSERT INTO `t_machine_record` VALUES ('148', '2017-04-06 15:51:25', '0');
-INSERT INTO `t_machine_record` VALUES ('149', '2017-04-06 15:52:25', '0');
-INSERT INTO `t_machine_record` VALUES ('150', '2017-04-06 15:53:25', '0');
-INSERT INTO `t_machine_record` VALUES ('151', '2017-04-06 15:54:25', '0');
-INSERT INTO `t_machine_record` VALUES ('152', '2017-04-06 15:55:25', '0');
-INSERT INTO `t_machine_record` VALUES ('153', '2017-04-06 15:56:46', '0');
-INSERT INTO `t_machine_record` VALUES ('154', '2017-04-06 15:57:46', '0');
-INSERT INTO `t_machine_record` VALUES ('155', '2017-04-06 15:58:46', '0');
-INSERT INTO `t_machine_record` VALUES ('156', '2017-04-06 15:59:46', '0');
-INSERT INTO `t_machine_record` VALUES ('157', '2017-04-06 16:00:46', '0');
-INSERT INTO `t_machine_record` VALUES ('158', '2017-04-06 16:01:46', '0');
-INSERT INTO `t_machine_record` VALUES ('159', '2017-04-06 16:02:46', '0');
-INSERT INTO `t_machine_record` VALUES ('160', '2017-04-06 16:03:46', '0');
-INSERT INTO `t_machine_record` VALUES ('161', '2017-04-06 16:04:46', '0');
-INSERT INTO `t_machine_record` VALUES ('162', '2017-04-06 16:05:46', '0');
-INSERT INTO `t_machine_record` VALUES ('163', '2017-04-06 16:06:46', '0');
-INSERT INTO `t_machine_record` VALUES ('164', '2017-04-06 16:07:46', '0');
-INSERT INTO `t_machine_record` VALUES ('165', '2017-04-06 16:08:46', '0');
-INSERT INTO `t_machine_record` VALUES ('166', '2017-04-06 16:09:46', '0');
-INSERT INTO `t_machine_record` VALUES ('167', '2017-04-06 16:10:46', '0');
-INSERT INTO `t_machine_record` VALUES ('168', '2017-04-06 16:11:46', '0');
-INSERT INTO `t_machine_record` VALUES ('169', '2017-04-06 16:12:46', '0');
-INSERT INTO `t_machine_record` VALUES ('170', '2017-04-06 16:13:46', '0');
-INSERT INTO `t_machine_record` VALUES ('171', '2017-04-06 16:14:46', '0');
-INSERT INTO `t_machine_record` VALUES ('172', '2017-04-06 16:15:46', '0');
-INSERT INTO `t_machine_record` VALUES ('173', '2017-04-06 16:16:46', '0');
-INSERT INTO `t_machine_record` VALUES ('174', '2017-04-06 16:18:34', '0');
-INSERT INTO `t_machine_record` VALUES ('175', '2017-04-06 16:19:34', '0');
-INSERT INTO `t_machine_record` VALUES ('176', '2017-04-06 16:20:34', '0');
-INSERT INTO `t_machine_record` VALUES ('177', '2017-04-06 16:21:34', '0');
-INSERT INTO `t_machine_record` VALUES ('178', '2017-04-06 16:22:34', '0');
-INSERT INTO `t_machine_record` VALUES ('179', '2017-04-06 16:23:34', '0');
-INSERT INTO `t_machine_record` VALUES ('180', '2017-04-06 16:24:34', '0');
-INSERT INTO `t_machine_record` VALUES ('181', '2017-04-06 16:25:34', '0');
-INSERT INTO `t_machine_record` VALUES ('182', '2017-04-06 16:26:34', '0');
-INSERT INTO `t_machine_record` VALUES ('183', '2017-04-06 16:27:34', '0');
-INSERT INTO `t_machine_record` VALUES ('184', '2017-04-06 16:28:34', '0');
-INSERT INTO `t_machine_record` VALUES ('185', '2017-04-06 16:29:34', '0');
-INSERT INTO `t_machine_record` VALUES ('186', '2017-04-06 16:30:34', '0');
-INSERT INTO `t_machine_record` VALUES ('187', '2017-04-06 16:31:34', '0');
-INSERT INTO `t_machine_record` VALUES ('188', '2017-04-06 16:32:34', '0');
-INSERT INTO `t_machine_record` VALUES ('189', '2017-04-06 16:33:34', '0');
-INSERT INTO `t_machine_record` VALUES ('190', '2017-04-06 16:34:34', '0');
-INSERT INTO `t_machine_record` VALUES ('191', '2017-04-06 16:35:34', '0');
-INSERT INTO `t_machine_record` VALUES ('192', '2017-04-06 16:36:34', '0');
-INSERT INTO `t_machine_record` VALUES ('193', '2017-04-06 16:37:34', '0');
-INSERT INTO `t_machine_record` VALUES ('194', '2017-04-06 16:38:34', '0');
-INSERT INTO `t_machine_record` VALUES ('195', '2017-04-06 16:39:34', '0');
-INSERT INTO `t_machine_record` VALUES ('196', '2017-04-06 16:40:34', '0');
-INSERT INTO `t_machine_record` VALUES ('197', '2017-04-06 16:41:34', '0');
-INSERT INTO `t_machine_record` VALUES ('198', '2017-04-06 16:42:34', '0');
-INSERT INTO `t_machine_record` VALUES ('199', '2017-04-06 16:43:34', '0');
-INSERT INTO `t_machine_record` VALUES ('200', '2017-04-06 16:44:34', '0');
-INSERT INTO `t_machine_record` VALUES ('201', '2017-04-06 16:45:34', '0');
-INSERT INTO `t_machine_record` VALUES ('202', '2017-04-06 16:46:34', '0');
-INSERT INTO `t_machine_record` VALUES ('203', '2017-04-06 16:47:34', '0');
-INSERT INTO `t_machine_record` VALUES ('204', '2017-04-06 16:48:34', '0');
-INSERT INTO `t_machine_record` VALUES ('205', '2017-04-06 16:49:34', '0');
-INSERT INTO `t_machine_record` VALUES ('206', '2017-04-06 16:50:34', '0');
-INSERT INTO `t_machine_record` VALUES ('207', '2017-04-06 16:51:34', '0');
-INSERT INTO `t_machine_record` VALUES ('208', '2017-04-06 16:52:34', '0');
-INSERT INTO `t_machine_record` VALUES ('209', '2017-04-06 16:53:34', '0');
-INSERT INTO `t_machine_record` VALUES ('210', '2017-04-06 16:54:34', '0');
-INSERT INTO `t_machine_record` VALUES ('211', '2017-04-06 16:55:34', '0');
-INSERT INTO `t_machine_record` VALUES ('212', '2017-04-06 16:56:34', '0');
-INSERT INTO `t_machine_record` VALUES ('213', '2017-04-06 16:57:34', '0');
-INSERT INTO `t_machine_record` VALUES ('214', '2017-04-06 16:58:34', '0');
-INSERT INTO `t_machine_record` VALUES ('215', '2017-04-06 16:59:34', '0');
-INSERT INTO `t_machine_record` VALUES ('216', '2017-04-06 17:00:34', '0');
-INSERT INTO `t_machine_record` VALUES ('217', '2017-04-06 17:01:34', '0');
-INSERT INTO `t_machine_record` VALUES ('218', '2017-04-06 17:02:34', '0');
-INSERT INTO `t_machine_record` VALUES ('219', '2017-04-06 17:03:34', '0');
-INSERT INTO `t_machine_record` VALUES ('220', '2017-04-06 17:04:34', '0');
-INSERT INTO `t_machine_record` VALUES ('221', '2017-04-06 17:05:34', '0');
-INSERT INTO `t_machine_record` VALUES ('222', '2017-04-06 17:06:34', '0');
-INSERT INTO `t_machine_record` VALUES ('223', '2017-04-06 17:07:34', '0');
-INSERT INTO `t_machine_record` VALUES ('224', '2017-04-06 17:08:34', '0');
-INSERT INTO `t_machine_record` VALUES ('225', '2017-04-06 17:09:34', '0');
-INSERT INTO `t_machine_record` VALUES ('226', '2017-04-06 17:10:34', '0');
-INSERT INTO `t_machine_record` VALUES ('227', '2017-04-06 17:11:34', '0');
-INSERT INTO `t_machine_record` VALUES ('228', '2017-04-06 17:12:34', '0');
-INSERT INTO `t_machine_record` VALUES ('229', '2017-04-06 17:13:34', '0');
-INSERT INTO `t_machine_record` VALUES ('230', '2017-04-06 17:14:34', '0');
-INSERT INTO `t_machine_record` VALUES ('231', '2017-04-06 17:15:34', '0');
-INSERT INTO `t_machine_record` VALUES ('232', '2017-04-06 17:16:34', '0');
-INSERT INTO `t_machine_record` VALUES ('233', '2017-04-06 17:17:34', '0');
-INSERT INTO `t_machine_record` VALUES ('234', '2017-04-06 17:18:34', '0');
-INSERT INTO `t_machine_record` VALUES ('235', '2017-04-06 17:19:34', '0');
-INSERT INTO `t_machine_record` VALUES ('236', '2017-04-06 17:20:34', '0');
-INSERT INTO `t_machine_record` VALUES ('237', '2017-04-06 17:21:34', '0');
-INSERT INTO `t_machine_record` VALUES ('238', '2017-04-06 17:22:34', '0');
-INSERT INTO `t_machine_record` VALUES ('239', '2017-04-06 17:23:34', '0');
-INSERT INTO `t_machine_record` VALUES ('240', '2017-04-06 17:24:34', '0');
-INSERT INTO `t_machine_record` VALUES ('241', '2017-04-06 17:25:34', '0');
-INSERT INTO `t_machine_record` VALUES ('242', '2017-04-06 17:26:34', '0');
-INSERT INTO `t_machine_record` VALUES ('243', '2017-04-06 17:27:34', '0');
-INSERT INTO `t_machine_record` VALUES ('244', '2017-04-06 17:28:34', '0');
-INSERT INTO `t_machine_record` VALUES ('245', '2017-04-06 17:29:34', '0');
-INSERT INTO `t_machine_record` VALUES ('246', '2017-04-06 17:30:34', '0');
-INSERT INTO `t_machine_record` VALUES ('247', '2017-04-06 17:31:28', '0');
-INSERT INTO `t_machine_record` VALUES ('248', '2017-04-06 17:32:28', '0');
-INSERT INTO `t_machine_record` VALUES ('249', '2017-04-06 17:33:28', '0');
-INSERT INTO `t_machine_record` VALUES ('250', '2017-04-06 17:34:28', '0');
-INSERT INTO `t_machine_record` VALUES ('251', '2017-04-06 17:35:28', '0');
-INSERT INTO `t_machine_record` VALUES ('252', '2017-04-06 17:36:28', '0');
-INSERT INTO `t_machine_record` VALUES ('253', '2017-04-06 17:37:28', '0');
-INSERT INTO `t_machine_record` VALUES ('254', '2017-04-06 17:38:28', '0');
-INSERT INTO `t_machine_record` VALUES ('255', '2017-04-06 17:39:28', '0');
-INSERT INTO `t_machine_record` VALUES ('256', '2017-04-06 17:40:28', '0');
-INSERT INTO `t_machine_record` VALUES ('257', '2017-04-06 17:41:28', '0');
-INSERT INTO `t_machine_record` VALUES ('258', '2017-04-06 17:42:28', '0');
-INSERT INTO `t_machine_record` VALUES ('259', '2017-04-06 17:43:28', '0');
-INSERT INTO `t_machine_record` VALUES ('260', '2017-04-06 17:44:28', '0');
-INSERT INTO `t_machine_record` VALUES ('261', '2017-04-06 17:45:28', '0');
-INSERT INTO `t_machine_record` VALUES ('262', '2017-04-06 17:46:28', '0');
-INSERT INTO `t_machine_record` VALUES ('263', '2017-04-06 17:47:28', '0');
-INSERT INTO `t_machine_record` VALUES ('264', '2017-04-06 17:48:28', '0');
-INSERT INTO `t_machine_record` VALUES ('265', '2017-04-06 17:49:28', '0');
-INSERT INTO `t_machine_record` VALUES ('266', '2017-04-06 17:50:28', '0');
-INSERT INTO `t_machine_record` VALUES ('267', '2017-04-06 17:51:28', '0');
-INSERT INTO `t_machine_record` VALUES ('268', '2017-04-06 17:52:28', '0');
-INSERT INTO `t_machine_record` VALUES ('269', '2017-04-06 17:53:28', '0');
-INSERT INTO `t_machine_record` VALUES ('270', '2017-04-06 17:54:28', '0');
-INSERT INTO `t_machine_record` VALUES ('285', '2017-04-07 11:26:24', '20');
-INSERT INTO `t_machine_record` VALUES ('288', '2017-04-07 11:37:29', '9');
-INSERT INTO `t_machine_record` VALUES ('289', '2017-04-07 11:38:29', '8');
-INSERT INTO `t_machine_record` VALUES ('290', '2017-04-07 11:40:12', '14');
-INSERT INTO `t_machine_record` VALUES ('291', '2017-04-07 11:46:53', '10');
-INSERT INTO `t_machine_record` VALUES ('292', '2017-04-07 11:49:43', '20');
-INSERT INTO `t_machine_record` VALUES ('293', '2017-04-07 11:50:43', '5');
-INSERT INTO `t_machine_record` VALUES ('294', '2017-04-07 11:51:43', '19');
-INSERT INTO `t_machine_record` VALUES ('295', '2017-04-07 11:52:43', '6');
-INSERT INTO `t_machine_record` VALUES ('296', '2017-04-07 11:53:43', '18');
-INSERT INTO `t_machine_record` VALUES ('297', '2017-04-07 11:54:43', '19');
-INSERT INTO `t_machine_record` VALUES ('298', '2017-04-07 11:55:43', '8');
-INSERT INTO `t_machine_record` VALUES ('299', '2017-04-07 11:56:43', '20');
-INSERT INTO `t_machine_record` VALUES ('300', '2017-04-07 11:57:43', '23');
-INSERT INTO `t_machine_record` VALUES ('301', '2017-04-07 11:58:43', '4');
-INSERT INTO `t_machine_record` VALUES ('302', '2017-04-07 11:59:43', '8');
-INSERT INTO `t_machine_record` VALUES ('303', '2017-04-07 12:00:43', '23');
-INSERT INTO `t_machine_record` VALUES ('304', '2017-04-07 12:01:43', '9');
-INSERT INTO `t_machine_record` VALUES ('305', '2017-04-07 12:02:43', '5');
-INSERT INTO `t_machine_record` VALUES ('306', '2017-04-07 12:03:43', '14');
-INSERT INTO `t_machine_record` VALUES ('307', '2017-04-07 12:04:43', '7');
-INSERT INTO `t_machine_record` VALUES ('308', '2017-04-07 12:05:43', '18');
-INSERT INTO `t_machine_record` VALUES ('309', '2017-04-07 12:06:43', '12');
-INSERT INTO `t_machine_record` VALUES ('310', '2017-04-07 12:07:43', '10');
-INSERT INTO `t_machine_record` VALUES ('311', '2017-04-07 12:08:43', '21');
-INSERT INTO `t_machine_record` VALUES ('312', '2017-04-07 12:09:43', '13');
-INSERT INTO `t_machine_record` VALUES ('313', '2017-04-07 12:10:43', '16');
-INSERT INTO `t_machine_record` VALUES ('314', '2017-04-07 12:11:43', '22');
-INSERT INTO `t_machine_record` VALUES ('315', '2017-04-07 12:12:43', '1');
-INSERT INTO `t_machine_record` VALUES ('316', '2017-04-07 12:13:43', '12');
-INSERT INTO `t_machine_record` VALUES ('317', '2017-04-07 12:14:43', '8');
-INSERT INTO `t_machine_record` VALUES ('318', '2017-04-07 12:15:43', '3');
-INSERT INTO `t_machine_record` VALUES ('319', '2017-04-07 12:16:43', '17');
-INSERT INTO `t_machine_record` VALUES ('320', '2017-04-07 12:17:43', '20');
-INSERT INTO `t_machine_record` VALUES ('321', '2017-04-07 12:18:43', '23');
-INSERT INTO `t_machine_record` VALUES ('322', '2017-04-07 12:19:43', '21');
-INSERT INTO `t_machine_record` VALUES ('323', '2017-04-07 12:20:43', '14');
-INSERT INTO `t_machine_record` VALUES ('324', '2017-04-07 12:21:43', '13');
-INSERT INTO `t_machine_record` VALUES ('325', '2017-04-07 12:22:43', '9');
-INSERT INTO `t_machine_record` VALUES ('326', '2017-04-07 12:23:43', '10');
-INSERT INTO `t_machine_record` VALUES ('327', '2017-04-07 12:24:43', '16');
-INSERT INTO `t_machine_record` VALUES ('328', '2017-04-07 12:25:43', '15');
-INSERT INTO `t_machine_record` VALUES ('329', '2017-04-07 12:26:43', '15');
-INSERT INTO `t_machine_record` VALUES ('330', '2017-04-07 12:27:43', '22');
-INSERT INTO `t_machine_record` VALUES ('331', '2017-04-07 12:28:43', '0');
-INSERT INTO `t_machine_record` VALUES ('332', '2017-04-07 12:29:43', '23');
-INSERT INTO `t_machine_record` VALUES ('333', '2017-04-07 12:30:43', '11');
-INSERT INTO `t_machine_record` VALUES ('334', '2017-04-07 12:31:43', '21');
-INSERT INTO `t_machine_record` VALUES ('335', '2017-04-07 12:32:43', '8');
-INSERT INTO `t_machine_record` VALUES ('336', '2017-04-07 12:33:43', '1');
-INSERT INTO `t_machine_record` VALUES ('337', '2017-04-07 12:34:43', '19');
-INSERT INTO `t_machine_record` VALUES ('338', '2017-04-07 12:35:43', '15');
-INSERT INTO `t_machine_record` VALUES ('339', '2017-04-07 12:36:43', '11');
-INSERT INTO `t_machine_record` VALUES ('340', '2017-04-07 12:37:43', '6');
-INSERT INTO `t_machine_record` VALUES ('341', '2017-04-07 12:38:43', '5');
-INSERT INTO `t_machine_record` VALUES ('342', '2017-04-07 12:39:43', '6');
-INSERT INTO `t_machine_record` VALUES ('343', '2017-04-07 12:40:43', '1');
-INSERT INTO `t_machine_record` VALUES ('344', '2017-04-07 12:41:43', '19');
-INSERT INTO `t_machine_record` VALUES ('345', '2017-04-07 12:42:43', '21');
-INSERT INTO `t_machine_record` VALUES ('346', '2017-04-07 12:43:43', '22');
-INSERT INTO `t_machine_record` VALUES ('347', '2017-04-07 12:44:43', '20');
-INSERT INTO `t_machine_record` VALUES ('348', '2017-04-07 12:45:43', '12');
-INSERT INTO `t_machine_record` VALUES ('349', '2017-04-07 12:46:43', '13');
-INSERT INTO `t_machine_record` VALUES ('350', '2017-04-07 12:47:43', '7');
-INSERT INTO `t_machine_record` VALUES ('351', '2017-04-07 12:48:43', '13');
-INSERT INTO `t_machine_record` VALUES ('352', '2017-04-07 12:49:43', '2');
-INSERT INTO `t_machine_record` VALUES ('353', '2017-04-07 12:50:43', '16');
-INSERT INTO `t_machine_record` VALUES ('354', '2017-04-07 12:51:43', '13');
-INSERT INTO `t_machine_record` VALUES ('355', '2017-04-07 12:52:43', '2');
-INSERT INTO `t_machine_record` VALUES ('356', '2017-04-07 12:53:43', '13');
-INSERT INTO `t_machine_record` VALUES ('357', '2017-04-07 12:55:31', '23');
-INSERT INTO `t_machine_record` VALUES ('358', '2017-04-07 14:53:20', '18');
-INSERT INTO `t_machine_record` VALUES ('359', '2017-04-07 14:54:29', '11');
-INSERT INTO `t_machine_record` VALUES ('360', '2017-04-07 14:55:29', '1');
-INSERT INTO `t_machine_record` VALUES ('361', '2017-04-07 14:56:29', '18');
-INSERT INTO `t_machine_record` VALUES ('362', '2017-04-07 14:57:29', '4');
-INSERT INTO `t_machine_record` VALUES ('363', '2017-04-07 14:58:29', '1');
-INSERT INTO `t_machine_record` VALUES ('364', '2017-04-07 14:59:29', '10');
-INSERT INTO `t_machine_record` VALUES ('365', '2017-04-07 15:00:29', '2');
-INSERT INTO `t_machine_record` VALUES ('366', '2017-04-07 15:01:29', '15');
-INSERT INTO `t_machine_record` VALUES ('367', '2017-04-07 15:02:29', '2');
-INSERT INTO `t_machine_record` VALUES ('368', '2017-04-07 15:03:29', '7');
-INSERT INTO `t_machine_record` VALUES ('369', '2017-04-07 15:04:29', '18');
-INSERT INTO `t_machine_record` VALUES ('370', '2017-04-07 15:05:29', '13');
-INSERT INTO `t_machine_record` VALUES ('371', '2017-04-07 15:06:29', '0');
-INSERT INTO `t_machine_record` VALUES ('372', '2017-04-07 15:07:29', '21');
-INSERT INTO `t_machine_record` VALUES ('373', '2017-04-07 15:08:29', '11');
-INSERT INTO `t_machine_record` VALUES ('374', '2017-04-07 15:09:29', '23');
-INSERT INTO `t_machine_record` VALUES ('375', '2017-04-07 15:10:29', '5');
-INSERT INTO `t_machine_record` VALUES ('376', '2017-04-07 15:11:29', '17');
-INSERT INTO `t_machine_record` VALUES ('377', '2017-04-07 15:12:29', '23');
-INSERT INTO `t_machine_record` VALUES ('378', '2017-04-07 15:13:29', '10');
-INSERT INTO `t_machine_record` VALUES ('379', '2017-04-07 15:14:29', '6');
-INSERT INTO `t_machine_record` VALUES ('380', '2017-04-07 15:15:29', '12');
-INSERT INTO `t_machine_record` VALUES ('381', '2017-04-07 15:16:29', '8');
-INSERT INTO `t_machine_record` VALUES ('382', '2017-04-07 15:17:29', '11');
-INSERT INTO `t_machine_record` VALUES ('383', '2017-04-07 15:18:29', '21');
-INSERT INTO `t_machine_record` VALUES ('384', '2017-04-07 15:19:29', '15');
-INSERT INTO `t_machine_record` VALUES ('385', '2017-04-07 15:20:29', '18');
-INSERT INTO `t_machine_record` VALUES ('386', '2017-04-07 15:21:29', '17');
-INSERT INTO `t_machine_record` VALUES ('387', '2017-04-07 15:22:29', '3');
-INSERT INTO `t_machine_record` VALUES ('388', '2017-04-07 15:23:29', '9');
-INSERT INTO `t_machine_record` VALUES ('389', '2017-04-07 15:24:29', '18');
-INSERT INTO `t_machine_record` VALUES ('390', '2017-04-07 15:25:29', '15');
-INSERT INTO `t_machine_record` VALUES ('391', '2017-04-07 15:26:29', '10');
-INSERT INTO `t_machine_record` VALUES ('392', '2017-04-07 15:27:29', '20');
-INSERT INTO `t_machine_record` VALUES ('393', '2017-04-07 15:28:29', '22');
-INSERT INTO `t_machine_record` VALUES ('394', '2017-04-07 15:29:29', '1');
-INSERT INTO `t_machine_record` VALUES ('395', '2017-04-07 15:30:29', '21');
-INSERT INTO `t_machine_record` VALUES ('396', '2017-04-07 15:31:29', '14');
-INSERT INTO `t_machine_record` VALUES ('397', '2017-04-07 15:32:29', '0');
-INSERT INTO `t_machine_record` VALUES ('398', '2017-04-07 15:33:29', '3');
-INSERT INTO `t_machine_record` VALUES ('399', '2017-04-07 15:34:29', '21');
-INSERT INTO `t_machine_record` VALUES ('400', '2017-04-07 15:35:29', '9');
-INSERT INTO `t_machine_record` VALUES ('401', '2017-04-07 15:36:29', '11');
-INSERT INTO `t_machine_record` VALUES ('402', '2017-04-07 15:37:29', '21');
-INSERT INTO `t_machine_record` VALUES ('403', '2017-04-07 15:38:29', '8');
-INSERT INTO `t_machine_record` VALUES ('404', '2017-04-07 15:39:29', '2');
-INSERT INTO `t_machine_record` VALUES ('405', '2017-04-07 15:40:29', '3');
-INSERT INTO `t_machine_record` VALUES ('406', '2017-04-07 15:41:29', '20');
-INSERT INTO `t_machine_record` VALUES ('407', '2017-04-07 15:42:29', '5');
-INSERT INTO `t_machine_record` VALUES ('408', '2017-04-07 15:43:29', '7');
-INSERT INTO `t_machine_record` VALUES ('409', '2017-04-07 15:44:29', '13');
-INSERT INTO `t_machine_record` VALUES ('410', '2017-04-07 15:45:29', '21');
-INSERT INTO `t_machine_record` VALUES ('411', '2017-04-07 15:46:29', '20');
-INSERT INTO `t_machine_record` VALUES ('412', '2017-04-07 15:47:29', '16');
-INSERT INTO `t_machine_record` VALUES ('413', '2017-04-07 15:48:29', '12');
-INSERT INTO `t_machine_record` VALUES ('414', '2017-04-07 15:49:29', '17');
-INSERT INTO `t_machine_record` VALUES ('415', '2017-04-07 15:50:29', '0');
-INSERT INTO `t_machine_record` VALUES ('416', '2017-04-07 15:51:29', '6');
-INSERT INTO `t_machine_record` VALUES ('417', '2017-04-07 15:52:29', '16');
-INSERT INTO `t_machine_record` VALUES ('418', '2017-04-07 15:53:29', '19');
-INSERT INTO `t_machine_record` VALUES ('419', '2017-04-07 15:54:29', '12');
-INSERT INTO `t_machine_record` VALUES ('420', '2017-04-07 15:55:29', '13');
-INSERT INTO `t_machine_record` VALUES ('421', '2017-04-07 15:56:29', '16');
-INSERT INTO `t_machine_record` VALUES ('422', '2017-04-07 15:58:34', '6');
-INSERT INTO `t_machine_record` VALUES ('423', '2017-04-07 15:59:34', '23');
-INSERT INTO `t_machine_record` VALUES ('424', '2017-04-07 16:00:34', '4');
-INSERT INTO `t_machine_record` VALUES ('425', '2017-04-07 16:01:34', '20');
-INSERT INTO `t_machine_record` VALUES ('426', '2017-04-07 16:02:34', '2');
-INSERT INTO `t_machine_record` VALUES ('427', '2017-04-07 16:03:34', '14');
-INSERT INTO `t_machine_record` VALUES ('428', '2017-04-07 16:04:34', '7');
-INSERT INTO `t_machine_record` VALUES ('429', '2017-04-07 16:05:34', '13');
-INSERT INTO `t_machine_record` VALUES ('430', '2017-04-07 16:06:34', '10');
-INSERT INTO `t_machine_record` VALUES ('431', '2017-04-07 16:07:34', '13');
-INSERT INTO `t_machine_record` VALUES ('432', '2017-04-07 16:08:34', '4');
-INSERT INTO `t_machine_record` VALUES ('433', '2017-04-07 16:09:34', '14');
-INSERT INTO `t_machine_record` VALUES ('434', '2017-04-07 16:10:34', '21');
-INSERT INTO `t_machine_record` VALUES ('435', '2017-04-07 16:11:34', '6');
-INSERT INTO `t_machine_record` VALUES ('436', '2017-04-07 16:12:34', '1');
-INSERT INTO `t_machine_record` VALUES ('437', '2017-04-07 16:13:34', '8');
-INSERT INTO `t_machine_record` VALUES ('438', '2017-04-07 16:14:34', '12');
-INSERT INTO `t_machine_record` VALUES ('439', '2017-04-07 16:15:34', '0');
-INSERT INTO `t_machine_record` VALUES ('440', '2017-04-07 16:16:34', '16');
-INSERT INTO `t_machine_record` VALUES ('441', '2017-04-07 16:18:23', '3');
-INSERT INTO `t_machine_record` VALUES ('442', '2017-04-07 16:19:23', '22');
-INSERT INTO `t_machine_record` VALUES ('443', '2017-04-07 16:20:23', '11');
-INSERT INTO `t_machine_record` VALUES ('444', '2017-04-07 16:21:23', '3');
-INSERT INTO `t_machine_record` VALUES ('445', '2017-04-07 16:22:23', '22');
-INSERT INTO `t_machine_record` VALUES ('446', '2017-04-07 16:23:23', '8');
-INSERT INTO `t_machine_record` VALUES ('447', '2017-04-07 16:24:23', '22');
-INSERT INTO `t_machine_record` VALUES ('448', '2017-04-07 16:25:23', '19');
+BEGIN;
+INSERT INTO `t_machine_record` VALUES ('1', '2017-03-30 10:03:16', '0'), ('2', '2017-03-30 10:03:56', '0'), ('3', '2017-03-30 10:04:36', '0'), ('4', '2017-03-30 10:05:16', '0'), ('5', '2017-03-30 10:05:56', '0'), ('6', '2017-03-30 10:06:36', '0'), ('7', '2017-03-30 10:07:16', '0'), ('8', '2017-03-30 10:07:56', '0'), ('9', '2017-03-30 10:08:36', '0'), ('10', '2017-03-30 10:09:16', '0'), ('11', '2017-03-30 10:09:56', '0'), ('12', '2017-03-30 10:10:36', '0'), ('13', '2017-03-30 10:11:16', '0'), ('14', '2017-03-30 10:11:56', '0'), ('15', '2017-03-30 10:12:36', '0'), ('16', '2017-03-30 10:13:16', '0'), ('17', '2017-03-30 10:13:56', '0'), ('18', '2017-03-30 10:14:36', '0'), ('19', '2017-03-30 10:15:16', '0'), ('20', '2017-03-30 10:15:56', '0'), ('21', '2017-03-30 10:16:36', '0'), ('22', '2017-03-30 10:17:16', '0'), ('23', '2017-03-30 10:17:56', '0'), ('24', '2017-03-30 17:13:36', '0'), ('25', '2017-03-30 17:14:16', '0'), ('26', '2017-03-30 17:14:56', '0'), ('27', '2017-03-30 17:15:36', '0'), ('28', '2017-03-30 17:16:16', '0'), ('29', '2017-03-30 17:16:56', '0'), ('30', '2017-03-30 17:17:36', '0'), ('31', '2017-03-30 17:18:16', '0'), ('32', '2017-03-30 17:18:56', '0'), ('33', '2017-03-30 17:19:36', '0'), ('34', '2017-03-30 17:20:16', '0'), ('35', '2017-03-30 17:20:56', '0'), ('36', '2017-03-30 17:21:36', '0'), ('37', '2017-03-30 17:22:16', '0'), ('38', '2017-03-30 17:22:56', '0'), ('39', '2017-03-30 17:23:36', '0'), ('40', '2017-03-30 17:24:16', '0'), ('41', '2017-03-30 17:24:56', '0'), ('42', '2017-04-05 16:32:40', '0'), ('43', '2017-04-05 16:33:40', '0'), ('44', '2017-04-05 16:34:40', '0'), ('45', '2017-04-05 16:35:40', '0'), ('46', '2017-04-05 16:36:40', '0'), ('47', '2017-04-05 16:38:36', '0'), ('48', '2017-04-05 16:39:36', '0'), ('49', '2017-04-05 16:40:36', '0'), ('50', '2017-04-05 16:41:36', '0'), ('51', '2017-04-05 16:42:36', '0'), ('52', '2017-04-05 16:43:36', '0'), ('53', '2017-04-05 16:44:36', '0'), ('54', '2017-04-05 16:45:36', '0'), ('55', '2017-04-05 16:46:36', '0'), ('56', '2017-04-05 16:47:36', '0'), ('57', '2017-04-05 17:30:32', '0'), ('58', '2017-04-05 17:31:32', '0'), ('59', '2017-04-05 17:32:32', '0'), ('60', '2017-04-05 17:33:32', '0'), ('61', '2017-04-05 17:34:32', '0'), ('62', '2017-04-05 17:36:40', '0'), ('63', '2017-04-05 17:37:40', '0'), ('64', '2017-04-05 17:38:42', '0'), ('65', '2017-04-05 17:39:53', '0'), ('66', '2017-04-05 17:40:36', '0'), ('67', '2017-04-05 17:41:36', '0'), ('68', '2017-04-05 17:42:36', '0'), ('69', '2017-04-05 17:46:37', '0'), ('70', '2017-04-05 17:47:37', '0'), ('71', '2017-04-05 17:48:37', '0'), ('72', '2017-04-05 17:49:37', '0'), ('73', '2017-04-05 17:50:37', '0'), ('74', '2017-04-05 17:51:37', '0'), ('75', '2017-04-06 14:36:40', '0'), ('76', '2017-04-06 14:37:40', '0'), ('77', '2017-04-06 14:38:40', '0'), ('78', '2017-04-06 14:39:40', '0'), ('79', '2017-04-06 14:40:40', '0'), ('80', '2017-04-06 14:41:40', '0'), ('81', '2017-04-06 14:42:40', '0'), ('82', '2017-04-06 14:43:40', '0'), ('83', '2017-04-06 14:44:40', '0'), ('84', '2017-04-06 14:45:40', '0'), ('85', '2017-04-06 14:46:40', '0'), ('86', '2017-04-06 14:47:40', '0'), ('87', '2017-04-06 14:48:40', '0'), ('88', '2017-04-06 14:49:40', '0'), ('89', '2017-04-06 14:50:40', '0'), ('90', '2017-04-06 14:51:40', '0'), ('91', '2017-04-06 14:52:40', '0'), ('92', '2017-04-06 14:53:40', '0'), ('93', '2017-04-06 14:54:40', '0'), ('94', '2017-04-06 14:55:40', '0'), ('95', '2017-04-06 14:56:40', '0'), ('96', '2017-04-06 14:57:40', '0'), ('97', '2017-04-06 14:58:40', '0'), ('98', '2017-04-06 14:59:40', '0'), ('99', '2017-04-06 15:00:40', '0'), ('100', '2017-04-06 15:01:40', '0'), ('101', '2017-04-06 15:02:40', '0'), ('102', '2017-04-06 15:03:40', '0'), ('103', '2017-04-06 15:04:40', '0'), ('104', '2017-04-06 15:05:40', '0'), ('105', '2017-04-06 15:06:40', '0'), ('106', '2017-04-06 15:07:40', '0'), ('107', '2017-04-06 15:08:40', '0'), ('108', '2017-04-06 15:09:40', '0'), ('109', '2017-04-06 15:10:40', '0'), ('110', '2017-04-06 15:11:40', '0'), ('111', '2017-04-06 15:12:40', '0'), ('112', '2017-04-06 15:13:40', '0'), ('113', '2017-04-06 15:14:40', '0'), ('114', '2017-04-06 15:15:40', '0'), ('115', '2017-04-06 15:16:40', '0'), ('116', '2017-04-06 15:17:40', '0'), ('117', '2017-04-06 15:18:40', '0'), ('118', '2017-04-06 15:19:40', '0'), ('119', '2017-04-06 15:20:40', '0'), ('120', '2017-04-06 15:21:40', '0'), ('121', '2017-04-06 15:22:40', '0'), ('122', '2017-04-06 15:23:40', '0'), ('123', '2017-04-06 15:24:40', '0'), ('124', '2017-04-06 15:25:40', '0'), ('125', '2017-04-06 15:26:40', '0'), ('126', '2017-04-06 15:27:40', '0'), ('127', '2017-04-06 15:28:40', '0'), ('128', '2017-04-06 15:29:40', '0'), ('129', '2017-04-06 15:30:40', '0'), ('130', '2017-04-06 15:31:40', '0'), ('131', '2017-04-06 15:32:40', '0'), ('132', '2017-04-06 15:33:40', '0'), ('133', '2017-04-06 15:34:40', '0'), ('134', '2017-04-06 15:35:40', '0'), ('135', '2017-04-06 15:36:40', '0'), ('136', '2017-04-06 15:37:40', '0'), ('137', '2017-04-06 15:38:40', '0'), ('138', '2017-04-06 15:40:48', '0'), ('139', '2017-04-06 15:41:48', '0'), ('140', '2017-04-06 15:43:33', '0'), ('141', '2017-04-06 15:44:25', '0'), ('142', '2017-04-06 15:45:25', '0'), ('143', '2017-04-06 15:46:25', '0'), ('144', '2017-04-06 15:47:25', '0'), ('145', '2017-04-06 15:48:25', '0'), ('146', '2017-04-06 15:49:25', '0'), ('147', '2017-04-06 15:50:25', '0'), ('148', '2017-04-06 15:51:25', '0'), ('149', '2017-04-06 15:52:25', '0'), ('150', '2017-04-06 15:53:25', '0'), ('151', '2017-04-06 15:54:25', '0'), ('152', '2017-04-06 15:55:25', '0'), ('153', '2017-04-06 15:56:46', '0'), ('154', '2017-04-06 15:57:46', '0'), ('155', '2017-04-06 15:58:46', '0'), ('156', '2017-04-06 15:59:46', '0'), ('157', '2017-04-06 16:00:46', '0'), ('158', '2017-04-06 16:01:46', '0'), ('159', '2017-04-06 16:02:46', '0'), ('160', '2017-04-06 16:03:46', '0'), ('161', '2017-04-06 16:04:46', '0'), ('162', '2017-04-06 16:05:46', '0'), ('163', '2017-04-06 16:06:46', '0'), ('164', '2017-04-06 16:07:46', '0'), ('165', '2017-04-06 16:08:46', '0'), ('166', '2017-04-06 16:09:46', '0'), ('167', '2017-04-06 16:10:46', '0'), ('168', '2017-04-06 16:11:46', '0'), ('169', '2017-04-06 16:12:46', '0'), ('170', '2017-04-06 16:13:46', '0'), ('171', '2017-04-06 16:14:46', '0'), ('172', '2017-04-06 16:15:46', '0'), ('173', '2017-04-06 16:16:46', '0'), ('174', '2017-04-06 16:18:34', '0'), ('175', '2017-04-06 16:19:34', '0'), ('176', '2017-04-06 16:20:34', '0'), ('177', '2017-04-06 16:21:34', '0'), ('178', '2017-04-06 16:22:34', '0'), ('179', '2017-04-06 16:23:34', '0'), ('180', '2017-04-06 16:24:34', '0'), ('181', '2017-04-06 16:25:34', '0'), ('182', '2017-04-06 16:26:34', '0'), ('183', '2017-04-06 16:27:34', '0'), ('184', '2017-04-06 16:28:34', '0'), ('185', '2017-04-06 16:29:34', '0'), ('186', '2017-04-06 16:30:34', '0'), ('187', '2017-04-06 16:31:34', '0'), ('188', '2017-04-06 16:32:34', '0'), ('189', '2017-04-06 16:33:34', '0'), ('190', '2017-04-06 16:34:34', '0'), ('191', '2017-04-06 16:35:34', '0'), ('192', '2017-04-06 16:36:34', '0'), ('193', '2017-04-06 16:37:34', '0'), ('194', '2017-04-06 16:38:34', '0'), ('195', '2017-04-06 16:39:34', '0'), ('196', '2017-04-06 16:40:34', '0'), ('197', '2017-04-06 16:41:34', '0'), ('198', '2017-04-06 16:42:34', '0'), ('199', '2017-04-06 16:43:34', '0'), ('200', '2017-04-06 16:44:34', '0'), ('201', '2017-04-06 16:45:34', '0'), ('202', '2017-04-06 16:46:34', '0'), ('203', '2017-04-06 16:47:34', '0'), ('204', '2017-04-06 16:48:34', '0'), ('205', '2017-04-06 16:49:34', '0'), ('206', '2017-04-06 16:50:34', '0'), ('207', '2017-04-06 16:51:34', '0'), ('208', '2017-04-06 16:52:34', '0'), ('209', '2017-04-06 16:53:34', '0'), ('210', '2017-04-06 16:54:34', '0'), ('211', '2017-04-06 16:55:34', '0'), ('212', '2017-04-06 16:56:34', '0'), ('213', '2017-04-06 16:57:34', '0'), ('214', '2017-04-06 16:58:34', '0'), ('215', '2017-04-06 16:59:34', '0'), ('216', '2017-04-06 17:00:34', '0'), ('217', '2017-04-06 17:01:34', '0'), ('218', '2017-04-06 17:02:34', '0'), ('219', '2017-04-06 17:03:34', '0'), ('220', '2017-04-06 17:04:34', '0'), ('221', '2017-04-06 17:05:34', '0'), ('222', '2017-04-06 17:06:34', '0'), ('223', '2017-04-06 17:07:34', '0'), ('224', '2017-04-06 17:08:34', '0'), ('225', '2017-04-06 17:09:34', '0'), ('226', '2017-04-06 17:10:34', '0'), ('227', '2017-04-06 17:11:34', '0'), ('228', '2017-04-06 17:12:34', '0'), ('229', '2017-04-06 17:13:34', '0'), ('230', '2017-04-06 17:14:34', '0'), ('231', '2017-04-06 17:15:34', '0'), ('232', '2017-04-06 17:16:34', '0'), ('233', '2017-04-06 17:17:34', '0'), ('234', '2017-04-06 17:18:34', '0'), ('235', '2017-04-06 17:19:34', '0'), ('236', '2017-04-06 17:20:34', '0'), ('237', '2017-04-06 17:21:34', '0'), ('238', '2017-04-06 17:22:34', '0'), ('239', '2017-04-06 17:23:34', '0'), ('240', '2017-04-06 17:24:34', '0'), ('241', '2017-04-06 17:25:34', '0'), ('242', '2017-04-06 17:26:34', '0'), ('243', '2017-04-06 17:27:34', '0'), ('244', '2017-04-06 17:28:34', '0'), ('245', '2017-04-06 17:29:34', '0'), ('246', '2017-04-06 17:30:34', '0'), ('247', '2017-04-06 17:31:28', '0'), ('248', '2017-04-06 17:32:28', '0'), ('249', '2017-04-06 17:33:28', '0'), ('250', '2017-04-06 17:34:28', '0'), ('251', '2017-04-06 17:35:28', '0'), ('252', '2017-04-06 17:36:28', '0'), ('253', '2017-04-06 17:37:28', '0'), ('254', '2017-04-06 17:38:28', '0'), ('255', '2017-04-06 17:39:28', '0'), ('256', '2017-04-06 17:40:28', '0'), ('257', '2017-04-06 17:41:28', '0'), ('258', '2017-04-06 17:42:28', '0'), ('259', '2017-04-06 17:43:28', '0'), ('260', '2017-04-06 17:44:28', '0'), ('261', '2017-04-06 17:45:28', '0'), ('262', '2017-04-06 17:46:28', '0'), ('263', '2017-04-06 17:47:28', '0'), ('264', '2017-04-06 17:48:28', '0'), ('265', '2017-04-06 17:49:28', '0'), ('266', '2017-04-06 17:50:28', '0'), ('267', '2017-04-06 17:51:28', '0'), ('268', '2017-04-06 17:52:28', '0'), ('269', '2017-04-06 17:53:28', '0'), ('270', '2017-04-06 17:54:28', '0'), ('285', '2017-04-07 11:26:24', '20'), ('288', '2017-04-07 11:37:29', '9'), ('289', '2017-04-07 11:38:29', '8'), ('290', '2017-04-07 11:40:12', '14'), ('291', '2017-04-07 11:46:53', '10'), ('292', '2017-04-07 11:49:43', '20'), ('293', '2017-04-07 11:50:43', '5'), ('294', '2017-04-07 11:51:43', '19'), ('295', '2017-04-07 11:52:43', '6'), ('296', '2017-04-07 11:53:43', '18'), ('297', '2017-04-07 11:54:43', '19'), ('298', '2017-04-07 11:55:43', '8'), ('299', '2017-04-07 11:56:43', '20'), ('300', '2017-04-07 11:57:43', '23'), ('301', '2017-04-07 11:58:43', '4'), ('302', '2017-04-07 11:59:43', '8'), ('303', '2017-04-07 12:00:43', '23'), ('304', '2017-04-07 12:01:43', '9'), ('305', '2017-04-07 12:02:43', '5'), ('306', '2017-04-07 12:03:43', '14'), ('307', '2017-04-07 12:04:43', '7'), ('308', '2017-04-07 12:05:43', '18'), ('309', '2017-04-07 12:06:43', '12'), ('310', '2017-04-07 12:07:43', '10'), ('311', '2017-04-07 12:08:43', '21'), ('312', '2017-04-07 12:09:43', '13'), ('313', '2017-04-07 12:10:43', '16'), ('314', '2017-04-07 12:11:43', '22'), ('315', '2017-04-07 12:12:43', '1'), ('316', '2017-04-07 12:13:43', '12'), ('317', '2017-04-07 12:14:43', '8'), ('318', '2017-04-07 12:15:43', '3'), ('319', '2017-04-07 12:16:43', '17'), ('320', '2017-04-07 12:17:43', '20'), ('321', '2017-04-07 12:18:43', '23'), ('322', '2017-04-07 12:19:43', '21'), ('323', '2017-04-07 12:20:43', '14'), ('324', '2017-04-07 12:21:43', '13'), ('325', '2017-04-07 12:22:43', '9'), ('326', '2017-04-07 12:23:43', '10'), ('327', '2017-04-07 12:24:43', '16'), ('328', '2017-04-07 12:25:43', '15'), ('329', '2017-04-07 12:26:43', '15'), ('330', '2017-04-07 12:27:43', '22'), ('331', '2017-04-07 12:28:43', '0'), ('332', '2017-04-07 12:29:43', '23'), ('333', '2017-04-07 12:30:43', '11'), ('334', '2017-04-07 12:31:43', '21'), ('335', '2017-04-07 12:32:43', '8'), ('336', '2017-04-07 12:33:43', '1'), ('337', '2017-04-07 12:34:43', '19'), ('338', '2017-04-07 12:35:43', '15'), ('339', '2017-04-07 12:36:43', '11'), ('340', '2017-04-07 12:37:43', '6'), ('341', '2017-04-07 12:38:43', '5'), ('342', '2017-04-07 12:39:43', '6'), ('343', '2017-04-07 12:40:43', '1'), ('344', '2017-04-07 12:41:43', '19'), ('345', '2017-04-07 12:42:43', '21'), ('346', '2017-04-07 12:43:43', '22'), ('347', '2017-04-07 12:44:43', '20'), ('348', '2017-04-07 12:45:43', '12'), ('349', '2017-04-07 12:46:43', '13'), ('350', '2017-04-07 12:47:43', '7'), ('351', '2017-04-07 12:48:43', '13'), ('352', '2017-04-07 12:49:43', '2'), ('353', '2017-04-07 12:50:43', '16'), ('354', '2017-04-07 12:51:43', '13'), ('355', '2017-04-07 12:52:43', '2'), ('356', '2017-04-07 12:53:43', '13'), ('357', '2017-04-07 12:55:31', '23'), ('358', '2017-04-07 14:53:20', '18'), ('359', '2017-04-07 14:54:29', '11'), ('360', '2017-04-07 14:55:29', '1'), ('361', '2017-04-07 14:56:29', '18'), ('362', '2017-04-07 14:57:29', '4'), ('363', '2017-04-07 14:58:29', '1'), ('364', '2017-04-07 14:59:29', '10'), ('365', '2017-04-07 15:00:29', '2'), ('366', '2017-04-07 15:01:29', '15'), ('367', '2017-04-07 15:02:29', '2'), ('368', '2017-04-07 15:03:29', '7'), ('369', '2017-04-07 15:04:29', '18'), ('370', '2017-04-07 15:05:29', '13'), ('371', '2017-04-07 15:06:29', '0'), ('372', '2017-04-07 15:07:29', '21'), ('373', '2017-04-07 15:08:29', '11'), ('374', '2017-04-07 15:09:29', '23'), ('375', '2017-04-07 15:10:29', '5'), ('376', '2017-04-07 15:11:29', '17'), ('377', '2017-04-07 15:12:29', '23'), ('378', '2017-04-07 15:13:29', '10'), ('379', '2017-04-07 15:14:29', '6'), ('380', '2017-04-07 15:15:29', '12'), ('381', '2017-04-07 15:16:29', '8'), ('382', '2017-04-07 15:17:29', '11'), ('383', '2017-04-07 15:18:29', '21'), ('384', '2017-04-07 15:19:29', '15'), ('385', '2017-04-07 15:20:29', '18'), ('386', '2017-04-07 15:21:29', '17'), ('387', '2017-04-07 15:22:29', '3'), ('388', '2017-04-07 15:23:29', '9'), ('389', '2017-04-07 15:24:29', '18'), ('390', '2017-04-07 15:25:29', '15'), ('391', '2017-04-07 15:26:29', '10'), ('392', '2017-04-07 15:27:29', '20'), ('393', '2017-04-07 15:28:29', '22'), ('394', '2017-04-07 15:29:29', '1'), ('395', '2017-04-07 15:30:29', '21'), ('396', '2017-04-07 15:31:29', '14'), ('397', '2017-04-07 15:32:29', '0'), ('398', '2017-04-07 15:33:29', '3'), ('399', '2017-04-07 15:34:29', '21'), ('400', '2017-04-07 15:35:29', '9'), ('401', '2017-04-07 15:36:29', '11'), ('402', '2017-04-07 15:37:29', '21'), ('403', '2017-04-07 15:38:29', '8'), ('404', '2017-04-07 15:39:29', '2'), ('405', '2017-04-07 15:40:29', '3'), ('406', '2017-04-07 15:41:29', '20'), ('407', '2017-04-07 15:42:29', '5'), ('408', '2017-04-07 15:43:29', '7'), ('409', '2017-04-07 15:44:29', '13'), ('410', '2017-04-07 15:45:29', '21'), ('411', '2017-04-07 15:46:29', '20'), ('412', '2017-04-07 15:47:29', '16'), ('413', '2017-04-07 15:48:29', '12'), ('414', '2017-04-07 15:49:29', '17'), ('415', '2017-04-07 15:50:29', '0'), ('416', '2017-04-07 15:51:29', '6'), ('417', '2017-04-07 15:52:29', '16'), ('418', '2017-04-07 15:53:29', '19'), ('419', '2017-04-07 15:54:29', '12'), ('420', '2017-04-07 15:55:29', '13'), ('421', '2017-04-07 15:56:29', '16'), ('422', '2017-04-07 15:58:34', '6'), ('423', '2017-04-07 15:59:34', '23'), ('424', '2017-04-07 16:00:34', '4'), ('425', '2017-04-07 16:01:34', '20'), ('426', '2017-04-07 16:02:34', '2'), ('427', '2017-04-07 16:03:34', '14'), ('428', '2017-04-07 16:04:34', '7'), ('429', '2017-04-07 16:05:34', '13'), ('430', '2017-04-07 16:06:34', '10'), ('431', '2017-04-07 16:07:34', '13'), ('432', '2017-04-07 16:08:34', '4'), ('433', '2017-04-07 16:09:34', '14'), ('434', '2017-04-07 16:10:34', '21'), ('435', '2017-04-07 16:11:34', '6'), ('436', '2017-04-07 16:12:34', '1'), ('437', '2017-04-07 16:13:34', '8'), ('438', '2017-04-07 16:14:34', '12'), ('439', '2017-04-07 16:15:34', '0'), ('440', '2017-04-07 16:16:34', '16'), ('441', '2017-04-07 16:18:23', '3'), ('442', '2017-04-07 16:19:23', '22'), ('443', '2017-04-07 16:20:23', '11'), ('444', '2017-04-07 16:21:23', '3'), ('445', '2017-04-07 16:22:23', '22'), ('446', '2017-04-07 16:23:23', '8'), ('447', '2017-04-07 16:24:23', '22'), ('448', '2017-04-07 16:25:23', '19'), ('449', '2017-04-08 10:26:13', '10'), ('450', '2017-04-08 10:27:13', '18'), ('451', '2017-04-08 10:28:13', '6'), ('452', '2017-04-08 10:29:13', '17'), ('453', '2017-04-08 10:30:13', '6'), ('454', '2017-04-08 10:31:13', '9'), ('455', '2017-04-08 10:32:13', '21'), ('456', '2017-04-08 10:33:13', '9'), ('457', '2017-04-08 10:34:13', '21'), ('458', '2017-04-08 10:35:13', '6'), ('459', '2017-04-08 10:36:13', '16'), ('460', '2017-04-08 10:37:13', '7'), ('461', '2017-04-08 10:38:13', '17'), ('462', '2017-04-08 10:39:13', '8'), ('463', '2017-04-08 10:40:13', '17'), ('464', '2017-04-08 10:41:13', '10'), ('465', '2017-04-08 10:42:13', '7'), ('466', '2017-04-08 10:43:13', '23'), ('467', '2017-04-08 10:44:13', '12'), ('468', '2017-04-08 10:45:13', '19'), ('469', '2017-04-08 10:46:13', '5'), ('470', '2017-04-08 10:47:13', '18'), ('471', '2017-04-08 10:48:13', '6'), ('472', '2017-04-08 10:49:13', '23'), ('473', '2017-04-08 10:50:13', '0'), ('474', '2017-04-08 10:51:13', '5'), ('475', '2017-04-08 10:52:13', '11'), ('476', '2017-04-08 10:53:13', '17'), ('477', '2017-04-08 10:54:13', '5'), ('478', '2017-04-08 10:55:13', '23'), ('479', '2017-04-08 10:56:13', '7'), ('480', '2017-04-08 10:57:22', '3'), ('481', '2017-04-08 10:58:22', '7'), ('482', '2017-04-08 10:59:22', '8'), ('483', '2017-04-08 11:00:58', '19'), ('484', '2017-04-08 11:02:20', '3'), ('485', '2017-04-08 11:03:20', '22'), ('486', '2017-04-08 11:04:20', '19'), ('487', '2017-04-08 11:05:20', '13'), ('488', '2017-04-08 11:06:20', '14'), ('489', '2017-04-08 11:07:20', '15'), ('490', '2017-04-08 11:08:20', '1'), ('491', '2017-04-08 11:09:20', '15'), ('492', '2017-04-08 11:10:20', '20'), ('493', '2017-04-08 11:11:20', '14'), ('494', '2017-04-08 11:12:20', '3'), ('495', '2017-04-08 11:13:20', '9'), ('496', '2017-04-08 11:14:20', '21'), ('497', '2017-04-08 11:15:20', '16'), ('498', '2017-04-08 11:16:20', '8'), ('499', '2017-04-08 11:17:20', '15'), ('500', '2017-04-08 11:18:20', '5'), ('501', '2017-04-08 11:19:20', '15'), ('502', '2017-04-08 11:20:20', '1'), ('503', '2017-04-08 11:21:20', '5'), ('504', '2017-04-08 11:22:20', '13'), ('505', '2017-04-08 11:23:20', '8'), ('506', '2017-04-08 11:24:20', '16'), ('507', '2017-04-08 11:25:20', '10'), ('508', '2017-04-08 11:26:20', '16'), ('509', '2017-04-08 11:27:20', '4'), ('510', '2017-04-08 11:28:20', '18'), ('511', '2017-04-08 11:29:20', '22'), ('512', '2017-04-08 11:30:20', '6'), ('513', '2017-04-08 11:31:20', '14'), ('514', '2017-04-08 11:32:20', '3'), ('515', '2017-04-08 11:33:20', '8'), ('516', '2017-04-08 11:34:20', '0'), ('517', '2017-04-08 11:35:20', '6'), ('518', '2017-04-08 11:36:20', '16'), ('519', '2017-04-08 11:37:20', '9'), ('520', '2017-04-08 11:38:20', '21'), ('521', '2017-04-08 11:39:20', '16'), ('522', '2017-04-08 11:40:20', '17'), ('523', '2017-04-08 11:41:20', '10'), ('524', '2017-04-08 11:42:20', '0'), ('525', '2017-04-08 11:43:20', '19'), ('526', '2017-04-08 11:44:20', '12'), ('527', '2017-04-08 11:45:20', '13'), ('528', '2017-04-08 11:46:20', '18'), ('529', '2017-04-08 11:47:20', '15'), ('530', '2017-04-08 11:48:20', '17'), ('531', '2017-04-08 11:49:20', '6'), ('532', '2017-04-08 11:50:20', '10'), ('533', '2017-04-08 11:51:20', '12'), ('534', '2017-04-08 11:52:20', '16'), ('535', '2017-04-08 11:53:20', '11'), ('536', '2017-04-08 11:54:20', '13'), ('537', '2017-04-08 11:55:20', '20'), ('538', '2017-04-08 11:56:20', '21'), ('539', '2017-04-08 11:57:20', '1'), ('540', '2017-04-08 11:58:20', '17'), ('541', '2017-04-08 11:59:20', '12'), ('542', '2017-04-08 12:00:20', '23'), ('543', '2017-04-08 12:01:20', '4'), ('544', '2017-04-08 12:02:20', '13'), ('545', '2017-04-08 12:03:20', '20'), ('546', '2017-04-08 12:04:20', '18'), ('547', '2017-04-08 12:05:20', '1'), ('548', '2017-04-08 12:06:20', '22'), ('549', '2017-04-08 12:07:20', '22'), ('550', '2017-04-08 12:08:20', '15'), ('551', '2017-04-08 12:09:20', '5'), ('552', '2017-04-08 12:10:20', '11'), ('553', '2017-04-08 12:11:20', '14'), ('554', '2017-04-08 12:12:20', '6'), ('555', '2017-04-08 12:13:20', '20'), ('556', '2017-04-08 12:14:20', '18'), ('557', '2017-04-08 12:15:20', '22'), ('558', '2017-04-08 12:16:20', '5'), ('559', '2017-04-08 12:17:20', '9'), ('560', '2017-04-08 12:18:20', '0'), ('561', '2017-04-08 12:19:20', '15'), ('562', '2017-04-08 12:20:20', '22'), ('563', '2017-04-08 12:21:20', '15'), ('564', '2017-04-08 12:22:20', '13'), ('565', '2017-04-08 12:23:20', '3'), ('566', '2017-04-08 12:24:20', '4'), ('567', '2017-04-08 12:25:20', '8'), ('568', '2017-04-08 12:26:20', '17'), ('569', '2017-04-08 12:27:20', '16'), ('570', '2017-04-08 12:28:20', '7'), ('571', '2017-04-08 12:29:20', '11'), ('572', '2017-04-08 12:30:20', '5'), ('573', '2017-04-08 12:31:20', '12'), ('574', '2017-04-08 12:32:20', '10'), ('575', '2017-04-08 12:33:20', '13'), ('576', '2017-04-08 12:34:20', '9'), ('577', '2017-04-08 12:35:20', '5'), ('578', '2017-04-08 12:36:20', '8'), ('579', '2017-04-08 12:37:20', '15'), ('580', '2017-04-08 12:38:20', '19'), ('581', '2017-04-08 12:39:20', '22'), ('582', '2017-04-08 12:40:20', '9'), ('583', '2017-04-08 12:41:20', '15'), ('584', '2017-04-08 12:42:20', '20'), ('585', '2017-04-08 12:43:20', '23'), ('586', '2017-04-08 12:44:20', '23'), ('587', '2017-04-08 12:45:20', '4'), ('588', '2017-04-08 12:46:20', '3'), ('589', '2017-04-08 12:47:20', '7'), ('590', '2017-04-08 12:48:20', '1'), ('591', '2017-04-08 12:49:20', '13'), ('592', '2017-04-08 12:50:20', '21'), ('593', '2017-04-08 12:51:20', '14'), ('594', '2017-04-08 12:52:20', '0'), ('595', '2017-04-08 12:53:20', '16'), ('596', '2017-04-08 12:54:20', '6'), ('597', '2017-04-08 12:55:20', '14'), ('598', '2017-04-08 12:56:20', '22'), ('599', '2017-04-08 12:57:20', '1'), ('600', '2017-04-08 12:58:20', '3'), ('601', '2017-04-08 12:59:20', '5'), ('602', '2017-04-08 13:00:20', '12'), ('603', '2017-04-08 13:01:20', '9'), ('604', '2017-04-08 13:02:20', '23'), ('605', '2017-04-08 13:03:20', '21'), ('606', '2017-04-08 13:04:20', '12'), ('607', '2017-04-08 13:05:20', '2'), ('608', '2017-04-08 13:06:20', '6'), ('609', '2017-04-08 13:07:20', '17'), ('610', '2017-04-08 13:08:20', '11'), ('611', '2017-04-08 13:09:20', '9'), ('612', '2017-04-08 13:10:20', '17'), ('613', '2017-04-08 13:11:20', '17'), ('614', '2017-04-08 13:12:20', '13'), ('615', '2017-04-08 13:13:20', '5'), ('616', '2017-04-08 13:14:20', '10'), ('617', '2017-04-08 13:15:20', '9'), ('618', '2017-04-08 13:16:20', '20'), ('619', '2017-04-08 13:17:20', '10'), ('620', '2017-04-08 13:18:20', '20'), ('621', '2017-04-08 13:19:20', '12'), ('622', '2017-04-08 13:20:20', '23'), ('623', '2017-04-08 13:21:20', '12'), ('624', '2017-04-08 13:22:20', '12'), ('625', '2017-04-08 13:23:20', '23'), ('626', '2017-04-08 13:24:20', '23'), ('627', '2017-04-08 13:25:20', '18'), ('628', '2017-04-08 13:26:20', '14'), ('629', '2017-04-08 13:27:20', '3'), ('630', '2017-04-08 13:28:20', '2'), ('631', '2017-04-08 13:29:20', '15'), ('632', '2017-04-08 13:30:20', '4'), ('633', '2017-04-08 13:31:20', '20'), ('634', '2017-04-08 13:32:20', '3'), ('635', '2017-04-08 13:33:20', '19'), ('636', '2017-04-08 13:34:20', '21'), ('637', '2017-04-08 13:35:20', '2'), ('638', '2017-04-08 13:36:20', '2'), ('639', '2017-04-08 13:37:20', '1'), ('640', '2017-04-08 13:38:20', '0'), ('641', '2017-04-08 13:39:20', '2'), ('642', '2017-04-08 13:40:20', '4'), ('643', '2017-04-08 13:41:20', '5'), ('644', '2017-04-08 13:42:20', '21'), ('645', '2017-04-08 13:43:20', '19'), ('646', '2017-04-08 13:44:20', '23'), ('647', '2017-04-08 13:45:21', '13'), ('648', '2017-04-08 13:46:21', '18'), ('649', '2017-04-08 13:47:21', '7'), ('650', '2017-04-08 13:48:21', '14'), ('651', '2017-04-08 13:49:21', '22'), ('652', '2017-04-08 13:50:21', '9'), ('653', '2017-04-08 13:51:21', '14'), ('654', '2017-04-08 13:52:21', '17'), ('655', '2017-04-08 13:53:21', '22'), ('656', '2017-04-08 13:54:21', '18'), ('657', '2017-04-08 13:55:21', '6'), ('658', '2017-04-08 13:56:21', '7'), ('659', '2017-04-08 13:57:21', '18'), ('660', '2017-04-08 13:58:21', '13'), ('661', '2017-04-08 13:59:21', '19'), ('662', '2017-04-08 14:00:21', '11'), ('663', '2017-04-08 14:01:21', '20'), ('664', '2017-04-08 14:02:21', '17'), ('665', '2017-04-08 14:03:21', '16'), ('666', '2017-04-08 14:04:21', '16'), ('667', '2017-04-08 14:05:21', '5'), ('668', '2017-04-08 14:06:21', '12'), ('669', '2017-04-08 14:07:21', '22'), ('670', '2017-04-08 14:08:21', '18'), ('671', '2017-04-08 14:09:21', '7'), ('672', '2017-04-08 14:10:21', '3'), ('673', '2017-04-08 14:11:21', '10'), ('674', '2017-04-08 14:12:21', '11'), ('675', '2017-04-08 14:13:21', '12'), ('676', '2017-04-08 14:14:21', '11'), ('677', '2017-04-08 14:15:21', '10'), ('678', '2017-04-08 14:16:21', '18'), ('679', '2017-04-08 14:17:21', '13'), ('680', '2017-04-08 14:18:21', '21'), ('681', '2017-04-08 14:19:21', '2'), ('682', '2017-04-08 14:20:21', '3'), ('683', '2017-04-08 14:21:21', '16'), ('684', '2017-04-08 14:22:21', '8'), ('685', '2017-04-08 14:23:21', '9'), ('686', '2017-04-08 14:24:21', '18'), ('687', '2017-04-08 14:25:21', '22'), ('688', '2017-04-08 14:26:21', '13'), ('689', '2017-04-08 14:27:21', '22'), ('690', '2017-04-08 14:28:21', '4'), ('691', '2017-04-08 14:29:21', '18'), ('692', '2017-04-08 14:30:21', '3'), ('693', '2017-04-08 14:31:21', '0'), ('694', '2017-04-08 14:32:21', '16'), ('695', '2017-04-08 14:33:21', '13'), ('696', '2017-04-08 14:34:21', '8'), ('697', '2017-04-08 14:35:21', '5'), ('698', '2017-04-08 14:36:21', '2'), ('699', '2017-04-08 14:37:21', '7'), ('700', '2017-04-08 14:38:21', '10'), ('701', '2017-04-08 14:39:21', '20'), ('702', '2017-04-08 14:40:21', '6'), ('703', '2017-04-08 14:41:21', '13'), ('704', '2017-04-08 14:42:21', '15'), ('705', '2017-04-08 14:43:21', '5'), ('706', '2017-04-08 14:44:21', '5'), ('707', '2017-04-08 14:45:21', '20'), ('708', '2017-04-08 14:46:21', '9'), ('709', '2017-04-08 14:47:21', '23'), ('710', '2017-04-08 14:48:21', '21'), ('711', '2017-04-08 14:49:21', '22'), ('712', '2017-04-08 14:50:21', '5'), ('713', '2017-04-08 14:51:21', '12'), ('714', '2017-04-08 14:52:21', '1'), ('715', '2017-04-08 14:53:21', '11'), ('716', '2017-04-08 14:54:21', '0'), ('717', '2017-04-08 14:55:21', '16'), ('718', '2017-04-08 14:56:21', '0'), ('719', '2017-04-08 14:57:21', '20'), ('720', '2017-04-08 14:58:21', '21'), ('721', '2017-04-08 14:59:21', '11'), ('722', '2017-04-08 15:00:21', '5'), ('723', '2017-04-08 15:01:21', '12'), ('724', '2017-04-08 15:02:21', '3'), ('725', '2017-04-08 15:03:21', '4'), ('726', '2017-04-08 15:04:21', '5'), ('727', '2017-04-08 15:05:21', '12'), ('728', '2017-04-08 15:06:21', '18'), ('729', '2017-04-08 15:07:21', '16'), ('730', '2017-04-08 15:08:21', '7'), ('731', '2017-04-08 15:09:21', '5'), ('732', '2017-04-08 15:10:21', '22'), ('733', '2017-04-08 15:11:21', '13'), ('734', '2017-04-08 15:12:21', '5'), ('735', '2017-04-08 15:13:21', '23'), ('736', '2017-04-08 15:14:21', '11'), ('737', '2017-04-08 15:15:21', '0'), ('738', '2017-04-08 15:16:21', '9'), ('739', '2017-04-08 15:17:21', '23'), ('740', '2017-04-08 15:18:21', '11'), ('741', '2017-04-08 15:19:21', '19'), ('742', '2017-04-08 15:20:21', '9'), ('743', '2017-04-08 15:21:21', '2'), ('744', '2017-04-08 15:22:21', '18'), ('745', '2017-04-08 15:23:21', '23'), ('746', '2017-04-08 15:24:21', '0'), ('747', '2017-04-08 15:25:21', '11'), ('748', '2017-04-08 15:26:21', '4'), ('749', '2017-04-08 15:27:21', '15'), ('750', '2017-04-08 15:28:21', '8'), ('751', '2017-04-08 15:29:21', '5'), ('752', '2017-04-08 15:30:21', '13'), ('753', '2017-04-08 15:31:21', '14'), ('754', '2017-04-08 15:32:21', '1'), ('755', '2017-04-08 15:33:21', '23'), ('756', '2017-04-08 15:34:21', '0'), ('757', '2017-04-08 15:35:21', '18'), ('758', '2017-04-08 15:36:21', '3'), ('759', '2017-04-08 15:37:21', '0'), ('760', '2017-04-08 15:38:21', '2'), ('761', '2017-04-08 15:39:21', '7'), ('762', '2017-04-08 15:40:21', '11'), ('763', '2017-04-08 15:41:21', '5'), ('764', '2017-04-08 15:42:21', '1'), ('765', '2017-04-08 15:43:21', '12'), ('766', '2017-04-08 15:44:21', '7'), ('767', '2017-04-08 15:45:21', '11'), ('768', '2017-04-08 15:46:21', '3'), ('769', '2017-04-08 15:47:21', '11'), ('770', '2017-04-08 15:48:21', '17'), ('771', '2017-04-08 15:49:21', '6'), ('772', '2017-04-08 15:50:21', '19'), ('773', '2017-04-08 15:51:21', '4'), ('774', '2017-04-08 15:52:21', '2'), ('775', '2017-04-08 15:53:21', '5'), ('776', '2017-04-08 15:54:21', '10'), ('777', '2017-04-08 15:55:21', '22'), ('778', '2017-04-08 15:56:21', '20'), ('779', '2017-04-08 15:57:21', '1'), ('780', '2017-04-08 15:58:21', '14'), ('781', '2017-04-08 15:59:21', '9'), ('782', '2017-04-08 16:00:21', '7'), ('783', '2017-04-08 16:01:21', '16'), ('784', '2017-04-08 16:02:21', '2'), ('785', '2017-04-08 16:03:21', '23'), ('786', '2017-04-08 16:04:21', '14'), ('787', '2017-04-08 16:05:21', '19'), ('788', '2017-04-08 16:06:21', '7'), ('789', '2017-04-08 16:07:21', '7'), ('790', '2017-04-08 16:08:21', '14'), ('791', '2017-04-08 16:09:21', '3'), ('792', '2017-04-08 16:10:21', '5'), ('793', '2017-04-08 16:11:21', '11'), ('794', '2017-04-08 16:12:21', '17'), ('795', '2017-04-08 16:13:21', '2'), ('796', '2017-04-08 16:14:21', '5'), ('797', '2017-04-08 16:15:21', '22'), ('798', '2017-04-08 16:16:21', '15'), ('799', '2017-04-08 16:17:21', '23'), ('800', '2017-04-08 16:18:21', '17'), ('801', '2017-04-08 16:19:21', '17'), ('802', '2017-04-08 16:20:21', '20'), ('803', '2017-04-08 16:21:21', '21'), ('804', '2017-04-08 16:22:21', '6'), ('805', '2017-04-08 16:23:21', '10'), ('806', '2017-04-08 16:24:21', '12'), ('807', '2017-04-08 16:25:21', '7'), ('808', '2017-04-08 16:26:21', '12'), ('809', '2017-04-08 16:27:21', '15'), ('810', '2017-04-08 16:28:21', '19'), ('811', '2017-04-08 16:29:21', '4'), ('812', '2017-04-08 16:30:21', '11'), ('813', '2017-04-08 16:31:21', '9'), ('814', '2017-04-08 16:32:21', '21'), ('815', '2017-04-08 16:33:21', '2'), ('816', '2017-04-08 16:34:21', '21'), ('817', '2017-04-08 16:35:21', '17'), ('818', '2017-04-08 16:36:21', '17'), ('819', '2017-04-08 16:37:21', '12'), ('820', '2017-04-08 16:38:21', '10'), ('821', '2017-04-08 16:39:21', '20'), ('822', '2017-04-08 16:40:21', '18'), ('823', '2017-04-08 16:41:21', '4'), ('824', '2017-04-08 16:42:21', '7'), ('825', '2017-04-08 16:43:21', '16'), ('826', '2017-04-08 16:44:21', '9'), ('827', '2017-04-08 16:45:21', '7'), ('828', '2017-04-08 16:46:21', '7'), ('829', '2017-04-08 16:47:21', '11'), ('830', '2017-04-08 16:48:21', '6'), ('831', '2017-04-08 16:49:21', '18'), ('832', '2017-04-08 16:50:21', '23'), ('833', '2017-04-08 16:51:21', '15'), ('834', '2017-04-08 16:52:21', '16'), ('835', '2017-04-08 16:53:21', '9'), ('836', '2017-04-08 16:54:21', '21'), ('837', '2017-04-08 16:55:21', '20'), ('838', '2017-04-08 16:56:21', '13'), ('839', '2017-04-08 16:57:21', '11'), ('840', '2017-04-08 16:58:21', '2'), ('841', '2017-04-08 16:59:21', '3'), ('842', '2017-04-08 17:00:21', '22'), ('843', '2017-04-08 17:01:21', '19'), ('844', '2017-04-08 17:02:21', '13'), ('845', '2017-04-08 17:03:21', '9'), ('846', '2017-04-08 17:04:21', '4'), ('847', '2017-04-08 17:05:21', '4'), ('848', '2017-04-08 17:06:21', '9'), ('849', '2017-04-08 17:07:21', '8'), ('850', '2017-04-08 17:08:21', '1'), ('851', '2017-04-08 17:09:21', '2'), ('852', '2017-04-08 17:10:21', '17'), ('853', '2017-04-08 17:11:21', '21'), ('854', '2017-04-08 17:12:21', '19'), ('855', '2017-04-08 17:13:21', '21'), ('856', '2017-04-08 17:14:21', '20'), ('857', '2017-04-08 17:15:21', '20'), ('858', '2017-04-08 17:16:21', '15'), ('859', '2017-04-08 17:17:21', '17'), ('860', '2017-04-08 17:18:21', '18'), ('861', '2017-04-08 17:19:21', '16'), ('862', '2017-04-08 17:20:21', '1'), ('863', '2017-04-08 17:21:21', '20'), ('864', '2017-04-08 17:22:21', '21'), ('865', '2017-04-08 17:23:21', '14'), ('866', '2017-04-08 17:24:21', '22'), ('867', '2017-04-08 17:25:21', '9'), ('868', '2017-04-08 17:26:21', '18'), ('869', '2017-04-08 17:27:21', '3'), ('870', '2017-04-08 17:28:21', '8'), ('871', '2017-04-08 17:29:21', '7'), ('872', '2017-04-08 17:30:21', '19'), ('873', '2017-04-08 17:31:21', '16'), ('874', '2017-04-08 17:32:21', '18'), ('875', '2017-04-08 17:33:21', '15'), ('876', '2017-04-08 17:34:21', '19'), ('877', '2017-04-08 17:35:21', '7'), ('878', '2017-04-08 17:36:21', '14'), ('879', '2017-04-08 17:37:21', '7'), ('880', '2017-04-08 17:38:21', '0'), ('881', '2017-04-08 17:39:21', '7'), ('882', '2017-04-08 17:40:21', '23'), ('883', '2017-04-08 17:41:21', '21'), ('884', '2017-04-08 17:42:21', '3'), ('885', '2017-04-08 17:43:21', '11'), ('886', '2017-04-08 17:44:21', '23'), ('887', '2017-04-08 17:45:21', '18'), ('888', '2017-04-08 17:46:21', '0'), ('889', '2017-04-08 17:47:21', '15'), ('890', '2017-04-08 17:48:21', '23'), ('891', '2017-04-08 17:49:21', '13'), ('892', '2017-04-08 17:50:21', '9'), ('893', '2017-04-08 17:51:21', '22'), ('894', '2017-04-08 17:52:21', '17'), ('895', '2017-04-08 17:53:21', '5'), ('896', '2017-04-08 17:54:21', '9'), ('897', '2017-04-08 17:55:21', '17'), ('898', '2017-04-08 17:56:21', '21'), ('899', '2017-04-08 17:57:21', '6'), ('900', '2017-04-08 17:58:21', '7'), ('901', '2017-04-08 17:59:21', '7'), ('902', '2017-04-08 18:00:21', '0'), ('903', '2017-04-08 18:01:21', '2'), ('904', '2017-04-08 18:02:21', '9'), ('905', '2017-04-08 18:03:21', '21'), ('906', '2017-04-08 18:04:21', '9'), ('907', '2017-04-08 18:05:21', '4'), ('908', '2017-04-08 18:06:21', '1'), ('909', '2017-04-08 18:07:21', '22'), ('910', '2017-04-08 18:08:21', '22'), ('911', '2017-04-08 18:09:21', '3'), ('912', '2017-04-08 18:10:21', '20'), ('913', '2017-04-08 18:11:21', '6'), ('914', '2017-04-08 18:12:21', '2'), ('915', '2017-04-08 18:13:21', '12'), ('916', '2017-04-08 18:14:21', '9'), ('917', '2017-04-08 18:15:21', '12'), ('918', '2017-04-08 18:16:21', '18'), ('919', '2017-04-08 18:17:21', '7'), ('920', '2017-04-08 18:18:21', '22'), ('921', '2017-04-08 18:19:21', '11'), ('922', '2017-04-08 18:20:21', '3'), ('923', '2017-04-08 18:21:21', '13'), ('924', '2017-04-08 18:22:21', '15'), ('925', '2017-04-08 18:23:21', '1'), ('926', '2017-04-08 18:24:21', '17'), ('927', '2017-04-08 18:25:21', '4'), ('928', '2017-04-08 18:26:21', '2'), ('929', '2017-04-08 18:27:21', '2'), ('930', '2017-04-08 18:28:21', '7'), ('931', '2017-04-08 18:29:21', '20'), ('932', '2017-04-08 18:30:21', '17'), ('933', '2017-04-08 18:31:21', '5'), ('934', '2017-04-08 18:32:21', '19'), ('935', '2017-04-08 18:33:21', '1'), ('936', '2017-04-08 18:34:21', '5'), ('937', '2017-04-08 18:35:21', '8'), ('938', '2017-04-08 18:36:21', '19'), ('939', '2017-04-08 18:37:21', '17'), ('940', '2017-04-08 18:38:21', '1'), ('941', '2017-04-08 18:39:21', '3'), ('942', '2017-04-08 18:40:21', '23'), ('943', '2017-04-08 18:41:21', '19'), ('944', '2017-04-08 18:42:21', '17'), ('945', '2017-04-08 18:43:21', '20'), ('946', '2017-04-08 18:44:21', '9'), ('947', '2017-04-08 18:45:21', '3'), ('948', '2017-04-08 18:46:21', '14'), ('949', '2017-04-08 18:47:21', '7'), ('950', '2017-04-08 18:48:21', '13'), ('951', '2017-04-08 18:49:21', '1'), ('952', '2017-04-08 18:50:21', '20'), ('953', '2017-04-08 18:51:21', '22'), ('954', '2017-04-08 18:52:21', '14'), ('955', '2017-04-08 18:53:21', '10'), ('956', '2017-04-08 18:54:21', '2'), ('957', '2017-04-08 18:55:21', '20'), ('958', '2017-04-08 18:56:21', '11'), ('959', '2017-04-08 18:57:21', '17'), ('960', '2017-04-08 18:58:21', '19'), ('961', '2017-04-08 18:59:21', '9'), ('962', '2017-04-08 19:00:21', '13'), ('963', '2017-04-08 19:01:21', '10'), ('964', '2017-04-08 19:02:21', '15'), ('965', '2017-04-08 19:03:21', '20'), ('966', '2017-04-08 19:04:21', '10'), ('967', '2017-04-08 19:05:21', '23'), ('968', '2017-04-08 19:06:21', '16'), ('969', '2017-04-08 19:07:21', '19'), ('970', '2017-04-08 19:08:21', '13'), ('971', '2017-04-08 19:09:21', '6'), ('972', '2017-04-08 19:10:21', '7'), ('973', '2017-04-08 19:11:21', '18'), ('974', '2017-04-08 19:12:21', '15'), ('975', '2017-04-08 19:13:21', '2'), ('976', '2017-04-08 19:14:21', '12'), ('977', '2017-04-08 19:15:21', '16'), ('978', '2017-04-08 19:16:21', '5'), ('979', '2017-04-08 19:17:21', '11'), ('980', '2017-04-08 19:18:21', '22'), ('981', '2017-04-08 19:19:21', '3'), ('982', '2017-04-08 19:20:21', '23'), ('983', '2017-04-08 19:21:21', '16'), ('984', '2017-04-08 19:22:21', '13'), ('985', '2017-04-08 19:23:21', '23'), ('986', '2017-04-08 19:24:21', '0'), ('987', '2017-04-08 19:25:21', '9'), ('988', '2017-04-08 19:26:21', '18'), ('989', '2017-04-08 19:27:21', '15'), ('990', '2017-04-08 19:28:21', '10'), ('991', '2017-04-08 19:29:21', '0'), ('992', '2017-04-08 19:30:21', '8'), ('993', '2017-04-08 19:31:21', '6'), ('994', '2017-04-08 19:32:21', '2'), ('995', '2017-04-08 19:33:21', '18'), ('996', '2017-04-08 19:34:21', '23'), ('997', '2017-04-08 19:35:21', '14'), ('998', '2017-04-08 19:36:21', '0'), ('999', '2017-04-08 19:37:21', '5'), ('1000', '2017-04-08 19:38:21', '1'), ('1001', '2017-04-08 19:39:21', '22'), ('1002', '2017-04-08 19:40:21', '0'), ('1003', '2017-04-08 19:41:21', '5'), ('1004', '2017-04-08 19:42:21', '7'), ('1005', '2017-04-08 19:43:21', '9'), ('1006', '2017-04-08 19:44:21', '17'), ('1007', '2017-04-08 19:45:21', '20'), ('1008', '2017-04-08 19:46:21', '2'), ('1009', '2017-04-08 19:47:21', '4'), ('1010', '2017-04-08 19:48:21', '9'), ('1011', '2017-04-08 19:49:21', '4'), ('1012', '2017-04-08 19:50:21', '19'), ('1013', '2017-04-08 19:51:21', '20'), ('1014', '2017-04-08 19:52:21', '17'), ('1015', '2017-04-08 19:53:21', '3'), ('1016', '2017-04-08 19:54:21', '1'), ('1017', '2017-04-08 19:55:21', '0'), ('1018', '2017-04-08 19:56:21', '9'), ('1019', '2017-04-08 19:57:21', '11'), ('1020', '2017-04-08 19:58:21', '21'), ('1021', '2017-04-08 19:59:21', '10'), ('1022', '2017-04-08 20:00:21', '3'), ('1023', '2017-04-08 20:01:21', '15'), ('1024', '2017-04-08 20:02:21', '10'), ('1025', '2017-04-08 20:03:21', '22'), ('1026', '2017-04-08 20:04:21', '8'), ('1027', '2017-04-08 20:05:21', '12'), ('1028', '2017-04-08 20:06:21', '18'), ('1029', '2017-04-08 20:07:21', '14'), ('1030', '2017-04-08 20:08:21', '23'), ('1031', '2017-04-08 20:09:21', '16'), ('1032', '2017-04-08 20:10:21', '22'), ('1033', '2017-04-08 20:11:21', '13'), ('1034', '2017-04-08 20:12:21', '0'), ('1035', '2017-04-08 20:13:21', '10'), ('1036', '2017-04-08 20:14:21', '23'), ('1037', '2017-04-08 20:15:21', '21'), ('1038', '2017-04-08 20:16:21', '0'), ('1039', '2017-04-08 20:17:21', '2'), ('1040', '2017-04-08 20:18:21', '9'), ('1041', '2017-04-08 20:19:21', '11'), ('1042', '2017-04-08 20:20:21', '14'), ('1043', '2017-04-08 20:21:21', '8'), ('1044', '2017-04-08 20:22:21', '22'), ('1045', '2017-04-08 20:23:21', '19'), ('1046', '2017-04-08 20:24:21', '5'), ('1047', '2017-04-08 20:25:21', '12'), ('1048', '2017-04-08 20:26:21', '15'), ('1049', '2017-04-08 20:27:21', '2'), ('1050', '2017-04-08 20:28:22', '22'), ('1051', '2017-04-08 20:29:21', '1'), ('1052', '2017-04-08 20:30:22', '20'), ('1053', '2017-04-08 20:31:22', '2'), ('1054', '2017-04-08 20:32:22', '18'), ('1055', '2017-04-08 20:33:22', '16'), ('1056', '2017-04-08 20:34:22', '21'), ('1057', '2017-04-08 20:35:22', '8'), ('1058', '2017-04-08 20:36:22', '3'), ('1059', '2017-04-08 20:37:22', '13'), ('1060', '2017-04-08 20:38:22', '18'), ('1061', '2017-04-08 20:39:22', '1'), ('1062', '2017-04-08 20:40:22', '6'), ('1063', '2017-04-08 20:41:22', '14'), ('1064', '2017-04-08 20:42:22', '7'), ('1065', '2017-04-08 20:43:22', '13'), ('1066', '2017-04-08 20:44:22', '14'), ('1067', '2017-04-08 20:45:22', '10'), ('1068', '2017-04-08 20:46:22', '17'), ('1069', '2017-04-08 20:47:22', '1'), ('1070', '2017-04-08 20:48:22', '5'), ('1071', '2017-04-08 20:49:22', '18'), ('1072', '2017-04-08 20:50:22', '2'), ('1073', '2017-04-08 20:51:22', '19'), ('1074', '2017-04-08 20:52:22', '18'), ('1075', '2017-04-08 20:53:22', '11'), ('1076', '2017-04-08 20:54:22', '20'), ('1077', '2017-04-08 20:55:22', '10'), ('1078', '2017-04-08 20:56:22', '17'), ('1079', '2017-04-08 20:57:22', '6'), ('1080', '2017-04-08 20:58:22', '4'), ('1081', '2017-04-08 20:59:22', '10'), ('1082', '2017-04-08 21:00:22', '5'), ('1083', '2017-04-08 21:01:22', '3'), ('1084', '2017-04-08 21:02:22', '17'), ('1085', '2017-04-08 21:03:22', '8'), ('1086', '2017-04-08 21:04:22', '16'), ('1087', '2017-04-08 21:05:22', '3'), ('1088', '2017-04-08 21:06:22', '11'), ('1089', '2017-04-08 21:07:22', '4'), ('1090', '2017-04-08 21:08:22', '12'), ('1091', '2017-04-08 21:09:22', '11'), ('1092', '2017-04-08 21:10:22', '0'), ('1093', '2017-04-08 21:11:22', '14'), ('1094', '2017-04-08 21:12:22', '19'), ('1095', '2017-04-08 21:13:22', '5'), ('1096', '2017-04-08 21:14:22', '4'), ('1097', '2017-04-08 21:15:22', '8'), ('1098', '2017-04-08 21:16:22', '12'), ('1099', '2017-04-08 21:17:22', '22'), ('1100', '2017-04-08 21:18:22', '17'), ('1101', '2017-04-08 21:19:22', '1'), ('1102', '2017-04-08 21:20:22', '11'), ('1103', '2017-04-08 21:21:22', '0'), ('1104', '2017-04-08 21:22:22', '23'), ('1105', '2017-04-08 21:23:22', '13'), ('1106', '2017-04-08 21:24:22', '10'), ('1107', '2017-04-08 21:25:22', '9'), ('1108', '2017-04-08 21:26:22', '10'), ('1109', '2017-04-08 21:27:22', '15'), ('1110', '2017-04-08 21:28:22', '22'), ('1111', '2017-04-08 21:29:22', '16'), ('1112', '2017-04-08 21:30:22', '9'), ('1113', '2017-04-08 21:31:22', '12'), ('1114', '2017-04-08 21:32:22', '22'), ('1115', '2017-04-08 21:33:22', '11'), ('1116', '2017-04-08 21:34:22', '20'), ('1117', '2017-04-08 21:35:22', '12'), ('1118', '2017-04-08 21:36:22', '7'), ('1119', '2017-04-08 21:37:22', '20'), ('1120', '2017-04-08 21:38:22', '2'), ('1121', '2017-04-08 21:39:22', '14'), ('1122', '2017-04-08 21:40:22', '1'), ('1123', '2017-04-08 21:41:22', '16'), ('1124', '2017-04-08 21:42:22', '12'), ('1125', '2017-04-08 21:43:22', '6'), ('1126', '2017-04-08 21:44:22', '15'), ('1127', '2017-04-08 21:45:22', '9'), ('1128', '2017-04-08 21:46:22', '12'), ('1129', '2017-04-08 21:47:22', '9'), ('1130', '2017-04-08 21:48:22', '20'), ('1131', '2017-04-08 21:49:22', '20'), ('1132', '2017-04-08 21:50:22', '2'), ('1133', '2017-04-08 21:51:22', '19'), ('1134', '2017-04-08 21:52:22', '1'), ('1135', '2017-04-08 21:53:22', '18'), ('1136', '2017-04-08 21:54:22', '21'), ('1137', '2017-04-08 21:55:22', '0'), ('1138', '2017-04-08 21:56:22', '0'), ('1139', '2017-04-08 21:57:22', '3'), ('1140', '2017-04-08 21:58:22', '6'), ('1141', '2017-04-08 21:59:22', '2'), ('1142', '2017-04-08 22:00:22', '7'), ('1143', '2017-04-08 22:01:22', '12'), ('1144', '2017-04-08 22:02:22', '22'), ('1145', '2017-04-08 22:03:22', '3'), ('1146', '2017-04-08 22:04:22', '1'), ('1147', '2017-04-08 22:05:22', '18'), ('1148', '2017-04-08 22:06:22', '17'), ('1149', '2017-04-08 22:07:22', '15'), ('1150', '2017-04-08 22:08:22', '21'), ('1151', '2017-04-08 22:09:22', '6'), ('1152', '2017-04-08 22:10:22', '2'), ('1153', '2017-04-08 22:11:22', '9'), ('1154', '2017-04-08 22:12:22', '1'), ('1155', '2017-04-08 22:13:22', '9'), ('1156', '2017-04-08 22:14:22', '13'), ('1157', '2017-04-08 22:15:22', '10'), ('1158', '2017-04-08 22:16:22', '1'), ('1159', '2017-04-08 22:17:22', '14'), ('1160', '2017-04-08 22:18:22', '14'), ('1161', '2017-04-08 22:19:22', '17'), ('1162', '2017-04-08 22:20:22', '21'), ('1163', '2017-04-08 22:21:22', '16'), ('1164', '2017-04-08 22:22:22', '16'), ('1165', '2017-04-08 22:23:22', '23'), ('1166', '2017-04-08 22:24:22', '9'), ('1167', '2017-04-08 22:25:22', '6'), ('1168', '2017-04-08 22:26:22', '13'), ('1169', '2017-04-08 22:27:22', '5'), ('1170', '2017-04-08 22:28:22', '18'), ('1171', '2017-04-08 22:29:22', '12'), ('1172', '2017-04-08 22:30:22', '15'), ('1173', '2017-04-08 22:31:22', '16'), ('1174', '2017-04-08 22:32:22', '16'), ('1175', '2017-04-08 22:33:22', '10'), ('1176', '2017-04-08 22:34:22', '17'), ('1177', '2017-04-08 22:35:22', '7'), ('1178', '2017-04-08 22:36:22', '22'), ('1179', '2017-04-08 22:37:22', '7'), ('1180', '2017-04-08 22:38:22', '17'), ('1181', '2017-04-08 22:39:22', '3'), ('1182', '2017-04-08 22:40:22', '18'), ('1183', '2017-04-08 22:41:22', '15'), ('1184', '2017-04-08 22:42:22', '1'), ('1185', '2017-04-08 22:43:22', '10'), ('1186', '2017-04-08 22:44:22', '23'), ('1187', '2017-04-08 22:45:22', '12'), ('1188', '2017-04-08 22:46:22', '10'), ('1189', '2017-04-08 22:47:22', '23'), ('1190', '2017-04-08 22:48:22', '20'), ('1191', '2017-04-08 22:49:22', '16'), ('1192', '2017-04-08 22:50:22', '19'), ('1193', '2017-04-08 22:51:22', '17'), ('1194', '2017-04-08 22:52:22', '22'), ('1195', '2017-04-08 22:53:22', '21'), ('1196', '2017-04-08 22:54:22', '8'), ('1197', '2017-04-08 22:55:22', '1'), ('1198', '2017-04-08 22:56:22', '1'), ('1199', '2017-04-08 22:57:22', '3'), ('1200', '2017-04-08 22:58:22', '6'), ('1201', '2017-04-08 22:59:22', '6'), ('1202', '2017-04-08 23:00:22', '23'), ('1203', '2017-04-08 23:01:22', '21'), ('1204', '2017-04-08 23:02:22', '16'), ('1205', '2017-04-08 23:03:22', '22'), ('1206', '2017-04-08 23:04:22', '17'), ('1207', '2017-04-08 23:05:22', '11'), ('1208', '2017-04-08 23:06:22', '9'), ('1209', '2017-04-08 23:07:22', '4'), ('1210', '2017-04-08 23:08:22', '13'), ('1211', '2017-04-08 23:09:22', '19'), ('1212', '2017-04-11 14:47:59', '0'), ('1213', '2017-04-11 14:48:59', '0'), ('1214', '2017-04-11 14:49:59', '0'), ('1215', '2017-04-11 14:50:59', '0'), ('1216', '2017-04-11 14:51:59', '0'), ('1217', '2017-04-11 14:52:59', '0'), ('1218', '2017-04-11 14:53:59', '0'), ('1219', '2017-04-11 14:54:59', '0'), ('1220', '2017-04-11 14:55:55', '0'), ('1221', '2017-04-11 14:56:55', '0'), ('1222', '2017-04-11 14:57:55', '0'), ('1223', '2017-04-11 14:58:55', '0'), ('1224', '2017-04-11 14:59:55', '0'), ('1225', '2017-04-11 15:00:55', '0'), ('1226', '2017-04-11 15:02:51', '0'), ('1227', '2017-04-11 15:03:51', '0'), ('1228', '2017-04-11 15:04:51', '0'), ('1229', '2017-04-11 15:05:51', '0'), ('1230', '2017-04-11 15:06:51', '0'), ('1231', '2017-04-11 15:07:51', '0'), ('1232', '2017-04-11 15:08:51', '0'), ('1233', '2017-04-11 15:09:51', '0'), ('1234', '2017-04-11 15:10:51', '0'), ('1235', '2017-04-11 15:11:51', '0'), ('1236', '2017-04-11 15:12:51', '0'), ('1237', '2017-04-11 15:13:51', '0'), ('1238', '2017-04-11 15:14:51', '0'), ('1239', '2017-04-11 15:15:51', '0'), ('1240', '2017-04-11 15:16:51', '0'), ('1241', '2017-04-11 15:17:51', '0'), ('1242', '2017-04-11 15:18:51', '0'), ('1243', '2017-04-11 15:19:51', '0'), ('1244', '2017-04-11 15:20:51', '0'), ('1245', '2017-04-11 15:21:51', '0'), ('1246', '2017-04-11 15:22:51', '0'), ('1247', '2017-04-11 15:23:51', '0'), ('1248', '2017-04-11 15:24:51', '0'), ('1249', '2017-04-11 15:25:51', '0'), ('1250', '2017-04-11 15:26:51', '0'), ('1251', '2017-04-11 15:27:51', '0'), ('1252', '2017-04-11 15:28:51', '0'), ('1253', '2017-04-11 15:29:51', '0'), ('1254', '2017-04-11 15:30:51', '0'), ('1255', '2017-04-11 15:31:51', '0'), ('1256', '2017-04-11 15:32:51', '0'), ('1257', '2017-04-11 15:33:51', '0'), ('1258', '2017-04-11 15:34:51', '0'), ('1259', '2017-04-11 15:35:51', '0'), ('1260', '2017-04-11 15:36:58', '0'), ('1261', '2017-04-11 16:15:46', '0'), ('1262', '2017-04-11 16:16:46', '0'), ('1263', '2017-04-11 16:17:34', '0'), ('1264', '2017-04-11 16:18:34', '0'), ('1265', '2017-04-11 16:19:34', '0'), ('1266', '2017-04-11 16:20:34', '0'), ('1267', '2017-04-11 16:21:34', '0'), ('1268', '2017-04-11 16:22:34', '0'), ('1269', '2017-04-11 16:23:34', '0'), ('1270', '2017-04-11 16:24:34', '0'), ('1271', '2017-04-11 16:25:34', '0'), ('1272', '2017-04-11 16:26:34', '0'), ('1273', '2017-04-11 16:27:34', '0'), ('1274', '2017-04-11 16:28:34', '0'), ('1275', '2017-04-11 16:31:02', '0'), ('1276', '2017-04-11 16:32:02', '0'), ('1277', '2017-04-11 16:33:02', '0'), ('1278', '2017-04-11 16:34:18', '0'), ('1279', '2017-04-11 16:35:18', '0'), ('1280', '2017-04-11 16:36:18', '0'), ('1281', '2017-04-11 16:37:18', '0'), ('1282', '2017-04-11 16:38:18', '0'), ('1283', '2017-04-11 16:39:18', '0'), ('1284', '2017-04-11 16:41:27', '0'), ('1285', '2017-04-11 16:41:34', '0'), ('1286', '2017-04-11 16:42:18', '0'), ('1287', '2017-04-11 16:43:18', '0'), ('1288', '2017-04-11 16:44:50', '0'), ('1289', '2017-04-11 16:45:50', '0'), ('1290', '2017-04-11 16:47:08', '0'), ('1291', '2017-04-11 16:48:08', '0'), ('1292', '2017-04-11 16:49:08', '0'), ('1293', '2017-04-11 16:50:08', '0'), ('1294', '2017-04-11 16:51:40', '0'), ('1295', '2017-04-11 16:52:40', '0'), ('1296', '2017-04-11 16:53:40', '0'), ('1297', '2017-04-11 16:54:40', '0'), ('1298', '2017-04-11 16:55:40', '0'), ('1299', '2017-04-11 16:56:40', '0'), ('1300', '2017-04-11 16:57:46', '0'), ('1301', '2017-04-11 16:58:46', '0'), ('1302', '2017-04-11 16:59:46', '0'), ('1303', '2017-04-11 17:00:46', '0'), ('1304', '2017-04-11 17:01:46', '0'), ('1305', '2017-04-11 17:02:46', '0'), ('1306', '2017-04-11 17:03:46', '0'), ('1307', '2017-04-11 17:04:46', '0'), ('1308', '2017-04-11 17:05:46', '0'), ('1309', '2017-04-11 17:06:46', '0'), ('1310', '2017-04-11 17:07:46', '0'), ('1311', '2017-04-11 17:08:46', '0'), ('1312', '2017-04-11 17:09:46', '0'), ('1313', '2017-04-11 17:10:46', '0'), ('1314', '2017-04-11 17:11:46', '0'), ('1315', '2017-04-11 17:12:46', '0'), ('1316', '2017-04-11 17:13:46', '0'), ('1317', '2017-04-11 17:14:46', '0'), ('1318', '2017-04-11 17:15:46', '0'), ('1319', '2017-04-11 17:16:46', '0'), ('1320', '2017-04-11 17:17:46', '0'), ('1321', '2017-04-11 17:18:46', '0'), ('1322', '2017-04-11 17:19:46', '0'), ('1323', '2017-04-11 17:20:46', '0'), ('1324', '2017-04-11 17:21:46', '0'), ('1325', '2017-04-11 17:22:46', '0'), ('1326', '2017-04-11 17:23:46', '0'), ('1327', '2017-04-11 17:24:46', '0'), ('1328', '2017-04-11 17:25:46', '0'), ('1329', '2017-04-11 17:26:46', '0'), ('1330', '2017-04-11 17:27:46', '0'), ('1331', '2017-04-11 17:28:46', '0'), ('1332', '2017-04-11 17:29:46', '0'), ('1333', '2017-04-11 17:30:46', '0'), ('1334', '2017-04-11 17:31:46', '0'), ('1335', '2017-04-11 17:32:46', '0'), ('1336', '2017-04-11 17:33:46', '0'), ('1337', '2017-04-11 17:34:46', '0'), ('1338', '2017-04-11 17:35:46', '0'), ('1339', '2017-04-11 17:36:46', '0'), ('1340', '2017-04-11 17:37:46', '0'), ('1341', '2017-04-11 17:38:46', '0'), ('1342', '2017-04-11 17:39:46', '0'), ('1343', '2017-04-11 17:40:46', '0'), ('1344', '2017-04-11 17:41:46', '0'), ('1345', '2017-04-11 17:42:46', '0'), ('1346', '2017-04-11 17:43:46', '0'), ('1347', '2017-04-11 17:44:46', '0'), ('1348', '2017-04-11 17:45:46', '0'), ('1349', '2017-04-11 17:46:46', '0'), ('1350', '2017-04-11 17:47:46', '0'), ('1351', '2017-04-11 17:48:46', '0'), ('1352', '2017-04-11 17:49:46', '0'), ('1353', '2017-04-11 17:50:46', '0'), ('1354', '2017-04-11 17:51:46', '0'), ('1355', '2017-04-11 17:52:46', '0'), ('1356', '2017-04-11 17:53:46', '0'), ('1357', '2017-04-11 17:54:46', '0'), ('1358', '2017-04-11 17:55:46', '0'), ('1359', '2017-04-11 17:56:46', '0'), ('1360', '2017-04-11 17:57:46', '0'), ('1361', '2017-04-11 17:58:46', '0'), ('1362', '2017-04-11 17:59:46', '0'), ('1363', '2017-04-11 18:00:46', '0'), ('1364', '2017-04-11 18:01:46', '0'), ('1365', '2017-04-11 18:02:46', '0'), ('1366', '2017-04-11 18:03:46', '0'), ('1367', '2017-04-11 18:04:46', '0'), ('1368', '2017-04-11 18:05:46', '0'), ('1369', '2017-04-11 18:06:46', '0'), ('1370', '2017-04-11 18:49:21', '0'), ('1371', '2017-04-11 18:50:21', '0'), ('1372', '2017-04-11 18:51:21', '0'), ('1373', '2017-04-11 18:52:21', '0'), ('1374', '2017-04-11 18:53:21', '0'), ('1375', '2017-04-11 18:54:21', '0'), ('1376', '2017-04-11 18:55:21', '0'), ('1377', '2017-04-11 18:56:21', '0'), ('1378', '2017-04-11 18:57:21', '0'), ('1379', '2017-04-11 18:58:21', '0'), ('1380', '2017-04-11 18:59:21', '0'), ('1381', '2017-04-11 19:00:21', '0'), ('1382', '2017-04-11 19:01:21', '0'), ('1383', '2017-04-11 19:02:21', '0'), ('1384', '2017-04-11 19:03:21', '0'), ('1385', '2017-04-11 19:06:05', '0'), ('1386', '2017-04-11 19:07:05', '0'), ('1387', '2017-04-11 19:08:05', '0'), ('1388', '2017-04-11 19:09:05', '0'), ('1389', '2017-04-11 19:10:05', '0'), ('1390', '2017-04-11 19:11:05', '0'), ('1391', '2017-04-11 19:12:05', '0'), ('1392', '2017-04-11 19:13:05', '0'), ('1393', '2017-04-11 19:14:05', '0'), ('1394', '2017-04-11 19:15:05', '0'), ('1395', '2017-04-11 19:16:05', '0'), ('1396', '2017-04-11 19:17:05', '0'), ('1397', '2017-04-11 19:18:05', '0'), ('1398', '2017-04-11 19:19:05', '0'), ('1399', '2017-04-11 19:20:05', '0'), ('1400', '2017-04-11 19:21:05', '0'), ('1401', '2017-04-11 19:22:05', '0'), ('1402', '2017-04-11 19:23:05', '0'), ('1403', '2017-04-11 19:24:05', '0'), ('1404', '2017-04-11 19:25:05', '0'), ('1405', '2017-04-11 19:26:05', '0'), ('1406', '2017-04-11 19:34:50', '0'), ('1407', '2017-04-11 19:35:50', '0'), ('1408', '2017-04-11 19:36:50', '0'), ('1409', '2017-04-11 19:37:50', '0'), ('1410', '2017-04-11 19:38:50', '0'), ('1411', '2017-04-11 19:39:50', '0'), ('1412', '2017-04-11 19:42:48', '0'), ('1413', null, null);
+COMMIT;
 
 -- ----------------------------
--- Table structure for `t_machine_timer`
+--  Table structure for `t_machine_timer`
 -- ----------------------------
 DROP TABLE IF EXISTS `t_machine_timer`;
 CREATE TABLE `t_machine_timer` (
@@ -592,11 +139,7 @@ CREATE TABLE `t_machine_timer` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of t_machine_timer
--- ----------------------------
-
--- ----------------------------
--- Table structure for `t_machine_user`
+--  Table structure for `t_machine_user`
 -- ----------------------------
 DROP TABLE IF EXISTS `t_machine_user`;
 CREATE TABLE `t_machine_user` (
@@ -612,15 +155,17 @@ CREATE TABLE `t_machine_user` (
   PRIMARY KEY (`id`),
   KEY `FK_T_MACHINE_USER_WX_OPEN_ID` (`weixin_open_id`),
   CONSTRAINT `FK_T_MACHINE_USER_WX_OPEN_ID` FOREIGN KEY (`weixin_open_id`) REFERENCES `t_weixin_user` (`open_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of t_machine_user
+--  Records of `t_machine_user`
 -- ----------------------------
-INSERT INTO `t_machine_user` VALUES ('4', null, null, null, 'oCmBsvwBS37C3MjyvwTyvepQL2EA', null, '2017-04-05 16:38:24', '0000009996', null);
+BEGIN;
+INSERT INTO `t_machine_user` VALUES ('4', null, null, null, 'oCmBsvwBS37C3MjyvwTyvepQL2EA', null, '2017-04-05 16:38:24', '100790', null), ('5', null, null, null, 'oCmBsv5Aiv-uhH13b5qnF9y6XE3A', null, '2017-04-11 18:49:41', '10000', null);
+COMMIT;
 
 -- ----------------------------
--- Table structure for `t_weixin_user`
+--  Table structure for `t_weixin_user`
 -- ----------------------------
 DROP TABLE IF EXISTS `t_weixin_user`;
 CREATE TABLE `t_weixin_user` (
@@ -637,18 +182,22 @@ CREATE TABLE `t_weixin_user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='微信用户表 ';
 
 -- ----------------------------
--- Records of t_weixin_user
+--  Records of `t_weixin_user`
 -- ----------------------------
-INSERT INTO `t_weixin_user` VALUES ('oCmBsvwBS37C3MjyvwTyvepQL2EA', 'ahem!', '2017-04-07 16:24:41', '1', '', '', '中国', 'http://wx.qlogo.cn/mmopen/ajNVdqHZLLAP7oXpIAt7WnaV1AjeCUbC6bHuoNAEXLap8iaaxBWTPqFaP0pL8RAFCG5zGPEVSdMx5qaR6HiamHAg/0', null);
+BEGIN;
+INSERT INTO `t_weixin_user` VALUES ('oCmBsv5Aiv-uhH13b5qnF9y6XE3A', 'XDF高中数学丛杰', '2017-04-11 18:50:51', '2', '福建', '福州', '中国', 'http://wx.qlogo.cn/mmopen/8iaxE5Wt8sicD4DV8789qCPHoCiciayLicOyiaBghY6B3jsyk37sfML1lgkFyuFHEXVsXZoXdxXkIXnpz47B61HaXns5DA7sCrBgo5/0', null), ('oCmBsvwBS37C3MjyvwTyvepQL2EA', 'ahem!', '2017-04-11 19:19:48', '1', '', '', '中国', 'http://wx.qlogo.cn/mmopen/ajNVdqHZLLAP7oXpIAt7WnaV1AjeCUbC6bHuoNAEXLap8iaaxBWTPqFaP0pL8RAFCG5zGPEVSdMx5qaR6HiamHAg/0', null);
+COMMIT;
 
 -- ----------------------------
--- View structure for `v_bet_record`
+--  View structure for `v_bet_record`
 -- ----------------------------
 DROP VIEW IF EXISTS `v_bet_record`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_bet_record` AS select `r`.`record_id` AS `record_id`,`r`.`bet_fruit_id_1` AS `fruit_id`,sum(`r`.`bet_score_1`) AS `sum_score` from `t_machine_bet_record` `r` group by `r`.`record_id`,`fruit_id` union all select `r`.`record_id` AS `record_id`,`r`.`bet_fruit_id_2` AS `fruit_id`,sum(`r`.`bet_score_2`) AS `sum_score` from `t_machine_bet_record` `r` group by `r`.`record_id`,`fruit_id` union all select `r`.`record_id` AS `record_id`,`r`.`bet_fruit_id_3` AS `fruit_id`,sum(`r`.`bet_score_3`) AS `sum_score` from `t_machine_bet_record` `r` group by `r`.`record_id`,`fruit_id` union all select `r`.`record_id` AS `record_id`,`r`.`bet_fruit_id_4` AS `fruit_id`,sum(`r`.`bet_score_4`) AS `sum_score` from `t_machine_bet_record` `r` group by `r`.`record_id`,`fruit_id` union all select `r`.`record_id` AS `record_id`,`r`.`bet_fruit_id_5` AS `fruit_id`,sum(`r`.`bet_score_5`) AS `sum_score` from `t_machine_bet_record` `r` group by `r`.`record_id`,`fruit_id` union all select `r`.`record_id` AS `record_id`,`r`.`bet_fruit_id_6` AS `fruit_id`,sum(`r`.`bet_score_6`) AS `sum_score` from `t_machine_bet_record` `r` group by `r`.`record_id`,`fruit_id` union all select `r`.`record_id` AS `record_id`,`r`.`bet_fruit_id_7` AS `fruit_id`,sum(`r`.`bet_score_7`) AS `sum_score` from `t_machine_bet_record` `r` group by `r`.`record_id`,`fruit_id` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_bet_record` AS select `r`.`record_id` AS `record_id`,`r`.`bet_fruit_id_1` AS `fruit_id`,sum(`r`.`bet_score_1`) AS `sum_score` from `t_machine_bet_record` `r` group by `r`.`record_id`,`fruit_id` union all select `r`.`record_id` AS `record_id`,`r`.`bet_fruit_id_2` AS `fruit_id`,sum(`r`.`bet_score_2`) AS `sum_score` from `t_machine_bet_record` `r` group by `r`.`record_id`,`fruit_id` union all select `r`.`record_id` AS `record_id`,`r`.`bet_fruit_id_3` AS `fruit_id`,sum(`r`.`bet_score_3`) AS `sum_score` from `t_machine_bet_record` `r` group by `r`.`record_id`,`fruit_id` union all select `r`.`record_id` AS `record_id`,`r`.`bet_fruit_id_4` AS `fruit_id`,sum(`r`.`bet_score_4`) AS `sum_score` from `t_machine_bet_record` `r` group by `r`.`record_id`,`fruit_id` union all select `r`.`record_id` AS `record_id`,`r`.`bet_fruit_id_5` AS `fruit_id`,sum(`r`.`bet_score_5`) AS `sum_score` from `t_machine_bet_record` `r` group by `r`.`record_id`,`fruit_id` union all select `r`.`record_id` AS `record_id`,`r`.`bet_fruit_id_6` AS `fruit_id`,sum(`r`.`bet_score_6`) AS `sum_score` from `t_machine_bet_record` `r` group by `r`.`record_id`,`fruit_id` union all select `r`.`record_id` AS `record_id`,`r`.`bet_fruit_id_7` AS `fruit_id`,sum(`r`.`bet_score_7`) AS `sum_score` from `t_machine_bet_record` `r` group by `r`.`record_id`,`fruit_id`;
 
 -- ----------------------------
--- View structure for `v_bet_statistic`
+--  View structure for `v_bet_statistic`
 -- ----------------------------
 DROP VIEW IF EXISTS `v_bet_statistic`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_bet_statistic` AS select `t`.`record_id` AS `record_id`,`t`.`fruit_id` AS `fruit_id`,`f`.`cn_name` AS `fruit_name`,sum(`t`.`sum_score`) AS `sum_score`,ifnull((sum(`t`.`sum_score`) * `f`.`fruit_multiple`),0) AS `all_sum` from (`v_bet_record` `t` left join `t_machine_fruit` `f` on((`f`.`id` = `t`.`fruit_id`))) group by `t`.`record_id`,`t`.`fruit_id` order by `t`.`record_id` desc,`t`.`fruit_id` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_bet_statistic` AS select `t`.`record_id` AS `record_id`,`t`.`fruit_id` AS `fruit_id`,`f`.`cn_name` AS `fruit_name`,sum(`t`.`sum_score`) AS `sum_score`,ifnull((sum(`t`.`sum_score`) * `f`.`fruit_multiple`),0) AS `all_sum` from (`v_bet_record` `t` left join `t_machine_fruit` `f` on((`f`.`id` = `t`.`fruit_id`))) group by `t`.`record_id`,`t`.`fruit_id` order by `t`.`record_id` desc,`t`.`fruit_id`;
+
+SET FOREIGN_KEY_CHECKS = 1;

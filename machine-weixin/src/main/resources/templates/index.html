@@ -28,14 +28,14 @@ html, body {
 	<div class="weui-tab">
 
 		<div class="weui-tabbar">
-			<a href="#homePage" class="weui-tabbar__item weui_bar__item_on">
+			<a href="javascript:void(0);" class="weui-tabbar__item weui_bar__item_on" onclick="menuClick('myindex.html')">
 				<span class="weui-badge"
 				style="position: absolute; top: -.4em; right: 1em;">8</span>
 				<div class="weui-tabbar__icon">
-					<img src="./images/icons/home.png" alt="">
+					<img src="./images/icons/home.png" alt="" >
 				</div>
 				<p class="weui-tabbar__label">水果机</p>
-			</a> <a href="#findPage" class="weui-tabbar__item">
+			</a> <a href="javascript:void(0);" class="weui-tabbar__item" menuClick('openRecord.html')>
 				<div class="weui-tabbar__icon">
 					<img src="./images/icons/find.png" alt="">
 				</div>
@@ -54,13 +54,12 @@ html, body {
 		</div>
 
 		<div class="weui-tab__bd">
-			<div id="homePage"
+			<div id="mainPage"
 				class="weui-tab__bd-item weui-tab__bd-item--active" scrolling="auto">
 
 								<iframe align="center" width="100%" height="90%" src="myindex.html"
 									frameborder="no" border="0" marginwidth="0" marginheight="0" style="overflow: auto;"
 									scrolling="auto"></iframe>
-								<link rel = "import" href = "myindex.html"/> 
 
             </div>
             <div id="findPage" class="weui-tab__bd-item">
@@ -93,8 +92,13 @@ html, body {
 		src="http://cdn.bootcss.com/jquery-weui/1.0.0-rc.0/js/city-picker.min.js"></script>
 
 	<script type="text/javascript">
+	
+	function menuClick(pageUrl) {
+		$('#mainPage').load(pageUrl);
+
+	};
 // 		$(document).ready(function() {
-// 			$('#homePage').load('myindex.html');
+// 			$('#mainPage').load('myindex.html');
 
 // 		});
 
