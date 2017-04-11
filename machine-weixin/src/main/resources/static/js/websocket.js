@@ -8,7 +8,7 @@ var url = "ittun.com:52317";
 // 判断当前浏览器是否支持WebSocket
 if ('WebSocket' in window) {
 //	alert(document.location.host);
-	websocket = new WebSocket( "ws://"+url + "/websocket");
+	websocket = new WebSocket( "ws://"+url + "/websocket;user=4");
 } else {
 	websocket = new SockJS("http://" + url + "/sockjs/websocket");
 }
@@ -33,8 +33,14 @@ websocket.onmessage = function(event) {
 		// 设置开奖号码
 		recordId=obj.content.id;
 		nextOpenNum = obj.content.openNumber;
-	} else {
-
+	} if (obj.type == 'betResult') {
+		// 设置开奖号码
+		var betResult=obj.content.betResult;
+		if (betResult==1) {
+			 alert('gotScore='+obj.content.gotScore);
+			 nextGotScore=obj.content.gotScore;
+		}
+		
 	}
 
 	// var type = obj.type;

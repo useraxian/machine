@@ -3,6 +3,7 @@ package com.ahem.machine.weixin.core;
 import java.io.Serializable;
 import java.util.List;
 
+import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -105,13 +106,21 @@ public class TimeCounter implements Serializable {
 
 			// 发送用户各自得分情况
 			List<TMachineBetRecord> records = userScoreService.findGotScore(recordId);
-			
+
 			for (TMachineBetRecord record : records) {
-				record.getBetResult();
-//				record
+				JSONObject object = new JSONObject();
+				Integer result = record.getBetResult();
+				object.put("betResult", result);
+				if (result == 1) {
+					Integer gotScore = record.getGotScore();
+					object.put("gotScore", gotScore);
+				}
+				WebMessage msg = new WebMessage(MessageType.betResult, object);
+				TextMessage txtMsg = new TextMessage(msg.toJsonString());
+				SysWebSocketHandler.sendMsgToUser(record.getUserId(), txtMsg);
 			}
 		} catch (Exception e) {
-			
+
 			logger.error("开奖异常！", e);
 			// TODO 发生异常，进行手动开奖
 		}

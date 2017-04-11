@@ -52,8 +52,9 @@ public class RecordService {
 
 	private Integer generateOpenNumber(Integer recordId) {
 		// TODO 判断使用那种策略
-		IGenerator generator = maxGenerator;
-		return generator.generate(recordId);
+//		IGenerator generator = maxGenerator;
+//		return generator.generate(recordId);
+		return 0;
 	}
 
 	/**

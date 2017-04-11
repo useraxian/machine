@@ -30,7 +30,7 @@ public class HandshakeInterceptor extends HttpSessionHandshakeInterceptor {
 				// 使用userName区分WebSocketHandler，以便定向发送消息
 				TMachineUser user = (TMachineUser) session.getAttribute(Global.SEESION_USER_KEY);
 				System.out.println("user="+user);
-				attributes.put("USER", user);
+//				attributes.put(Global.SEESION_USER_KEY, user);
 			} else {
 				return false;
 			}

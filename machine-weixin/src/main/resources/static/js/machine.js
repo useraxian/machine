@@ -49,6 +49,7 @@ var indexs = {
 
 var last = 23;// 上次开奖位置
 var nextOpenNum = null;
+var nextGotScore=0;
 var moveNum = null;
 var finalNum = null;
 
@@ -288,23 +289,9 @@ function getUserScore() {
 	});
 }
 
-function getWinScore(fruitName) {
-	var betIdx = null;
-	// 根据水果名称获取下注索引
-	for ( var key in bets) {
-		var val = bets[key];
-		if (val == fruitName) {
-			betIdx = key;
-			break;
-		}
-	}
-	// 根据下注索引获取下注分数
-	var score = parseInt($('#score' + betIdx).html());
-	var bs = times[betIdx];// 倍数
-	var winScore = score * bs;
-	console.log('winScore=' + winScore);
-	var myScore = parseInt($('#myscore').html());
-	$('#myscore').html(numberCover(myScore + winScore, 6));
+function setGotScore(fruitName) {
+	
+	$('#gotscore').html(numberCover(nextGotScore, 6));
 }
 
 function confirmBet() {

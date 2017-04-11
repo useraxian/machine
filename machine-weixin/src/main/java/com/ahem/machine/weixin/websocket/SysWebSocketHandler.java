@@ -1,10 +1,7 @@
 package com.ahem.machine.weixin.websocket;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
@@ -12,6 +9,7 @@ import java.util.concurrent.ConcurrentMap;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.web.socket.CloseStatus;
 import org.springframework.web.socket.TextMessage;
 import org.springframework.web.socket.WebSocketHandler;
@@ -28,6 +26,9 @@ public class SysWebSocketHandler implements WebSocketHandler {
 	@Autowired
 	TimeCounter timeCounter;
 
+	public SysWebSocketHandler() {
+		System.out.println("初始化SysWebSocketHandler");
+	}
 	@Override
 	public void afterConnectionClosed(WebSocketSession session, CloseStatus status) throws Exception {
 		System.out.println("Connection closed..." + session.getRemoteAddress().toString());
@@ -41,12 +42,18 @@ public class SysWebSocketHandler implements WebSocketHandler {
 
 	@Override
 	public void afterConnectionEstablished(WebSocketSession session) throws Exception {
-		logger.debug("连接成功，用户：" + session.getRemoteAddress().toString());
-
+		HttpHeaders httpHeaders= session.getHandshakeHeaders();
+		System.out.println("Cookie="+httpHeaders.get("Cookie")); //这里面就有 sessionid
 		Map<String, Object> attributes = session.getAttributes();
 		TMachineUser user = (TMachineUser) attributes.get(Global.SEESION_USER_KEY);
 		Integer userId = user.getId();
-		userMap.put(userId, session); // 加入set中
+		WebSocketSession wsSession = userMap.get(userId);
+		if(wsSession==null){
+			userMap.put(userId, session); // 加入set中
+			logger.debug("连接成功，用户：" + session.getRemoteAddress().toString());
+		}
+		
+		
 	}
 
 	@Override
