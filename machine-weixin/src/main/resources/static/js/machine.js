@@ -52,8 +52,9 @@ var nextOpenNum = null;
 var nextGotScore = 0;
 var moveNum = null;
 var finalNum = null;
+var bsScore = 0;// 大小分数
 
-var mul=true;//倍数按钮状态
+var mul = true;// 倍数按钮状态
 
 var myScoreUrl = '/machine/myscore';
 /**
@@ -65,6 +66,7 @@ function initMachine() {
 }
 
 function ui() {
+	$('#nicknameDiv').html($('#nickname').val());
 	// 设置转盘图标
 	for ( var key in indexs) {
 		var img = 'url(images/' + fruits[key] + ')';
@@ -117,22 +119,6 @@ function ui() {
 function data() {
 	// 获取分数
 	getUserScore();
-	// $.ajax({
-	// url : "/machine/myscore",
-	// success : function(result) {
-	// var obj = JSON.parse(result);
-	// if (obj.meta.success) {
-	// console.log('我的分数:' + obj.data);
-	// $('#myscore').html(numberCover(obj.data, 6));
-	// } else {
-	// console.log('加载分数失败!' + result);
-	// }
-	//
-	// },
-	// error : function() {
-	//
-	// }
-	// });
 }
 /**
  * 移动到下个目标
@@ -152,7 +138,6 @@ function moveToNext(i) {
  * 开始开奖，进行转盘动画转动
  */
 function startRun() {
-	// TODO nextOpenNum改成从后台获取
 	if (nextOpenNum == null) {
 		return;
 	}
@@ -171,14 +156,18 @@ function startRun() {
 		// 判断动画是否结束
 		if (finalNum != null && moveNum != null && finalNum == moveNum) {
 			// TODO 判断输赢，结合动画效果
-			setGotScore(nextGotScore);
-			$.confirm("自定义的消息内容", function() {
-				// 点击确认后的回调函数
-			}, function() {
-				nextGotScore = 0;
+			if (nextGotScore > 0) {
+				bsScore = nextGotScore;
 				setGotScore(nextGotScore);
-				getUserScore();
-			});
+				//TODO 押大小
+				$.confirm("押大小", function() {
+					// 点击确认后的回调函数
+				}, function() {
+					nextGotScore = 0;
+					setGotScore(nextGotScore);
+					getUserScore();
+				});
+			}
 
 			// 获取分数
 			// getUserScore();
@@ -195,7 +184,7 @@ function startRun() {
  * 重置分数
  */
 function reset() {
-	mul=true;//重置加倍按钮状态
+	mul = true;// 重置加倍按钮状态
 	var $scoreDivs = $('.bet-num-tr td div');
 	for (var i = 0; i < $scoreDivs.length; i++) {
 		var div = $scoreDivs[i];
@@ -218,14 +207,14 @@ function bet(idx) {
 		return false;
 	}
 
-	mul=false;
+	mul = false;
 	// 判断是否在开奖动画
 	var $score = $('#score' + idx);
 	var $myscore = $('#myscore');
 	var scoreVal = parseInt($score.html());// 下注分数
 	var myscoreVal = parseInt($myscore.html());// 我的分数
 	var mul = getMultiple();
-	if (myscoreVal-1*mul < 0) {
+	if (myscoreVal - 1 * mul < 0) {
 
 		$.modal({
 			title : "提醒",
@@ -246,14 +235,13 @@ function bet(idx) {
 	} else {
 		if (scoreVal < 99) {
 			scoreVal++;
-			myscoreVal=myscoreVal-mul*1;
+			myscoreVal = myscoreVal - mul * 1;
 			if (scoreVal < 10) {
 				$score.html("0" + scoreVal);
 			} else {
 				$score.html(scoreVal);
 			}
 
-			
 			var myscoreLength = String(myscoreVal).length;
 			if (myscoreLength < 6) {
 				for (var i = 0; i < 6 - myscoreLength; i++) {
@@ -298,11 +286,14 @@ function getUserScore() {
 	});
 }
 
+// 设置得分框分数
 function setGotScore(scoreVal) {
 	$('#gotscore').html(numberCover(scoreVal, 6));
 }
+// 获取得分框分数
 function getGotScore() {
-	return nextGotScore;
+	var scVal = parseInt($('#gotscore').html());
+	return scVal;
 }
 
 function confirmBet() {
@@ -347,19 +338,18 @@ function confirmBet() {
 		}
 	});
 }
-//获取我的分数
-function getMyScore(){
+// 获取我的分数
+function getMyScore() {
 	var $myscore = $('#myscore');
 	return parseInt($myscore.html());// 我的分数
 }
-//设置我的分数
-function setMyScore(val){
+// 设置我的分数
+function setMyScore(val) {
 	var $myscore = $('#myscore');
-	$myscore.html(numberCover(val,6))
+	$myscore.html(numberCover(val, 6))
 }
 
-
-//加倍
+// 加倍
 function addMultiple() {
 	var valStr = $('#addMul').html();
 	valStr = valStr.substr(1);
@@ -369,25 +359,28 @@ function addMultiple() {
 	}
 }
 
-//获取当前倍数
+// 获取当前倍数
 function getMultiple() {
 	var valStr = $('#addMul').html();
 	valStr = valStr.substr(1);
 	return parseInt(valStr);
 }
 
-//赢得的分数-减
+// 赢得的分数-减
 function reduceScore() {
-	//TODO  控制压大小的起始分数
-	var scVal=getGotScore()/2;
-	nextGotScore=nextGotScore-scVal;
-	setGotScore(nextGotScore);
-	setMyScore(getMyScore()+scVal);
+	var gscVal = getGotScore();
+	if (gscVal <= 1) {
+		return;
+	}
+	setGotScore(gscVal / 2);// 得分-
+	setMyScore(getMyScore() + (gscVal / 2));// 我的分数+
 }
-//赢得的分数-减
+// 赢得的分数-减
 function addScore() {
-	var scVal=getGotScore()/2;
-	nextGotScore=nextGotScore-scVal;
-	setGotScore(nextGotScore);
-	setMyScore(getMyScore()+scVal);
+	var gscVal = getGotScore();
+	if(gscVal>=bsScore){
+		return;
+	}
+	setGotScore(gscVal * 2);// 得分-
+	setMyScore(getMyScore() - (gscVal *2));// 我的分数+
 }

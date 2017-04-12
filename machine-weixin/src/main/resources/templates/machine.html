@@ -4,14 +4,17 @@
 <meta charset="utf-8"></meta>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
 <meta name="viewport"
-	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"></meta>
+	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+></meta>
 <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
 <title>slot machine</title>
 <!-- head 中 -->
 <link rel="stylesheet"
-	href="http://cdn.bootcss.com/weui/1.1.1/style/weui.min.css"></link>
+	href="http://cdn.bootcss.com/weui/1.1.1/style/weui.min.css"
+></link>
 <link rel="stylesheet"
-	href="http://cdn.bootcss.com/jquery-weui/1.0.1/css/jquery-weui.min.css"></link>
+	href="http://cdn.bootcss.com/jquery-weui/1.0.1/css/jquery-weui.min.css"
+></link>
 
 <!--游戏首页样式-->
 <link rel="stylesheet" href="/css/index.css"></link>
@@ -31,9 +34,9 @@
 			</div>
 		</div>
 		<div class="weui-flex__item">
-			<div style="color: red">
-				<p th:text="'昵称：' + ${nickname} + '!'"></p>
+			<div id="headImg" style="color: red">
 			</div>
+			<div id="nicknameDiv" style="color: red"></div>
 		</div>
 	</div>
 
@@ -54,16 +57,20 @@
 			<tr>
 				<td id="23"></td>
 				<td colspan="5" rowspan="5" valign="top" height="30px"
-					style="background: url(images/center.jpg); background-size: cover; position: relative; border-width: 2px; border-style: solid; border-color: white">
+					style="background: url(images/center.jpg); background-size: cover; position: relative; border-width: 2px; border-style: solid; border-color: white"
+				>
 					<div class="weui-flex"
-						style="position: relative; top: 5px; height: 30px;">
+						style="position: relative; top: 5px; height: 30px;"
+					>
 						<div id="gotscore" class="weui-flex__item number"
 							style="box-shadow: 2px 2px 2px #888888 inset, -2px -2px 2px #888888 inset; border-radius: 5px; text-align: center; color: red; display: inline;"
-							align="left">000000</div>
+							align="left"
+						>000000</div>
 						<div class="weui-flex__item number"></div>
 						<div id="myscore" class="weui-flex__item number"
 							style="box-shadow: 2px 2px 2px #888888 inset, -2px -2px 2px #888888 inset; border-radius: 5px; text-align: center; color: red; display: inline;"
-							align="right">000010</div>
+							align="right"
+						>000010</div>
 					</div>
 					<div style="color: red">
 						开奖时间： <span id="timeSpan" class="number">00:00</span>
@@ -97,7 +104,7 @@
 				<td id="12"></td>
 			</tr>
 		</table>
-		<br/>
+		<br />
 	</div>
 	<div class="operate-contain">
 		<div class="operate">
@@ -105,10 +112,12 @@
 				<tr>
 					<td><a id="addMul" class="yx-btn" onclick="addMultiple()">X10</a></td>
 					<td><a id="addScore" class="zfx-btn" onclick="addScore()">+</a></td>
-					<td><a id="reduceScore" class="zfx-btn"onclick="reduceScore()">-</a></td>
+					<td><a id="reduceScore" class="zfx-btn"
+							onclick="reduceScore()"
+						>-</a></td>
 					<td><a class="yx-btn">1-6</a></td>
 					<td><a class="yx-btn">8-13</a></td>
-					<td style="width:50px"><a class="yx-btn" >GO</a></td>
+					<td style="width: 50px"><a class="yx-btn">GO</a></td>
 				</tr>
 			</table>
 		</div>
@@ -128,8 +137,10 @@
 			</tr>
 		</table>
 	</div>
-	
-	<div style="margin-top: 3px;height: 45px;background-color: #e1870a;" align="center">
+
+	<div style="margin-top: 3px; height: 45px; background-color: #e1870a;"
+		align="center"
+	>
 		<table width="100%" cellspacing="0">
 			<tr class="bet-btn-tr">
 				<td><a id="bet1" class="yx-bet-btn" onclick="bet(1)">&nbsp;&nbsp;</a></td>
@@ -140,13 +151,13 @@
 				<td><a id="bet6" class="yx-bet-btn" onclick="bet(6)">&nbsp;&nbsp;</a></td>
 				<td><a id="bet7" class="yx-bet-btn" onclick="bet(7)">&nbsp;&nbsp;</a></td>
 				<td><a id="bet8" class="yx-bet-btn" onclick="bet(8)">&nbsp;&nbsp;</a></td>
-<!-- 				<td><button id="bet2" type="button" onclick="bet(2)"></button></td> -->
-<!-- 				<td><button id="bet3" type="button" onclick="bet(3)"></button></td> -->
-<!-- 				<td><button id="bet4" type="button" onclick="bet(4)"></button></td> -->
-<!-- 				<td><button id="bet5" type="button" onclick="bet(5)"></button></td> -->
-<!-- 				<td><button id="bet6" type="button" onclick="bet(6)"></button></td> -->
-<!-- 				<td><button id="bet7" type="button" onclick="bet(7)"></button></td> -->
-<!-- 				<td><button id="bet8" type="button" onclick="bet87)"></button></td> -->
+				<!-- 				<td><button id="bet2" type="button" onclick="bet(2)"></button></td> -->
+				<!-- 				<td><button id="bet3" type="button" onclick="bet(3)"></button></td> -->
+				<!-- 				<td><button id="bet4" type="button" onclick="bet(4)"></button></td> -->
+				<!-- 				<td><button id="bet5" type="button" onclick="bet(5)"></button></td> -->
+				<!-- 				<td><button id="bet6" type="button" onclick="bet(6)"></button></td> -->
+				<!-- 				<td><button id="bet7" type="button" onclick="bet(7)"></button></td> -->
+				<!-- 				<td><button id="bet8" type="button" onclick="bet87)"></button></td> -->
 
 			</tr>
 		</table>
@@ -188,7 +199,9 @@
 		</table>
 	</div>
  -->
-
+	<input type="hidden" id="userid" th:value="${userid}" />
+	<input type="hidden" id="nickname" th:value="${nickname}" />
+	<input type="hidden" id="headimgurl" th:value="${headimgurl}" />
 	<div id="confirmBetBtn" class="button" onclick="confirmBet()">确认下注</div>
 	<div class="button czBtn" onclick="reset()">重置</div>
 
@@ -198,18 +211,65 @@
 	<div class="target"></div>
 	<!--目标游戏结束-->
 
-
-	<input type="hidden" id="userid" th:value="${userid}" />
-
 	<script src="http://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
 	<script
-		src="http://cdn.bootcss.com/jquery-weui/1.0.1/js/jquery-weui.min.js"></script>
+		src="http://cdn.bootcss.com/jquery-weui/1.0.1/js/jquery-weui.min.js"
+	></script>
 	<script type="text/javascript" src="/js/sockjs-1.1.1.js"></script>
 	<script type="text/javascript" src="/js/tool.js"></script>
 	<script type="text/javascript" src="/js/machine.js"></script>
-	<script type="text/javascript" src="/js/index.js"></script>
 	<script type="text/javascript" src="/js/timecounter.js"></script>
 	<script type="text/javascript" src="/js/websocket.js"></script>
+	<script type="text/javascript" >
+		$(document).ready(function() {
+			initMachine();
+			console.log($(window).height()); // 浏览器当前窗口可视区域高度
+			console.log($(document).height()); // 浏览器当前窗口文档的高度
+			console.log($(document.body).height());// 浏览器当前窗口文档body的高度
+			console.log($(document.body).outerHeight(true));// 浏览器当前窗口文档body的总高度
+			// 包括border
+			// padding
+			// margin
+			console.log($(window).width()); // 浏览器当前窗口可视区域宽度
+			console.log($(document).width());// 浏览器当前窗口文档对象宽度
+			console.log($(document.body).width());// 浏览器当前窗口文档body的高度
+			console.log($(document.body).outerWidth(true));// 浏览器当前窗口文档body的总宽度
+			// 包括border
+			// padding
+			// margin
+			addVisibilityChangeListener();
+		});
+
+		function addVisibilityChangeListener() {
+			//各种浏览器兼容
+			var hidden, state, visibilityChange;
+			if (typeof document.hidden !== "undefined") {
+				hidden = "hidden";
+				visibilityChange = "visibilitychange";
+				state = "visibilityState";
+			} else if (typeof document.mozHidden !== "undefined") {
+				hidden = "mozHidden";
+				visibilityChange = "mozvisibilitychange";
+				state = "mozVisibilityState";
+			} else if (typeof document.msHidden !== "undefined") {
+				hidden = "msHidden";
+				visibilityChange = "msvisibilitychange";
+				state = "msVisibilityState";
+			} else if (typeof document.webkitHidden !== "undefined") {
+				hidden = "webkitHidden";
+				visibilityChange = "webkitvisibilitychange";
+				state = "webkitVisibilityState";
+			}
+			// 添加监听器，在title里显示状态变化
+			document.addEventListener(visibilityChange, function() {
+				if (document[state] == 'visible') {
+					getUserScore();
+					refreshTime();
+				}
+			}, false);
+
+		}
+	</script>
 
 </body>
 </html>

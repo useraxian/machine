@@ -1,17 +1,20 @@
 ﻿<!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="utf-8"></meta>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
 <meta name="viewport"
-	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"></meta>
+	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+></meta>
 <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
 <title>slot machine</title>
 <!-- head 中 -->
 <link rel="stylesheet"
-	href="//cdn.bootcss.com/weui/1.1.1/style/weui.min.css">
+	href="//cdn.bootcss.com/weui/1.1.1/style/weui.min.css"
+/>
 <link rel="stylesheet"
-	href="//cdn.bootcss.com/jquery-weui/1.0.1/css/jquery-weui.min.css">
+	href="//cdn.bootcss.com/jquery-weui/1.0.1/css/jquery-weui.min.css"
+/>
 
 <!-- body 最后 -->
 <script src="//cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
@@ -24,30 +27,40 @@ html, body {
 
 </head>
 
-<body ontouchstart>
+<body>
 	<div class="weui-tab">
 
 		<div class="weui-tabbar">
-			<a href="javascript:void(0);" class="weui-tabbar__item weui_bar__item_on" onclick="menuClick('myindex.html')">
+			<a href="javascript:void(0);"
+				class="weui-tabbar__item weui_bar__item_on"
+				onclick="menuClick('/machine')"
+			>
+				<!-- 				onclick="menuClick('myindex.html')" -->
 				<span class="weui-badge"
-				style="position: absolute; top: -.4em; right: 1em;">8</span>
+					style="position: absolute; top: -.4em; right: 1em;"
+				>8</span>
 				<div class="weui-tabbar__icon">
-					<img src="./images/icons/home.png" alt="" >
+					<img src="/images/icon_machine.png" alt="" />
 				</div>
 				<p class="weui-tabbar__label">水果机</p>
-			</a> <a href="javascript:void(0);" class="weui-tabbar__item" menuClick('openRecord.html')>
+			</a>
+			<a href="javascript:void(0);" class="weui-tabbar__item"
+				onclick="menuClick('openRecord.html')"
+			>
 				<div class="weui-tabbar__icon">
-					<img src="./images/icons/find.png" alt="">
+					<img src="/images/icon_machine.png" alt="" />
 				</div>
 				<p class="weui-tabbar__label">开奖记录</p>
-			</a> <a href="#orderPage" class="weui-tabbar__item">
+			</a>
+			<a href="#orderPage" class="weui-tabbar__item">
 				<div class="weui-tabbar__icon">
-					<img src="./images/icons/order.png" alt="">
+					<img src="/images/icon_machine.png" alt="" />
 				</div>
 				<p class="weui-tabbar__label">充值</p>
-			</a> <a href="#mePage" class="weui-tabbar__item">
+			</a>
+			<a href="#mePage" class="weui-tabbar__item">
 				<div class="weui-tabbar__icon">
-					<img src="./images/icons/user.png" alt="">
+					<img src="/images/icon_machine.png" alt="" />
 				</div>
 				<p class="weui-tabbar__label">我</p>
 			</a>
@@ -55,59 +68,37 @@ html, body {
 
 		<div class="weui-tab__bd">
 			<div id="mainPage"
-				class="weui-tab__bd-item weui-tab__bd-item--active" scrolling="auto">
-
-								<iframe align="center" width="100%" height="90%" src="myindex.html"
-									frameborder="no" border="0" marginwidth="0" marginheight="0" style="overflow: auto;"
-									scrolling="auto"></iframe>
-
-            </div>
-            <div id="findPage" class="weui-tab__bd-item">
-                <iframe align="center" width="100%" height="100%"
-					src="find.html" frameborder="no" border="0" marginwidth="0"
-					marginheight="0" scrolling="no"
-				></iframe>
-                <!-- <h1>发现-页面</h1>
-			</div>
-			<div id="orderPage" class="weui-tab__bd-item"></div>
-			<div id="mePage" class="weui-tab__bd-item">
-				<iframe align="center" width="100%" height="100%" src="me.html"
-					frameborder="no" border="0" marginwidth="0" marginheight="0"
-					scrolling="no"></iframe>
-				<!-- <h1>我-页面</h1> -->
+				class="weui-tab__bd-item weui-tab__bd-item--active"
+			>
+				
 			</div>
 		</div>
 	</div>
 
+
 	<!-- body 最后 -->
 	<script src="http://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
 	<script
-		src="http://cdn.bootcss.com/jquery-weui/1.0.0-rc.0/js/jquery-weui.min.js"></script>
+		src="http://cdn.bootcss.com/jquery-weui/1.0.0-rc.0/js/jquery-weui.min.js"
+	></script>
 
 
 	<!-- 如果使用了某些拓展插件还需要额外的JS -->
 	<script
-		src="http://cdn.bootcss.com/jquery-weui/1.0.0-rc.0/js/swiper.min.js"></script>
+		src="http://cdn.bootcss.com/jquery-weui/1.0.0-rc.0/js/swiper.min.js"
+	></script>
 	<script
-		src="http://cdn.bootcss.com/jquery-weui/1.0.0-rc.0/js/city-picker.min.js"></script>
+		src="http://cdn.bootcss.com/jquery-weui/1.0.0-rc.0/js/city-picker.min.js"
+	></script>
 
 	<script type="text/javascript">
-	
-	function menuClick(pageUrl) {
-		$('#mainPage').load(pageUrl);
-
-	};
-// 		$(document).ready(function() {
-// 			$('#mainPage').load('myindex.html');
-
-// 		});
-
-// 		$("#homePage").scroll(function() {
-// 			console.log('scroll..');
-// 			var $target = $('div.target');// 代表找到div.target的元素
-// 			var offset = $('#0').offset();
-// 			$target.css('top', offset.top, 'left', offset.left);
-// 		});
+		function menuClick(pageUrl) {
+			$('#mainPage').load("loading.html");
+			$('#mainPage').load(pageUrl);
+		};
+		$(document).ready(function(){
+			menuClick('/machine');
+		});
 	</script>
 </body>
 

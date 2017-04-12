@@ -67,8 +67,8 @@ public class WeixinUserService {
 	 * @return
 	 */
 	public boolean hasUser(String openId) {
-		List<TWeixinUser> users = findByOpenId(openId);
-		return users.size() > 0;
+		TWeixinUser users = findByOpenId(openId);
+		return users != null;
 	}
 
 	/**
@@ -77,10 +77,11 @@ public class WeixinUserService {
 	 * @param openId
 	 * @return
 	 */
-	public List<TWeixinUser> findByOpenId(String openId) {
+	public TWeixinUser findByOpenId(String openId) {
 		TWeixinUserExample example = new TWeixinUserExample();
 		example.createCriteria().andOpenIdEqualTo(openId);
-		return wxUserMapper.selectByExample(example);
+		List<TWeixinUser> list = wxUserMapper.selectByExample(example);
+		return list.size() > 0 ? list.get(0) : null;
 	}
 
 	/**

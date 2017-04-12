@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.ahem.machine.weixin.core.Global;
 import com.ahem.machine.weixin.entity.TMachineUser;
+import com.ahem.machine.weixin.entity.TWeixinUser;
 import com.ahem.machine.weixin.service.WeixinUserService;
 import com.github.sd4324530.fastweixin.api.OauthAPI;
 import com.github.sd4324530.fastweixin.api.config.ApiConfig;
@@ -64,8 +65,28 @@ public class WeixinLoginController {
 		} else {
 
 		}
+		return "index";
 
-		return "myindex";
+	}
+
+	@RequestMapping("/machine")
+	public String machine(HttpServletRequest req, Model model) throws IOException {
+		HttpSession session = req.getSession();
+		TMachineUser machineUser = (TMachineUser) session.getAttribute(Global.SEESION_USER_KEY);
+		if (machineUser != null) {
+			TWeixinUser wxUser = weixinUserService.findByOpenId(machineUser.getWeixinOpenId());
+			model.addAttribute("userid", machineUser.getId());
+			model.addAttribute("openid", machineUser.getWeixinOpenId());
+			model.addAttribute("nickname", wxUser.getNickname());
+			model.addAttribute("city", wxUser.getCity());
+			model.addAttribute("headimgurl", wxUser.getHeadimgurl());
+			model.addAttribute("province", wxUser.getProvince());
+			model.addAttribute("country", wxUser.getCountry());
+			return "machine";
+		} else {
+			model.addAttribute("error","error");
+			return "error";
+		}
 
 	}
 
