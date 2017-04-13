@@ -51,7 +51,6 @@ public class WeixinLoginController {
 
 		// 获取userId
 		TMachineUser machineUser = weixinUserService.findMachineUserByOpenId(userInfo.getOpenid());
-		System.out.println("userid=" + machineUser.getId());
 		if (machineUser != null) {
 			HttpSession session = req.getSession();
 			session.setAttribute(Global.SEESION_USER_KEY, machineUser);
@@ -62,9 +61,7 @@ public class WeixinLoginController {
 			model.addAttribute("headimgurl", userInfo.getHeadimgurl());
 			model.addAttribute("province", userInfo.getProvince());
 			model.addAttribute("country", userInfo.getCountry());
-		} else {
-
-		}
+		} 
 		return "index";
 
 	}

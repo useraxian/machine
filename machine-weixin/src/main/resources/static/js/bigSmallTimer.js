@@ -1,50 +1,31 @@
 /**
  * 倒计时器
  */
-var minute = 0;
-var second = 0;
-var bsStatus = 'stop';
 
-/**
- * 启动计时器
- */
-function initTimeCounter() {
+function Timer(minute,second) {
+	　this.minute = minute;
+　　　this.secondOrg = second;
+	  this.minute = minute;
+	  this.second = second;
+}	
+
+Timer.prototype.begin = function(m,s,event){
 	self.setInterval(function() {
-		if (second > 0) {
-			second--;
-		} else if (second == 0 && minute > 0) {
-			minute--;
-			second = 60;
-			second--;
+		if (this.second > 0) {
+			this.second--;
+		} else if (this.second == 0 && this.minute > 0) {
+			this.minute--;
+			this.second = 60;
+			this.second--;
 		}
-		setTime(minute, second);
-
-		if (minute == 0 && second == 0) {
-			// 押大小时间结束
+		console.log(this.minute+':'+this.second);
+		if (this.minute == m && this.second == s) {
+			event();
 		}
-
+		if (this.minute == 0 && this.second == 0) {
+			 this.minute=this.minuteOrg;
+			 this.second=this.secondOrg;
+		}
 	}, 1000);
-}
-/**
- * 
- * 设置时间计时器的值
- */
-function setTime(m, s) {
-	minute = m;
-	second = s;
-	// time = numberCover(minute, 2) + ":" + numberCover(second, 2);
-	// $('#timeSpan').html(time);
-}
+};
 
-/**
- * 开始时间计时器
- */
-function startTimeCounter() {
-	status = 'start';
-}
-/**
- * 停止时间计时器
- */
-function stopTimeCounter() {
-	status = 'stop';
-}

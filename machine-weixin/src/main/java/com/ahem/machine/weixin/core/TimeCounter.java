@@ -110,15 +110,21 @@ public class TimeCounter implements Serializable {
 
 			for (TMachineBetRecord record : records) {
 				HashMap<String, Integer> hashMap = new HashMap<>();
-				Integer result = record.getBetResult();
-				hashMap.put("betResult", result);
-				if (result == 1) {
-					Integer gotScore = record.getGotScore();
-					hashMap.put("gotScore", gotScore);
+				WebMessage msg = null;
+				try {
+					Integer result = record.getBetResult();
+					hashMap.put("betResult", result);
+					if (result == 1) {
+						Integer gotScore = record.getGotScore();
+						hashMap.put("gotScore", gotScore);
+					}
+					msg = new WebMessage(MessageType.betResult, hashMap);
+					TextMessage txtMsg = new TextMessage(msg.toJsonString());
+					SysWebSocketHandler.sendMsgToUser(record.getUserId() + "", txtMsg);
+				} catch (Exception e) {
+					logger.error("向用户发送得分情况失败！[hashMap="+hashMap+",WebMessage="+msg.toJsonString()+"]");
 				}
-				WebMessage msg = new WebMessage(MessageType.betResult, hashMap);
-				TextMessage txtMsg = new TextMessage(msg.toJsonString());
-				SysWebSocketHandler.sendMsgToUser(record.getUserId()+"", txtMsg);
+
 			}
 		} catch (Exception e) {
 

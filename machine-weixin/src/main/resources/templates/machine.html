@@ -34,8 +34,7 @@
 			</div>
 		</div>
 		<div class="weui-flex__item">
-			<div id="headImg" style="color: red">
-			</div>
+			<div id="headImg" style="color: red"></div>
 			<div id="nicknameDiv" style="color: red"></div>
 		</div>
 	</div>
@@ -199,9 +198,7 @@
 		</table>
 	</div>
  -->
-	<input type="hidden" id="userid" th:value="${userid}" />
-	<input type="hidden" id="nickname" th:value="${nickname}" />
-	<input type="hidden" id="headimgurl" th:value="${headimgurl}" />
+
 	<div id="confirmBetBtn" class="button" onclick="confirmBet()">确认下注</div>
 	<div class="button czBtn" onclick="reset()">重置</div>
 
@@ -211,18 +208,10 @@
 	<div class="target"></div>
 	<!--目标游戏结束-->
 
-	<script src="http://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
-	<script
-		src="http://cdn.bootcss.com/jquery-weui/1.0.1/js/jquery-weui.min.js"
-	></script>
-	<script type="text/javascript" src="/js/sockjs-1.1.1.js"></script>
-	<script type="text/javascript" src="/js/tool.js"></script>
-	<script type="text/javascript" src="/js/machine.js"></script>
-	<script type="text/javascript" src="/js/timecounter.js"></script>
-	<script type="text/javascript" src="/js/websocket.js"></script>
-	<script type="text/javascript" >
+	<script type="text/javascript">
 		$(document).ready(function() {
 			initMachine();
+			initWSClient();
 			console.log($(window).height()); // 浏览器当前窗口可视区域高度
 			console.log($(document).height()); // 浏览器当前窗口文档的高度
 			console.log($(document.body).height());// 浏览器当前窗口文档body的高度
