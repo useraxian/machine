@@ -57,6 +57,22 @@ var bsScore = 0;// 大小分数
 var mul = true;// 倍数按钮状态
 
 var myScoreUrl = '/machine/myscore';
+
+
+/***********大小计时器***************/
+var smTimer=new Timer(0,30,1);
+var te = new TimedEvent(0,10,function(){
+	$.toptip("10秒后停止", '2000','warning');
+});
+var arr=new Array();
+arr.push(te);
+smTimer.timedEvents=arr;
+smTimer.perSecond=function(){
+	$('#timeBSSpan').html(smTimer.realMinute+':'+smTimer.realSecond);
+ }
+/***********大小计时器***************/
+ 
+ 
 /**
  * 初始化机器UI
  */
@@ -66,7 +82,9 @@ function initMachine() {
 }
 
 function ui() {
+	console.log($('#headimgurl').val());
 	$('#nicknameDiv').html($('#nickname').val());
+	$("#headImg").attr('src',$('#headimgurl').val()); 
 	// 设置转盘图标
 	for ( var key in indexs) {
 		var img = 'url(images/' + fruits[key] + ')';
@@ -159,9 +177,9 @@ function startRun() {
 			if (nextGotScore > 0) {
 				bsScore = nextGotScore;
 				setGotScore(nextGotScore);
-				//TODO 押大小
+				// TODO 押大小
 				$.confirm("押大小", function() {
-					// 点击确认后的回调函数
+					smTimer.start();
 				}, function() {
 					nextGotScore = 0;
 					setGotScore(nextGotScore);

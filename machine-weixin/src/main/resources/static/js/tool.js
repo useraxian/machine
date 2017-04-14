@@ -34,3 +34,20 @@ function numberCover(num, len) {
 function isNull(data) {
 	return (data == "" || data == undefined || data == null);
 }
+
+
+
+/**
+ * 等待
+ * 
+ * @param data
+ */
+function sleep(numberMillis) {
+	　　var now = new Date();
+	　　var exitTime = now.getTime() + numberMillis;
+	　　while (true) {
+	　　now = new Date();
+	　　if (now.getTime() > exitTime)
+	　　return;
+	　　}
+	　　}

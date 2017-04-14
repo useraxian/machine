@@ -1,18 +1,25 @@
 package com.ahem.machine.weixin.service;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import org.apache.ibatis.session.RowBounds;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.ahem.machine.weixin.core.IGenerator;
+import com.ahem.machine.weixin.core.DateUtils;
 import com.ahem.machine.weixin.core.MaxGenerator;
+import com.ahem.machine.weixin.entity.MRecord;
+import com.ahem.machine.weixin.entity.TMachineFruit;
+import com.ahem.machine.weixin.entity.TMachineIndex;
 import com.ahem.machine.weixin.entity.TMachineRecord;
 import com.ahem.machine.weixin.entity.TMachineRecordExample;
+import com.ahem.machine.weixin.mapper.TMachineFruitMapper;
+import com.ahem.machine.weixin.mapper.TMachineIndexMapper;
 import com.ahem.machine.weixin.mapper.TMachineRecordMapper;
 
 /**
@@ -27,6 +34,12 @@ public class RecordService {
 
 	@Autowired
 	TMachineRecordMapper recordMapper;
+
+	@Autowired
+	TMachineIndexMapper indexMapper;
+
+	@Autowired
+	TMachineFruitMapper fruitMapper;
 
 	@Autowired
 	MaxGenerator maxGenerator;
@@ -52,8 +65,8 @@ public class RecordService {
 
 	private Integer generateOpenNumber(Integer recordId) {
 		// TODO 判断使用那种策略
-//		IGenerator generator = maxGenerator;
-//		return generator.generate(recordId);
+		// IGenerator generator = maxGenerator;
+		// return generator.generate(recordId);
 		return 0;
 	}
 
@@ -98,5 +111,22 @@ public class RecordService {
 	 */
 	public TMachineRecord findById(Integer recordId) {
 		return recordMapper.selectByPrimaryKey(recordId);
+	}
+
+	public List<MRecord> findByPage(int offset, int limit) {
+		List<MRecord> ls = new ArrayList<>();
+		TMachineRecordExample example = new TMachineRecordExample();
+		example.createCriteria().andOpenNumberIsNotNull();
+		example.setOrderByClause("id desc");
+		RowBounds rowBounds = new RowBounds(offset, limit);
+		List<TMachineRecord> records = recordMapper.selectByExampleWithRowbounds(example, rowBounds);
+		for (TMachineRecord record : records) {
+			TMachineIndex index = indexMapper.selectByPrimaryKey(record.getOpenNumber());
+			TMachineFruit fruit = fruitMapper.selectByPrimaryKey(index.getFruitId());
+			String openTime = DateUtils.fomat("yyyy-MM-dd HH:mm:ss", record.getOpenTime());
+			MRecord mRecord = new MRecord(record.getId(), "/images/"+fruit.getImageName(),openTime);
+			ls.add(mRecord);
+		}
+		return ls;
 	}
 }

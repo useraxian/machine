@@ -1,9 +1,26 @@
 ﻿<!DOCTYPE html>
 <html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
 <head>
+<link rel="stylesheet"
+	href="http://cdn.bootcss.com/weui/1.1.1/style/weui.min.css"
+></link>
+<link rel="stylesheet"
+	href="http://cdn.bootcss.com/jquery-weui/1.0.1/css/jquery-weui.min.css"
+></link>
 <title>开奖记录</title>
 </head>
 <body>
-	开奖记录
+	<h1>开奖记录</h1>
+	<div class="weui-cells">
+		<div class="weui-cell" th:each="record : ${records}">
+			<div class="weui-cell__hd">
+				<img style="width: 25px;heigth=25px;" th:src="@{${record.imgName}}" />
+			</div>
+			<div class="weui-cell__bd" th:text="'第'+${record.recordId}+'期'">
+			</div>
+			<div class="weui-cell__ft" th:text="${record.openTime}"></div>
+		</div>
+
+	</div>
 </body>
 </html>

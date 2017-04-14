@@ -9,6 +9,19 @@ body {
 	background-size: inherit;
 }
 
+/**用户头像*/
+.head-img {
+	width: 25px;
+	height: 25px;
+	display: inline;
+}
+
+/**用户昵称*/
+.nickname {
+	color: red;
+	display: inline;
+}
+
 .yx-btn {
 	background-color: #DB5705;
 	border-radius: 100%;
@@ -71,6 +84,7 @@ body {
 	width: 25px;
 	height: 25px;
 }
+
 .yx-bet-btn:active {
 	box-shadow: 0 3px 0 #DB1F05, 0 3px 6px rgba(0, 0, 0, 0.9);
 	-webkit-box-shadow: 0 3px 0 #DB1F05, 0 3px 6px rgba(0, 0, 0, 0.9);

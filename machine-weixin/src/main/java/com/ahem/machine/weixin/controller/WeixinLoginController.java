@@ -1,6 +1,7 @@
 package com.ahem.machine.weixin.controller;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -12,8 +13,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.ahem.machine.weixin.core.Global;
+import com.ahem.machine.weixin.entity.MRecord;
+import com.ahem.machine.weixin.entity.TMachineRecord;
 import com.ahem.machine.weixin.entity.TMachineUser;
 import com.ahem.machine.weixin.entity.TWeixinUser;
+import com.ahem.machine.weixin.service.RecordService;
 import com.ahem.machine.weixin.service.WeixinUserService;
 import com.github.sd4324530.fastweixin.api.OauthAPI;
 import com.github.sd4324530.fastweixin.api.config.ApiConfig;
@@ -32,6 +36,8 @@ public class WeixinLoginController {
 
 	@Autowired
 	WeixinUserService weixinUserService;
+	@Autowired
+	RecordService recordService;
 
 	@RequestMapping("/wxlogin")
 	public void wxlogin(HttpServletResponse response) throws IOException {
@@ -61,7 +67,7 @@ public class WeixinLoginController {
 			model.addAttribute("headimgurl", userInfo.getHeadimgurl());
 			model.addAttribute("province", userInfo.getProvince());
 			model.addAttribute("country", userInfo.getCountry());
-		} 
+		}
 		return "index";
 
 	}
@@ -81,9 +87,16 @@ public class WeixinLoginController {
 			model.addAttribute("country", wxUser.getCountry());
 			return "machine";
 		} else {
-			model.addAttribute("error","error");
+			model.addAttribute("error", "error");
 			return "error";
 		}
+	}
+
+	@RequestMapping("/openRecord")
+	public String openRecord(HttpServletRequest req, Model model) throws IOException {
+		List<MRecord> records = recordService.findByPage(0, 15);
+		model.addAttribute("records", records);
+		return "openRecord";
 
 	}
 
