@@ -1,20 +1,68 @@
-
-<!DOCTYPE html>
-<html lang="zh-CN">
+﻿<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8" />
+<title>后台管理</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- basic styles -->
+<link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/css/font-awesome.min.css" />
+
+<!--[if IE 7]>
+		  <link rel="stylesheet" href="/assets/css/font-awesome-ie7.min.css" />
+		<![endif]-->
+
+<!-- page specific plugin styles -->
+
+<!-- fonts -->
+
+<link rel="stylesheet"
+	href="http://fonts.googleapis.com/css?family=Open+Sans:400,300"
+/>
+
+<!-- ace styles -->
+
+<link rel="stylesheet" href="/assets/css/ace.min.css" />
+<link rel="stylesheet" href="/assets/css/ace-rtl.min.css" />
+<link rel="stylesheet" href="/assets/css/ace-skins.min.css" />
+
+<!--[if lte IE 8]>
+		  <link rel="stylesheet" href="/assets/css/ace-ie.min.css" />
+		<![endif]-->
+
+<!-- inline styles related to this page -->
+
+<!-- ace settings handler -->
+
+<script src="/assets/js/ace-extra.min.js"></script>
+
+
+<script type="text/javascript" src="/js/index.js">
+	
+</script>
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+<!--[if lt IE 9]>
+		<script src="/assets/js/html5shiv.js"></script>
+		<script src="/assets/js/respond.min.js"></script>
+		<![endif]-->
 </head>
-<title>用户</title>
 
 <body>
+
 	<div class="page-content">
+
 		<div class="row">
 			<div class="col-xs-12">
 				<!-- PAGE CONTENT BEGINS -->
+
 				<table id="grid-table"></table>
+
 				<div id="grid-pager"></div>
+
+				<table id="list2"></table>
+				<div id="pager2"></div>
 
 				<script type="text/javascript">
 					var $path_base = "/";//this will be used in gritter alerts containing images
@@ -24,18 +72,247 @@
 			</div>
 		</div>
 	</div>
+	<!-- basic scripts -->
 
+	<!--[if !IE]> -->
+
+	<script
+		src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"
+	></script>
+
+	<!-- <![endif]-->
+
+	<!--[if IE]>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<![endif]-->
+
+	<!--[if !IE]> -->
 
 	<script type="text/javascript">
-		jQuery(function($) {
+		window.jQuery
+				|| document
+						.write("<script src='/assets/js/jquery-2.0.3.min.js'>"
+								+ "<"+"script>");
+	</script>
 
+	<!-- <![endif]-->
+
+	<!--[if IE]>
+<script type="text/javascript">
+ window.jQuery || document.write("<script src='/assets/js/jquery-1.10.2.min.js'>"+"<"+"script>");
+</script>
+<![endif]-->
+
+	<script type="text/javascript">
+		if ("ontouchend" in document)
+			document
+					.write("<script src='/assets/js/jquery.mobile.custom.min.js'>"
+							+ "<"+"script>");
+	</script>
+	<script src="/assets/js/bootstrap.min.js"></script>
+	<script src="/assets/js/typeahead-bs2.min.js"></script>
+
+	<!-- page specific plugin scripts -->
+	<script src="assets/js/date-time/bootstrap-datepicker.min.js"></script>
+	<script src="assets/js/jqGrid/jquery.jqGrid.min.js"></script>
+	<script src="assets/js/jqGrid/i18n/grid.locale-en.js"></script>
+
+
+	<!--[if lte IE 8]>
+		  <script src="/assets/js/excanvas.min.js"></script>
+		<![endif]-->
+
+	<script src="/assets/js/jquery-ui-1.10.3.custom.min.js"></script>
+	<script src="/assets/js/jquery.ui.touch-punch.min.js"></script>
+	<script src="/assets/js/jquery.slimscroll.min.js"></script>
+	<script src="/assets/js/jquery.easy-pie-chart.min.js"></script>
+	<script src="/assets/js/jquery.sparkline.min.js"></script>
+	<script src="/assets/js/flot/jquery.flot.min.js"></script>
+	<script src="/assets/js/flot/jquery.flot.pie.min.js"></script>
+	<script src="/assets/js/flot/jquery.flot.resize.min.js"></script>
+
+	<!-- ace scripts -->
+
+	<script src="/assets/js/ace-elements.min.js"></script>
+	<script src="/assets/js/ace.min.js"></script>
+
+	<!-- inline scripts related to this page -->
+
+	<script type="text/javascript">
+		var grid_data = [ {
+			id : "1",
+			name : "Desktop Computer",
+			note : "note",
+			stock : "Yes",
+			ship : "FedEx",
+			sdate : "2007-12-03"
+		}, {
+			id : "2",
+			name : "Laptop",
+			note : "Long text ",
+			stock : "Yes",
+			ship : "InTime",
+			sdate : "2007-12-03"
+		}, {
+			id : "3",
+			name : "LCD Monitor",
+			note : "note3",
+			stock : "Yes",
+			ship : "TNT",
+			sdate : "2007-12-03"
+		}, {
+			id : "4",
+			name : "Speakers",
+			note : "note",
+			stock : "No",
+			ship : "ARAMEX",
+			sdate : "2007-12-03"
+		}, {
+			id : "5",
+			name : "Laser Printer",
+			note : "note2",
+			stock : "Yes",
+			ship : "FedEx",
+			sdate : "2007-12-03"
+		}, {
+			id : "6",
+			name : "Play Station",
+			note : "note3",
+			stock : "No",
+			ship : "FedEx",
+			sdate : "2007-12-03"
+		}, {
+			id : "7",
+			name : "Mobile Telephone",
+			note : "note",
+			stock : "Yes",
+			ship : "ARAMEX",
+			sdate : "2007-12-03"
+		}, {
+			id : "8",
+			name : "Server",
+			note : "note2",
+			stock : "Yes",
+			ship : "TNT",
+			sdate : "2007-12-03"
+		}, {
+			id : "9",
+			name : "Matrix Printer",
+			note : "note3",
+			stock : "No",
+			ship : "FedEx",
+			sdate : "2007-12-03"
+		}, {
+			id : "10",
+			name : "Desktop Computer",
+			note : "note",
+			stock : "Yes",
+			ship : "FedEx",
+			sdate : "2007-12-03"
+		}, {
+			id : "11",
+			name : "Laptop",
+			note : "Long text ",
+			stock : "Yes",
+			ship : "InTime",
+			sdate : "2007-12-03"
+		}, {
+			id : "12",
+			name : "LCD Monitor",
+			note : "note3",
+			stock : "Yes",
+			ship : "TNT",
+			sdate : "2007-12-03"
+		}, {
+			id : "13",
+			name : "Speakers",
+			note : "note",
+			stock : "No",
+			ship : "ARAMEX",
+			sdate : "2007-12-03"
+		}, {
+			id : "14",
+			name : "Laser Printer",
+			note : "note2",
+			stock : "Yes",
+			ship : "FedEx",
+			sdate : "2007-12-03"
+		}, {
+			id : "15",
+			name : "Play Station",
+			note : "note3",
+			stock : "No",
+			ship : "FedEx",
+			sdate : "2007-12-03"
+		}, {
+			id : "16",
+			name : "Mobile Telephone",
+			note : "note",
+			stock : "Yes",
+			ship : "ARAMEX",
+			sdate : "2007-12-03"
+		}, {
+			id : "17",
+			name : "Server",
+			note : "note2",
+			stock : "Yes",
+			ship : "TNT",
+			sdate : "2007-12-03"
+		}, {
+			id : "18",
+			name : "Matrix Printer",
+			note : "note3",
+			stock : "No",
+			ship : "FedEx",
+			sdate : "2007-12-03"
+		}, {
+			id : "19",
+			name : "Matrix Printer",
+			note : "note3",
+			stock : "No",
+			ship : "FedEx",
+			sdate : "2007-12-03"
+		}, {
+			id : "20",
+			name : "Desktop Computer",
+			note : "note",
+			stock : "Yes",
+			ship : "FedEx",
+			sdate : "2007-12-03"
+		}, {
+			id : "21",
+			name : "Laptop",
+			note : "Long text ",
+			stock : "Yes",
+			ship : "InTime",
+			sdate : "2007-12-03"
+		}, {
+			id : "22",
+			name : "LCD Monitor",
+			note : "note3",
+			stock : "Yes",
+			ship : "TNT",
+			sdate : "2007-12-03"
+		}, {
+			id : "23",
+			name : "Speakers",
+			note : "note",
+			stock : "No",
+			ship : "ARAMEX",
+			sdate : "2007-12-03"
+		} ];
+
+		jQuery(function($) {
 			var grid_selector = "#grid-table";
 			var pager_selector = "#grid-pager";
 
 			jQuery(grid_selector).jqGrid(
 					{
-						url : "/users",
+						//direction: "rtl",
+						url : "/user",
+						// 						data : grid_data,
 						datatype : "json",
+						height : 380,
 						colNames : [ ' ', 'ID', 'Last Sales', 'Name', 'Stock',
 								'Ship via', 'Notes' ],
 						colModel : [ {
@@ -132,7 +409,7 @@
 						},
 
 						editurl : $path_base + "/dummy.html",//nothing is saved
-						caption : "用户信息",
+						caption : "jqGrid with inline editing",
 
 						autowidth : true
 
@@ -389,9 +666,69 @@
 					container : 'body'
 				});
 			}
+
 			//var selr = jQuery(grid_selector).jqGrid('getGridParam','selrow');
 
 		});
+
+		$(function() {
+			pageInit();
+		});
+		function pageInit() {
+			jQuery("#list2").jqGrid(
+					{
+						url : ctx + '/JSONData',
+						datatype : "json",
+						colNames : [ 'Inv No', 'Date', 'Client', 'Amount',
+								'Tax', 'Total', 'Notes' ],
+						colModel : [ {
+							name : 'id',
+							index : 'id',
+							width : 55
+						}, {
+							name : 'invdate',
+							index : 'invdate',
+							width : 90
+						}, {
+							name : 'name',
+							index : 'name asc, invdate',
+							width : 100
+						}, {
+							name : 'amount',
+							index : 'amount',
+							width : 80,
+							align : "right"
+						}, {
+							name : 'tax',
+							index : 'tax',
+							width : 80,
+							align : "right"
+						}, {
+							name : 'total',
+							index : 'total',
+							width : 80,
+							align : "right"
+						}, {
+							name : 'note',
+							index : 'note',
+							width : 150,
+							sortable : false
+						} ],
+						rowNum : 10,
+						rowList : [ 10, 20, 30 ],
+						pager : '#pager2',
+						sortname : 'id',
+						mtype : "post",
+						viewrecords : true,
+						sortorder : "desc",
+						caption : "JSON 实例"
+					});
+			jQuery("#list2").jqGrid('navGrid', '#pager2', {
+				edit : false,
+				add : false,
+				del : false
+			});
+		}
 	</script>
 </body>
 </html>

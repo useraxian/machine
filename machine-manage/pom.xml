@@ -15,7 +15,9 @@
 
 	<properties>
 		<machine.version>v.0.0.1</machine.version>
+		<common.version>v.0.0.1</common.version>
 		<machine.public.version>v.0.0.1</machine.public.version>
+		<fastjson>1.2.15</fastjson>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -29,11 +31,11 @@
 			<optional>true</optional><!-- optional=true,依赖不会传递，该项目依赖devtools；之后依赖myboot项目的项目如果想要使用devtools，需要重新引入 -->
 		</dependency>
 
-<!-- 		<dependency> -->
-<!-- 			<groupId>com.ahem.machine</groupId> -->
-<!-- 			<artifactId>machine-public</artifactId> -->
-<!-- 			<version>${machine.public.version}</version> -->
-<!-- 		</dependency> -->
+		<dependency>
+			<groupId>com.ahem.machine</groupId>
+			<artifactId>machine-public</artifactId>
+			<version>${machine.public.version}</version>
+		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -44,7 +46,7 @@
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>fastjson</artifactId>
-			<version>1.2.15</version>
+			<version>${fastjson}</version>
 		</dependency>
 	</dependencies>
 
@@ -57,11 +59,6 @@
 				<version>${machine.pulic.version}</version>
 			</dependency>
 
-			<dependency>
-				<groupId>com.ahem.machine.public</groupId>
-				<artifactId>machine-public</artifactId>
-				<version>${machine.version}</version>
-			</dependency>
 			<dependency>
 				<groupId>com.ahem.machine.manage</groupId>
 				<artifactId>machine-manage-app</artifactId>
