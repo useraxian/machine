@@ -7,18 +7,18 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ahem.machine.weixin.entity.TMachineBetRecord;
-import com.ahem.machine.weixin.entity.TMachineBetRecordExample;
-import com.ahem.machine.weixin.entity.TMachineFruit;
-import com.ahem.machine.weixin.entity.TMachineIndex;
-import com.ahem.machine.weixin.entity.TMachineRecord;
-import com.ahem.machine.weixin.entity.TMachineUser;
-import com.ahem.machine.weixin.mapper.TMachineBetRecordMapper;
-import com.ahem.machine.weixin.mapper.TMachineFruitMapper;
-import com.ahem.machine.weixin.mapper.TMachineIndexMapper;
-import com.ahem.machine.weixin.mapper.TMachineRecordMapper;
-import com.ahem.machine.weixin.mapper.TMachineUserMapper;
-import com.ahem.machine.weixin.mapper.VUserBetRecordMapper;
+import com.ahem.machine.pub.mapper.TMachineBetRecordMapper;
+import com.ahem.machine.pub.mapper.TMachineFruitMapper;
+import com.ahem.machine.pub.mapper.TMachineIndexMapper;
+import com.ahem.machine.pub.mapper.TMachineRecordMapper;
+import com.ahem.machine.pub.mapper.TMachineUserMapper;
+import com.ahem.machine.pub.po.TMachineBetRecord;
+import com.ahem.machine.pub.po.TMachineBetRecordExample;
+import com.ahem.machine.pub.po.TMachineFruit;
+import com.ahem.machine.pub.po.TMachineIndex;
+import com.ahem.machine.pub.po.TMachineRecord;
+import com.ahem.machine.pub.po.TMachineUser;
+
 
 /**
  * 用户分数Service
@@ -30,8 +30,6 @@ import com.ahem.machine.weixin.mapper.VUserBetRecordMapper;
 public class UserScoreService {
 	private static Logger logger = LoggerFactory.getLogger(UserScoreService.class);
 
-	@Autowired
-	VUserBetRecordMapper userBetRecordMapper;
 
 	@Autowired
 	TMachineUserMapper userMapper;

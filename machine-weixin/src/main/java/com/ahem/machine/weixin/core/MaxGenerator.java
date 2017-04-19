@@ -6,8 +6,8 @@ import java.util.Random;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.ahem.machine.weixin.entity.TMachineIndex;
-import com.ahem.machine.weixin.entity.VBetStatistic;
+import com.ahem.machine.pub.po.TMachineIndex;
+import com.ahem.machine.pub.po.VBetStatistic;
 import com.ahem.machine.weixin.service.BetStatisticService;
 import com.ahem.machine.weixin.service.IndexService;
 

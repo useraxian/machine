@@ -2,8 +2,6 @@ package com.ahem.machine.weixin.websocket;
 
 import java.util.Map;
 
-import javax.servlet.http.HttpSession;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.server.ServerHttpRequest;
@@ -13,7 +11,6 @@ import org.springframework.web.socket.WebSocketHandler;
 import org.springframework.web.socket.server.support.HttpSessionHandshakeInterceptor;
 
 import com.ahem.machine.weixin.core.Global;
-import com.ahem.machine.weixin.entity.TMachineUser;
 
 public class HandshakeInterceptor extends HttpSessionHandshakeInterceptor {
 	private final static Logger logger = LoggerFactory.getLogger(HandshakeInterceptor.class);

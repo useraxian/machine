@@ -1,4 +1,4 @@
-package com.ahem.machine.weixin.entity;
+package com.ahem.machine.weixin.model;
 
 import java.util.Date;
 
