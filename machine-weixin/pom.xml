@@ -16,6 +16,7 @@
 	<properties>
 		<machine.version>v.0.0.1</machine.version>
 		<machine.public.version>v.0.0.1</machine.public.version>
+		<common.version>v.0.0.1</common.version>
 		<fastjson>1.2.15</fastjson>
 		<fastwx>1.3.14</fastwx>
 	</properties>
@@ -35,14 +36,14 @@
 			<artifactId>spring-boot-starter-websocket</artifactId>
 		</dependency>
 
-<!-- 		<dependency> -->
-<!-- 			<groupId>org.springframework.boot</groupId> -->
-<!-- 			<artifactId>spring-boot-starter-security</artifactId> -->
-<!-- 		</dependency> -->
-<!-- 		<dependency> -->
-<!-- 			<groupId>org.springframework.security.oauth</groupId> -->
-<!-- 			<artifactId>spring-security-oauth2</artifactId> -->
-<!-- 		</dependency> -->
+		<!-- <dependency> -->
+		<!-- <groupId>org.springframework.boot</groupId> -->
+		<!-- <artifactId>spring-boot-starter-security</artifactId> -->
+		<!-- </dependency> -->
+		<!-- <dependency> -->
+		<!-- <groupId>org.springframework.security.oauth</groupId> -->
+		<!-- <artifactId>spring-security-oauth2</artifactId> -->
+		<!-- </dependency> -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-websocket</artifactId>
@@ -58,6 +59,11 @@
 			<groupId>com.ahem.machine</groupId>
 			<artifactId>machine-public</artifactId>
 			<version>${machine.public.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.ahem</groupId>
+			<artifactId>common-utils</artifactId>
+			<version>${common.version}</version>
 		</dependency>
 
 		<!-- fastjson -->

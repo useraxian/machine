@@ -4,8 +4,8 @@ logging:
   level:
     org:
       springframework:
-        security: DEBUG
-        web: DEBUG
+        security: INFO
+        web: INFO
 
 #是否开启基本的鉴权，默认为true
 security:

@@ -4,14 +4,13 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 
-import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 import org.springframework.web.socket.TextMessage;
 
-import com.ahem.machine.weixin.entity.TMachineBetRecord;
-import com.ahem.machine.weixin.entity.TMachineRecord;
+import com.ahem.machine.pub.po.TMachineBetRecord;
+import com.ahem.machine.pub.po.TMachineRecord;
 import com.ahem.machine.weixin.service.RecordService;
 import com.ahem.machine.weixin.service.UserScoreService;
 import com.ahem.machine.weixin.websocket.MessageType;

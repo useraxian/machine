@@ -12,11 +12,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.ahem.machine.pub.po.TMachineUser;
+import com.ahem.machine.pub.po.TWeixinUser;
 import com.ahem.machine.weixin.core.Global;
-import com.ahem.machine.weixin.entity.MRecord;
-import com.ahem.machine.weixin.entity.TMachineRecord;
-import com.ahem.machine.weixin.entity.TMachineUser;
-import com.ahem.machine.weixin.entity.TWeixinUser;
+import com.ahem.machine.weixin.model.MRecord;
 import com.ahem.machine.weixin.service.RecordService;
 import com.ahem.machine.weixin.service.WeixinUserService;
 import com.github.sd4324530.fastweixin.api.OauthAPI;

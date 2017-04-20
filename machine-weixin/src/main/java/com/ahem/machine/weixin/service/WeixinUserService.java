@@ -7,13 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.ahem.machine.weixin.core.EmojiFilterUtil;
-import com.ahem.machine.weixin.entity.TMachineUser;
-import com.ahem.machine.weixin.entity.TMachineUserExample;
-import com.ahem.machine.weixin.entity.TWeixinUser;
-import com.ahem.machine.weixin.entity.TWeixinUserExample;
-import com.ahem.machine.weixin.mapper.TMachineUserMapper;
-import com.ahem.machine.weixin.mapper.TWeixinUserMapper;
+import com.ahem.common.utils.EmojiFilterUtil;
+import com.ahem.machine.pub.mapper.TMachineUserMapper;
+import com.ahem.machine.pub.mapper.TWeixinUserMapper;
+import com.ahem.machine.pub.po.TMachineUser;
+import com.ahem.machine.pub.po.TMachineUserExample;
+import com.ahem.machine.pub.po.TWeixinUser;
+import com.ahem.machine.pub.po.TWeixinUserExample;
 import com.github.sd4324530.fastweixin.api.response.GetUserInfoResponse;
 
 @Service

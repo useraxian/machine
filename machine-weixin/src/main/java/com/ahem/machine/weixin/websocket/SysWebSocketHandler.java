@@ -9,7 +9,6 @@ import java.util.concurrent.ConcurrentMap;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpHeaders;
 import org.springframework.web.socket.CloseStatus;
 import org.springframework.web.socket.TextMessage;
 import org.springframework.web.socket.WebSocketHandler;
@@ -18,7 +17,6 @@ import org.springframework.web.socket.WebSocketSession;
 
 import com.ahem.machine.weixin.core.Global;
 import com.ahem.machine.weixin.core.TimeCounter;
-import com.ahem.machine.weixin.entity.TMachineUser;
 
 public class SysWebSocketHandler implements WebSocketHandler {
 	private final static Logger logger = LoggerFactory.getLogger(SysWebSocketHandler.class);

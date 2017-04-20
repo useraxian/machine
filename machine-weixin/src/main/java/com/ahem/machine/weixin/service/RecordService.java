@@ -11,16 +11,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.ahem.machine.weixin.core.DateUtils;
+import com.ahem.common.utils.DateUtils;
+import com.ahem.machine.pub.mapper.TMachineFruitMapper;
+import com.ahem.machine.pub.mapper.TMachineIndexMapper;
+import com.ahem.machine.pub.mapper.TMachineRecordMapper;
+import com.ahem.machine.pub.po.TMachineFruit;
+import com.ahem.machine.pub.po.TMachineIndex;
+import com.ahem.machine.pub.po.TMachineRecord;
+import com.ahem.machine.pub.po.TMachineRecordExample;
 import com.ahem.machine.weixin.core.MaxGenerator;
-import com.ahem.machine.weixin.entity.MRecord;
-import com.ahem.machine.weixin.entity.TMachineFruit;
-import com.ahem.machine.weixin.entity.TMachineIndex;
-import com.ahem.machine.weixin.entity.TMachineRecord;
-import com.ahem.machine.weixin.entity.TMachineRecordExample;
-import com.ahem.machine.weixin.mapper.TMachineFruitMapper;
-import com.ahem.machine.weixin.mapper.TMachineIndexMapper;
-import com.ahem.machine.weixin.mapper.TMachineRecordMapper;
+import com.ahem.machine.weixin.model.MRecord;
 
 /**
  * 开奖记录service

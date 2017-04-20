@@ -9,9 +9,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.ahem.machine.pub.po.TMachineRecord;
 import com.ahem.machine.weixin.core.RestResponse;
-import com.ahem.machine.weixin.entity.TMachineRecord;
-import com.ahem.machine.weixin.mapper.TMachineUserMapper;
 import com.ahem.machine.weixin.service.BetRecordService;
 import com.ahem.machine.weixin.service.RecordService;
 import com.ahem.machine.weixin.service.UserScoreService;
