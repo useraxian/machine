@@ -1,0 +1,13 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>微信登陆后的页面</title>
+</head>
+<body>
+	<p th:text="'openid:' + ${openid} + '!'"></p>
+	<p th:text="'昵称：' + ${nickname} + '!'"></p>
+	<p th:text="'城市:' + ${city} + '!'"></p>
+	<p th:text="'省份:' + ${province} + '!'"></p>
+	<p th:text="'国家:' + ${country} + '!'"></p>
+</body>
+</html>
