@@ -38,7 +38,7 @@ function Timer(minute, second, type) {
 		this.event();
 
 		// 重新设置时间
-		if (this.realMinute == 0 && this.realSecond > 0) {
+		if (this.realMinute == 0 && this.realSecond == 0) {
 			if (this.type == 1) {
 				this.end();
 			} else {
@@ -52,7 +52,7 @@ function Timer(minute, second, type) {
 		console.log(this);
 		var t = this;
 		this.timeId = self.setInterval(function() {
-			t.count()
+			t.count();
 		}, 1000);
 	};
 

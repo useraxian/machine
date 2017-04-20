@@ -59,18 +59,24 @@ var mul = true;// 倍数按钮状态
 var myScoreUrl = '/machine/myscore';
 
 
-/***********大小计时器***************/
+/*********************************大小计时器*********************************/
 var smTimer=new Timer(0,30,1);
-var te = new TimedEvent(0,10,function(){
+var te1 = new TimedEvent(0,10,function(){
 	$.toptip("10秒后停止", '2000','warning');
 });
+var te2 = new TimedEvent(0,0,function(){
+	nextGotScore = 0;
+	setGotScore(nextGotScore);
+	getUserScore();
+});
 var arr=new Array();
-arr.push(te);
+arr.push(te1);
+arr.push(te2);
 smTimer.timedEvents=arr;
 smTimer.perSecond=function(){
 	$('#timeBSSpan').html(smTimer.realMinute+':'+smTimer.realSecond);
  }
-/***********大小计时器***************/
+/*********************************大小计时器*********************************/
  
  
 /**

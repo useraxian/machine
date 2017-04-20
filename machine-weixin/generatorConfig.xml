@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 <generatorConfiguration>
-	<!--<classPathEntry location="/Users/fangzhixian/Documents/repo/mysql/mysql-connector-java/5.1.40/mysql-connector-java-5.1.40.jar" /> -->
-	<classPathEntry	location="C:/Users/Administrator/.m2/repository/mysql/mysql-connector-java/5.1.40/mysql-connector-java-5.1.40.jar" /> 
+	<classPathEntry
+		location="/Users/fangzhixian/Documents/repo/mysql/mysql-connector-java/5.1.40/mysql-connector-java-5.1.40.jar" />
+	<!-- <classPathEntry -->
+	<!-- location="C:/Users/Administrator/.m2/repository/mysql/mysql-connector-java/5.1.40/mysql-connector-java-5.1.40.jar" 
+		/> -->
 
 	<context id="context1" targetRuntime="MyBatis3">
 		<!-- 生成的Java文件的编码 -->
 		<property name="javaFileEncoding" value="UTF-8" />
 		<plugin type="org.mybatis.generator.plugins.ToStringPlugin" />
-		<!-- 这里引入分页插件 -->   
-		<plugin type="org.mybatis.generator.plugins.RowBoundsPlugin"/>
+		<!-- 这里引入分页插件 -->
+		<plugin type="org.mybatis.generator.plugins.RowBoundsPlugin" />
 
 		<commentGenerator>
 			<property name="suppressAllComments" value="false" />
@@ -46,8 +49,14 @@
 		<table schema="machine" tableName="t_weixin_user"
 			domainObjectName="TWeixinUser">
 		</table>
+		<table schema="machine" tableName="t_machine_big_small_record"
+			domainObjectName="TMachineBigSmallRecord">
+		</table>
 		<table schema="machine" tableName="v_bet_statistic"
-			domainObjectName="VBetStatistic" enableInsert="false" enableSelectByPrimaryKey="false" enableUpdateByPrimaryKey="false" enableDeleteByPrimaryKey="false" enableDeleteByExample="false" enableUpdateByExample="false">
+			domainObjectName="VBetStatistic" enableInsert="false"
+			enableSelectByPrimaryKey="false" enableUpdateByPrimaryKey="false"
+			enableDeleteByPrimaryKey="false" enableDeleteByExample="false"
+			enableUpdateByExample="false">
 		</table>
 	</context>
 </generatorConfiguration>

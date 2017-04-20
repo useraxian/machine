@@ -10,9 +10,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.ahem.machine.weixin.core.RandomUtil;
 import com.ahem.machine.weixin.core.RestResponse;
 import com.ahem.machine.weixin.entity.TMachineBetRecord;
+import com.ahem.machine.weixin.entity.TMachineBigSmallRecord;
 import com.ahem.machine.weixin.service.BetRecordService;
+import com.ahem.machine.weixin.service.BigSmallRecoreService;
 import com.sun.tools.javac.util.List;
 
 /**
@@ -34,6 +37,9 @@ public class BetController {
 
 	@Autowired
 	BetRecordService betRecordService;
+
+	@Autowired
+	BigSmallRecoreService bigSmallRecordService;
 
 	@RequestMapping(value = "/bet", method = RequestMethod.POST)
 	public RestResponse bet(@RequestParam Integer userId, @RequestParam Integer score1, @RequestParam Integer score2,
@@ -70,11 +76,45 @@ public class BetController {
 
 			betRecordService.add(betRecord);
 			result = "下注成功！";
+			resp.success(result);
 		} catch (Exception e) {
 			logger.error("下注异常！" + betRecord.toString(), e);
 			result = "下注异常！";
+			resp.failure(result);
 		}
-		resp.success(result);
+
+		return resp;
+	}
+
+	@RequestMapping(value = "/bigOrSmall", method = RequestMethod.POST)
+	public RestResponse bigOrSmall(Integer bigOrSmall, Integer recordId, Integer userId, Integer score) {
+		logger.debug("下注[userid=" + userId + ",score=" + score + ",bigOrSmall=" + bigOrSmall + "]");
+		Integer result = -1;
+		RestResponse resp = new RestResponse();
+
+		// TODO 确认用户是否有分数
+		try {
+			int random = RandomUtil.random(0, 14);
+			TMachineBigSmallRecord record = new TMachineBigSmallRecord();
+			record.setRecordId(recordId);
+			record.setUserId(userId);
+			record.setBetScore(score);
+			record.setBigSmallNum(random);
+			record.setBetNum(bigOrSmall);
+			if (random >= 1 && random <= 8 && bigOrSmall == 0) {
+				record.setGotScore(score);
+			} else if (random >= 9 && random <= 13 && bigOrSmall == 1) {
+				record.setGotScore(score);
+			} else {
+				record.setGotScore(0);
+			}
+			bigSmallRecordService.add(record);
+			result = random;
+			resp.success(result);
+		} catch (Exception e) {
+			logger.error("压大小异常！[userid=" + userId + ",score=" + score + ",bigOrSmall=" + bigOrSmall + "]", e);
+			resp.failure();
+		}
 		return resp;
 	}
 
