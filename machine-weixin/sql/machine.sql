@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50625
 File Encoding         : 65001
 
-Date: 2017-04-20 18:03:09
+Date: 2017-04-21 17:36:53
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -90,20 +90,29 @@ CREATE TABLE `t_machine_fruit` (
   `button_name` varchar(50) CHARACTER SET utf8 DEFAULT NULL COMMENT '按钮名称',
   `fruit_multiple` int(10) unsigned zerofill NOT NULL DEFAULT '0000000000' COMMENT '水果倍数',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1 COMMENT='水果表 ';
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1 COMMENT='水果表 ';
 
 -- ----------------------------
 -- Records of t_machine_fruit
 -- ----------------------------
-INSERT INTO `t_machine_fruit` VALUES ('1', 'seven', '七', 'seven.png', 'seven.png', '0000000010');
-INSERT INTO `t_machine_fruit` VALUES ('2', 'cherry', '樱桃', 'cherry.png', 'cherry.png', '0000000010');
-INSERT INTO `t_machine_fruit` VALUES ('3', 'prune', '西梅', 'prune.png', 'prune.png', '0000000010');
-INSERT INTO `t_machine_fruit` VALUES ('4', 'banana', '香蕉', 'banana.png', 'banana.png', '0000000010');
-INSERT INTO `t_machine_fruit` VALUES ('5', 'lemo', '柠檬', 'lemo.png', 'lemo.png', '0000000010');
-INSERT INTO `t_machine_fruit` VALUES ('6', 'orange', '橘子', 'orange.png', 'orange.png', '0000000010');
-INSERT INTO `t_machine_fruit` VALUES ('7', 'watermelon', '西瓜', 'watermelon.png', 'watermelon.png', '0000000010');
-INSERT INTO `t_machine_fruit` VALUES ('8', 'bigwin', '大赢家', 'bigwin.png', 'bigwin.png', '0000000010');
-INSERT INTO `t_machine_fruit` VALUES ('9', 'bar', 'bar', 'bar.png', 'bar.png', '0000000010');
+INSERT INTO `t_machine_fruit` VALUES ('1', 'pingguo', '苹果', 'pingguo.jpg', 'btn-pingguo.png', '0000000010');
+INSERT INTO `t_machine_fruit` VALUES ('2', 'pingguox3', '苹果x3', 'pingguox3.jpg', 'btn-pingguo.png', '0000000030');
+INSERT INTO `t_machine_fruit` VALUES ('3', 'juzi', '橘子', 'juzi.jpg', 'btn-juzi.png', '0000000010');
+INSERT INTO `t_machine_fruit` VALUES ('4', 'juzix3', '橘子x3', 'juzix3.jpg', 'btn-juzi.png', '0000000010');
+INSERT INTO `t_machine_fruit` VALUES ('5', 'ningmeng', '柠檬', 'ningmengx3.jpg', 'btn-ningmeng.png', '0000000010');
+INSERT INTO `t_machine_fruit` VALUES ('6', 'ningmengx3', '柠檬x3', 'ningmeng.jpg', 'btn-ningmeng.png', '0000000010');
+INSERT INTO `t_machine_fruit` VALUES ('7', 'lingdang', '铃铛', 'lingdang.jpg', 'btn-lingdang.png', '0000000010');
+INSERT INTO `t_machine_fruit` VALUES ('8', 'lingdangx3', '铃铛x3', 'lingdangx3.jpg', 'btn-lingdang.png', '0000000010');
+INSERT INTO `t_machine_fruit` VALUES ('9', 'xigua', '西瓜', 'xigua.jpg', 'btn-xigua.png', '0000000010');
+INSERT INTO `t_machine_fruit` VALUES ('10', 'xiguax3', '西瓜', 'xiguax3.jpg', 'btn-xiguax.png', '0000000010');
+INSERT INTO `t_machine_fruit` VALUES ('11', 'xingxing', '星星', 'xingxing.jpg', 'btn-xingxing.png', '0000000010');
+INSERT INTO `t_machine_fruit` VALUES ('12', 'xingxingx3', '星星x3', 'xingxingx3.jpg', 'btn-xingxing.png', '0000000010');
+INSERT INTO `t_machine_fruit` VALUES ('13', 'qi', '七', 'qi.jpg', 'btn-qi.png', '0000000010');
+INSERT INTO `t_machine_fruit` VALUES ('14', 'qix3', '七x3', 'qix3.jpg', 'btn-qix3.png', '0000000010');
+INSERT INTO `t_machine_fruit` VALUES ('15', 'barx50', 'barx50', 'barx50.jpg', 'btn-bar.png', '0000000010');
+INSERT INTO `t_machine_fruit` VALUES ('16', 'barx100', 'barx100', 'barx100.jpg', 'btn-bar.png', '0000000010');
+INSERT INTO `t_machine_fruit` VALUES ('17', 'goodluckl', 'GoodLuckLeft', 'goodluckl.jpg', null, '0000000010');
+INSERT INTO `t_machine_fruit` VALUES ('18', 'goodluckr', 'GoodLuckRight', 'goodluckr.jpg', null, '0000000010');
 
 -- ----------------------------
 -- Table structure for `t_machine_index`
@@ -120,30 +129,30 @@ CREATE TABLE `t_machine_index` (
 -- ----------------------------
 -- Records of t_machine_index
 -- ----------------------------
-INSERT INTO `t_machine_index` VALUES ('0', '1');
-INSERT INTO `t_machine_index` VALUES ('9', '1');
-INSERT INTO `t_machine_index` VALUES ('18', '1');
-INSERT INTO `t_machine_index` VALUES ('1', '2');
-INSERT INTO `t_machine_index` VALUES ('10', '2');
-INSERT INTO `t_machine_index` VALUES ('19', '2');
-INSERT INTO `t_machine_index` VALUES ('2', '3');
-INSERT INTO `t_machine_index` VALUES ('11', '3');
-INSERT INTO `t_machine_index` VALUES ('20', '3');
-INSERT INTO `t_machine_index` VALUES ('3', '4');
-INSERT INTO `t_machine_index` VALUES ('12', '4');
-INSERT INTO `t_machine_index` VALUES ('21', '4');
-INSERT INTO `t_machine_index` VALUES ('4', '5');
-INSERT INTO `t_machine_index` VALUES ('13', '5');
-INSERT INTO `t_machine_index` VALUES ('22', '5');
-INSERT INTO `t_machine_index` VALUES ('5', '6');
-INSERT INTO `t_machine_index` VALUES ('14', '6');
-INSERT INTO `t_machine_index` VALUES ('23', '6');
-INSERT INTO `t_machine_index` VALUES ('6', '7');
-INSERT INTO `t_machine_index` VALUES ('15', '7');
-INSERT INTO `t_machine_index` VALUES ('7', '8');
-INSERT INTO `t_machine_index` VALUES ('16', '8');
-INSERT INTO `t_machine_index` VALUES ('8', '9');
-INSERT INTO `t_machine_index` VALUES ('17', '9');
+INSERT INTO `t_machine_index` VALUES ('4', '1');
+INSERT INTO `t_machine_index` VALUES ('10', '1');
+INSERT INTO `t_machine_index` VALUES ('16', '1');
+INSERT INTO `t_machine_index` VALUES ('22', '1');
+INSERT INTO `t_machine_index` VALUES ('5', '2');
+INSERT INTO `t_machine_index` VALUES ('0', '3');
+INSERT INTO `t_machine_index` VALUES ('12', '3');
+INSERT INTO `t_machine_index` VALUES ('11', '4');
+INSERT INTO `t_machine_index` VALUES ('6', '5');
+INSERT INTO `t_machine_index` VALUES ('18', '5');
+INSERT INTO `t_machine_index` VALUES ('17', '6');
+INSERT INTO `t_machine_index` VALUES ('1', '7');
+INSERT INTO `t_machine_index` VALUES ('13', '7');
+INSERT INTO `t_machine_index` VALUES ('23', '7');
+INSERT INTO `t_machine_index` VALUES ('7', '9');
+INSERT INTO `t_machine_index` VALUES ('8', '10');
+INSERT INTO `t_machine_index` VALUES ('19', '11');
+INSERT INTO `t_machine_index` VALUES ('20', '12');
+INSERT INTO `t_machine_index` VALUES ('15', '13');
+INSERT INTO `t_machine_index` VALUES ('14', '14');
+INSERT INTO `t_machine_index` VALUES ('2', '15');
+INSERT INTO `t_machine_index` VALUES ('3', '16');
+INSERT INTO `t_machine_index` VALUES ('21', '17');
+INSERT INTO `t_machine_index` VALUES ('9', '18');
 
 -- ----------------------------
 -- Table structure for `t_machine_record`
@@ -156,7 +165,7 @@ CREATE TABLE `t_machine_record` (
   PRIMARY KEY (`id`),
   KEY `fk_t_machine_record_number_index_id` (`open_number`),
   CONSTRAINT `fk_t_machine_record_number_index_id` FOREIGN KEY (`open_number`) REFERENCES `t_machine_index` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1070 DEFAULT CHARSET=latin1 COMMENT='开奖记录表 ';
+) ENGINE=InnoDB AUTO_INCREMENT=1084 DEFAULT CHARSET=latin1 COMMENT='开奖记录表 ';
 
 -- ----------------------------
 -- Records of t_machine_record
@@ -1213,7 +1222,21 @@ INSERT INTO `t_machine_record` VALUES ('1065', '2017-04-14 17:39:36', '0');
 INSERT INTO `t_machine_record` VALUES ('1066', '2017-04-14 17:40:36', '0');
 INSERT INTO `t_machine_record` VALUES ('1067', '2017-04-19 14:49:01', '0');
 INSERT INTO `t_machine_record` VALUES ('1068', '2017-04-19 14:50:01', '0');
-INSERT INTO `t_machine_record` VALUES ('1069', null, null);
+INSERT INTO `t_machine_record` VALUES ('1069', '2017-04-21 14:55:44', '0');
+INSERT INTO `t_machine_record` VALUES ('1070', '2017-04-21 14:56:44', '0');
+INSERT INTO `t_machine_record` VALUES ('1071', '2017-04-21 14:58:38', '0');
+INSERT INTO `t_machine_record` VALUES ('1072', '2017-04-21 14:59:38', '0');
+INSERT INTO `t_machine_record` VALUES ('1073', '2017-04-21 15:00:38', '0');
+INSERT INTO `t_machine_record` VALUES ('1074', '2017-04-21 15:01:38', '0');
+INSERT INTO `t_machine_record` VALUES ('1075', '2017-04-21 15:14:13', '0');
+INSERT INTO `t_machine_record` VALUES ('1076', '2017-04-21 15:15:13', '0');
+INSERT INTO `t_machine_record` VALUES ('1077', '2017-04-21 15:16:47', '0');
+INSERT INTO `t_machine_record` VALUES ('1078', '2017-04-21 15:17:47', '0');
+INSERT INTO `t_machine_record` VALUES ('1079', '2017-04-21 15:18:47', '0');
+INSERT INTO `t_machine_record` VALUES ('1080', '2017-04-21 15:19:47', '0');
+INSERT INTO `t_machine_record` VALUES ('1081', '2017-04-21 15:20:47', '0');
+INSERT INTO `t_machine_record` VALUES ('1082', '2017-04-21 15:21:47', '0');
+INSERT INTO `t_machine_record` VALUES ('1083', '2017-04-21 15:22:47', '0');
 
 -- ----------------------------
 -- Table structure for `t_machine_timer`

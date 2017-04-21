@@ -75,20 +75,20 @@ public class WeixinLoginController {
 	public String machine(HttpServletRequest req, Model model) throws IOException {
 		HttpSession session = req.getSession();
 		TMachineUser machineUser = (TMachineUser) session.getAttribute(Global.SEESION_USER_KEY);
-		if (machineUser != null) {
-			TWeixinUser wxUser = weixinUserService.findByOpenId(machineUser.getWeixinOpenId());
-			model.addAttribute("userid", machineUser.getId());
-			model.addAttribute("openid", machineUser.getWeixinOpenId());
-			model.addAttribute("nickname", wxUser.getNickname());
-			model.addAttribute("city", wxUser.getCity());
-			model.addAttribute("headimgurl", wxUser.getHeadimgurl());
-			model.addAttribute("province", wxUser.getProvince());
-			model.addAttribute("country", wxUser.getCountry());
+//		if (machineUser != null) {
+//			TWeixinUser wxUser = weixinUserService.findByOpenId(machineUser.getWeixinOpenId());
+//			model.addAttribute("userid", machineUser.getId());
+//			model.addAttribute("openid", machineUser.getWeixinOpenId());
+//			model.addAttribute("nickname", wxUser.getNickname());
+//			model.addAttribute("city", wxUser.getCity());
+//			model.addAttribute("headimgurl", wxUser.getHeadimgurl());
+//			model.addAttribute("province", wxUser.getProvince());
+//			model.addAttribute("country", wxUser.getCountry());
 			return "machine";
-		} else {
-			model.addAttribute("error", "error");
-			return "error";
-		}
+//		} else {
+//			model.addAttribute("error", "error");
+//			return "error";
+//		}
 	}
 
 	@RequestMapping("/openRecord")

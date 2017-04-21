@@ -24,4 +24,16 @@ public class WebMvcStaticResourceConfiguration extends WebMvcConfigurerAdapter {
 	// registry.addViewController("/login").setViewName("/login");
 	// }
 
+	
+//	<bean name="content-part" class="org.thymeleaf.spring4.view.ThymeleafView">
+//	  <property name="templateName" value="index" />
+//	  <property name="fragmentSpec">
+//	    <bean class="org.thymeleaf.standard.fragment.StandardDOMSelectorFragmentSpec"
+//	          c:selectorExpression="content" />
+//	  </property>
+//	</bean>
+	
+//	public ThymeleafView fragment(){
+//		
+//	}
 }

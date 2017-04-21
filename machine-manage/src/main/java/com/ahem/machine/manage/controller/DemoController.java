@@ -20,10 +20,10 @@ public class DemoController {
 	public String allUsers(Model model) {
 		List<TMachineUser> users = demoService.findAllUsers();
 		model.addAttribute("users", users);
-		model.addAttribute("error", "error");
-		model.addAttribute("timestamp", System.currentTimeMillis());
-		return "error";
-//		return "demo/thmyleaf-ajax";
+//		model.addAttribute("error", "error");
+////		model.addAttribute("timestamp", System.currentTimeMillis());
+//		return "error";
+		return "demo/fragment :: resultsList";
 //		 :: resultsList
 	}
 }

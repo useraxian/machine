@@ -4,47 +4,56 @@
 
 // 水果
 var fruits = {
-	'seven' : 'seven.png',
-	'cherry' : 'cherry.png',
-	'prune' : 'prune.png',
-	'banana' : 'banana.png',
-	'lemo' : 'lemo.png',
-	'orange' : 'orange.png',
-	'watermelon' : 'watermelon.png',
-	'bigwin' : 'bigwin.png',
-	'bar' : 'bar.png'
-
+	'pingguo' : 'pingguo.jpg',
+	'pingguox3' : 'pingguox3.jpg',
+	'juzi' : 'juzi.jpg',
+	'juzix3' : 'juzix3.jpg',
+	'ningmeng' : 'ningmeng.jpg',
+	'ningmengx3' : 'ningmengx3.jpg',
+	'lingdang' : 'lingdang.jpg',
+	'lingdangx3' : 'lingdangx3.jpg',
+	'xigua' : 'xigua.jpg',
+	'xiguax3' : 'xiguax3.jpg',
+	'xingxing' : 'xingxing.jpg',
+	'xingxingx3' : 'xingxingx3.jpg',
+	'qi' : 'qi.jpg',
+	'qix3' : 'qix3.jpg',
+	'barx50' : 'barx50.jpg',
+	'barx100' : 'barx100.jpg',
+	'goodluckl':'goodluckl.jpg',
+	'goodluckr':'goodluckr.jpg'
 };
 
-var bets = {
-	1 : 'seven',
-	2 : 'cherry',
-	3 : 'prune',
-	4 : 'banana',
-	5 : 'lemo',
-	6 : 'orange',
-	7 : 'watermelon'
-};
-var times = {
-	1 : 50,
-	2 : 40,
-	3 : 30,
-	4 : 20,
-	5 : 15,
-	6 : 10,
-	7 : 5
+var btnImgs = {
+	1 : 'btn-bar.jpg',
+	2 : 'btn-qi.png',
+	3 : 'btn-xingxing.png',
+	4 : 'btn-xigua.png',
+	5 : 'btn-lingdang.png',
+	6 : 'btn-ningmeng.png',
+	7 : 'btn-juzi.png',
+	8 : 'btn-pingguo.png'
 };
 
 var indexs = {
-	'seven' : [ 0, 9, 18 ],
-	'cherry' : [ 1, 10, 19 ],
-	'prune' : [ 2, 11, 20 ],
-	'banana' : [ 3, 12, 21 ],
-	'lemo' : [ 4, 13, 22 ],
-	'orange' : [ 5, 14, 23 ],
-	'watermelon' : [ 6, 15 ],
-	'bigwin' : [ 7, 16 ],
-	'bar' : [ 8, 17 ]
+		'pingguo' :[4,10,16,22],
+		'pingguox3' : [5],
+		'juzi' : [0,12],
+		'juzix3' : [11],
+		'ningmeng' : [6,18],
+		'ningmengx3' : [17],
+		'lingdang' : [1,13],
+		'lingdangx3' : [23],
+		'xigua' : [7],
+		'xiguax3' : [8],
+		'xingxing' : [19],
+		'xingxingx3' : [20],
+		'qi' : [15],
+		'qix3' : [14],
+		'barx50' : [2],
+		'barx100' : [3],
+		'goodluckl':[21],
+		'goodluckr':[9]
 };
 
 var last = 23;// 上次开奖位置
@@ -59,7 +68,7 @@ var mul = true;// 倍数按钮状态
 var myScoreUrl = '/machine/myscore';
 
 
-/*********************************大小计时器*********************************/
+/** *******************************大小计时器******************************** */
 var smTimer=new Timer(0,30,1);
 var te1 = new TimedEvent(0,10,function(){
 	$.toptip("10秒后停止", '2000','warning');
@@ -76,7 +85,7 @@ smTimer.timedEvents=arr;
 smTimer.perSecond=function(){
 	$('#timeBSSpan').html(smTimer.realMinute+':'+smTimer.realSecond);
  }
-/*********************************大小计时器*********************************/
+/** *******************************大小计时器******************************** */
  
  
 /**
@@ -102,10 +111,10 @@ function ui() {
 	}
 
 	// 设置图标和按钮
-	for ( var key in bets) {
+	for ( var key in btnImgs) {
 		console.log(key);
-		var fruitName = bets[key];
-		var img = 'url(images/' + fruits[fruitName] + ')';
+		var imgName = btnImgs[key];
+		var img = 'url(images/' + imgName+ ')';
 		$('#bet' + key).css('background', img);
 		$('#bet' + key).css('background-size', '35px 25px');
 	}

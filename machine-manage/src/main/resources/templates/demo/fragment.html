@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+>
+<head>
+
+</head>
+
+<body>
+	<div th:fragment="resultsList" id="resultsList">
+		<table>
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>openid</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="user : ${users}">
+					<td th:text="${user.id}"></td>
+					<td th:text="${user.weixinOpenId}"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+>
 <script
-		src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"
-	></script>
+	src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"
+></script>
 <head>
 <script type="text/javascript">
 	function loadUsers() {
@@ -16,22 +18,6 @@
 
 <body>
 	<button onclick="loadUsers()">加载表格</button>
-	<div id="resultsBlock"></div>
-	<div th:fragment="resultsList" id="results-block">
-		<table>
-			<thead>
-				<tr>
-					<th>Id</th>
-					<th>openid</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr th:each="user : ${users}">
-					<td th:text="${user.id}"></td>
-					<td th:text="${user.weixinOpenId}"></td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
+	<div id="resultsBlock" >11</div>
 </body>
 </html>
